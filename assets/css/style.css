@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height: 1.5;
+    color: #212529;
+    /* background-color: #f7f7f7; */
+    background-color: #b1b1b1;
+}
+.navbar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 5px;
+    height: 80px;
+    background-color: #ffffff;
+}
+
+/*
+headeer top
+*/
+.topbar{
+  background-color: #df5311;
+  padding: 0;
+  height: 50px;
+}
+
+.topbar .container .row .col-md-12 { 
+  padding:0;
+}
+
+.topbar p{
+  margin:0;
+  display:inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.topbar p > i{
+  margin-right:5px;
+}
+.topbar p:last-child{
+  text-align:right;
+} 
+
+header .navbar {
+    margin-bottom: 0;
+}
+
+.header_topbar_right{
+    margin: 10px 15px 0px;
+}
+
+.icons_background_blur{
+    background-color: #00000033;
+}
+
+.topbar li.topbar {
+    display: inline;
+    padding-right: 18px;
+    line-height: 52px;
+    transition: all .3s linear;
+}
+
+.topbar li.topbar:hover {
+    color: #1bbde8;
+}
+
+.topbar ul.info i {
+    color: #df5311;
+    font-style: normal;
+    margin-right: 8px;
+    display: inline-block;
+    position: relative;
+    top: 4px;
+}
+
+a:hover{
+    color: #ffffff;
+}
+
+.topbar ul.info li {
+    float: right;
+    padding-left: 30px;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 44px;
+}
+
+.topbar ul.info i span {
+    color: #aaa;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-left: 18px;
+}
+
+ul.social-network {
+  border:none;
+  margin:0;
+  padding:0;
+}
+
+ul.social-network li {
+  border:none;  
+  margin:0;
+}
+
+ul.social-network li i {
+  margin:0;
+}
+
+ul.social-network li {
+    display:inline;
+    margin: 0 5px;
+    border: 0px solid #2D2D2D;
+    padding: 5px 0 0;
+    width: 32px;
+    display: inline-block;
+    text-align: center;
+    height: 32px;
+    vertical-align: baseline;
+    color: #000;
+}
+
+ul.social-network {
+  list-style: none;
+  margin: 5px 0 10px 0px;
+  float: right;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+.bg-image-full {
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.bg-dark {
+    background-color: #222!important;
+}
+
+.elementor a {
+    box-shadow: none;
+    text-decoration: none;
+}
+.btn-donate {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    background: #138999;
+    color: #fff !important;
+    padding: 18px 65px 18px 20px;
+    line-height: 18px;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.btn-donate:after {
+    content: "\f004";
+    width: 40px;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    font-family: "Font Awesome 5 Free";
+    color: #df5311;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.nav-link{
+    color: #768385 !important;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu_link:hover{
+    color: #0e6a79;
+    text-decoration: underline;
+}
+
+.navbar_left_btn {
+    background: #df5311;
+}
+
+.navbar_right_btn:hover{
+    background-color: #df5311;
+}
+.navbar_right_btn:hover::after{
+    background-color: #ffc107;
+    color: #ffffff;
+}
+.navbar_left_btn:hover{
+    background-color: #138999;
+}
+.navbar_left_btn:hover::after{
+    background-color: #ffc107;
+    color: #ffffff;
+}
+
+/* footer */
+.footer{
+    background-color: #144047;
+    height: auto;
+    padding: 105px 0px;
+    position: fixed; 
+    bottom: 0px;
+}
