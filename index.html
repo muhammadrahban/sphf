@@ -361,7 +361,7 @@
                             <div style="margin-top: 20%;">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <span class="form_span">Rs</span><input type="text" class="form_input_amount">
+                                        <span class="form_span">Rs</span><input type="text" class="form_input_amount" min="1000">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -374,7 +374,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <button type="button" class="form_submit_btn">DONATE</button>
+                                        <button type="button" data-toggle="modal" data-target="#modelId" class="form_submit_btn">DONATE</button>
                                     </div>
                                 </div>
                             </div>
@@ -514,6 +514,93 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="form_span">Rs</span><input type="text" readonly class="form_input_amount" value="1000">
+                        </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Select Payment Method</h4>
+                    <hr>
+                    <div class="px-3">
+                        <input type="radio" name="payment" id="payment1" selected value="Test Donation">
+                        <label for="payment1">Test Donation</label>
+
+                        <input type="radio" name="payment" id="payment2" value="Offline Donation">
+                        <label for="payment2">Offline Donation</label>
+                    </div>
+                    <h4>Personal Info</h4>
+                    <hr>
+                    <div class="row py-2">
+                        <div class="col-md-2">
+                            <label for="title">Title<span style="color: red;">*</span></label>
+                            <select name="title" id="title" class="form-control">
+                                <option value="Mr">Mr.</option>
+                                <option value="Mrs">Mrs.</option>
+                                <option value="Ms">Ms.</option>
+                            </select>
+                        </div>
+                        <div class="col-md-5">
+                            <label for="firstname">First Name <span style="color: red;">*</span></label>
+                            <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name">
+                        </div>
+                        <div class="col-md-5">
+                            <label for="lastname">Last Name <span style="color: red;">*</span></label>
+                            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-12">
+                            <label for="companyname">Company Name <span style="color: red;">*</span></label>
+                            <input type="text" name="companyname" class="form-control" id="companyname" placeholder="Company Name">
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-12">
+                            <label for="email_address">Email Address <span style="color: red;">*</span></label>
+                            <input type="text" name="email_address" class="form-control" id="email_address" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-12">
+                            <input type="checkbox" name="anonymous" id="anonymous">
+                            <label for="anonymous">Make this an anonymous donation.</label>
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-12">
+                            <label for="comment">Comment <span style="color: red;">*</span></label>
+                            <textarea name="comment" class="form-control" id="comment" placeholder="Leave a comment"></textarea>
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <div class="input-group-text">Donation Total</div>
+                                </div>
+                                <input type="text" class="form-control" id="total_donation" placeholder="Rs300,000" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="form_submit_btn btn-block">DONATE NOW</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
