@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/slick.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>SPHF</title>
+  </head>
+  <body>
+
+    <header class="top-bar d-none d-md-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-center">
+                    <a href="#" class="p-2 text-light">
+                        <i class="fa fa-phone-alt text-warning mr-2"></i>
+                        +92 111 111 111
+                    </a>
+                    <a href="#" class="p-2 text-light">
+                        <i class="fas fa-envelope text-warning"></i>
+                        donor@sphf.gos.pk
+                    </a>
+                    <a href="faqs.html" class="p-2 text-light">
+                        <i class="fa fa-info text-warning"></i>
+                        Donor FAQs
+                    </a>
+                </div>
+                <!-- social icon-->
+                <div class="col-md-6 text-right">
+                    <div class="d-flex align-items-center  justify-content-end">
+                        <div class="px-3 top-bar-icons-bg">
+                            <div class="d-flex align-items-center">
+                                <a href="#" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                        <div class="ml-3"> 
+                            <div class="d-flex align-items-center">
+                                <a class="p-2" href="#">
+                                    <i style="position:relative; z-index:0" class="fas fa-heart text-light"></i>
+                                    <span class="cart-indicator">0</span>
+                                </a>
+                                <a class="waves-effect waves-dark" href="#"><i class="fas fa-search text-light"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </header>
+    <header class="top-bar mobile d-block d-md-none" style="background: #144047;">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <a href="#" class="p-2 text-light">
+                        <i class="fa fa-phone-alt text-warning mr-2"></i>
+                        <small>+92 111 111 111</small>
+                    </a>
+                </div>
+                <!-- social icon-->
+                <div class="col-6 text-right">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a href="#" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="stickey-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/images/SPHF-donor-logo.png" alt="SPHF-donor-logo" width="150">
+                </a>
+                <div class="d-none d-md-flex">
+                    <a href="#" class="underline-link p-2">Why & How Donate</a>
+                    <a href="#" class="underline-link p-2">Track Your Donation</a>
+                </div>
+                <div class="d-none d-md-flex">
+                    <a class="btn p-2 nav-btn-secondary mx-2 text-white" href="become-a-donor.html">
+                        <span class="px-2">TRANSFER TO SPHF</span>
+                        <i class="fa fa-heart text-warning"></i>
+                    </a>
+                    <a class="btn p-2 nav-btn-primary mx-2 text-white" href="adopt-a-beneficiary.html">
+                        <span class="px-2">ADOPT A BENEFICIARY</span>
+                        <i class="fa fa-heart text-warning"></i>
+                    </a>
+                </div>
+                <a href="#" class="underline-link p-2 d-none d-md-block">Login</a>
+                <a href="javascript:void(0);" onclick="$('.mobile-nav').addClass('open')" class="p-3 d-block d-md-none"><i class="fa fa-2x fa-bars"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav">
+        <div class="d-flex justify-content-between" style="background-color: #F1F6F7;">
+            <a class="navbar-brand" href="#">
+                <img class="mx-2" src="./assets/images/SPHF-donor-logo.png" alt="SPHF-donor-logo" height="40">
+            </a>
+            <a href="javascript:void(0);" onclick="$('.mobile-nav').removeClass('open')" class="btn py-2 px-3 rounded-0" style="background-color: #df5311;">
+                <i class="mt-2 fa fa-times-circle text-white"></i>
+            </a>
+        </div>
+        <div class="p-3" style="height: calc(100vh - 50px); overflow-y: auto; overflow-x: hidden;">
+            <a href="#" class="btn btn-lg btn-block text-left px-0 mb-2 border-bottom-1">Why & How Donate</a>
+            <a href="#" class="btn btn-lg btn-block text-left px-0 mb-2 border-bottom-1">Track Your Donation</a>
+            <button class="btn btn-block p-2 nav-btn-secondary d-flex align-items-center justify-content-between">
+                <span class="px-2">TRANSFER TO SPHF</span>
+                <i class="fa fa-heart text-warning"></i>
+            </button>
+            <a class="btn btn-block p-2 nav-btn-primary d-flex align-items-center justify-content-between text-white" href="adopt-a-beneficiary.html">
+                <span class="px-2">ADOPT A BENEFICIARY</span>
+                <i class="fa fa-heart text-warning"></i>
+            </a>
+            <a href="#" class="btn btn-lg btn-block text-left px-0 mb-2 border-bottom-1">Login</a>
+        </div>
+    </div>
+    
+    <main>
+        <section style="background-image: url('./assets/images/shape-8.png'); background-size:auto 100%;">
+            <div class="container py-5">
+                <h1 class="mb-5">Transfer your donation to SPHF</h1>
+                <form class="card mb-5" id="multi-step-form">
+                    <div class="step" data-step="1">
+                        <div class="py-4 px-0">
+                            <ul>
+                                <li>Add the amount you want to donate.</li>
+                                <li>Add donor’s basic detail, select payment mode and make online payment.</li>
+                                <li>You can also choose offline payment option.</li>
+                                <li>Your donation will be transferred securely to SPHF, and SPHF will be assigned to disburse your funds to flood-affected beneficiaries in Sindh.</li>
+                                <li>Once you submit donation, you’ll receive e-receipt on e-mail.</li>
+                                <li>You can also login to your donor account to view and track your donation.</li>
+                            </ul>
+                            <h4 class="ml-4">Let’s begin giving joy.</h4>
+                        </div>
+                        <img class="w-100" src="./assets/images/transfer-your-donation-to-SPHF.jpg">
+                        <div class="row text-center">
+                            <div class="col-md-4 p-3">
+                                <h5 class="mb-0">₨ 733,131,000</h5>
+                                <smal>Raised</smal>
+                            </div>
+                            <div class="col-md-4 p-3">
+                                <h5 class="mb-0">15</h5>
+                                <smal>Donations</smal>
+                            </div>
+                            <div class="col-md-4 p-3">
+                                <h5 class="mb-0">₨ 2,200,000,000</h5>
+                                <smal>Goal</smal>
+                            </div>
+                        </div>
+                        <div class="progress py-2 rounded mx-4">
+                            <div class="progress-bar bg-success py-2 rounded" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="text-center p-4">
+                            <button class="btn btn-lg btn-success next-step" data-step="2">Donate Now <i class="fa fa-chevron-right"></i></button>
+                            <div class="my-4">
+                                <i class="fa fa-circle mx-2"></i>
+                                <i class="fa fa-circle text-muted mx-2"></i>
+                                <i class="fa fa-circle text-muted mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="bg-light p-3 text-center">
+                            <i class="fa fa-lock text-muted"></i> Secure Donation
+                        </div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="bg-light d-flex align-items-center">
+                            <button class="btn p-3 prev-step" data-step="2"><i class="fa fa-chevron-left"></i></button>
+                            <span class="mx-auto">Choose Amount</span>
+                        </div>
+                        <div class="p-4 px-0">
+                            <h4>How much would you like to donate?</h4>
+                            <p>You can contribute any amount you wish to.</p>
+                            <p>The cost of building one house is PKR 300,000. Any amount you contribute will go towards building houses in flood-affected areas of Sindh, Pakistan.</p>
+                            <h4>Thank you for your generosity!</h4>
+                        </div>
+                        <div class="row mx-0">
+                            <div class="col-md-3 p-4">
+                                <select class="btn alert-success" id="currency">
+                                    <option value="PKR" data-symbol="₨">PKR - Pakistani Rupee</option>
+                                    <option value="USD" data-symbol="$">USD - United States Dollar</option>
+                                    <option value="Euro" data-symbol="€">Euro - European Union</option>
+                                    <option value="GBP" data-symbol="£">GBP - Great British Pound</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mx-auto" style="width:fit-content">
+                                    <div class="d-flex align-items-center">
+                                        <h4 class="m-3 input_symbol">₨</h4>
+                                        <input id="amount" name="amount" class="p-3" required value="100,000" style="font-size: 24px; border:1px solid lightgray; border-width: 0 0 0 1px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 p-4"></div>
+                            <div class="col-12"></div>
+                            <div class="col-md-4 p-2">
+                                <button type="button" onclick="selectAmount(this,'10,000')" class="amount-btn btn btn-lg btn-success btn-block py-3">
+                                    <h4 class="mb-0"><span class="input_symbol">₨</span> 10,000</h4>
+                                </button>
+                            </div>
+                            <div class="col-md-4 p-2">
+                                <button type="button" onclick="selectAmount(this,'50,000')" class="amount-btn btn btn-lg btn-success btn-block py-3">
+                                    <h4 class="mb-0"><span class="input_symbol">₨</span> 50,000</h4>
+                                </button>
+                            </div>
+                            <div class="col-md-4 p-2">
+                                <button type="button" onclick="selectAmount(this,'100,000')" class="amount-btn btn btn-lg btn-outline-success btn-block py-3">
+                                    <h4 class="mb-0"><span class="input_symbol">₨</span> 100,000</h4>
+                                </button>
+                            </div>
+                            <div class="col-md-4 p-2">
+                                <button type="button" onclick="selectAmount(this,'1,500,000')" class="amount-btn btn btn-lg btn-success btn-block py-3">
+                                    <h4 class="mb-0"><span class="input_symbol">₨</span> 1,500,000</h4>
+                                </button>
+                            </div>
+                            <div class="col-md-4 p-2">
+                                <button type="button" onclick="selectAmount(this,'3,000,000')" class="amount-btn btn btn-lg btn-success btn-block py-3">
+                                    <h4 class="mb-0"><span class="input_symbol">₨</span> 3,000,000</h4>
+                                </button>
+                            </div>
+                            <div class="col-md-4 p-2">
+                                <button type="button" onclick="selectAmount(this,'custom')" class="amount-btn btn btn-lg btn-success btn-block py-3">
+                                    <h4 class="mb-0">Custom Amount</h4>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <button class="btn btn-lg btn-success next-step" data-step="3">Continue <i class="fa fa-chevron-right"></i></button>
+                            <div class="my-4">
+                                <i class="fa fa-circle text-muted mx-2"></i>
+                                <i class="fa fa-circle mx-2"></i>
+                                <i class="fa fa-circle text-muted mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="bg-light p-3 text-center">
+                            <i class="fa fa-lock text-muted"></i> Secure Donation
+                        </div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="bg-light d-flex align-items-center">
+                            <button class="btn p-3 prev-step" data-step="2"><i class="fa fa-chevron-left"></i></button>
+                            <span class="mx-auto">Add Your Information</span>
+                        </div>
+                        <div class="p-4 px-0 text-center">
+                            <h4>Who’s giving today?</h4>
+                            <p><i>You’re required to fill your information. You can donate anonymously or as an individual or as a company.</i></p>
+                            <p class="text-danger"><i>Note: Additional fields to be added in the form: CNIC, Mobile Number, JobTitle, Company, Country, City, postal code. Donor consent required</i></p>
+                            
+                        </div>
+                        <div class="row mx-0">
+                            <div class="col-md-2">
+                                <select name="title" class="form-control mb-3">
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Ms.">Ms.</option>
+                                </select>
+                            </div>
+                            <div class="col-md-5">
+                                <input name="firstname" placeholder="First Name*" class="form-control mb-3" required>
+                            </div>
+                            <div class="col-md-5">
+                                <input name="lastname" placeholder="Last Name" class="form-control mb-3">
+                            </div>
+                            <div class="col-md-12">
+                                <input name="companyname" placeholder="Company Name*" class="form-control mb-3" required>
+                            </div>
+                            <div class="col-md-12">
+                                <input name="email" placeholder="Email Address*" class="form-control mb-3" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <input type="checkbox" name="anonymous" id="anonymous">
+                                <label for="anonymous">Make this an anonymous donation.</label>
+                            </div>
+                            <div class="col-md-12">
+                                <textarea name="comment" class="form-control mb-3" id="comment" placeholder="Leave a comment"></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- PAYMENT -->
+                        
+                        <div class="p-4 px-0 text-center">
+                            <p><i>Here's what you're about to donate</i></p>
+                        </div>
+                        <table class="table bg-light">
+                            <tr>
+                                <td><b>Donation Summary</b></td>
+                                <td class="text-right"><a class="text-success prev-step" data-step="2">Edit Donation <i class="fa fa-edit"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Payment Amount</td>
+                                <td class="text-right"><span class="input_symbol">₨</span> <span class="input_amount">100,000</span></td>
+                            </tr>
+                            <tr>
+                                <td>Giving Frequency</td>
+                                <td class="text-right">One time</td>
+                            </tr>
+                            <tr>
+                                <td><b>Donation Total</b></td>
+                                <td class="text-right"><b><span class="input_symbol">₨</span> <span class="input_amount">100,000</span></b></td>
+                            </tr>
+                        </table>
+                        <div class="text-center p-4">
+                            <button type="submit" class="btn btn-lg btn-success">Donate Now</button>
+                            <div class="my-4">
+                                <i class="fa fa-circle text-muted mx-2"></i>
+                                <i class="fa fa-circle text-muted mx-2"></i>
+                                <i class="fa fa-circle mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="bg-light p-3 text-center">
+                            <i class="fa fa-lock text-muted"></i> Secure Donation
+                        </div>
+                    </div>
+                </form>
+                <p>Having problems making a donation?</p>
+                <p>Email us at donor@sphf.gos.pk or call at +92 111 111 111</p>
+            </div>
+        </section>
+    </main>
+    <footer style="background-color: #144047;">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="d-flex flex-column">
+                        <img class="mb-3" src="./assets/images/SPHF-donor-logo-white.png" alt="logo" width="150">
+                        <p class="text-light text-left footer_paragraph">
+                            The SPHF Donor Platform facilitates individuals and organizations wishing to make online donation for  construction of resilient houses for flood affectees in Sindh, Pakistan. The platform is simple, secure medium to register, select donation option, process payment and track impact of the donation made.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4 class="text-white mb-5">Links</h4>
+                            <a href="#" class="p-link text-white d-block mb-3">Why & How Donate</a>
+                            <a href="#" class="p-link text-white d-block mb-3">Explore Beneficiaries</a>
+                            <a href="#" class="p-link text-white d-block mb-3">Become a Donor</a>
+                            <a href="#" class="p-link text-white d-block mb-3">Donor FAQs</a>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="text-white mb-5">Contact</h4>
+                            <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-envelope"></i> donor@sphf.gos.pk</a>
+                            <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-phone"></i> +92 111 111 111</a>
+                            <a href="#" class="p-link text-white d-block mb-3">Privacy</a>
+                            <a href="#" class="p-link text-white d-block mb-3">Terms</a>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="text-white mb-0">Sponsor houses & help them</h4>
+                            <div class="text-right">
+                                <img src="./assets/images/arrow-3.png">
+                            </div>
+                            <button class="btn p-2 nav-btn-secondary">
+                                <span class="px-2">DONATE NOW</span>
+                                <i class="fa fa-heart text-warning"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color:gray;">
+            <div class="row">
+                <div class="col-md-6 ">
+                    <p class="text-white mb-4 text-center text-md-left">© 2023 Copyrights by HTA. All Rights Reserved</p>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <a href="#" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".step").hide();
+            $(".step:first").show();
+
+            $(".next-step").click(function () {
+                var currentStep = $(this).closest(".step");
+
+                var requiredPass = true;
+                $(currentStep).find('input,select,textarea').each(function(){
+                    if($(this).prop("required") && $(this).val()==''){
+                        requiredPass = false;
+                    }
+                });
+                if(requiredPass){
+                    var nextStep = $(this).closest(".step").next(".step");
+                    currentStep.hide();
+                    nextStep.show();
+                }
+
+                document.querySelector('main').scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+            });
+
+            $(".prev-step").click(function () {
+                var currentStep = $(this).closest(".step");
+                var prevStep = $(this).closest(".step").prev(".step");
+                currentStep.hide();
+                prevStep.show();
+                document.querySelector('main').scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+            });
+
+            $('#currency').on('change',function(){
+                var symbol = $(this).find('option[value="'+$(this).val()+'"]').data('symbol');
+                $('.input_symbol').html(symbol);
+            });
+        });
+
+        function selectAmount(obj,amount){
+            $('.amount-btn').removeClass('btn-outline-success');
+            $('.amount-btn').addClass('btn-success');
+            $(obj).removeClass('btn-success');
+            $(obj).addClass('btn-outline-success');
+
+            if(amount=='custom'){
+                $('#amount').val("");
+                $('#amount').focus();
+            }else{
+                $('#amount').val(amount);
+                $('.input_amount').html(amount);
+            }
+        }
+        $('#amount').on('change',function(){
+            $('.input_amount').html($(this).val());
+        });
+    </script>
+  </body>
+</html>
