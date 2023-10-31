@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/slick.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>SPHF</title>
+</head>
+
+<body>
+
+    <header class="top-bar d-none d-md-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-center">
+                    <a href="#" class="p-2 text-light">
+                        <i class="fa fa-phone-alt text-warning mr-2"></i>
+                        +92 111 111 111
+                    </a>
+                    <a href="#" class="p-2 text-light">
+                        <i class="fas fa-envelope text-warning"></i>
+                        donor@sphf.gos.pk
+                    </a>
+                    <a href="faqs.html" class="p-2 text-light">
+                        <i class="fa fa-info text-warning"></i>
+                        Donor FAQs
+                    </a>
+                </div>
+                <!-- social icon-->
+                <div class="col-md-6 text-right">
+                    <div class="d-flex align-items-center  justify-content-end">
+                        <div class="px-3 top-bar-icons-bg">
+                            <div class="d-flex align-items-center">
+                                <a href="#" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                        <div class="ml-3">
+                            <div class="d-flex align-items-center">
+                                <a class="p-2" href="#">
+                                    <i style="position:relative; z-index:0" class="fas fa-heart text-light"></i>
+                                    <span class="cart-indicator">0</span>
+                                </a>
+                                <a class="waves-effect waves-dark" href="#"><i class="fas fa-search text-light"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <header class="top-bar mobile d-block d-md-none" style="background: #144047;">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <a href="#" class="p-2 text-light">
+                        <i class="fa fa-phone-alt text-warning mr-2"></i>
+                        <small>+92 111 111 111</small>
+                    </a>
+                </div>
+                <!-- social icon-->
+                <div class="col-6 text-right">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a href="#" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="stickey-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/images/SPHF-donor-logo.png" alt="SPHF-donor-logo" width="150">
+                </a>
+                <div class="d-none d-md-flex">
+                    <a href="#" class="underline-link p-2">Why & How Donate</a>
+                    <a href="#" class="underline-link p-2">Track Your Donation</a>
+                </div>
+                <div class="d-none d-md-flex">
+                    <a class="btn p-2 nav-btn-secondary mx-2 text-white" href="become-a-donor.html">
+                        <span class="px-2">TRANSFER TO SPHF</span>
+                        <i class="fa fa-heart text-warning"></i>
+                    </a>
+                    <a class="btn p-2 nav-btn-primary mx-2 text-white" href="adopt-a-beneficiary.html">
+                        <span class="px-2">ADOPT A BENEFICIARY</span>
+                        <i class="fa fa-heart text-warning"></i>
+                    </a>
+                </div>
+                <a href="#" class="underline-link p-2 d-none d-md-block">Login</a>
+                <a href="javascript:void(0);" onclick="$('.mobile-nav').addClass('open')"
+                    class="p-3 d-block d-md-none"><i class="fa fa-2x fa-bars"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav">
+        <div class="d-flex justify-content-between" style="background-color: #F1F6F7;">
+            <a class="navbar-brand" href="#">
+                <img class="mx-2" src="./assets/images/SPHF-donor-logo.png" alt="SPHF-donor-logo" height="40">
+            </a>
+            <a href="javascript:void(0);" onclick="$('.mobile-nav').removeClass('open')" class="btn py-2 px-3 rounded-0"
+                style="background-color: #df5311;">
+                <i class="mt-2 fa fa-times-circle text-white"></i>
+            </a>
+        </div>
+        <div class="p-3" style="height: calc(100vh - 50px); overflow-y: auto; overflow-x: hidden;">
+            <a href="#" class="btn btn-lg btn-block text-left px-0 mb-2 border-bottom-1">Why & How Donate</a>
+            <a href="#" class="btn btn-lg btn-block text-left px-0 mb-2 border-bottom-1">Track Your Donation</a>
+            <button class="btn btn-block p-2 nav-btn-secondary d-flex align-items-center justify-content-between">
+                <span class="px-2">TRANSFER TO SPHF</span>
+                <i class="fa fa-heart text-warning"></i>
+            </button>
+            <a class="btn btn-block p-2 nav-btn-primary d-flex align-items-center justify-content-between text-white"
+                href="adopt-a-beneficiary.html">
+                <span class="px-2">ADOPT A BENEFICIARY</span>
+                <i class="fa fa-heart text-warning"></i>
+            </a>
+            <a href="#" class="btn btn-lg btn-block text-left px-0 mb-2 border-bottom-1">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <style>
+            h5[aria-expanded] .fa {
+                display: none;
+            }
+
+            h5[aria-expanded="true"] .fa-minus {
+                color: #FDBE44;
+                display: block !important;
+            }
+
+            h5[aria-expanded="false"] .fa-plus {
+                display: block !important;
+            }
+
+            .accordion div+div {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        </style>
+        <section
+            style="background-image: url('./assets/images/Your-Benificiary-List-banner.jpg'); background-size:cover;">
+            <div class="container py-5">
+                <h1 class="my-5 text-white text-center text-lg-left">Checkout</h1>
+            </div>
+        </section>
+        <section>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-md-8 offset-2">
+                        <div class="bg-white border border-secondary rounded m-3 p-3">
+                            <h4 class="bg-title p-3">
+                                Add Payment Information
+                            </h4>
+                            <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                    value="option1" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                    Donate with Office Donation
+                                </label>
+                            </div>
+                            <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                    value="option1" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                    Donate with Credit / Debit Card
+                                </label>
+                            </div>
+                            <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                    value="option1" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                    Donate via Online Bank Transfer
+                                </label>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-secondary rounded m-3 p-3">
+                            <h4 class="bg-title p-2">
+                                Donate with Office Donation
+                            </h4>
+                            <p class="p-2">
+                                To make an office donation toward this SPHF caise, follow these steps:
+                            </p>
+                            <ol>
+                                <li> Write a check payable to "Sindh People's Housing for Flood Affectees"</li>
+                                <li> On the memo line of the check, indicate that the donation is for "Sindh People's
+                                    Housing for Flood Affectees"</li>
+                                <li> Mail your check to:</li>
+                            </ol>
+                            <p class="px-4">
+                                Sindh People's Housing for Flood Affectees
+                            </p>
+                            <p class="font-weight-bold py-2 px-4" style="font-size: 20px;">
+                                Bungalow No.20, Block 7/8, Modern Cooperative Housing Society, Tipu Sultan Road,
+                                Karachi, Pakistan
+                            </p>
+
+                        </div>
+                        <div class="bg-white border border-secondary rounded m-3 p-3">
+                            <h4 class="bg-title p-2">
+                                Donate with Credit / Debit Card
+                            </h4>
+                            <div class="d-flex justify-content-between">
+                                <p class="p-2" style="font-size: 14px;">
+                                    To make an office donation toward this SPHF caise, follow these steps:
+                                </p>
+                                <img src="assets/images/payment.png" alt="" width="200">
+                            </div>
+                            <div class="row p-2">
+                                <div class="col-md-10">
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="card_number">Card: <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="number" class="form-control" id="card_number"
+                                                        placeholder="Card Number" max="16">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="expire">Expire: <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="number" id="expire" class="form-control"
+                                                        placeholder="MM/YY">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="cvv">CVV: <span class="text-danger">*</span></label>
+                                                    <input type="number" id="cvv" class="form-control"
+                                                        placeholder="CVV">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="first_name">Cardholder First Name: <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="number" id="first_name" class="form-control"
+                                                        id="card_number" max="16">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="last_name">Cardholder Last Name: <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="number" id="last_name" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-warning px-5 py-2 font-weight-bold"
+                                                style="font-size: 18px;">SUBMIT</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-secondary rounded m-3 p-3">
+                            <h4 class="bg-title p-2">
+                                Donate via Online Bank Transfer
+                            </h4>
+                            <div class="row p-2">
+                                <div class="col-md-10">
+                                    <form action="">
+                                        <div class="row py-2">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="bank_list">Select Bank: <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="number" id="bank_list" class="form-control" max="16">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="account_num">Enter Account Number / IBAN: <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="text" id="account_num" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2">
+                                            <button class="btn btn-warning px-5 py-2 font-weight-bold"
+                                                style="font-size: 18px;">VERIFY</button>
+                                        </div>
+                                        <div class="row py-2">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="account_title">Account Title: <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="text" id="account_title" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="routing_num">Bank Routing Number: <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="text" id="routing_num" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="account_amount">Enter Amount: <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="number" id="account_amount" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2">
+                                            <button class="btn btn-warning px-5 py-2 font-weight-bold"
+                                                style="font-size: 18px;">SUBMIT</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="py-4 text-secondary"> Here's what you're about to donate</p>
+                            <div class="py-4 d-flex justify-content-between">
+                                <h4 class="bg-title">Your Donation Summary</h4>
+                                <a href="#" class="text-success">Edit Donation &nbsp;&nbsp; <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered checkout-list">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total
+                                            Beneficiaries</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary m-0 text-center" style="font-size: 18px;">5</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total Houses
+                                            Sponsored</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary m-0 text-center" style="font-size: 18px;">5</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total
+                                            Donation Amount &nbsp;&nbsp;&nbsp;&nbsp; <span
+                                                style="font-size: 14px; font-weight: 400;"
+                                                class="text-secondary">(Exempted from all kind of taxes)</span></p>
+                                    </td>
+                                    <td>
+                                        <p class="text-secondary m-0 text-center" style="font-size: 18px;">PKR 1,500,000
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="py-4">
+                            <button type="button" class="btn btn-success mx-2 float-right ">
+                                DONATE NOW &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer style="background-color: #144047;">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="d-flex flex-column">
+                        <img class="mb-3" src="./assets/images/SPHF-donor-logo-white.png" alt="logo" width="150">
+                        <p class="text-light text-left footer_paragraph">
+                            The SPHF Donor Platform facilitates individuals and organizations wishing to make online
+                            donation for construction of resilient houses for flood affectees in Sindh, Pakistan. The
+                            platform is simple, secure medium to register, select donation option, process payment and
+                            track impact of the donation made.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4 class="text-white mb-5">Links</h4>
+                            <a href="#" class="p-link text-white d-block mb-3">Why & How Donate</a>
+                            <a href="#" class="p-link text-white d-block mb-3">Explore Beneficiaries</a>
+                            <a href="#" class="p-link text-white d-block mb-3">Become a Donor</a>
+                            <a href="#" class="p-link text-white d-block mb-3">Donor FAQs</a>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="text-white mb-5">Contact</h4>
+                            <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-envelope"></i>
+                                donor@sphf.gos.pk</a>
+                            <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-phone"></i> +92 111 111
+                                111</a>
+                            <a href="#" class="p-link text-white d-block mb-3">Privacy</a>
+                            <a href="#" class="p-link text-white d-block mb-3">Terms</a>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="text-white mb-0">Sponsor houses & help them</h4>
+                            <div class="text-right">
+                                <img src="./assets/images/arrow-3.png">
+                            </div>
+                            <button class="btn p-2 nav-btn-secondary">
+                                <span class="px-2">DONATE NOW</span>
+                                <i class="fa fa-heart text-warning"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color:gray;">
+            <div class="row">
+                <div class="col-md-6 ">
+                    <p class="text-white mb-4 text-center text-md-left">© 2023 Copyrights by HTA. All Rights Reserved
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <a href="#" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
