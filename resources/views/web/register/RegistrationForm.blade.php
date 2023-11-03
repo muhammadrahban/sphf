@@ -98,11 +98,17 @@
                             <div class="col-sm-12 col-xs-12">
                                 <textarea cols="40" rows="10" class="form-control" required placeholder="Comments" name="Comments"></textarea>
                             </div>
-                            <p class="pl-3 py-2" style="color:red">Note Additional fields to be added - tick boxes Donor consent,
-                                Donor Undertaking, Donate anonymously. Donate as individual,
-                                Donate&nbsp;as&nbsp;company.</p>
+                                <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                                    <input type="checkbox" id="note" required class="m-2"/>
+                                    <label for="note">
+                                        Note Additional fields to be added - tick boxes Donor consent,
+                                        Donor Undertaking, Donate anonymously. Donate as individual,
+                                        Donate&nbsp;as&nbsp;company.
+                                    </label>
+                                </div>
+                            </p>
                             <div class="col-sm-12 col-xs-12 action text-left">
-                                <button type="submit" class="btn btn-danger">Register </button>
+                                <button type="submit" class="btn btn-danger">Register</button>
                             </div>
                         </div>
                         <div class="wpcf7-response-output" aria-hidden="true"></div>
