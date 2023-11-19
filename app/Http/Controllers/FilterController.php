@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\victim;
 use Illuminate\Http\Request;
+use \Illuminate\Support\Facades\DB;
 
 class FilterController extends Controller
 {
     function filterView(Request $request)
     {
-        $json       = \File::json('simple.json');
-        $json       = $json['d']['results'];
-        $foundItems = [];
         $count      = 0;
+        $limit      = 10;
+        $offset     = 0;
         $data       = [];
         if ($request->has('keywords') && $request->keywords != '') {
             $keyword = $request->keywords;
@@ -28,41 +29,23 @@ class FilterController extends Controller
             $data['gender'] = $gender;
         }
 
-        if (isset($keyword) && isset($location) && isset($gender)) {
-            foreach ($json as $item) {
-                $keywordPattern = "/$keyword/i";
-                $locationPattern = "/$location/i";
-                if (preg_match($keywordPattern, $item['BenfName'])
-                    && preg_match($locationPattern, $item['Tehsil'])
-                    && $item['Gender'] == $gender) {
-                    $foundItems[] = $item;
-                }
-            }
-        } elseif (isset($keyword)) {
-            foreach ($json as $item) {
-                $keywordPattern = "/$keyword/i";
-                if (preg_match($keywordPattern, $item['BenfName'])) {
-                    $foundItems[] = $item;
-                }
-            }
-        } elseif (isset($location)) {
-            foreach ($json as $item) {
-                $locationPattern = "/$location/i";
-                if (preg_match($locationPattern, $item['Tehsil'])) {
-                    $foundItems[] = $item;
-                }
-            }
-        } elseif (isset($gender)) {
-            foreach ($json as $item) {
-                if ($item['Gender'] == $gender) {
-                    $foundItems[] = $item;
-                }
-            }
-        } else {
-            $foundItems = $json;
+        if ($request->has('page')) {
+            $offset = $request->page;
+            $data['page'] = $request->page;
         }
 
-        $count = count($foundItems);
-        return view('web.filter.view', compact('foundItems', 'count', 'data'));
+        $location_list  = victim::select('tehsil')->get()->groupBy('tehsil');
+        $foundItems = new victim();
+
+        if (isset($keyword)) {
+            $foundItems = $foundItems->where('da_occupant_name','like', '%'.$keyword.'%');
+        } elseif (isset($location)) {
+            $foundItems = $foundItems->where('tehsil', $location);
+        } elseif (isset($gender)) {
+            $foundItems = $foundItems->where('gender', $gender);
+        }
+        $count = $foundItems->count();
+        $foundItems = $foundItems->offset($offset*$limit)->take($limit)->get();
+        return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list'));
     }
 }

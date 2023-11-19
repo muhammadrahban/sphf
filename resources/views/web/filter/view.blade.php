@@ -15,7 +15,7 @@
                                 style="font-weight: 700; font-size: 18px;">X</span></p>
                     </div>
                     <div class="my-4 p-4" style="background-color: #f6f6f6 !important;">
-                        <form action="" method="post" id="clear_all_form">
+                        <form action="{{route('web.filterWiew')}}" method="post" id="clear_all_form">
                             @csrf
                             <div class="form-row align-items-center my-2">
                                 <div class="col-12">
@@ -36,26 +36,29 @@
                                     <select class="custom-select mb-3" id="location" name="location"
                                         placeholder="Dadu, karachi">
                                         <option>Select Location</option>
-                                        <option value="Dadu" @selected(@$data['location'] == 'Dadu')>Dadu</option>
-                                        <option value="Jati" @selected(@$data['location'] == 'Jati')>Jati</option>
+                                        @foreach (@$location_list as $location => $location_data)
+                                            <option value="{{ $location }}" @selected(@$data['location'] == $location)>
+                                                {{ $location }}</option>
+                                        @endforeach
+                                        {{-- <option value="Jati" @selected(@$data['location'] == 'Jati')>Jati</option>
                                         <option value="Taluka" @selected(@$data['location'] == 'Taluka')>Taluka</option>
                                         <option value="karachi" @selected(@$data['location'] == 'karachi')>karachi</option>
                                         <option value="Ghotki" @selected(@$data['location'] == 'Ghotki')>Ghotki</option>
-                                        <option value="Lakhi" @selected(@$data['location'] == 'Lakhi')>Lakhi</option>
+                                        <option value="Lakhi" @selected(@$data['location'] == 'Lakhi')>Lakhi</option> --}}
                                     </select>
                                 </div>
                             </div>
                             <!-- <div class="form-row align-items-center my-2">
-                                    <div class="col-12">
-                                        <label for="location" style="font-size: 13px;">Radius around selected destination</label>
-                                        <select class="custom-select mb-3" id="location" placeholder="Dadu, Sukkar">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </div> -->
+                                        <div class="col-12">
+                                            <label for="location" style="font-size: 13px;">Radius around selected destination</label>
+                                            <select class="custom-select mb-3" id="location" placeholder="Dadu, Sukkar">
+                                                <option selected>Open this select menu</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div> -->
                             <div class="form-row align-items-center my-2">
                                 <label for="vulnerability" style="font-size: 20px;">Vulnerability</label>
                                 <div class="col-12">
@@ -102,6 +105,7 @@
                             </div>
                             <div class="form-row align-items-center my-2">
                                 <div class="col-12">
+                                    <input type="hidden" name="page" value="0">
                                     <button type="submit" class="btn btn-warning btn-block">Search</button>
                                 </div>
                             </div>
@@ -117,8 +121,10 @@
                                 class="fa fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="d-flex justify-content-start m-2">
-                        @foreach ($data as $list)
-                            <button type="button" class="btn btn-outline-warning mx-2">{{ $list }} </button>
+                        @foreach ($data as $key => $list)
+                            @if ($key != 'page')
+                                <button type="button" class="btn btn-outline-warning mx-2">{{ $list }} </button>
+                            @endif
                         @endforeach
                     </div>
                     <div class="d-flex justify-content-start m-3">
@@ -159,21 +165,28 @@
                                 <img src="{{ asset('images/users/1.jpg') }}" width="70" height="70"
                                     class="rounded-circle">
                                 <div class="d-flex flex-column mx-3">
-                                    <h5 class="bg-title benf_name">{{ $item['BenfName'] }}</h5>
+                                    <h5 class="bg-title benf_name">{{ $item['da_occupant_name'] }}</h5>
                                     <div class="d-flex" style="font-size: 18px;">
                                         <p class="text-primary m-0 mr-4"><i class="fa fa-bars" aria-hidden="true"></i>
-                                            Widow</p>
+                                            {{ $item['widows'] != 0 ? 'Widow ' : '' }}
+                                            {{ $item['women_with_disable_husband'] != 0 ? 'Women ' : '' }}
+                                            {{ $item['unaccompained_elders_over_the_age_of_60'] != 0 ? 'Elderly ' : '' }}
+                                            {{ $item['people_with_disability_physically_or_mentally'] != 0 ? 'Differntly Abled ' : '' }}
+                                        </p>
                                         <p class="text-secondary m-0 mx-4"><i class="fa fa-map-marker"
-                                                aria-hidden="true"></i> {{ $item['Tehsil'] }}</p>
+                                                aria-hidden="true"></i> {{ $item['district'] }} / {{ $item['tehsil'] }}
+                                        </p>
                                         <p class="text-secondary m-0 mx-4"><i class="fa fa-btc" aria-hidden="true"></i>
                                             PKR 300,000</p>
                                     </div>
                                     <p class="m-0 w-auto rounded text-left px-2 my-3" style="background-color: #ececec;">
-                                        {{ $item['Message'] }}</p>
+                                        Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available
+                                    </p>
                                 </div>
                                 <div class="ml-auto">
                                     <div class="d-flex flex-column">
-                                        <p class="bg-title text-success text-right m-0">ID: {{ $item['BenfId'] }}</p>
+                                        <p class="bg-title text-success text-right m-0">ID:
+                                            {{ $item['filled_da_form_id'] }}</p>
                                         <button type="button" class="btn btn-info mt-4 px-4 py-2 text-center">View
                                             Profile</button>
                                     </div>
@@ -182,6 +195,49 @@
                         @endforeach
 
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    @php
+                        $perPage        = 10;
+                        $totalPages     = (int)ceil($count / $perPage) - 1;
+                        $currentPage    = (int)$data['page'];
+                    @endphp
+
+                    <nav class="Pager5" aria-label="pagination example pagination_nav">
+                        <ul class="pagination pagination-circle justify-content-center">
+
+                            <!--Arrow left-->
+                            <li class="page-item {{ $currentPage === 0 ? 'disabled' : '' }}">
+                                <a class="page-link prev"
+                                    href="{{ $currentPage > 0 ? url('web/filter?page=' . ($currentPage - 1)) : '#' }}"
+                                    aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+
+                            <!--Numbers-->
+                            @for ($i = 0; $i <= $totalPages; $i++)
+                                <li class="page-item {{ $currentPage === $i ? 'active' : '' }}">
+                                    <a class="page-link"
+                                        href="{{ url('web/filter?page=' . $i) }}">{{ $i +1 }}</a>
+                                </li>
+                            @endfor
+
+                            <!--Arrow right-->
+                            <li class="page-item {{ $currentPage === $totalPages ? 'disabled' : '' }}">
+                                <a class="page-link next"
+                                    href="{{ $currentPage < $totalPages ? url('web/filter?page=' . ($currentPage + 1)) : '#' }}"
+                                    aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
                 </div>
             </div>
         </section>
@@ -196,7 +252,7 @@
             });
         }
 
-        $('#select_all').click(function(){
+        $('#select_all').click(function() {
 
             var isChecked = this.checked;
             $('.searchable-item input[type="checkbox"]').each(function() {
