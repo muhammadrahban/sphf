@@ -1,0 +1,4 @@
+[09-Nov-2023 13:21:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Factories\Factory" not found in /home/umeradmin/public_html/sphf/database/factories/UserFactory.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/database/factories/UserFactory.php on line 11

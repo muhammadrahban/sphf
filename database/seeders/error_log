@@ -1,0 +1,4 @@
+[09-Nov-2023 01:09:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/umeradmin/public_html/sphf/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/database/seeders/DatabaseSeeder.php on line 8

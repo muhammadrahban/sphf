@@ -1,0 +1,8 @@
+[10-Nov-2023 06:00:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/umeradmin/public_html/sphf/routes/api.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/routes/api.php on line 17
+[15-Nov-2023 16:02:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/umeradmin/public_html/sphf/routes/console.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/routes/console.php on line 17

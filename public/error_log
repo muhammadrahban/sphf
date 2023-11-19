@@ -1,0 +1,2 @@
+[19-Nov-2023 20:15:15 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 380016920 bytes) in /home/umeradmin/public_html/sphf/app/Http/Controllers/VictimController.php on line 18
+[19-Nov-2023 20:17:43 UTC] PHP Fatal error:  Out of memory (allocated 554078208) (tried to allocate 20480 bytes) in /home/umeradmin/public_html/sphf/app/Http/Controllers/VictimController.php on line 18
