@@ -161,7 +161,7 @@ Route::get('/doner/register', function() {
 })->name('register.doner');
 
 // Route::get('/doner/register', [RegisterController::class, 'showRegistrationForm'])->name('register.doner');
-Route::post('/web/filter?page=0', [FilterController::class, 'filterView'])->name('web.filterWiew');
+Route::post('/web/filter', [FilterController::class, 'filterView'])->name('web.filterWiew');
 Route::get('/web/filter', [FilterController::class, 'filterView']);
 Route::get('/web/checkoutlist', [CheckoutController::class, 'checkOutList'])->name('web.checkOutList');
 Route::get('/web/proceedCheckoutview', [CheckoutController::class, 'proceedCheckoutview'])->name('web.proceedCheckoutview');

@@ -202,7 +202,7 @@
                     @php
                         $perPage        = 10;
                         $totalPages     = (int)ceil($count / $perPage) - 1;
-                        $currentPage    = (int)$data['page'];
+                        $currentPage    = (int)@$data['page'];
                     @endphp
 
                     <nav class="Pager5" aria-label="pagination example pagination_nav">
