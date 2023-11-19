@@ -1,0 +1,4 @@
+[19-Nov-2023 21:26:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/umeradmin/public_html/sphf/database/migrations/2014_10_12_100000_create_password_reset_tokens_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/database/migrations/2014_10_12_100000_create_password_reset_tokens_table.php on line 7

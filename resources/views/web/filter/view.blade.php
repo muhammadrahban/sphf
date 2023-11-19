@@ -200,14 +200,14 @@
             <div class="row">
                 <div class="col-md-12">
                     @php
-                        $perPage        = 10;
-                        $totalPages     = (int)ceil($count / $perPage) - 1;
-                        $currentPage    = (int)@$data['page'];
+                        $perPage = 10;
+                        $totalPages = (int) ceil($count / $perPage) - 1;
+                        $currentPage = (int) @$data['page'];
                     @endphp
-
+                    
                     <nav class="Pager5" aria-label="pagination example pagination_nav">
                         <ul class="pagination pagination-circle justify-content-center">
-
+                    
                             <!--Arrow left-->
                             <li class="page-item {{ $currentPage === 0 ? 'disabled' : '' }}">
                                 <a class="page-link prev"
@@ -217,15 +217,19 @@
                                     <span class="sr-only">Previous</span>
                                 </a>
                             </li>
-
+                    
                             <!--Numbers-->
-                            @for ($i = 0; $i <= $totalPages; $i++)
+                            @php
+                                $start = max(0, $currentPage - 2);
+                                $end = min($totalPages, $start + 4);
+                            @endphp
+                    
+                            @for ($i = $start; $i <= $end; $i++)
                                 <li class="page-item {{ $currentPage === $i ? 'active' : '' }}">
-                                    <a class="page-link"
-                                        href="{{ url('web/filter?page=' . $i) }}">{{ $i +1 }}</a>
+                                    <a class="page-link" href="{{ url('web/filter?page=' . $i) }}">{{ $i + 1 }}</a>
                                 </li>
                             @endfor
-
+                    
                             <!--Arrow right-->
                             <li class="page-item {{ $currentPage === $totalPages ? 'disabled' : '' }}">
                                 <a class="page-link next"
@@ -237,6 +241,7 @@
                             </li>
                         </ul>
                     </nav>
+
 
                 </div>
             </div>

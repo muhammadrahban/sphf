@@ -20,6 +20,7 @@ class VictimController extends Controller
     // Remove the header row
     array_shift($data);
 
+    // Chunk the data into smaller arrays to avoid memory issues
     $chunks = array_chunk($data, 1000);
 
     foreach ($chunks as $chunk) {
