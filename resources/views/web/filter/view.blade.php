@@ -38,8 +38,8 @@
                                         placeholder="Dadu, karachi">
                                         <option>Select Location</option>
                                         @foreach (@$location_list as $location => $location_data)
-                                            <option value="{{ $location }}" @selected(@$data['location'] == $location)>
-                                                {{ $location }}</option>
+                                            <option value="{{ $location_data['tehsil'] }}" @selected(@$data['location'] == $location_data['tehsil'])>
+                                                {{ $location_data['tehsil'] }}</option>
                                         @endforeach
                                         {{-- <option value="Jati" @selected(@$data['location'] == 'Jati')>Jati</option>
                                         <option value="Taluka" @selected(@$data['location'] == 'Taluka')>Taluka</option>
