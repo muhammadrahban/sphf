@@ -15,7 +15,8 @@
                                 style="font-weight: 700; font-size: 18px;">X</span></p>
                     </div>
                     <div class="my-4 p-4" style="background-color: #f6f6f6 !important;">
-                        <form action="{{route('web.filterWiew')}}" method="post" id="clear_all_form">
+                        <form action="{{ route('web.filterWiew', ['page' => 0]) }}"
+                            method="post" id="clear_all_form">
                             @csrf
                             <div class="form-row align-items-center my-2">
                                 <div class="col-12">
@@ -49,16 +50,16 @@
                                 </div>
                             </div>
                             <!-- <div class="form-row align-items-center my-2">
-                                        <div class="col-12">
-                                            <label for="location" style="font-size: 13px;">Radius around selected destination</label>
-                                            <select class="custom-select mb-3" id="location" placeholder="Dadu, Sukkar">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div> -->
+                                            <div class="col-12">
+                                                <label for="location" style="font-size: 13px;">Radius around selected destination</label>
+                                                <select class="custom-select mb-3" id="location" placeholder="Dadu, Sukkar">
+                                                    <option selected>Open this select menu</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
                             <div class="form-row align-items-center my-2">
                                 <label for="vulnerability" style="font-size: 20px;">Vulnerability</label>
                                 <div class="col-12">
@@ -204,36 +205,33 @@
                         $totalPages = (int) ceil($count / $perPage) - 1;
                         $currentPage = (int) @$data['page'];
                     @endphp
-                    
+
                     <nav class="Pager5" aria-label="pagination example pagination_nav">
                         <ul class="pagination pagination-circle justify-content-center">
-                    
                             <!--Arrow left-->
                             <li class="page-item {{ $currentPage === 0 ? 'disabled' : '' }}">
                                 <a class="page-link prev"
-                                    href="{{ $currentPage > 0 ? url('web/filter?page=' . ($currentPage - 1)) : '#' }}"
+                                    href="{{ $currentPage > 0 ? route('web.filterWiew', array_merge(request()->all(), ['page' => $currentPage - 1])) : '#' }}"
                                     aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                     <span class="sr-only">Previous</span>
                                 </a>
                             </li>
-                    
                             <!--Numbers-->
                             @php
                                 $start = max(0, $currentPage - 2);
                                 $end = min($totalPages, $start + 4);
                             @endphp
-                    
                             @for ($i = $start; $i <= $end; $i++)
                                 <li class="page-item {{ $currentPage === $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ url('web/filter?page=' . $i) }}">{{ $i + 1 }}</a>
+                                    <a class="page-link"
+                                        href="{{ route('web.filterWiew', array_merge(request()->all(), ['page' => $i])) }}">{{ $i + 1 }}</a>
                                 </li>
                             @endfor
-                    
                             <!--Arrow right-->
                             <li class="page-item {{ $currentPage === $totalPages ? 'disabled' : '' }}">
                                 <a class="page-link next"
-                                    href="{{ $currentPage < $totalPages ? url('web/filter?page=' . ($currentPage + 1)) : '#' }}"
+                                    href="{{ $currentPage < $totalPages ? route('web.filterWiew', array_merge(request()->all(), ['page' => $currentPage + 1])) : '#' }}"
                                     aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                     <span class="sr-only">Next</span>
@@ -241,8 +239,6 @@
                             </li>
                         </ul>
                     </nav>
-
-
                 </div>
             </div>
         </section>
