@@ -37,10 +37,11 @@ class FilterController extends Controller
 
         $foundItems = $foundItems->offset($offset * $limit)->take($limit)->get();
 
-        $location_list = Cache::remember('tehsil_list', now()->addHours(24), function () {
-            return victim::select('tehsil')->get()->groupBy('tehsil');
-        });
+        $location_list = victim::select('tehsil', DB::raw('count(*) as total'))
+                 ->groupBy('tehsil')
+                 ->get();
 
+     
 
         return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list'));
     }
