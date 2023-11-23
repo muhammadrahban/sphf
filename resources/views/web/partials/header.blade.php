@@ -30,7 +30,7 @@
                         <div class="d-flex align-items-center">
                             <a class="p-2" href="#">
                                 <i style="position:relative; z-index:0" class="fas fa-heart text-light"></i>
-                                <span class="cart-indicator">0</span>
+                                <span class="cart-indicator">{{ count(session('cart', [])) }}</span>
                             </a>
                             <a class="waves-effect waves-dark" href="#"><i class="fas fa-search text-light"></i></a>
                         </div>
@@ -77,12 +77,23 @@
                     <span class="px-2">TRANSFER TO SPHF</span>
                     <i class="fa fa-heart text-warning"></i>
                 </a>
-                <a class="btn p-2 nav-btn-primary mx-2 text-white" href="{{route('register.doner')}}">
-                    <span class="px-2">ADOPT A BENEFICIARY</span>
-                    <i class="fa fa-heart text-warning"></i>
-                </a>
+                @auth
+                    <a class="btn p-2 nav-btn-primary mx-2 text-white" href="{{route('filterView')}}">
+                        <span class="px-2">ADOPT A BENEFICIARY</span>
+                        <i class="fa fa-heart text-warning"></i>
+                    </a>
+                @else
+                    <a class="btn p-2 nav-btn-primary mx-2 text-white" href="{{route('register.doner')}}">
+                        <span class="px-2">ADOPT A BENEFICIARY</span>
+                        <i class="fa fa-heart text-warning"></i>
+                    </a>
+                @endauth
             </div>
-            <a href="#" class="underline-link p-2 d-none d-md-block">Login</a>
+            @auth
+            <a href="#" class="underline-link p-2 d-none d-md-block">My Account</a>
+            @else
+                <a href="{{route('login.doner')}}" class="underline-link p-2 d-none d-md-block">Login</a>
+            @endauth
             <a href="javascript:void(0);" onclick="$('.mobile-nav').addClass('open')" class="p-3 d-block d-md-none"><i class="fa fa-2x fa-bars"></i></a>
         </div>
     </div>

@@ -41,11 +41,6 @@
                                             <option value="{{ $location_data['tehsil'] }}" @selected(@$data['location'] == $location_data['tehsil'])>
                                                 {{ $location_data['tehsil'] }}</option>
                                         @endforeach
-                                        {{-- <option value="Jati" @selected(@$data['location'] == 'Jati')>Jati</option>
-                                        <option value="Taluka" @selected(@$data['location'] == 'Taluka')>Taluka</option>
-                                        <option value="karachi" @selected(@$data['location'] == 'karachi')>karachi</option>
-                                        <option value="Ghotki" @selected(@$data['location'] == 'Ghotki')>Ghotki</option>
-                                        <option value="Lakhi" @selected(@$data['location'] == 'Lakhi')>Lakhi</option> --}}
                                     </select>
                                 </div>
                             </div>
@@ -114,88 +109,91 @@
                     </div>
                 </div>
                 <div class="col-md-8 px-2">
-                    <div class="d-flex justify-content-end mb-4">
-                        <button type="button" class="btn btn-outline-warning mx-2"><i class="fa fa-heart"
-                                aria-hidden="true"></i> Your Beneficiaries List &nbsp;&nbsp; <i class="fa fa-arrow-right"
-                                aria-hidden="true"></i></button>
-                        <a href="{{ route('web.checkOutList') }}" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i
-                                class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="d-flex justify-content-start m-2">
-                        @foreach ($data as $key => $list)
-                            @if ($key != 'page')
-                                <button type="button" class="btn btn-outline-warning mx-2">{{ $list }} </button>
-                            @endif
-                        @endforeach
-                    </div>
-                    <div class="d-flex justify-content-start m-3">
-                        <div class="form-check form-check-inline mx-3">
-                            <input class="form-check-input" type="checkbox" id="select_all">
-                            <label class="form-check-label bg-title" for="select_all"
-                                style="font-size: 20px; color: #878787;">Select All</label>
+                    <form action="{{route('cart.store')}}" method="POST">
+                        @csrf
+                        <div class="d-flex justify-content-end mb-4">
+                            <button type="button" class="btn btn-outline-warning mx-2"><i class="fa fa-heart"
+                                    aria-hidden="true"></i> Your Beneficiaries List &nbsp;&nbsp; <i class="fa fa-arrow-right"
+                                    aria-hidden="true"></i></button>
+                            {{-- <a href="{{ route('web.checkOutList') }}" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a> --}}
+                            <button type="submit" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                         </div>
-                        <div class="d-flex mx-3">
-                            <i class="fa fa-user" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
-                                aria-hidden="true"></i>
-                            <div class="d-flex flex-column">
-                                <p class="m-0">Persons</p>
-                                <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                        <div class="d-flex justify-content-start m-2">
+                            @foreach ($data as $key => $list)
+                                @if ($key != 'page')
+                                    <button type="button" class="btn btn-outline-warning mx-2">{{ $list }} </button>
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="d-flex justify-content-start m-3">
+                            <div class="form-check form-check-inline mx-3">
+                                <input class="form-check-input" type="checkbox" id="select_all">
+                                <label class="form-check-label bg-title" for="select_all"
+                                    style="font-size: 20px; color: #878787;">Select All</label>
                             </div>
-                        </div>
-                        <div class="d-flex mx-3">
-                            <i class="fa fa-home" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
-                                aria-hidden="true"></i>
-                            <div class="d-flex flex-column">
-                                <p class="m-0">Homes</p>
-                                <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
-                            </div>
-                        </div>
-                        <div class="d-flex ml-auto w-40">
-                            <label class="w-50" for="sort_by">Sort by : </label>
-                            <select class="form-control" id="sort_by">
-                                <option value="most_relevant">Most Relevant</option>
-                                <option value="show_all">Show All</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mx-3 my-4">
-                        @foreach ($foundItems as $item)
-                            <div class="d-flex justify-content-between my-3 align-items-center searchable-item">
-                                <input class="mx-3" type="checkbox" class="heart" />
-                                {{-- <img src="{{$item['__metadata']['uri']}}" width="70" height="70" class="rounded-circle"> --}}
-                                <img src="{{ asset('images/users/1.jpg') }}" width="70" height="70"
-                                    class="rounded-circle">
-                                <div class="d-flex flex-column mx-3">
-                                    <h5 class="bg-title benf_name">{{ $item['da_occupant_name'] }}</h5>
-                                    <div class="d-flex" style="font-size: 18px;">
-                                        <p class="text-primary m-0 mr-4"><i class="fa fa-bars" aria-hidden="true"></i>
-                                            {{ $item['widows'] != 0 ? 'Widow ' : '' }}
-                                            {{ $item['women_with_disable_husband'] != 0 ? 'Women ' : '' }}
-                                            {{ $item['unaccompained_elders_over_the_age_of_60'] != 0 ? 'Elderly ' : '' }}
-                                            {{ $item['people_with_disability_physically_or_mentally'] != 0 ? 'Differntly Abled ' : '' }}
-                                        </p>
-                                        <p class="text-secondary m-0 mx-4"><i class="fa fa-map-marker"
-                                                aria-hidden="true"></i> {{ $item['district'] }} / {{ $item['tehsil'] }}
-                                        </p>
-                                        <p class="text-secondary m-0 mx-4"><i class="fa fa-btc" aria-hidden="true"></i>
-                                            PKR 300,000</p>
-                                    </div>
-                                    <p class="m-0 w-auto rounded text-left px-2 my-3" style="background-color: #ececec;">
-                                        Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available
-                                    </p>
-                                </div>
-                                <div class="ml-auto">
-                                    <div class="d-flex flex-column">
-                                        <p class="bg-title text-success text-right m-0">ID:
-                                            {{ $item['filled_da_form_id'] }}</p>
-                                        <button type="button" class="btn btn-info mt-4 px-4 py-2 text-center">View
-                                            Profile</button>
-                                    </div>
+                            <div class="d-flex mx-3">
+                                <i class="fa fa-user" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
+                                    aria-hidden="true"></i>
+                                <div class="d-flex flex-column">
+                                    <p class="m-0">Persons</p>
+                                    <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
                                 </div>
                             </div>
-                        @endforeach
+                            <div class="d-flex mx-3">
+                                <i class="fa fa-home" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
+                                    aria-hidden="true"></i>
+                                <div class="d-flex flex-column">
+                                    <p class="m-0">Homes</p>
+                                    <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                                </div>
+                            </div>
+                            <div class="d-flex ml-auto w-40">
+                                <label class="w-50" for="sort_by">Sort by : </label>
+                                <select class="form-control" id="sort_by">
+                                    <option value="most_relevant">Most Relevant</option>
+                                    <option value="show_all">Show All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mx-3 my-4">
+                            @foreach ($foundItems as $item)
+                                <div class="d-flex justify-content-between my-3 align-items-center searchable-item">
+                                    <input class="mx-3" type="checkbox" class="heart" name="item_ids[]"  value="{{ $item->id }}" />
+                                    {{-- <img src="{{$item['__metadata']['uri']}}" width="70" height="70" class="rounded-circle"> --}}
+                                    <img src="{{ asset('images/users/1.jpg') }}" width="70" height="70"
+                                        class="rounded-circle">
+                                    <div class="d-flex flex-column mx-3">
+                                        <h5 class="bg-title benf_name">{{ $item['da_occupant_name'] }}</h5>
+                                        <div class="d-flex" style="font-size: 18px;">
+                                            <p class="text-primary m-0 mr-4"><i class="fa fa-bars" aria-hidden="true"></i>
+                                                {{ $item['widows'] != 0 ? 'Widow ' : '' }}
+                                                {{ $item['women_with_disable_husband'] != 0 ? 'Women ' : '' }}
+                                                {{ $item['unaccompained_elders_over_the_age_of_60'] != 0 ? 'Elderly ' : '' }}
+                                                {{ $item['people_with_disability_physically_or_mentally'] != 0 ? 'Differntly Abled ' : '' }}
+                                            </p>
+                                            <p class="text-secondary m-0 mx-4"><i class="fa fa-map-marker"
+                                                    aria-hidden="true"></i> {{ $item['district'] }} / {{ $item['tehsil'] }}
+                                            </p>
+                                            <p class="text-secondary m-0 mx-4"><i class="fa fa-btc" aria-hidden="true"></i>
+                                                PKR 300,000</p>
+                                        </div>
+                                        <p class="m-0 w-auto rounded text-left px-2 my-3" style="background-color: #ececec;">
+                                            Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available
+                                        </p>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <div class="d-flex flex-column">
+                                            <p class="bg-title text-success text-right m-0">ID:
+                                                {{ $item['filled_da_form_id'] }}</p>
+                                            <button type="button" class="btn btn-info mt-4 px-4 py-2 text-center">View
+                                                Profile</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
 
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="row">

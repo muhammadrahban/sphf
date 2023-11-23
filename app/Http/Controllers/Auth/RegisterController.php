@@ -50,9 +50,19 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'full_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'first_name'        => ['required', 'string', 'max:255'],
+            'last_name'         => ['required', 'string', 'max:255'],
+            'email'             => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone'             => ['required', 'string', 'max:255', 'unique:users'],
+            'nationality_no'    => ['required', 'string', 'max:255'],
+            'nationality'       => ['required', 'string', 'max:255'],
+            'address'           => ['required', 'string', 'max:255'],
+            'city'              => ['required', 'string', 'max:255'],
+            'country'           => ['required', 'string', 'max:255'],
+            'post_code'         => ['required', 'string', 'max:255'],
+            'organiation'       => ['required', 'string', 'max:255'],
+            'job_title'         => ['required', 'string', 'max:255'],
+            'comments'          => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -64,10 +74,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $password = $data['first_name'] .'_'. $data['last_name'] .'1234';
         return User::create([
-            'full_name' => $data['full_name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'first_name'    => $data['first_name'],
+            'last_name'     => $data['last_name'],
+            'email'         => $data['email'],
+            'phone'         => $data['phone'],
+            'password'      => Hash::make($password),
+            'nationality_no'=> $data['nationality'],
+            'nationality'   => $data['nationality'],
+            'address'       => $data['address'],
+            'city'          => $data['city'],
+            'country'       => $data['country'],
+            'post_code'     => $data['post_code'],
+            'organiation'   => $data['organiation'],
+            'job_title'     => $data['job_title'],
+            'comments'      => $data['comments'],
         ]);
     }
 }

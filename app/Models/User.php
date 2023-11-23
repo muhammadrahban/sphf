@@ -25,24 +25,26 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-
-        'full_name',
-        // 'last_name',
-        'address',
-        'referral_code',
-        'spin_count',
-        // 'forgot_password_code',
+        'first_name',
+        'last_name',
         'email',
-        'social_id',
-        'provider',
+        'email_verified_at',
         'phone',
+        'phone_verified_at',
         'password',
-        'gender',
-        'dob',
-        'profile_image',
-        'customer_stripe_id',
-        'user_type',
-        'user_role',
+        'nationality_no',
+        'nationality',
+        'address',
+        'city',
+        'country',
+        'post_code',
+        'organiation',
+        'job_title',
+        'comments',
+        'is_anonymously',
+        'is_individual',
+        'is_company',
+        'remember_token'
     ];
 
     /**
@@ -61,44 +63,27 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'phone_verified_at' => 'datetime',
         'email_verified_at' => 'datetime',
     ];
-
-    // check subscriptions
-    protected $appends = [
-        'is_subscribed',
-    ];
-    public function getIsSubscribedAttribute()
-    {
-        $subscription = $this->subscriptions()->latest()->first();
-        // return Carbon::now()->format('Y-m-d');
-        if ($subscription) {
-            if ($subscription->end_date >= Carbon::now()->format('Y-m-d')) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     /**
      * The booted method of the model
      */
-    protected static function booted()
-    {
-        static::creating(function ($user) {
-            $user->verification_code = mt_rand(10000, 99999);
-            $user->phone_verification_code = mt_rand(10000, 99999);
-            $user->expired_at = Carbon::now()->addMinutes(60);
-        });
-    }
+    // protected static function booted()
+    // {
+    //     static::creating(function ($user) {
+    //         $user->verification_code = mt_rand(10000, 99999);
+    //     });
+    // }
 
 
-    public function verifyUser()
-    {
-        $this->phone_verified_at = now();
-        $this->phone_verification_code = NULL;
-        $this->save();
-    }
+    // public function verifyUser()
+    // {
+    //     $this->phone_verified_at = now();
+    //     $this->phone_verification_code = NULL;
+    //     $this->save();
+    // }
 
     /**
      * Set password encryption when insert
@@ -116,83 +101,41 @@ class User extends Authenticatable
      * @param $date
      * @return string
      */
-    public function getExpiredAtAttribute($date)
-    {
-        if ($date !== null) {
-            return Carbon::parse($date)->format('Y-m-d H:i:s');
-        }
-    }
+    // public function getExpiredAtAttribute($date)
+    // {
+    //     if ($date !== null) {
+    //         return Carbon::parse($date)->format('Y-m-d H:i:s');
+    //     }
+    // }
 
     /**
      * Mark user verified
      */
-    public function markUserVerified()
-    {
-        $this->verification_code = null;
-        $this->expired_at = null;
-        $this->email_verified_at = now();
+    // public function markUserVerified()
+    // {
+    //     $this->verification_code = null;
+    //     $this->expired_at = null;
+    //     $this->email_verified_at = now();
 
-        $this->save();
-    }
+    //     $this->save();
+    // }
 
     /**
      * Check if verification code is not expired
      *
      * @return bool
      */
-    public function hasValidCode()
-    {
-        return $this->verification_code !== null && Carbon::parse($this->expired_at)->addMinutes(60) > now();
-    }
-    public function userMedia()
-    {
-        return $this->hasMany(UserMedia::class);
-    }
-    public function wallet()
-    {
-        return $this->hasOne(wallet::class);
-    }
+    // public function hasValidCode()
+    // {
+    //     return $this->verification_code !== null && Carbon::parse($this->expired_at)->addMinutes(60) > now();
+    // }
 
-    public function devices()
-    {
-        return $this->hasMany(UserDevice::class);
-    }
-
-    /**
-     * Get all of the withdrawLog for the User
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function withdrawLog()
-    {
-        return $this->hasMany(WithdrawLog::class);
-    }
-
-
-
-
-
-    public function userDevice($request, $access_token)
-    {
-        $request['access_token'] = $access_token;
-        $this->devices()->updateOrCreate(
-            $request->only('udid'),
-            $request->all()
-        );
-    }
-
-    public function subscriptions()
-    {
-        return $this->hasMany(Subscription::class);
-    }
-
-    public function favorites()
-    {
-        return $this->hasMany(Favourite::class, 'user_id');
-    }
-
-    public function orders()
-    {
-        return $this->hasMany(Order::class, 'user_id');
-    }
+    // public function userDevice($request, $access_token)
+    // {
+    //     $request['access_token'] = $access_token;
+    //     $this->devices()->updateOrCreate(
+    //         $request->only('udid'),
+    //         $request->all()
+    //     );
+    // }
 }

@@ -20,6 +20,7 @@ use App\Http\Controllers\UserMediaController;
 use App\Http\Controllers\AppoinmentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\UserDeviceController;
 use App\Http\Controllers\PreferencesController;
@@ -157,24 +158,23 @@ Route::get('/becomdoner', function () {
 })->name('becom.doner');
 
 Route::get('/doner/register', function() {
-    return view('web.register.RegistrationForm');
+    return view('web.auth.RegistrationForm');
 })->name('register.doner');
 
-// Route::get('/doner/register', [RegisterController::class, 'showRegistrationForm'])->name('register.doner');
-Route::post('/web/filter', [FilterController::class, 'filterView'])->name('web.filterWiew');
-Route::get('/web/filter', [FilterController::class, 'filterView']);
-Route::get('/web/checkoutlist', [CheckoutController::class, 'checkOutList'])->name('web.checkOutList');
-Route::get('/web/proceedCheckoutview', [CheckoutController::class, 'proceedCheckoutview'])->name('web.proceedCheckoutview');
-Route::post('/web/submitpaymentdetail', [PaymentController::class, 'submitPaymentDetail'])->name('web.SubmitPaymentDetail');
+Route::get('/doner/login', function() {
+    return view('web.auth.LoginForm');
+})->name('login.doner');
 
-Route::get('/clear', function () {
-    \Artisan::call('config:clear');
-    \Artisan::call('cache:clear');
-    // composer dump-autoload
-    \Artisan::call('view:clear');
-    \Artisan::call('route:clear');
-    return 'clear all';
-})->name('LP');
-
+Route::middleware(['auth'])->prefix('web')->group(function () {
+        Route::post('/filter', [FilterController::class, 'filterView'])->name('web.filterWiew');
+        Route::get('/filter', [FilterController::class, 'filterView'])->name('filterView');
+        Route::post('/add-to-cart', [CartController::class, 'store'])->name('cart.store');
+        Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+        Route::get('/cart-list', [CartController::class, 'index'])->name('cart.index');
+        Route::get('/user-detail', [UserController::class, 'paymentUser'])->name('user.paymentuser');
+        Route::post('/user-update', [UserController::class, 'updateuser'])->name('user.updateuser');
+        Route::get('/submitpaymentdetail', [PaymentController::class, 'submitPaymentDetail'])->name('web.SubmitPaymentDetail');
+    }
+);
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
