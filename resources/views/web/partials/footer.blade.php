@@ -17,13 +17,16 @@
                         <a href="#" class="p-link text-white d-block mb-3">Explore Beneficiaries</a>
                         <a href="#" class="p-link text-white d-block mb-3">Become a Donor</a>
                         <a href="#" class="p-link text-white d-block mb-3">Donor FAQs</a>
+                        <a href="#" class="p-link text-white d-block mb-3">Privacy</a>
+                        <a href="#" class="p-link text-white d-block mb-3">Terms</a>
                     </div>
                     <div class="col-md-4">
                         <h4 class="text-white mb-5">Contact</h4>
+                        <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-address-card-o"></i>Sindh Peoples Housing for Flood Affectees
+(SPHF) <br/><b>Address:</b> Bungalow no. 20, Block 7/8, Modern Cooperative Housing Society, Karachi.</a>
                         <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-envelope"></i> donor@sphf.gos.pk</a>
-                        <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-phone"></i> +92 111 111 111</a>
-                        <a href="#" class="p-link text-white d-block mb-3">Privacy</a>
-                        <a href="#" class="p-link text-white d-block mb-3">Terms</a>
+                        <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-phone"></i> +92 21 99334119-20</a>
+
                     </div>
                     <div class="col-md-4">
                         <h4 class="text-white mb-0">Sponsor houses & help them</h4>

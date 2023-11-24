@@ -4,7 +4,7 @@
             <div class="col-md-6 d-flex align-items-center">
                 <a href="#" class="p-2 text-light">
                     <i class="fa fa-phone-alt text-warning mr-2"></i>
-                    +92 111 111 111
+                    +92 21 99334119-20
                 </a>
                 <a href="#" class="p-2 text-light">
                     <i class="fas fa-envelope text-warning"></i>
