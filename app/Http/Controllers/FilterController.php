@@ -24,7 +24,7 @@ class FilterController extends Controller
         if ($request->has('location') && $request->location != 'Select Location') {
             $location = $request->location;
             $data['location'] = $location;
-            $foundItems->where('tehsil', $location);
+            $foundItems->where('district', $location);
         }
 
         if ($request->has('gender') && $request->gender != 'Select Gender') {
@@ -37,8 +37,8 @@ class FilterController extends Controller
 
         $foundItems = $foundItems->offset($offset * $limit)->take($limit)->get();
 
-        $location_list = victim::select('tehsil', DB::raw('count(*) as total'))
-                 ->groupBy('tehsil')
+        $location_list = victim::select('district', DB::raw('count(*) as total'))
+                 ->groupBy('district')
                  ->get();
 
      

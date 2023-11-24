@@ -13,6 +13,36 @@ return new class extends Migration
     {
         Schema::create('general_donations', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('cnic');
+            $table->string('phone');
+            $table->string('job_title');
+            $table->string('country');
+            $table->string('city');
+            $table->string('postal_code');
+            $table->string('company_name');
+            $table->string('email');
+            $table->boolean('is_anonymous');
+            $table->text('comments');
+            $table->boolean('is_individual')->default(0);
+            $table->boolean('is_company')->default(0);
+            $table->double('amount');
+            $table->double('charges');
+            $table->double('total_amount');
+            $table->double('charged_amount');
+            $table->enum('transaction_type',['dod','card','obt']);
+            $table->string('check_no')->nullable();
+            $table->string('card')->nullable();
+            $table->string('cvv')->nullable();
+            $table->string('cardholder_first_name')->nullable();
+            $table->string('cardholder_last_name')->nullable();
+            $table->string('bank')->nullable();
+            $table->string('iban')->nullable();
+            $table->string('account_title')->nullable();
+            $table->string('bank_routing_number')->nullable();
+            $table->string('payment_status');
             $table->timestamps();
         });
     }
