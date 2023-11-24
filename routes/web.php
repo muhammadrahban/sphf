@@ -147,7 +147,7 @@ Route::get('/logintest', [LoginController::class, 'showLoginForm'])->name('login
 
 Route::get('/', function () {
     return view('web.home');
-});
+})->name('web.home');
 
 Route::get('/webfaqs', function () {
     return view('web.Faqs');
@@ -174,6 +174,7 @@ Route::middleware(['auth'])->prefix('web')->group(function () {
         Route::get('/user-detail', [UserController::class, 'paymentUser'])->name('user.paymentuser');
         Route::post('/user-update', [UserController::class, 'updateuser'])->name('user.updateuser');
         Route::get('/submitpaymentdetail', [PaymentController::class, 'submitPaymentDetail'])->name('web.SubmitPaymentDetail');
+        Route::post('/submit-donation', [PaymentController::class, 'submitPaymentDonation'])->name('web.SubmitDonation');
     }
 );
 

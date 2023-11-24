@@ -20,6 +20,7 @@ class DonationInvoice extends Model
         'transaction_type',
         'check_no',
         'card',
+        'expire',
         'cvv',
         'cardholder_first_name',
         'cardholder_last_name',
