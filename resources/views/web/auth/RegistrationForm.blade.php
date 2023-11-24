@@ -77,6 +77,25 @@
                                 @enderror
                             </div>
                         </div>
+                                                <div class="row">
+                            <div class="col-sm-6 col-xs-12 p-3">
+                                <input size="40" class="form-control @error('password') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Password" type="password" name="password">
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-sm-6 col-xs-12 p-3">
+                                <input size="40" class="form-control @error('confirm_password') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Confirm Paswword" type="password" name="confirm_password">
+                                @error('confirm_password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="col-sm-6 col-xs-12 p-3">
                                 <input size="40" class="form-control @error('phone') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Mobile" type="text" name="phone">

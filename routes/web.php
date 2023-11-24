@@ -31,6 +31,7 @@ use App\Http\Controllers\helpAndSupportController;
 use App\Http\Controllers\CustomChangePasswordController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -175,6 +176,7 @@ Route::middleware(['auth'])->prefix('web')->group(function () {
         Route::post('/user-update', [UserController::class, 'updateuser'])->name('user.updateuser');
         Route::get('/submitpaymentdetail', [PaymentController::class, 'submitPaymentDetail'])->name('web.SubmitPaymentDetail');
         Route::post('/submit-donation', [PaymentController::class, 'submitPaymentDonation'])->name('web.SubmitDonation');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('web.dashboard');
     }
 );
 

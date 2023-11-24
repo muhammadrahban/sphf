@@ -1,7 +1,7 @@
 @extends('web.master')
 @section('webcontain')
     <main>
-        <section class="container my-5" style="max-width: 70% !important;">
+        <section class="container my-5" style="max-width: 90% !important;">
             <div class="row">
                 <div class="col-md-4 px-2">
                     <div class="border border-secondary border-0 border-bottom-1">
@@ -185,8 +185,8 @@
                                         <div class="d-flex flex-column">
                                             <p class="bg-title text-success text-right m-0">ID:
                                                 {{ $item['filled_da_form_id'] }}</p>
-                                            <button type="button" class="btn btn-info mt-4 px-4 py-2 text-center">View
-                                                Profile</button>
+                                            <!--<button type="button" class="btn btn-info mt-4 px-4 py-2 text-center">View-->
+                                            <!--    Profile</button>-->
                                         </div>
                                     </div>
                                 </div>
