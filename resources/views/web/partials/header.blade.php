@@ -90,7 +90,7 @@
                 @endauth
             </div>
             @auth
-                <a href="{{route('web.home')}}" class="underline-link p-2 d-none d-md-block">My Account</a>
+                <a href="{{route('web.dashboard')}}" class="underline-link p-2 d-none d-md-block">My Account</a>
             @else
                 <a href="{{route('login.doner')}}" class="underline-link p-2 d-none d-md-block">Login</a>
             @endauth
@@ -127,7 +127,7 @@
             </a>
         @endauth
         @auth
-            <a href="{{route('web.home')}}" class="btn btn-lg btn-block text-left px-0 mb-2 border-bottom-1">My Account</a>
+            <a href="{{route('web.dashboard')}}" class="btn btn-lg btn-block text-left px-0 mb-2 border-bottom-1">My Account</a>
         @else
             <a href="{{route('login.doner')}}" class="btn btn-lg btn-block text-left px-0 mb-2 border-bottom-1">Login</a>
         @endauth

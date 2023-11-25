@@ -177,6 +177,10 @@ Route::middleware(['auth'])->prefix('web')->group(function () {
         Route::get('/submitpaymentdetail', [PaymentController::class, 'submitPaymentDetail'])->name('web.SubmitPaymentDetail');
         Route::post('/submit-donation', [PaymentController::class, 'submitPaymentDonation'])->name('web.SubmitDonation');
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('web.dashboard');
+        Route::get('/profile', [DashboardController::class, 'profile'])->name('web.profile');
+        Route::get('/track', [DashboardController::class, 'track'])->name('web.track');
+        Route::get('/donation', [DashboardController::class, 'donation'])->name('web.donation');
+        Route::post('/profile-update', [DashboardController::class, 'updateuser'])->name('user.adminupdate');
     }
 );
 

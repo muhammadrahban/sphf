@@ -630,3 +630,96 @@ ol>li::marker {
 .Pager5 ul li.disabled:hover {
     border-bottom: none !important;
 }
+
+
+#left-menu {
+    overflow-y: auto;
+    border-right: 1px solid #e6ecf5;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    overflow-x: hidden;
+    z-index: 2;
+}
+
+#left-menu.small-left-menu,
+#logo.small-left-menu {
+    width: 60px;
+}
+
+#left-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+#left-menu ul li {
+    padding: 0 10px;
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 5px;
+}
+
+#left-menu ul li a {
+    /* color: #99abb4; */
+    width: 100%;
+    display: inline-block;
+    /* width: 260px;
+    height: 37px; */
+    position: relative;
+}
+
+
+#left-menu ul li a i {
+    font-size: 28px;
+    text-align: center;
+    width: 35px;
+    display: inline-block;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#left-menu ul li:hover a span {
+    /* color: #0e9aee; */
+}
+
+#left-menu ul li:hover a i {
+    /* color: #0e9aee; */
+}
+
+#left-menu ul li a span {
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    font-weight: 300;
+    font-size: 24px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#left-menu ul li.active {
+    background-color: #12434a;
+}
+
+#left-menu ul li.active a {
+    /* border-bottom: 2px solid #0e9aee; */
+}
+
+#left-menu ul li.active a span {
+    color: #fff;
+}
+
+#left-menu ul li.active a i {
+    color: #fff;
+}
+
+.box-data {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
