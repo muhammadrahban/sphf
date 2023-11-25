@@ -13,9 +13,9 @@
                 <div class="row">
                     <div class="col-md-4">
                         <h4 class="text-white mb-5">Links</h4>
-                        <a href="#" class="p-link text-white d-block mb-3">Why & How Donate</a>
-                        <a href="#" class="p-link text-white d-block mb-3">Explore Beneficiaries</a>
-                        <a href="#" class="p-link text-white d-block mb-3">Become a Donor</a>
+                        <a href="{{route('web.home')}}" class="p-link text-white d-block mb-3">Why & How Donate</a>
+                        <a href="{{route('register.filterView')}}" class="p-link text-white d-block mb-3">Explore Beneficiaries</a>
+                        <a href="{{route('register.doner')}}" class="p-link text-white d-block mb-3">Become a Donor</a>
                         <a href="#" class="p-link text-white d-block mb-3">Donor FAQs</a>
                         <a href="#" class="p-link text-white d-block mb-3">Privacy</a>
                         <a href="#" class="p-link text-white d-block mb-3">Terms</a>
@@ -33,10 +33,10 @@
                         <div class="text-right">
                             <img src="{{asset('images/arrow-3.png')}}">
                         </div>
-                        <button class="btn p-2 nav-btn-secondary">
+                        <a class="btn p-2 nav-btn-secondary" href="{{route('web.BecomAdoner')}}">
                             <span class="px-2">DONATE NOW</span>
                             <i class="fa fa-heart text-warning"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -47,10 +47,10 @@
                 <p class="text-white mb-4 text-center text-md-left">© 2023 Copyrights by HTA. All Rights Reserved</p>
             </div>
             <div class="col-md-6 text-center text-md-right">
-                <a href="#" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a>
+                <a href="https://www.facebook.com/sindhpeopleshousing/" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/SphfOfficial" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/sphfofficial/" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
+                {{-- <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a> --}}
             </div>
         </div>
     </div>

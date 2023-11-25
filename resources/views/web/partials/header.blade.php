@@ -20,10 +20,10 @@
                 <div class="d-flex align-items-center  justify-content-end">
                     <div class="px-3 top-bar-icons-bg">
                         <div class="d-flex align-items-center">
-                            <a href="#" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a>
+                            <a href="https://www.facebook.com/sindhpeopleshousing/" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/SphfOfficial" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/sphfofficial/" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
+                            {{-- <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a> --}}
                         </div>
                     </div>
                     <div class="ml-3">
@@ -47,16 +47,16 @@
             <div class="col-6 d-flex align-items-center">
                 <a href="#" class="p-2 text-light">
                     <i class="fa fa-phone-alt text-warning mr-2"></i>
-                    <small>+92 111 111 111</small>
+                    <small>+92 21 99334119-20</small>
                 </a>
             </div>
             <!-- social icon-->
             <div class="col-6 text-right">
                 <div class="d-flex justify-content-end align-items-center">
-                    <a href="#" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.facebook.com/sindhpeopleshousing/" class="p-2 text-light"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/SphfOfficial" class="p-2 text-light"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/sphfofficial/" class="p-2 text-light"><i class="fab fa-instagram"></i></a>
+                    {{-- <a href="#" class="p-2 text-light"><i class="fab fa-pinterest"></i></a> --}}
                 </div>
             </div>
         </div>
@@ -65,12 +65,12 @@
 <nav class="stickey-header">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('web.home')}}">
                 <img src="{{asset('images/SPHF-donor-logo.png')}}" alt="SPHF-donor-logo" width="150">
             </a>
             <div class="d-none d-md-flex">
-                <a href="#" class="underline-link p-2">Why & How Donate</a>
-                <a href="#" class="underline-link p-2">Track Your Donation</a>
+                <a href="{{route('web.home')}}" class="underline-link p-2">Why & How Donate</a>
+                <a href="{{route('web.dashboard')}}" class="underline-link p-2">Track Your Donation</a>
             </div>
             <div class="d-none d-md-flex">
                 <a class="btn p-2 nav-btn-secondary mx-2 text-white"  href="{{route('becom.doner')}}">
