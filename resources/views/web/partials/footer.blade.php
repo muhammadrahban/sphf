@@ -14,7 +14,7 @@
                     <div class="col-md-4">
                         <h4 class="text-white mb-5">Links</h4>
                         <a href="{{route('web.home')}}" class="p-link text-white d-block mb-3">Why & How Donate</a>
-                        <a href="{{route('register.filterView')}}" class="p-link text-white d-block mb-3">Explore Beneficiaries</a>
+                        <a href="{{route('filterView')}}" class="p-link text-white d-block mb-3">Explore Beneficiaries</a>
                         <a href="{{route('register.doner')}}" class="p-link text-white d-block mb-3">Become a Donor</a>
                         <a href="#" class="p-link text-white d-block mb-3">Donor FAQs</a>
                         <a href="#" class="p-link text-white d-block mb-3">Privacy</a>
