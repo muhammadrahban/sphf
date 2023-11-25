@@ -15,8 +15,7 @@
                                 style="font-weight: 700; font-size: 18px;">X</span></p>
                     </div>
                     <div class="my-4 p-4" style="background-color: #f6f6f6 !important;">
-                        <form action="{{ route('web.filterWiew', ['page' => 0]) }}"
-                            method="post" id="clear_all_form">
+                        <form action="{{ route('web.filterWiew', ['page' => 0]) }}" method="post" id="clear_all_form">
                             @csrf
                             <div class="form-row align-items-center my-2">
                                 <div class="col-12">
@@ -45,16 +44,16 @@
                                 </div>
                             </div>
                             <!-- <div class="form-row align-items-center my-2">
-                                            <div class="col-12">
-                                                <label for="location" style="font-size: 13px;">Radius around selected destination</label>
-                                                <select class="custom-select mb-3" id="location" placeholder="Dadu, Sukkar">
-                                                    <option selected>Open this select menu</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
+                                                    <div class="col-12">
+                                                        <label for="location" style="font-size: 13px;">Radius around selected destination</label>
+                                                        <select class="custom-select mb-3" id="location" placeholder="Dadu, Sukkar">
+                                                            <option selected>Open this select menu</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </div>
+                                                </div> -->
                             <div class="form-row align-items-center my-2">
                                 <label for="vulnerability" style="font-size: 20px;">Vulnerability</label>
                                 <div class="col-12">
@@ -109,19 +108,21 @@
                     </div>
                 </div>
                 <div class="col-md-8 px-2">
-                    <form action="{{route('cart.store')}}" method="POST">
+                    <form action="{{ route('cart.store') }}" method="POST">
                         @csrf
                         <div class="d-flex justify-content-end mb-4">
                             <button type="button" class="btn btn-outline-warning mx-2"><i class="fa fa-heart"
-                                    aria-hidden="true"></i> Your Beneficiaries List &nbsp;&nbsp; <i class="fa fa-arrow-right"
-                                    aria-hidden="true"></i></button>
+                                    aria-hidden="true"></i> Your Beneficiaries List &nbsp;&nbsp; <i
+                                    class="fa fa-arrow-right" aria-hidden="true"></i></button>
                             {{-- <a href="{{ route('web.checkOutList') }}" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a> --}}
-                            <button type="submit" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            <button type="submit" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i
+                                    class="fa fa-arrow-right" aria-hidden="true"></i></button>
                         </div>
                         <div class="d-flex justify-content-start m-2">
                             @foreach ($data as $key => $list)
                                 @if ($key != 'page')
-                                    <button type="button" class="btn btn-outline-warning mx-2">{{ $list }} </button>
+                                    <button type="button" class="btn btn-outline-warning mx-2">{{ $list }}
+                                    </button>
                                 @endif
                             @endforeach
                         </div>
@@ -158,26 +159,33 @@
                         <div class="mx-3 my-4">
                             @foreach ($foundItems as $item)
                                 <div class="d-flex justify-content-between my-3 align-items-center searchable-item">
-                                    <input class="mx-3" type="checkbox" class="heart" name="item_ids[]"  value="{{ $item->id }}" />
+                                    <input class="mx-3" type="checkbox" class="heart" name="item_ids[]"
+                                        value="{{ $item->id }}" />
                                     {{-- <img src="{{$item['__metadata']['uri']}}" width="70" height="70" class="rounded-circle"> --}}
-                                    <img src="{{ asset('images/users/1.jpg') }}" width="70" height="70"
-                                        class="rounded-circle">
+                                    {{-- <img src="{{ asset('images/users/1.jpg') }}" width="70" height="70" class="rounded-circle"> --}}
+                                    <div class="rounded-background" id="profile-background">
+                                        <span class="initial-letter">{{ substr($item['da_occupant_name'], 0, 1) }}</span>
+                                    </div>
                                     <div class="d-flex flex-column mx-3">
                                         <h5 class="bg-title benf_name">{{ $item['da_occupant_name'] }}</h5>
                                         <div class="d-flex" style="font-size: 18px;">
-                                            <p class="text-primary m-0 mr-4"><i class="fa fa-bars" aria-hidden="true"></i>
+                                            <p class="text-primary m-0 mr-4"><i class="fa fa-bars"
+                                                    aria-hidden="true"></i>
                                                 {{ $item['widows'] != 0 ? 'Widow ' : '' }}
                                                 {{ $item['women_with_disable_husband'] != 0 ? 'Women ' : '' }}
                                                 {{ $item['unaccompained_elders_over_the_age_of_60'] != 0 ? 'Elderly ' : '' }}
                                                 {{ $item['people_with_disability_physically_or_mentally'] != 0 ? 'Differntly Abled ' : '' }}
                                             </p>
                                             <p class="text-secondary m-0 mx-4"><i class="fa fa-map-marker"
-                                                    aria-hidden="true"></i> {{ $item['district'] }} / {{ $item['tehsil'] }}
+                                                    aria-hidden="true"></i> {{ $item['district'] }} /
+                                                {{ $item['tehsil'] }}
                                             </p>
-                                            <p class="text-secondary m-0 mx-4"><i class="fa fa-btc" aria-hidden="true"></i>
+                                            <p class="text-secondary m-0 mx-4"><i class="fa fa-btc"
+                                                    aria-hidden="true"></i>
                                                 PKR 300,000</p>
                                         </div>
-                                        <p class="m-0 w-auto rounded text-left px-2 my-3" style="background-color: #ececec;">
+                                        <p class="m-0 w-auto rounded text-left px-2 my-3"
+                                            style="background-color: #ececec;">
                                             Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available
                                         </p>
                                     </div>
@@ -243,6 +251,20 @@
     </main>
 
     <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        $(Document).ready(function(){
+            $('.rounded-background').css('background-color', getRandomColor());
+        })
+        // document.get('').style.backgroundColor = getRandomColor();
+
         function clear_all_button() {
             $('#clear_all_form').find(':input').each(function() {
                 if (this.type !== 'submit' && this.type !== 'button' && this.type !== 'hidden') {
