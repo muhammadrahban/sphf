@@ -33,7 +33,7 @@
                         <div class="text-right">
                             <img src="{{asset('images/arrow-3.png')}}">
                         </div>
-                        <a class="btn p-2 nav-btn-secondary" href="{{route('web.BecomAdoner')}}">
+                        <a class="btn p-2 nav-btn-secondary" href="{{route('becom.doner')}}">
                             <span class="px-2">DONATE NOW</span>
                             <i class="fa fa-heart text-warning"></i>
                         </a>
