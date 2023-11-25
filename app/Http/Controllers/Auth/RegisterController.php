@@ -76,22 +76,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $is_anonymous = isset($data['is_anonymously']) ? true : false;
+        $is_individual = isset($data['is_individual']) ? true : false;
+        $is_company   = isset($data['is_company']) ? true : false;
         $password = $data['first_name'] .'_'. $data['last_name'] .'1234';
         return User::create([
-            'first_name'    => $data['first_name'],
-            'last_name'     => $data['last_name'],
-            'email'         => $data['email'],
-            'phone'         => $data['phone'],
-            'password'      => Hash::make($data['password']),
-            'nationality_no'=> $data['nationality'],
-            'nationality'   => $data['nationality'],
-            'address'       => $data['address'],
-            'city'          => $data['city'],
-            'country'       => $data['country'],
-            'post_code'     => $data['post_code'],
-            'organiation'   => $data['organiation'],
-            'job_title'     => $data['job_title'],
-            'comments'      => $data['comments'],
+            'first_name'        => $data['first_name'],
+            'last_name'         => $data['last_name'],
+            'email'             => $data['email'],
+            'phone'             => $data['phone'],
+            'password'          => Hash::make($data['password']),
+            'nationality_no'    => $data['nationality'],
+            'nationality'       => $data['nationality'],
+            'address'           => $data['address'],
+            'city'              => $data['city'],
+            'country'           => $data['country'],
+            'post_code'         => $data['post_code'],
+            'organiation'       => $data['organiation'],
+            'job_title'         => $data['job_title'],
+            'comments'          => $data['comments'],
+            'is_anonymously'    => $is_anonymous,
+            'is_individual'     => $is_individual,
+            'is_company'        => $is_company,
         ]);
     }
 }

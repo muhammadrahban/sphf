@@ -62,7 +62,13 @@ class DashboardController extends Controller
                 'max:255',
                 Rule::unique('users')->ignore(auth()->id()),
             ],
+            'is_anonymously'    => ['accepted'],
+            'is_individual'     => ['accepted'],
+            'is_company'        => ['accepted'],
         ]);
+        $userData['is_anonymously'] = isset($userData['is_anonymously']) ? true : false;
+        $userData['is_individual']  = isset($userData['is_individual']) ? true : false;
+        $userData['is_company']     = isset($userData['is_company']) ? true : false;
         Auth::user()->update($userData);
         return redirect(Route('web.profile'))->with("message", "User updated suceesfully");
     }

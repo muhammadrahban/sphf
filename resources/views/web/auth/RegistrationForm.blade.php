@@ -187,13 +187,45 @@
                                     </span>
                                 @enderror
                             </div>
-                                <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
-                                    <input type="checkbox" id="note" required class="m-2"/>
-                                    <label for="note">
-                                        Note Additional fields to be added - tick boxes Donor consent,
-                                        Donor Undertaking, Donate anonymously. Donate as individual,
-                                        Donate&nbsp;as&nbsp;company.
-                                    </label>
+                                <div class="col-md-12">
+                                    <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                                        <input type="checkbox" id="note" required class="m-2"/>
+                                        <label for="note">
+                                            Donor consent.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                                        <input type="checkbox" id="note" required class="m-2"/>
+                                        <label for="note">
+                                            Donor Undertaking.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                                        <input type="checkbox" id="note" required class="m-2" name="is_anonymously"/>
+                                        <label for="note">
+                                            Donate anonymously.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                                        <input type="checkbox" id="note" required class="m-2" name="is_individual" />
+                                        <label for="note">
+                                            Donate as individual.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                                        <input type="checkbox" id="note" required class="m-2" name="is_company" />
+                                        <label for="note">
+                                            Donate&nbsp;as&nbsp;company.
+                                        </label>
+                                    </div>
                                 </div>
                             </p>
                             <div class="col-sm-12 col-xs-12 action text-left">
