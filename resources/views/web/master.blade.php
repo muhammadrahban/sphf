@@ -185,17 +185,18 @@
         });
 
         function selectAmount(obj,amount){
+            console.log(amount);
             $('.amount-btn').removeClass('btn-outline-success');
             $('.amount-btn').addClass('btn-success');
             $(obj).removeClass('btn-success');
             $(obj).addClass('btn-outline-success');
-
             if(amount=='custom'){
                 $('#amount').val("");
                 $('#amount').focus();
             }else{
                 $('#amount').val(amount);
                 $('.input_amount').html(amount);
+                $('#amount_value').val(amount);
             }
         }
         $('#amount').on('change',function(){

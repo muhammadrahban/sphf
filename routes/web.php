@@ -32,6 +32,7 @@ use App\Http\Controllers\CustomChangePasswordController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GeneralDonationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -157,6 +158,10 @@ Route::get('/webfaqs', function () {
 Route::get('/becomdoner', function () {
     return view('web.BecomAdoner');
 })->name('becom.doner');
+
+Route::post('/become-mdoner', [GeneralDonationController::class, 'donation'])->name('become.doner');
+
+// Route::get('/donation', [DashboardController::class, 'donation'])->name('web.donation');
 
 Route::get('/doner/register', function() {
     return view('web.auth.RegistrationForm');
