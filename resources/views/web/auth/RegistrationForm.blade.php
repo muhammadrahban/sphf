@@ -77,7 +77,7 @@
                                 @enderror
                             </div>
                         </div>
-                                                <div class="row">
+                        <div class="row">
                             <div class="col-sm-6 col-xs-12 p-3">
                                 <input size="40" class="form-control @error('password') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Password" type="password" name="password">
                                 @error('password')
@@ -179,56 +179,56 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-12 col-xs-12">
-                                <textarea cols="40" rows="10" class="form-control @error('comments') is-invalid @enderror" required placeholder="Comments" name="comments"></textarea>
+                            <div class="col-sm-12 col-xs-12 pl-3 py-2 ">
+                                <textarea cols="40" rows="10" class="form-control @error('comments') is-invalid @enderror" placeholder="Comments" name="comments"></textarea>
                                 @error('comments')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                                <div class="col-md-12">
-                                    <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                                <!--<div class="col-sm-6">
+                                    <div class="d-flex align-items-start">
                                         <input type="checkbox" id="note" required class="m-2"/>
                                         <label for="note">
                                             Donor consent.
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-start" >
                                         <input type="checkbox" id="note" required class="m-2"/>
                                         <label for="note">
                                             Donor Undertaking.
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-start">
                                         <input type="checkbox" id="note" required class="m-2" name="is_anonymously"/>
                                         <label for="note">
                                             Donate anonymously.
                                         </label>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
-                                        <input type="checkbox" id="note" required class="m-2" name="is_individual" />
+                                </div>-->
+                                <div class="col-sm-6 ">
+                                    <div class="d-flex align-items-start">
+                                        <input type="checkbox" id="note"  class="m-2" name="is_individual" />
                                         <label for="note">
                                             Donate as individual.
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
-                                        <input type="checkbox" id="note" required class="m-2" name="is_company" />
+                                <div class="col-sm-6 ">
+                                    <div class="d-flex align-items-start" >
+                                        <input type="checkbox" id="note"  class="m-2" name="is_company" />
                                         <label for="note">
-                                            Donate&nbsp;as&nbsp;company.
+                                            Donate as company.
                                         </label>
                                     </div>
                                 </div>
                             </p>
-                            <div class="col-sm-12 col-xs-12 action text-left">
+                            <div class="col-sm-12 col-xs-12 action text-left pl-3 py-2 ">
                                 <button type="submit" class="btn btn-danger">Register</button>
                             </div>
                         </div>

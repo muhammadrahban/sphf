@@ -10,20 +10,21 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex flex-wrap justify-content-center" style="gap:10px;">
-                                <div class="rounded bg-warning shadow text-center px-2 py-1 box-data">
+                                <div style="color: #5f3c03;" class="rounded bg-warning shadow text-center px-2 py-1 ">
                                     <h2>{{$count}}</h2>
-                                    <h6>Total Banificiaries</h6>
+                                    <h6>Total Benificiaries</h6>
                                 </div>
-                                <div class="rounded bg-info shadow px-2 py-1 text-white">
-                                    <div class="d-flex text-center align-items-center" style="gap:10px;">
+                                <div class="rounded bg-info shadow px-4 py-2 text-white">
+                                    <div class="d-flex text-center align-items-center" style="gap:15px;">
                                         <div>
-                                            <h2>{{$count}}</h2>
-                                            <h6>House Sponsored</h6>
+                                            
+                                            <h3 class="mb-0 "><img class="mr-2 mt-0 mb-2" style="width: 25px; height: 25px;" src="{{asset('images/home_icon_01.svg')}}">{{$count}}</h3>
+                                            <h6><small>House Sponsored</small></h6>
                                         </div>
                                         <div style="height:50px; width:2px; background:lightgray"></div>
                                         <div>
-                                            <h4>PKR <br> {{number_format(($count * 300000), 0)}}</h2>
-                                            <h6>Total Donations</h6>
+                                            <h3>{{number_format(($count * 300000), 0)}} <small>PKR</small></h3>
+                                            <h6><small>Total Donations</small></h6>
                                         </div>
                                     </div>
                                 </div>

@@ -126,31 +126,31 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="col-md-12">
-                                <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                            <div class="col-sm-6">
+                                <div class="pl-3 py-2 d-flex align-items-start" >
                                     <input type="checkbox" id="note" required class="m-2" name="is_anonymously" @checked(auth()->user()->is_anonymously)/>
                                     <label for="note">
                                         Donate anonymously.
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                            <div class="col-sm-6">
+                                <div class="pl-3 py-2 d-flex align-items-start" >
                                     <input type="checkbox" id="note" required class="m-2" name="is_individual" @checked(auth()->user()->is_individual) />
                                     <label for="note">
                                         Donate as individual.
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
+                            <div class="col-sm-6">
+                                <div class="pl-3 py-2 d-flex align-items-start" >
                                     <input type="checkbox" id="note" required class="m-2" name="is_company" @checked(auth()->user()->is_company) />
                                     <label for="note">
-                                        Donate&nbsp;as&nbsp;company.
+                                        Donate as company.
                                     </label>
                                 </div>
                             </div>
-                            </p>
+                           <!--</p>-->
                             <div class="col-sm-12 col-xs-12 action text-left">
                                 <button type="submit" class="btn btn-warning">Update &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                             </div>

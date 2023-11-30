@@ -4,7 +4,7 @@
     <section class="container my-5" style="position: relative; background-image: url('{{asset('images/adopt-beneficiary-01.jpg')}}'); background-size: cover; background-attachment: fixed;">
         <div class="overlay_adopt"></div>
         <div class="px-3 py-5 row">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="my-5 mx-auto">
                     <a href="#" class="video-link">
                         <i class="fa fa-play"></i>
@@ -15,7 +15,7 @@
                     <ul class="adopt_list_group">
                         <li class="adopt_list_item">
                             <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> First register on the
-                                SPFH platform</span>
+                                SPHF platform</span>
                         </li>
                         <li class="adopt_list_item">
                             <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Our team will connect
@@ -32,11 +32,14 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="bg-white p-3">
+            <div class="col-md-4 my-5 mx-auto">
+                <div class="bg-white p-4 my-5 mx-auto">
+                    <div class=" col-md-12 col-sm-12 col-xs-12 text-center">
+                <img  src="{{asset('images/SPHF-donor-logo.png')}}" alt="SPHF-donor-logo" width="150">
+                </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div class="row">
+                        <div class="row text-center">
                             <div class="col-md-12 col-sm-12 col-xs-12 p-3">
                                 <input size="40" class="form-control @error('email') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Email" type="email" name="email">
                                 @error('email')
@@ -46,7 +49,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row text-center">
                             <div class="col-md-12 col-sm-12 col-xs-12 p-3">
                                 <input size="40" class="form-control @error('password') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Password" type="password" name="password">
                                 @error('password')
@@ -57,8 +60,9 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-12 col-xs-12 action text-left">
+                            <div class="col-sm-12 col-xs-12 action text-center">
                                 <button type="submit" class="btn btn-danger">Login</button>
+                                <a href="/sphf/public/doner/register" style="color:red">Register</a>
                             </div>
                         </div>
                         <div class="wpcf7-response-output" aria-hidden="true"></div>

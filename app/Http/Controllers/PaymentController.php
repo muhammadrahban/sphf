@@ -33,8 +33,11 @@ class PaymentController extends Controller
             // 'bank_routing_number'   => ['string', 'max:255'],
         ]);
 
-        $cartItems  = session()->get('cart', []);
-        $amount     = (count($cartItems) * 300000);
+        $cartItems      = session()->get('cart', []);
+        $amount         = (count($cartItems) * 300000);
+        $two_per        = (300000 * 2) / 100;
+        $thirteen_per   = (300000 * 13) / 100;
+        $charges        = $two_per + $two_per + $thirteen_per;
         foreach ($cartItems as $key => $value) {
             $donation = Donation::create([
                 'user_id'               => Auth::user()->id,
@@ -45,9 +48,9 @@ class PaymentController extends Controller
             $data['user_id']        = Auth::user()->id;
             $data['victim_id']      = $key;
             $data['amount']         = $amount;
-            $data['charges']        = $amount;
-            $data['total_amount']   = $amount;
-            $data['charged_amount'] = $amount;
+            $data['charges']        = $charges;
+            $data['total_amount']   = $charges + $amount;
+            $data['charged_amount'] = $charges + $amount;
             $data['payment_status'] = 'completed';
             DonationInvoice::create($data);
         }

@@ -227,13 +227,58 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total
-                                                Donation Amount &nbsp;&nbsp;&nbsp;&nbsp; <span
-                                                    style="font-size: 14px; font-weight: 400;"
-                                                    class="text-secondary">(Exempted from all kind of taxes)</span></p>
+                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total Houses Sponsored</p>
                                         </td>
                                         <td>
-                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">PKR {{ number_format(count(session('cart', [])) * 300000, 0) }}
+                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{ count(session('cart', [])) }}</p>
+                                        </td>
+                                    </tr>
+                                    @php
+                                        $amount         = count(session('cart', [])) * 300000;
+                                        $two_per        = (($amount * 2) / 100);
+                                        $thirteen_per   = (($amount * 13) / 100);
+                                        $final          = $two_per + $two_per + $thirteen_per + $amount;
+                                    @endphp
+                                    <tr>
+                                        <td>
+                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Donation incl MDR & SST</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{ $two_per }}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Bank charges</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{ $two_per }}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">SST on Bank Charges</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{ $thirteen_per }}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total
+                                                Donation Amount</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">PKR {{ number_format($final, 0) }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Net Receipt to SPHF &nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 14px; font-weight: 400;" class="text-secondary">(Exempted from all kind of taxes)</span></p>
+                                        </td>
+                                        <td>
+                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">PKR {{ number_format($amount, 0) }}
                                             </p>
                                         </td>
                                     </tr>

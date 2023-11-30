@@ -104,6 +104,11 @@ a:hover {
     color: white;
 }
 
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
 /* HOME SLIDER */
 .home-slider {}
 
@@ -717,7 +722,8 @@ ol>li::marker {
 }
 
 .box-data {
-    width: 120px;
+    /*width: 120px;*/
+    padding: 10px !important;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -738,4 +744,40 @@ ol>li::marker {
     color: #fff; /* Text color on the background */
     font-size: 20px; /* Adjust font size as needed */
     font-weight: bold; /* Adjust font weight as needed */
+}
+
+.donating-slider{
+    margin-top: 0px;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .sort_filter {
+    display:none !important;
+  }
+  .filter_row{
+      margin: 0px !important;
+  }
+  #profile-background{
+      display: none !important;
+  }
+  .found-items-table{
+      margin: 0px !important;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .sort_filter {
+    display:none !important;
+  }
+  .filter_row{
+      margin: 0px !important;
+  }
+  #profile-background{
+      display: none !important;
+  }
+  .found-items-table{
+      margin: 0px !important;
+  }
 }

@@ -21,9 +21,9 @@ class FilterController extends Controller
             $foundItems->where('da_occupant_name', 'like', '%' . $keyword . '%');
         }
 
-        if ($request->has('location') && $request->location != 'Select Location') {
-            $location = $request->location;
-            $data['location'] = $location;
+        if ($request->has('district') && $request->location != 'Select district') {
+            $location = $request->district;
+            $data['district'] = $location;
             $foundItems->where('district', $location);
         }
 

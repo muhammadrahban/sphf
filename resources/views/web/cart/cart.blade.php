@@ -44,7 +44,10 @@
                                 </a>
                             </td>
                             <td>
-                                <img src="{{asset('images/adopt-beneficiary-01.jpg')}}" width="70" height="70" class="rounded-circle">
+                                <div class="rounded-background" id="profile-background">
+                                        <span class="initial-letter">{{ substr($item['da_occupant_name'], 0, 1) }}</span>
+                                    </div>
+                               {{--  <img src="{{asset('images/adopt-beneficiary-01.jpg')}}" width="70" height="70" class="rounded-circle">--}}
                             </td>
                             <td>
                                 <div class="d-flex flex-column mx-3 text-left">
@@ -57,7 +60,7 @@
                                             {{ $item['people_with_disability_physically_or_mentally'] != 0 ? 'Differntly Abled ' : '' }}
                                         </p>
                                         <a href="#" class="text-secondary mx-4"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $item['district'] }} / {{ $item['tehsil'] }}</a>
-                                        <a href="#" class="text-secondary mx-4"><i class="fa fa-btc" aria-hidden="true"></i> PKR 300,000</a>
+                                        <a href="#" class="text-secondary mx-4"><!--<i class="fa fa-btc" aria-hidden="true"></i> -->PKR 300,000</a>
                                     </div>
                                     <p class="m-0 w-auto rounded text-center my-3" style="background-color: #ececec;">Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available</p>
                                 </div>
@@ -124,4 +127,36 @@
         </div>
     </section>
 </main>
+   <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        $(Document).ready(function(){
+            $('.rounded-background').css('background-color', getRandomColor());
+        })
+        // document.get('').style.backgroundColor = getRandomColor();
+
+        function clear_all_button() {
+            $('#clear_all_form').find(':input').each(function() {
+                if (this.type !== 'submit' && this.type !== 'button' && this.type !== 'hidden') {
+                    $(this).val('');
+                }
+            });
+        }
+
+        $('#select_all').click(function() {
+
+            var isChecked = this.checked;
+            $('.searchable-item input[type="checkbox"]').each(function() {
+                this.checked = isChecked;
+            });
+
+        })
+    </script>
 @endsection

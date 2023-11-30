@@ -9,23 +9,23 @@
                 <div class="col-md-9 px-2">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="card shadow border-0 mt-2">
+                            <div class="card shadow border-0 mt-2 bg-info text-center">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col">
-                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total Donation</span>
+                                        <div class="col " style="color: #ffff;">
+                                            <span class="h6 font-semibold text-sm d-block mb-2">Total Donation</span>
                                             <span class="h3 font-bold mb-0">PKR {{ number_format(($count * 300000), 0) }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card shadow border-0 mt-2">
+                        <div class="col-md-4 ">
+                            <div class="card shadow border-0 mt-2 bg-warning text-center">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col">
-                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total Victims</span>
+                                        <div class="col" style="color: #5f3c03;">
+                                            <span  class=" h6 font-semibold text-sm d-block mb-2" >Total Banificiaries</span>
                                             <span class="h3 font-bold mb-0">{{ $count }}</span>
                                         </div>
                                     </div>
@@ -33,11 +33,11 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="card shadow border-0 mt-2">
+                            <div class="card shadow border-0 mt-2 text-center">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Phase 1</span>
+                                            <span class="h6 font-semibold text-sm d-block mb-2">Phase 1</span>
                                             <span class="h3 font-bold mb-0">{{ $count_phase_one }}</span>
                                         </div>
                                     </div>
@@ -45,11 +45,11 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="card shadow border-0 mt-2">
+                            <div class="card shadow border-0 mt-2 text-center">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Phase 2</span>
+                                            <span class="h6 font-semibold text-sm d-block mb-2">Phase 2</span>
                                             <span class="h3 font-bold mb-0">{{ $count_phase_two }}</span>
                                         </div>
                                     </div>
@@ -57,11 +57,11 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="card shadow border-0 mt-2">
+                            <div class="card shadow border-0 mt-2 text-center">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Phase 3</span>
+                                            <span class="h6 font-semibold  text-sm d-block mb-2">Phase 3</span>
                                             <span class="h3 font-bold mb-0">{{ $count_phase_three }}</span>
                                         </div>
                                     </div>
@@ -69,11 +69,11 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="card shadow border-0 mt-2">
+                            <div class="card shadow border-0 mt-2 text-center">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Phase 4</span>
+                                            <span class="h6 font-semibold  text-sm d-block mb-2">Phase 4</span>
                                             <span class="h3 font-bold mb-0">{{ $count_phase_four }}</span>
                                         </div>
                                     </div>
@@ -81,11 +81,11 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="card shadow border-0 mt-2">
+                            <div class="card shadow border-0 mt-2 alert-success text-center">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">House Completed</span>
+                                            <span class="h6 font-semibold text-sm d-block mb-2">House Completed</span>
                                             <span class="h3 font-bold mb-0">{{ $count_completed }}</span>
                                         </div>
                                     </div>

@@ -32,12 +32,12 @@
                             </div>
                             <div class="form-row align-items-center my-2">
                                 <div class="col-12">
-                                    <label for="location" style="font-size: 20px;">Location</label>
-                                    <select class="custom-select mb-3" id="location" name="location"
+                                    <label for="district" style="font-size: 20px;">district</label>
+                                    <select class="custom-select mb-3" id="district" name="district"
                                         placeholder="Dadu, karachi">
-                                        <option>Select Location</option>
+                                        <option>Select district</option>
                                         @foreach (@$location_list as $location => $location_data)
-                                            <option value="{{ $location_data['tehsil'] }}" @selected(@$data['location'] == $location_data['district'])>
+                                            <option value="{{ $location_data['district'] }}" @selected(@$data['district'] == $location_data['district'])>
                                                 {{ $location_data['district'] }}</option>
                                         @endforeach
                                     </select>
@@ -126,7 +126,7 @@
                                 @endif
                             @endforeach
                         </div>
-                        <div class="d-flex justify-content-start m-3">
+                        <div class="d-flex justify-content-start m-3 filter_row">
                             <div class="form-check form-check-inline mx-3">
                                 <input class="form-check-input" type="checkbox" id="select_all">
                                 <label class="form-check-label bg-title" for="select_all"
@@ -148,7 +148,7 @@
                                     <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
                                 </div>
                             </div>
-                            <div class="d-flex ml-auto w-40">
+                            <div class="d-flex ml-auto w-40 sort_filter">
                                 <label class="w-50" for="sort_by">Sort by : </label>
                                 <select class="form-control" id="sort_by">
                                     <option value="most_relevant">Most Relevant</option>
@@ -156,7 +156,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="mx-3 my-4">
+                        <div class="mx-3 my-4 found-items-table">
                             @foreach ($foundItems as $item)
                                 <div class="d-flex justify-content-between my-3 align-items-center searchable-item">
                                     <input class="mx-3" type="checkbox" class="heart" name="item_ids[]"
@@ -180,8 +180,8 @@
                                                     aria-hidden="true"></i> {{ $item['district'] }} /
                                                 {{ $item['tehsil'] }}
                                             </p>
-                                            <p class="text-secondary m-0 mx-4"><i class="fa fa-btc"
-                                                    aria-hidden="true"></i>
+                                            <p class="text-secondary m-0 mx-4"><!--<i class="fa fa-btc"
+                                                    aria-hidden="true"></i>-->
                                                 PKR 300,000</p>
                                         </div>
                                         <p class="m-0 w-auto rounded text-left px-2 my-3"

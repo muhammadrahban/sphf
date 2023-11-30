@@ -147,9 +147,13 @@ use App\Http\Controllers\GeneralDonationController;
 Auth::routes();
 Route::get('/logintest', [LoginController::class, 'showLoginForm'])->name('login.form');
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('web.home');
 })->name('web.home');
+
+Route::get('/', function () {
+    return view('web.new_home');
+});
 
 Route::get('/webfaqs', function () {
     return view('web.Faqs');
