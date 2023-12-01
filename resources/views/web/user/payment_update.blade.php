@@ -155,7 +155,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="col-sm-6">
+                                <div class="col-md-12">
                                 <div class="pl-3 py-2 d-flex align-items-start" >
                                     <input type="checkbox" id="note" required class="m-2" name="is_anonymously" @checked(auth()->user()->is_anonymously)/>
                                     <label for="note">
