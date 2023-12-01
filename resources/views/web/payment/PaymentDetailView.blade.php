@@ -79,7 +79,7 @@
                                 </p>
 
                             </div>
-                            <div id="card" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
+                            {{-- <div id="card" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
                                 <h4 class="bg-title p-2">
                                     Donate with Credit / Debit Card
                                 </h4>
@@ -138,8 +138,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="obt" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
+                            </div> --}}
+                            {{-- <div id="obt" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
                                 <h4 class="bg-title p-2">
                                     Donate via Online Bank Transfer
                                 </h4>
@@ -195,7 +195,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div>
                                 <p class="py-4 text-secondary"> Here's what you're about to donate</p>
                                 <div class="py-4 d-flex justify-content-between">
@@ -273,7 +273,7 @@
                                             </p>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    {{-- <tr>
                                         <td>
                                             <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Net Receipt to SPHF &nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 14px; font-weight: 400;" class="text-secondary">(Exempted from all kind of taxes)</span></p>
                                         </td>
@@ -281,7 +281,7 @@
                                             <p class="text-secondary m-0 text-center" style="font-size: 18px;">PKR {{ number_format($amount, 0) }}
                                             </p>
                                         </td>
-                                    </tr>
+                                    </tr> --}}
                                 </tbody>
                             </table>
                             <div class="py-4">

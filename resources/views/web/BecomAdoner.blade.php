@@ -17,21 +17,21 @@
                                 <li>Once you submit donation, you’ll receive e-receipt on e-mail.</li>
                                 <li>You can also login to your donor account to view and track your donation.</li>
                             </ul>
-                            <h4 class="ml-4">Let’s begin giving joy.</h4>
+                            <h4 class="ml-4  text-center">Unite for Resilience, Empower Change </br> Building a Stronger Sindh For a Better tomorrow, Today</h4>
                         </div>
                         <img class="w-100" src="{{ asset('/images/our_donor/Transfer_to_SPHF.jpg') }}">
                         <div class="row text-center">
                             <div class="col-md-4 p-3">
                                 <h5 class="mb-0">$2.08 Billion</h5>
-                                <smal>Financial Needs</smal>
+                                <small>Financial Needs</small>
                             </div>
                             <div class="col-md-4 p-3">
                                 <h5 class="mb-0">$727 Million</h5>
-                                <smal>Donor Compliment</smal>
+                                <small>Donor Compliment</small>
                             </div>
                             <div class="col-md-4 p-3">
                                 <h5 class="mb-0">$1.35 Billion</h5>
-                                <smal>Financial Gap</smal>
+                                <h4>Financial Gap</h4>
                             </div>
                         </div>
                         <div class="progress py-2 rounded mx-4">

@@ -18,7 +18,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="text-white display-1 font-weight-bold mb-4">Impact Beyond Walls/ Together we stand</h1>
+                            <h1 class="text-white display-1 font-weight-bold mb-4">Impact Beyond Walls</h1>
                             <h4 class="text-white mb-5">Join us in Creating Resilient Housing for Vulnerable Communities</h4>
                             <a href="/sphf/public/doner/register" class="btn text-white primary_button rounded-0 px-4 py-3">ADOPT A BENEFICIARY</a>
                         </div>
@@ -150,15 +150,14 @@
                 
                 <!-- Umer Code Strat -->
                <div class="col-lg-6">
-                    <label class="leading-line">Simple, transparent & joyful</label>
+                   <!-- <label class="leading-line">Simple, transparent & joyful</label>-->
                     <h1>How donating with SPHF Donor Platform works</h1>
-                    <p>Supporting the beneficiaries who lost their homes in the floods of 2022 in Sindh, Pakistan, is a simple process with the SPHF Donor Platform. Individuals and organizations, both local and overseas, can contribute to the construction of resilient homes.</p>
-                    <p>Under the <a href="http://www.sphf.gos.pk/" class="p-link">Sindh People’s Housing for Flood Affectees (SPHF)</a> program, each beneficiary is designated to receive PKR 300,000 for their home reconstruction. This ensures that each contribution has a meaningful impact on the ground.</p>
-                    <p>Donors have two options for contributing. The first option is to 'Adopt a Beneficiary,' allowing donors to explore and select beneficiaries online for a more personalized connection. The second option is to transfer funds directly to SPHF, which will be assigned and disbursed to the relevant beneficiaries.</p>
-                    <p>Donations are securely processed online through various payment options, including credit/debit cards and bank transfers. The SPHF platform ensures the security and transparency of every donation with the assistance of its Management Information System (MIS) and banking partners.</p>
-                    <p>With a global reach, the SPHF Donor Platform accepts contributions from individuals and organizations worldwide. This inclusivity allows everyone to play a part in the global effort to rebuild resilient homes in Sindh.</p>
-                    <p>The online experience on the SPHF Donor Platform is user-friendly, allowing donors to explore and contribute securely. Join the collective effort to rebuild communities affected by the floods.</p>
-                    <p class="mb-5">Choosing SPHF for your donations means actively participating in the rebuilding of communities, fostering resilience, and instilling hope for a brighter future. Be a part of the SPHF community committed to positive change.</p>
+                    <p class="text-justify">Supporting the beneficiaries who lost their homes in the floods of 2022 in Sindh, Pakistan, is a simple process with the SPHF Donor Platform. Individuals and organizations, both local and overseas, can contribute to the construction of resilient homes.</p>
+                    <p class="text-justify">Under the <a href="http://www.sphf.gos.pk/" class="p-link">Sindh People’s Housing for Flood Affectees (SPHF)</a> program, each beneficiary is designated to receive PKR 300,000 for their home reconstruction. This ensures that each contribution has a meaningful impact on the ground.</p>
+                    <p class="text-justify">Donors have two options for contributing. The first option is to 'Adopt a Beneficiary,' allowing donors to explore and select beneficiaries online for a more personalized connection. The second option is to transfer funds directly to SPHF, which will be assigned and disbursed to the relevant beneficiaries.</p>
+                    <p class="text-justify">Donations are securely processed online through various payment options, including credit/debit cards and bank transfers. The SPHF platform ensures the security and transparency of every donation with the assistance of its Management Information System (MIS) and banking partners.</p>
+                    <p class="text-justify">With a global reach, the SPHF Donor Platform accepts contributions from individuals and organizations worldwide. This inclusivity allows everyone to play a part in the global effort to rebuild resilient homes in Sindh.</p>
+                    <p class="text-justify">The online experience on the SPHF Donor Platform is user-friendly, allowing donors to explore and contribute securely. Join the collective effort to rebuild communities affected by the floods.</p>
                 </div>
                 <!-- Umer Code End -->
                 
@@ -177,16 +176,16 @@
                             <div class="custom-card orange p-4 text-right mb-4" style="width: 100%; min-height:200px; background-color: #FBB329; height:90%">
                                <!-- <i class="fa-5x far fa-heart text-light"></i>-->
                                  <img  style="width: 70px; height: 70px;" src="{{asset('images/Home_icon/Icons-05.svg')}}">
-                               <a href="#DdSPHF">  <h4 class="text-light text-left">Select way</h4></a>
-                               <a href="#DdSPHF"> <p class="text-light text-left">Directly donate to beneficiary or transfer to SPHF</p></a>
+                               <a href="/sphf/public/becomdoner">  <h4 class="text-light text-left">Transfer to </br>SPHF</h4></a>
+                               <a href="/sphf/public/becomdoner"> <p class="text-light text-left">Confide in SPHF with your donations.</p></a>
                             </div>
                         </div>
                         <div class="col-md-6 ">
                             <div class="custom-card orange p-4 text-right mb-4" style="width: 100%; min-height:200px; background-color: #138999; height:90%">
                                 <!--<i class="fa-5x far fa-heart text-light"></i>-->
                                  <img  style="width: 70px; height: 70px;" src="{{asset('images/Home_icon/Icons-06.svg')}}">
-                               <a href="/sphf/public/becomdoner">  <h4 class="text-light text-left">Donate</h4></a>
-                               <a href="/sphf/public/becomdoner">  <p class="text-light text-left">Make payment online & receive receipt, alerts & notifications</p></a>
+                               <a href="/sphf/public/doner/register">  <h4 class="text-light text-left">Adopt a Beneficiary</h4></a>
+                               <a href="/sphf/public/doner/register">  <p class="text-light text-left">Select & foster personalized connection with beneficiaries.</p></a>
                             </div>
                         </div>
                         <div class="col-md-6 ">
@@ -194,11 +193,11 @@
                                 <!--<i class="fa-5x far fa-heart text-light"></i>-->
                                  <img  style="width: 70px; height: 70px;" src="{{asset('images/Home_icon/Icons-04.svg')}}">
                                <a href="/sphf/public/doner/login">  <h4 class="text-light text-left">Track</h4><a/>
-                                <a href="/sphf/public/doner/login"> <p class="text-light text-left">Track the impact of donation through your donor account</p></a>
+                                <a href="/sphf/public/doner/login"> <p class="text-light text-left">Track the use of your donated funds for updates</p></a>
                             </div>
                         </div>
                     </div>
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <!--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                         <div class="carousel-item active">
                           <img class="d-block w-100" src="{{asset('images/Slider_box_home/images-01.jpg')}}" alt="First slide" style="height: 300px !important;">
@@ -218,7 +217,7 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                         </a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </section>
@@ -231,7 +230,7 @@
                         <i class="fa fa-play"></i>
                         <span></span>
                     </a>
-                    <h5 class="text-white my-5">Video shows impact of your donation</h5>
+                    <h5 class="text-white my-5">Watch the Impact of Your Generosity</h5>
                     <h1 class="text-white mb-5">Building homes with disaster-ready designs – where resilience meets the blueprint for a secure tomorrow</h1>
                     <a href="#our_donors" class="btn text-white primary_button rounded-0 px-4 py-3">OUR DONORS</a>
                 </div>
@@ -664,7 +663,7 @@
             <div class="container" id="DdSPHF">
                 <div class="row mx-0 my-5">
                     <div class="col-md-6 p-3 p-md-5 order-2 order-md-1" style="background: #144047;">
-                        <label class="text-warning">Direct your donations to SPHF,</label>
+                        <h4 class="text-warning">Direct your donations to SPHF</h4>
                         <h3 class="text-white">Empower Change, Impact Lives</h3>
 
                         <form action="">

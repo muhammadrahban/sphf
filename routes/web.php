@@ -152,8 +152,13 @@ Route::get('/home', function () {
 })->name('web.home');
 
 Route::get('/', function () {
-    return view('web.new_home');
+    return view('web.home');
 });
+
+//Route::get('/', function () {
+//    return view('web.new_home');
+//});
+
 
 Route::get('/webfaqs', function () {
     return view('web.Faqs');

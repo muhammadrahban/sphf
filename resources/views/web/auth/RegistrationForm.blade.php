@@ -15,7 +15,7 @@
                     <ul class="adopt_list_group">
                         <li class="adopt_list_item">
                             <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> First register on the
-                                SPFH platform</span>
+                                SPHF platform</span>
                         </li>
                         <li class="adopt_list_item">
                             <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Our team will connect
@@ -227,6 +227,13 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="col-sm-12">
+                                    <div class="d-flex align-items-start">
+                                        <input type="checkbox" id="termsCheckbox" class="m-2" required />
+                                        <label for="termsCheckbox">I agree to the <a href="#" id="termsLink" required style="color:#428bca;">Terms and Conditions</a>.</label>
+                                    </div>
+                                </div>
+                                
                             </p>
                             <div class="col-sm-12 col-xs-12 action text-left pl-3 py-2 ">
                                 <button type="submit" class="btn btn-danger">Register</button>
@@ -238,5 +245,46 @@
             </div>
         </div>
     </section>
+
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-justify">
+                <ol>
+                    <li>I declare that I do not belong to any negative or harmful organization. I affirm my commitment to ethical and lawful conduct in all interactions related to this donation portal.</li>
+                    <li>I understand that the information of beneficiaries within this donation portal is confidential. I commit to not sharing this information with others and acknowledge the importance of respecting privacy.</li>
+                    <li>I acknowledge that the collection and use of information will be in accordance with relevant privacy laws and regulations. I understand the organization's commitment to compliance with these laws.</li>
+                    <li>I recognize that the information provided is for the sole purpose of facilitating donations and support for beneficiaries through this portal. I agree that the information will be used only for this intended purpose.</li>
+                    <li>I understand that any violation of these terms may result in legal action and the termination of my access to the donation portal.</li>
+                    <li>I acknowledge that I have read and understood the terms outlined above, and I willingly agree to abide by them in my use of this donation portal.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    // JavaScript for Modal
+    document.getElementById('termsLink').addEventListener('click', function () {
+        // Show the terms modal
+        $('#termsModal').modal('show');
+    });
+</script>
+
 </main>
 @endsection
+
+
+
