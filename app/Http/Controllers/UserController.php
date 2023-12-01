@@ -27,6 +27,7 @@ class UserController extends Controller
             'post_code'         => ['required', 'string', 'max:255'],
             'organiation'       => ['required', 'string', 'max:255'],
             'job_title'         => ['required', 'string', 'max:255'],
+            'comments'          => ['sometimes', 'string', 'max:255'],
             'phone'             => [
                 'required',
                 'string',

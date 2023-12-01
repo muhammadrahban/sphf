@@ -119,33 +119,33 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12 col-xs-12">
-                                <textarea cols="40" rows="10" class="form-control @error('comments') is-invalid @enderror" required placeholder="Comments" name="comments">{{auth()->user()->comments}}</textarea>
+                                <textarea cols="40" rows="10" class="form-control @error('comments') is-invalid @enderror" placeholder="Comments" name="comments">{{auth()->user()->comments}}</textarea>
                                 @error('comments')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="col-sm-6">
+                              <div class="col-md-12">
                                 <div class="pl-3 py-2 d-flex align-items-start" >
-                                    <input type="checkbox" id="note" required class="m-2" name="is_anonymously" @checked(auth()->user()->is_anonymously)/>
+                                    <input type="checkbox" id="note" class="m-2" name="is_anonymously" @checked(auth()->user()->is_anonymously)/>
                                     <label for="note">
                                         Donate anonymously.
                                     </label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="pl-3 py-2 d-flex align-items-start" >
-                                    <input type="checkbox" id="note" required class="m-2" name="is_individual" @checked(auth()->user()->is_individual) />
-                                    <label for="note">
+                                <div class="d-flex align-items-start">
+                                    <input type="radio" id="individual" class="m-2" name="donation_type" value="individual" />
+                                    <label for="individual">
                                         Donate as individual.
                                     </label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="pl-3 py-2 d-flex align-items-start" >
-                                    <input type="checkbox" id="note" required class="m-2" name="is_company" @checked(auth()->user()->is_company) />
-                                    <label for="note">
+                                <div class="d-flex align-items-start">
+                                    <input type="radio" id="company" class="m-2" name="donation_type" value="company" />
+                                    <label for="company">
                                         Donate as company.
                                     </label>
                                 </div>

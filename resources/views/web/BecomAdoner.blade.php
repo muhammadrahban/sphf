@@ -215,14 +215,23 @@
                             <div class="col-md-12">
                                 <textarea name="comment" class="form-control mb-3" id="comment" placeholder="Leave a comment"></textarea>
                             </div>
-                            <div class="col-md-12 mb-3">
-                                <input type="checkbox" name="is_individual" id="anonymous">
-                                <label for="anonymous">Donation as Individual.</label>
-                            </div>
-                            <div class="col-md-12 mb-3">
-                                <input type="checkbox" name="is_company" id="anonymous">
-                                <label for="anonymous">Donation as Company.</label>
-                            </div>
+                           <div class="col-sm-6">
+    <div class="d-flex align-items-start">
+        <input type="radio" id="individual" class="m-2" name="donation_type" value="individual" />
+        <label for="individual">
+            Donate as individual.
+        </label>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="d-flex align-items-start">
+        <input type="radio" id="company" class="m-2" name="donation_type" value="company" />
+        <label for="company">
+            Donate as company.
+        </label>
+    </div>
+</div>
+
                         </div>
 
                         <div class="bg-white border border-secondary rounded m-3 p-3">
@@ -243,13 +252,13 @@
                                     Donate with Credit / Debit Card
                                 </label>
                             </div>
-                            <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
+                            {{-- <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
                                 <input class="form-check-input" type="radio" name="transaction_type" id="gridRadios1"
                                     value="obt">
                                 <label class="form-check-label" for="gridRadios1">
                                     Donate via Online Bank Transfer
                                 </label>
-                            </div>
+                            </div> --}}
                         </div>
                         <div id="dod" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
                             <h4 class="bg-title p-2">
@@ -273,7 +282,7 @@
                             </p>
 
                         </div>
-                        <div id="card" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
+                        {{-- <div id="card" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
                             <h4 class="bg-title p-2">
                                 Donate with Credit / Debit Card
                             </h4>
@@ -394,7 +403,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <!-- PAYMENT -->
                         <div class="p-4 px-0 text-center">
@@ -440,11 +449,11 @@
                                 <td class="text-right"><b><span class="input_symbol">₨</span> <span
                                             class="total_amount">100,000</span></b></td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td><b>Net Receipt to SPHF</b></td>
                                 <td class="text-right"><b><span class="input_symbol">₨</span> <span
                                             class="input_amount">100,000</span></b></td>
-                            </tr>
+                            </tr> --}}
                         </table>
                         <input type="hidden" name="amount" value="0" id="amount_value">
                         <input type="hidden" name="charges" value="0" id="amount_charges">
@@ -464,7 +473,7 @@
                     </div>
                 </form>
                 <p>Having problems making a donation?</p>
-                <p>Email us at donor@sphf.gos.pk or call at +92 111 111 111</p>
+                <p>Email us at donor@sphf.gos.pk or call at  +92 21 99334119-20</p>
             </div>
         </section>
     </main>

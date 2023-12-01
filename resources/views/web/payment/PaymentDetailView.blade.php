@@ -49,13 +49,13 @@
                                         Donate with Credit / Debit Card
                                     </label>
                                 </div>
-                                <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
+                                {{-- <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
                                     <input class="form-check-input" type="radio" name="transaction_type" id="gridRadios1"
                                         value="obt">
                                     <label class="form-check-label" for="gridRadios1">
                                         Donate via Online Bank Transfer
                                     </label>
-                                </div>
+                                </div> --}}
                             </div>
                             <div id="dod" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
                                 <h4 class="bg-title p-2">

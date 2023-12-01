@@ -155,7 +155,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="col-sm-6">
+                                <div class="col-md-12">
                                 <div class="pl-3 py-2 d-flex align-items-start" >
                                     <input type="checkbox" id="note" class="m-2" name="is_anonymously" @checked(auth()->user()->is_anonymously)/>
                                     <label for="note">
@@ -164,21 +164,22 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="pl-3 py-2 d-flex align-items-start" >
-                                    <input type="checkbox" id="note" required class="m-2" name="is_individual" @checked(auth()->user()->is_individual) />
-                                    <label for="note">
+                                <div class="d-flex align-items-start">
+                                    <input type="radio" id="individual" class="m-2" name="donation_type" value="individual" />
+                                    <label for="individual">
                                         Donate as individual.
                                     </label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="pl-3 py-2 d-flex align-items-start" >
-                                    <input type="checkbox" id="note" class="m-2" name="is_company" @checked(auth()->user()->is_company) />
-                                    <label for="note">
+                                <div class="d-flex align-items-start">
+                                    <input type="radio" id="company" class="m-2" name="donation_type" value="company" />
+                                    <label for="company">
                                         Donate as company.
                                     </label>
                                 </div>
                             </div>
+
                             <!--
                                     <div class="pl-3 py-2 d-flex align-items-start" style="color:red">
                                         <input type="checkbox" id="note" required class="m-2"/>
