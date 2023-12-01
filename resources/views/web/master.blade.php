@@ -21,7 +21,7 @@
         @include('web.partials.header')
          @yield('webcontain')
         @include('web.partials.footer')
-    
+
     <!-- Optional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -183,7 +183,7 @@
                 $('.input_symbol').html(symbol);
             });
         });
-        
+
         function selectAmount(obj,amount){
             console.log(amount);
             $('.amount-btn').removeClass('btn-outline-success');
@@ -204,13 +204,13 @@
                 $('#amount_charges').val((mdr + bank + sst_bank));
                 $('#total_amount').val(total_amount);
                 $('#charged_amount').val(total_amount);
-                
+
                 $('.input_amount').html(amount);
                 $('.mdr_sst').html(mdr);
                 $('.bank_charges').html(bank);
                 $('.sst_bank_charges').html(sst_bank);
                 $('.total_amount').html(total_amount);
-                
+
             }
         }
         $('#amount').on('change',function(){
@@ -225,15 +225,15 @@
             $('#amount_charges').val((mdr + bank + sst_bank));
             $('#total_amount').val(total_amount);
             $('#charged_amount').val(total_amount);
-            
+
             $('.input_amount').html(amount);
             $('.mdr_sst').html(mdr);
             $('.bank_charges').html(bank);
             $('.sst_bank_charges').html(sst_bank);
             $('.total_amount').html(total_amount);
         });
-        
-         var amount          = $('#amount').val();
+
+        var amount          = $('#amount').val();
         var f_amount        = parseInt(amount.replace(/,/g, ''));
         var mdr             = ((f_amount * 2) / 100);
         var bank            = ((f_amount * 2) / 100);
@@ -244,7 +244,7 @@
         $('#amount_charges').val((mdr + bank + sst_bank));
         $('#total_amount').val(total_amount);
         $('#charged_amount').val(total_amount);
-        
+
         $('.input_amount').html(amount);
         $('.mdr_sst').html(mdr);
         $('.bank_charges').html(bank);

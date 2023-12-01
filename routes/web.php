@@ -22,6 +22,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CronController;
 use App\Http\Controllers\UserDeviceController;
 use App\Http\Controllers\PreferencesController;
 use App\Http\Controllers\UserProfileController;
@@ -155,9 +156,7 @@ Route::get('/', function () {
     return view('web.home');
 });
 
-//Route::get('/', function () {
-//    return view('web.new_home');
-//});
+Route::get('/get-curreny', [CronController::class, 'getCurreny']);
 
 
 Route::get('/webfaqs', function () {

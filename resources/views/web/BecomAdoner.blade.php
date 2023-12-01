@@ -63,15 +63,15 @@
                                 building houses in flood-affected areas of Sindh, Pakistan.</p>
                             <h4>Thank you for your generosity!</h4>
                         </div>
-                        
+
                         <div class="row mx-0">
                             <div class="col-md-3 p-4">
                                 <p>Choose your currency</p>
                                 <select class="btn alert-success" id="currency">
                                     <option value="PKR" data-symbol="₨">PKR - Pakistani Rupee</option>
                                     <option value="USD" data-symbol="$">USD - United States Dollar</option>
-                                    <option value="Euro" data-symbol="€">Euro - European Union</option>
-                                    <option value="GBP" data-symbol="£">GBP - Great British Pound</option>
+                                    {{-- <option value="Euro" data-symbol="€">Euro - European Union</option>
+                                    <option value="GBP" data-symbol="£">GBP - Great British Pound</option> --}}
                                 </select>
                             </div>
                             <div class="col-md-6">
