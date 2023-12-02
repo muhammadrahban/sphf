@@ -44,15 +44,11 @@
                 <p><strong>Transaction Status:</strong> {{ $decodedData['TransactionStatus'] }}</p>
                 <p><strong>Order Date & Time:</strong> {{ $decodedData['OrderDateTime'] }}</p>
                 <p><strong>Transaction Date & Time:</strong> {{ $decodedData['TransactionDateTime'] }}</p>
-                <p><strong>Merchant ID:</strong> {{ $decodedData['MerchantId'] }}</p>
                 <p><strong>Merchant Name:</strong> {{ $decodedData['MerchantName'] }}</p>
-                <p><strong>Store ID:</strong> {{ $decodedData['StoreId'] }}</p>
                 <p><strong>Store Name:</strong> {{ $decodedData['StoreName'] }}</p>
-                <p><strong>Transaction Type ID:</strong> {{ $decodedData['TransactionTypeId'] }}</p>
                 <p><strong>Transaction Reference Number:</strong> {{ $decodedData['TransactionReferenceNumber'] }}</p>
                 <p><strong>Mobile Number:</strong> {{ $decodedData['MobileNumber'] }}</p>
                 <p><strong>Description:</strong> {{ $decodedData['Description'] }}</p>
-                <p><strong>Response Code:</strong> {{ $decodedData['ResponseCode'] }}</p>
 
                 <!-- Add a download button for the invoice -->
                 <a href="{{ route('download.invoice') }}" class="btn">Download Invoice</a>

@@ -9,6 +9,9 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
 
 
 class PaymentController extends Controller
@@ -268,7 +271,33 @@ class PaymentController extends Controller
             $donation->transaction_reference = $decodedData->TransactionReferenceNumber;
             $donation->save();
 
-            return view('web.invoice', ['decodedData' => $decodedData]);
+            // Render the Blade view to a variable
+            $view = view('web.invoice', compact('decodedData'))->render();
+
+            // Create an instance of Dompdf
+            $dompdf = new Dompdf();
+
+            // Load HTML content into Dompdf
+            $dompdf->loadHtml($view);
+
+            // (Optional) Set paper size and orientation
+            $dompdf->setPaper('A4', 'portrait');
+
+            // Render the HTML as PDF
+            $dompdf->render();
+
+            // Generate a file name for the invoice (e.g., invoice.pdf)
+
+            // Stream the generated PDF for download
+            // Generate a unique file name for the PDF
+            $fileName = 'invoice_' . time() . '.pdf';
+
+            // Path to the directory where you want to save the PDF
+            $pdfFilePath = public_path('invoices/' . $fileName); // Save in public/invoices directory
+
+            // Save the generated PDF to the server
+            $dompdf->save($pdfFilePath);
+            return view('web.invoice', ['decodedData' => $decodedData, 'file' => $pdfFilePath]);
         } catch (\Exception $e) {
             // Handle any exceptions or errors here
             return response()->json(['error' => $e->getMessage()], 500);
@@ -318,4 +347,34 @@ class PaymentController extends Controller
     //     // Stream the generated PDF for download
     //     $dompdf->stream($fileName);
     // }
+
+    // public function downloadInvoice()
+    // {
+    //     // Use $decodedData from your Blade view
+    //     $decodedData = [
+    //         // ... your data
+    //     ];
+
+    //     // Render the Blade view to a variable
+    //     $view = view('your.blade.view', compact('decodedData'))->render();
+
+    //     // Create an instance of Dompdf
+    //     $dompdf = new Dompdf();
+
+    //     // Load HTML content into Dompdf
+    //     $dompdf->loadHtml($view);
+
+    //     // (Optional) Set paper size and orientation
+    //     $dompdf->setPaper('A4', 'portrait');
+
+    //     // Render the HTML as PDF
+    //     $dompdf->render();
+
+    //     // Generate a file name for the invoice (e.g., invoice.pdf)
+    //     $fileName = 'invoice.pdf';
+
+    //     // Stream the generated PDF for download
+    //     return $dompdf->stream($fileName);
+    // }
+
 }
