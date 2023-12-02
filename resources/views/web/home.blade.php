@@ -775,10 +775,22 @@
         
          <!-- Umer Code Strat -->
         <section style="background-color: #f1f6f7;">
-            <div class="container py-5">
-                <div class="logo-slider">
-                    <div class="slide text-center">
-                        <img src="{{asset('images/logo-02_.png')}}" class="img-fluid partner-logo mx-auto">
+          <div class="container py-3 ">
+                <div class="row text-center ">
+                    <div class="col">
+                        <img src="{{asset('/images/Client_logo/logo-01.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >
+                    </div>
+                    <div class="col  ">
+                        <img src="{{asset('/images/Client_logo/logo-02.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >
+                    </div>
+                    <div class="col   ">
+                        <img src="{{asset('/images/Client_logo/logo-03.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >
+                    </div>
+                    <div class="col   ">
+                        <img src="{{asset('/images/Client_logo/logo-04.svg')}}" class="img-fluid partner-logo mx-auto"  style="width: 150px; height: 150px;" >
+                    </div>
+                    <div class="col  ">
+                        <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 150px; height: 150px;" >
                     </div>
                 </div>
             </div>

@@ -39,7 +39,7 @@
                                     <input class="form-check-input" type="radio" name="transaction_type" id="gridRadios1"
                                         value="dod" checked>
                                     <label class="form-check-label" for="gridRadios1">
-                                        Donate with Office Donation
+                                        Donate with Offline Donation
                                     </label>
                                 </div>
                                 <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
@@ -59,10 +59,10 @@
                             </div>
                             <div id="dod" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
                                 <h4 class="bg-title p-2">
-                                    Donate with Office Donation
+                                    Donate with Offline Donation
                                 </h4>
                                 <p class="p-2">
-                                    To make an office donation toward this SPHF caise, follow these steps:
+                                    To make an Offline donation toward this SPHF caise, follow these steps:
                                 </p>
                                 <ol>
                                     <li> Write a check payable to "Sindh People's Housing for Flood Affectees"</li>
@@ -85,7 +85,7 @@
                                 </h4>
                                 <div class="d-flex justify-content-between">
                                     <p class="p-2" style="font-size: 14px;">
-                                        To make an office donation toward this SPHF caise, follow these steps:
+                                        To make an Offline donation toward this SPHF caise, follow these steps:
                                     </p>
                                     <img src="{{ asset('images/payment.png') }}" alt="" width="200">
                                 </div>

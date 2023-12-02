@@ -32,7 +32,7 @@
                             </div>
                             <div class="form-row align-items-center my-2">
                                 <div class="col-12">
-                                    <label for="district" style="font-size: 20px;">district</label>
+                                    <label for="district" style="font-size: 20px;">District</label>
                                     <select class="custom-select mb-3" id="district" name="district"
                                         placeholder="Dadu, karachi">
                                         <option>Select district</option>
@@ -43,7 +43,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label for="tehsil" style="font-size: 20px;">tehsil</label>
+                                    <label for="tehsil" style="font-size: 20px;">Tehsil</label>
                                     <select class="custom-select mb-3" id="tehsil" name="tehsil"
                                         placeholder="Dadu, karachi">
                                         <option>Select tehsil</option>
@@ -54,7 +54,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label for="union_council" style="font-size: 20px;">union council</label>
+                                    <label for="union_council" style="font-size: 20px;">Union Council</label>
                                     <select class="custom-select mb-3" id="union_council" name="union_council"
                                         placeholder="Dadu, karachi">
                                         <option>Select union council</option>
@@ -65,7 +65,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label for="deh" style="font-size: 20px;">deh</label>
+                                    <label for="deh" style="font-size: 20px;">Deh</label>
                                     <select class="custom-select mb-3" id="deh" name="deh"
                                         placeholder="Dadu, karachi">
                                         <option>Select deh</option>
