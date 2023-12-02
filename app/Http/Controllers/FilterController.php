@@ -12,8 +12,7 @@ class FilterController extends Controller
 {
     public function filterView(Request $request)
     {
-        if(auth()->user()->email_verified_at == null)
-        {
+        if (auth()->user()->email_verified_at == null) {
             $data['message'] = "Please Verify Your Email To Adopt Victim.";
             return view('web.verify-message', compact('data'));
         }
@@ -29,7 +28,6 @@ class FilterController extends Controller
             $data['keywords'] = $keyword;
             $foundItems->where('da_occupant_name', 'like', '%' . $keyword . '%');
             $filtersApplied = true;
-
         }
 
         if ($request->has('district') && $request->district != 'Select district' && $request->district != null) {
@@ -37,28 +35,24 @@ class FilterController extends Controller
             $data['district'] = $district;
             $foundItems->where('district', $district);
             $filtersApplied = true;
-
         }
         if ($request->has('tehsil') && $request->tehsil != 'Select tehsil' && $request->tehsil != null) {
             $tehsil = $request->tehsil;
             $data['tehsil'] = $tehsil;
             $foundItems->where('tehsil', $tehsil);
             $filtersApplied = true;
-
         }
         if ($request->has('union_council') && $request->union_council != 'Select union council' && $request->union_council != null) {
             $union_council = $request->union_council;
             $data['union_council'] = $union_council;
             $foundItems->where('union_council', $union_council);
             $filtersApplied = true;
-
         }
         if ($request->has('deh') && $request->location != 'Select deh' && $request->deh != null) {
             $deh = $request->deh;
             $data['deh'] = $deh;
             $foundItems->where('deh', $deh);
             $filtersApplied = true;
-
         }
 
         if ($request->has('gender') && $request->gender != 'Select Gender') {
@@ -66,15 +60,45 @@ class FilterController extends Controller
             $data['gender'] = $gender;
             $foundItems->where('gender', $gender);
             $filtersApplied = true;
-
         }
+
+        if ($request->has('orphan')) {
+            $foundItems->where('unaccompained_minors_i_e_orphans', 1);
+            $filtersApplied = true;
+        }
+
+        // Assuming each checkbox represents a field in your database
+        if ($request->has('widow')) {
+            $foundItems->where('widow', 1);
+            $filtersApplied = true;
+        }
+
+        if ($request->has('women')) {
+            $foundItems->where('women_with_disable_husband', 1);
+            $filtersApplied = true;
+        }
+
+        if ($request->has('elderly')) {
+            $foundItems->where('divorced_abandoned_unmarried_older_dependent_on_others', 1);
+            $filtersApplied = true;
+        }
+        if ($request->has('elderly')) {
+            $foundItems->where('unaccompained_elders_over_the_age_of_60', 1);
+            $filtersApplied = true;
+        }
+
+        if ($request->has('differently_abled')) {
+            $foundItems->where('differently_abled', 1);
+            $filtersApplied = true;
+        }
+
+
 
         if ($request->has('currency')) {
             $currency = $request->currency;
             session()->forget('currency');
             session()->get('currency', $currency);
             $cart = session()->put('currency', $currency);
-
         }
 
         if ($filtersApplied) {
