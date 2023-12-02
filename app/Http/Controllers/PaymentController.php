@@ -261,15 +261,14 @@ class PaymentController extends Controller
             // Get the response body as a string
             $data = $response->getBody()->getContents();
 
-            // Decode the JSON string to an associative array
             $decodedData = json_decode($data, true);
-
-            // $decodedData is now an associative array containing the response data
-            // You can access individual elements like $decodedData['ResponseCode'], $decodedData['Description'], etc.
+            $decodedData = json_decode($decodedData, true);
             $donation = DonationInvoice::where('order_id', $O)->first();
-            $donation->transaction_status = $decodedData->TransactionStatus;
-            $donation->transaction_reference = $decodedData->TransactionReferenceNumber;
+            if($donation){
+            $donation->transaction_status = $decodedData['TransactionStatus'];
+            $donation->transaction_reference = $decodedData['TransactionReferenceNumber'];
             $donation->save();
+            }
 
             // Render the Blade view to a variable
             $view = view('web.invoice', compact('decodedData'))->render();
