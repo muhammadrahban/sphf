@@ -69,9 +69,9 @@ class GeneralDonationController extends Controller
         $params['charges']          = intval(str_replace(',', '', $params['charges']));
         $params['total_amount']     = intval(str_replace(',', '', $params['total_amount']));
         $params['charged_amount']   = intval(str_replace(',', '', $params['charged_amount']));
-        $params['is_anonymous']     = $request->has('is_anonymous') ? true : false;
-        $params['is_individual']    = $request->has('is_individual') ? true : false;
-        $params['is_company']       = $request->has('is_company') ? true : false;
+        // $params['is_anonymous']     = $request->has('is_anonymous') ? true : false;
+        // $params['is_individual']    = $request->has('is_individual') ? true : false;
+        // $params['is_company']       = $request->has('is_company') ? true : false;
         $params['payment_status']   = 'pending';
         $tok = $this->authToken($params['total_amount']);
         $params['transaction_reference']   = $tok['id'];
