@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Currency;
 use App\Models\GeneralDonation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -32,10 +33,12 @@ class GeneralDonationController extends Controller
         // Currency Code
         $initial_amount = $params['amount'];
         $currency       = session()->get('currency');
-        if($currency != 'PKR' && $params['symbol'] != 'PKR'){
-            $amount     = $this->currency($initial_amount, $params['symbol'], $currency);
-        }else{
-            $amount     = $initial_amount;
+        if ($currency != 'PKR') {
+            $amount = $this->currency($initial_amount, 'PKR', $currency);
+            $currency_db = Currency::where(['type' => 'PKR', 'base' => $currency])->first();
+            $amount = $amount * $currency_db->amount;
+        } else {
+            $amount = $initial_amount;
         }
 
         // this $amount varable is $params['amount'] / $regist['amount'];
@@ -88,7 +91,7 @@ class GeneralDonationController extends Controller
         $HS_MerchantId = "24821";
         $HS_StoreId = "033844";
         $HS_IsRedirectionRequest  = 0;
-        $HS_ReturnURL = "https://ftrack.biz/sphf/public/home";
+        $HS_ReturnURL = "https://ftrack.biz/sphf/public/callback";
         $HS_MerchantHash = "AGRvQQKxriw=";
         $HS_MerchantUsername = "apybej";
         $HS_MerchantPassword = "mGZK278HzVJvFzk4yqF7CA==";
