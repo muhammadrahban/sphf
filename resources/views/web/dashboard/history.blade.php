@@ -13,9 +13,9 @@
                                 <thead>
                                     <tr>
                                         <td>ID Number</td>
-                                        <td colspan="2">My Benificiaries</td>
-                                        <td>Transction</td>
-                                        <td>Transction status</td>
+                                        <td colspan="2">My Beneficiaries</td>
+                                        <td>Transaction </td>
+                                        <td>Transaction  status</td>
                                         <td>Amount Disbursed</td>
                                     </tr>
                                 </thead>
@@ -42,7 +42,7 @@
                             </table>
                         </div>
                         <div class="col-md-6">
-                            <b>Showing 10 of 10 Banificiaries</b>
+                            <b>Showing 10 of 10 Beneficiaries</b>
                         </div>
                         <div class="col-md-6">
                             {{-- <nav aria-label="Page navigation example" >

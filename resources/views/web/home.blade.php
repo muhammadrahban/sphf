@@ -226,7 +226,7 @@
             <div class="overlay"></div>
             <div class="container my-5 py-5 text-center">
                 <div class="my-5 col-md-10 mx-auto">
-                    <a href="https://www.youtube.com/watch?v=o5IhkPB4Cyg" class="video-link">
+                    <a href="https://youtu.be/m86jWvYeoJY" class="video-link">
                         <i class="fa fa-play"></i>
                         <span></span>
                     </a>

@@ -25,7 +25,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col" style="color: #5f3c03;">
-                                            <span  class=" h6 font-semibold text-sm d-block mb-2" >Total Banificiaries</span>
+                                            <span  class=" h6 font-semibold text-sm d-block mb-2" >Total Beneficiaries</span>
                                             <span class="h3 font-bold mb-0">{{ $count }}</span>
                                         </div>
                                     </div>

@@ -1,0 +1,44 @@
+[02-Dec-2023 04:24:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/database.php on line 18
+[02-Dec-2023 09:28:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/app.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/app.php on line 19
+[02-Dec-2023 09:29:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/cache.php on line 18
+[02-Dec-2023 09:29:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/filesystems.php on line 16
+[02-Dec-2023 09:30:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/logging.php on line 21
+[02-Dec-2023 09:30:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/mail.php on line 16
+[02-Dec-2023 09:30:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/queue.php on line 16
+[02-Dec-2023 09:30:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/sanctum.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/sanctum.php on line 18
+[02-Dec-2023 09:30:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/services.php on line 18
+[02-Dec-2023 09:30:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/session.php on line 21
+[02-Dec-2023 09:30:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/umeradmin/public_html/sphf/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/view.php on line 17

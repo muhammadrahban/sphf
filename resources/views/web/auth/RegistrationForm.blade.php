@@ -444,7 +444,7 @@
                                 <div class="col-sm-12">
                                     <div class="d-flex align-items-start">
                                         <input type="checkbox" id="termsCheckbox" class="m-2" required />
-                                        <label for="termsCheckbox">I agree to the <a href="#" id="termsLink" required style="color:#428bca;">Terms and Conditions</a>.</label>
+                                        <label for="termsCheckbox">I am giving the <a href="#" id="termsLink" required style="color:#428bca;">undertaking</a>.</label>
                                     </div>
                                 </div>
                                 
@@ -464,7 +464,7 @@
     <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+                <h5 class="modal-title" id="termsModalLabel">Undertaking</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

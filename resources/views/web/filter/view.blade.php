@@ -3,7 +3,7 @@
     <main>
         <section class="container my-5" style="max-width: 90% !important;">
             <div class="row">
-                <div class="col-md-4 px-2">
+                <div class="col-md-3 px-2">
                     <div class="border border-secondary border-0 border-bottom-1">
                         <h1 class="bg-title"> Filters </h1>
                         <hr style="border-top: 3px solid gray;">
@@ -142,7 +142,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-8 px-2">
+                <div class="col-md-9 px-2">
                     <form action="{{ route('cart.store') }}" method="POST">
                         @csrf
                         <div class="d-flex justify-content-end mb-4">
@@ -167,7 +167,7 @@
                                 <label class="form-check-label bg-title" for="select_all"
                                     style="font-size: 20px; color: #878787;">Select All</label>
                             </div>
-                            <div class="d-flex mx-3">
+                            <!--<div class="d-flex mx-3">
                                 <i class="fa fa-user" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
                                     aria-hidden="true"></i>
                                 <div class="d-flex flex-column">
@@ -182,7 +182,7 @@
                                     <p class="m-0">Homes</p>
                                     <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="d-flex ml-auto w-40 sort_filter">
                                 <label class="w-50" for="sort_by">Sort by : </label>
                                 <select class="form-control" id="sort_by">

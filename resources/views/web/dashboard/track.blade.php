@@ -12,7 +12,7 @@
                             <div class="d-flex flex-wrap justify-content-center" style="gap:10px;">
                                 <div style="color: #5f3c03;" class="rounded bg-warning shadow text-center px-2 py-1 ">
                                     <h2>{{$count}}</h2>
-                                    <h6>Total Benificiaries</h6>
+                                    <h6>Total Beneficiaries</h6>
                                 </div>
                                 <div class="rounded bg-info shadow px-4 py-2 text-white">
                                     <div class="d-flex text-center align-items-center" style="gap:15px;">
@@ -55,7 +55,7 @@
                                 <thead>
                                     <tr>
                                         <td>ID Number</td>
-                                        <td colspan="2">My Benificiaries</td>
+                                        <td colspan="2">My Beneficiaries</td>
                                         <td colspan="5">Construction Status</td>
                                         <td>Amount Disbursed</td>
                                     </tr>
@@ -134,7 +134,7 @@
                             </table>
                         </div>
                         <div class="col-md-6">
-                            <b>Showing 10 of 10 Banificiaries</b>
+                            <b>Showing 10 of 10 Beneficiaries</b>
                         </div>
                         <div class="col-md-6">
                             {{-- <nav aria-label="Page navigation example" >

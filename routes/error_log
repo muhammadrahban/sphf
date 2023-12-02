@@ -6,3 +6,11 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/umeradmin/public_html/sphf/routes/console.php on line 17
+[01-Dec-2023 20:33:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Broadcast" not found in /home/umeradmin/public_html/sphf/routes/channels.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/routes/channels.php on line 16
+[01-Dec-2023 20:33:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Auth" not found in /home/umeradmin/public_html/sphf/routes/web.php:147
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/routes/web.php on line 147
