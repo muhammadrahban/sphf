@@ -30,5 +30,6 @@ class DonationInvoice extends Model
         'bank_routing_number',
         'transaction_status',
         'payment_status',
+        'order_id',
     ];
 }
