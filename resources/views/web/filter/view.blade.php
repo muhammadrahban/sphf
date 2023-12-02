@@ -54,7 +54,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label for="union_council" style="font-size: 20px;">district</label>
+                                    <label for="union_council" style="font-size: 20px;">union council</label>
                                     <select class="custom-select mb-3" id="union_council" name="union_council"
                                         placeholder="Dadu, karachi">
                                         <option>Select union council</option>
@@ -65,7 +65,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label for="deh" style="font-size: 20px;">district</label>
+                                    <label for="deh" style="font-size: 20px;">deh</label>
                                     <select class="custom-select mb-3" id="deh" name="deh"
                                         placeholder="Dadu, karachi">
                                         <option>Select deh</option>
