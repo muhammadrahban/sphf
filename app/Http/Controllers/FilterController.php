@@ -7,6 +7,7 @@ use App\Models\victim;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\DB;
 use \Cache;
+
 class FilterController extends Controller
 {
     public function filterView(Request $request)
@@ -62,10 +63,10 @@ class FilterController extends Controller
 
         $currency       = session()->get('currency');
         $initial_amount = 300000;
-        foreach($foundItems as $key => $value){
-            if($currency != 'PKR'){
-                $amount = currency($initial_amount, 'PKR', $currency);
-            }else{
+        foreach ($foundItems as $key => $value) {
+            if ($currency != 'PKR') {
+                $amount = $this->currency($initial_amount, 'PKR', $currency);
+            } else {
                 $amount = $initial_amount;
             }
             $foundItems[$key]['price']  = $amount;
@@ -73,30 +74,29 @@ class FilterController extends Controller
         }
 
         $location_list = victim::select('district', DB::raw('count(*) as total'))
-                 ->groupBy('district')
-                 ->get();
+            ->groupBy('district')
+            ->get();
         $location_list_tehsil = victim::select('tehsil', DB::raw('count(*) as total'))
-                 ->groupBy('tehsil')
-                 ->get();
+            ->groupBy('tehsil')
+            ->get();
         $location_list_union_council = victim::select('union_council ', DB::raw('count(*) as total'))
-                 ->groupBy('union_council')
-                 ->get();
+            ->groupBy('union_council')
+            ->get();
         $location_list_deh = victim::select('deh ', DB::raw('count(*) as total'))
-                 ->groupBy('deh')
-                 ->get();
+            ->groupBy('deh')
+            ->get();
 
-        return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list','location_list_tehsil','location_list_union_council','location_list_deh'));
+        return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list', 'location_list_tehsil', 'location_list_union_council', 'location_list_deh'));
     }
 
-    function currency($amount, $curr_symbol, $symbol)
-{
-    $Currency   = Currency::where(['base' => $curr_symbol, 'type' => $symbol])->first();
-    if($Currency){
-        $new_amount = $Currency->amount * $amount;
-    }else{
-        $new_amount = $amount;
+    public function currency($amount, $curr_symbol, $symbol)
+    {
+        $Currency   = Currency::where(['base' => $curr_symbol, 'type' => $symbol])->first();
+        if ($Currency) {
+            $new_amount = $Currency->amount * $amount;
+        } else {
+            $new_amount = $amount;
+        }
+        return $new_amount;
     }
-    return $new_amount;
-}
-
 }
