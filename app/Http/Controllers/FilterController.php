@@ -22,10 +22,24 @@ class FilterController extends Controller
         }
 
         if ($request->has('district') && $request->location != 'Select district' && $request->location != null) {
-            dd($request->location);
-            $location = $request->district;
-            $data['district'] = $location;
-            $foundItems->where('district', $location);
+            $district = $request->district;
+            $data['district'] = $district;
+            $foundItems->where('district', $district);
+        }
+        if ($request->has('tehsil') && $request->tehsil != 'Select tehsil' && $request->tehsil != null) {
+            $tehsil = $request->tehsil;
+            $data['tehsil'] = $tehsil;
+            $foundItems->where('tehsil', $tehsil);
+        }
+        if ($request->has('union_council') && $request->union_council != 'Select union council' && $request->union_council != null) {
+            $union_council = $request->union_council;
+            $data['union_council'] = $union_council;
+            $foundItems->where('union_council', $union_council);
+        }
+        if ($request->has('deh') && $request->location != 'Select deh' && $request->deh != null) {
+            $deh = $request->deh;
+            $data['deh'] = $deh;
+            $foundItems->where('deh', $deh);
         }
 
         if ($request->has('gender') && $request->gender != 'Select Gender') {
@@ -60,7 +74,16 @@ class FilterController extends Controller
         $location_list = victim::select('district', DB::raw('count(*) as total'))
                  ->groupBy('district')
                  ->get();
+        $location_list_tehsil = victim::select('tehsil', DB::raw('count(*) as total'))
+                 ->groupBy('tehsil')
+                 ->get();
+        $location_list_union_council = victim::select('union_council ', DB::raw('count(*) as total'))
+                 ->groupBy('union_council')
+                 ->get();
+        $location_list_deh = victim::select('deh ', DB::raw('count(*) as total'))
+                 ->groupBy('deh')
+                 ->get();
 
-        return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list'));
+        return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list','location_list_tehsil','location_list_union_council','location_list_deh'));
     }
 }

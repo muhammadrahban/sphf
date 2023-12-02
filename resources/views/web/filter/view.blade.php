@@ -42,6 +42,39 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="col-12">
+                                    <label for="tehsil" style="font-size: 20px;">tehsil</label>
+                                    <select class="custom-select mb-3" id="tehsil" name="tehsil"
+                                        placeholder="Dadu, karachi">
+                                        <option>Select tehsil</option>
+                                        @foreach (@$location_list_tehsil as $location => $location_data)
+                                            <option value="{{ $location_data['tehsil'] }}" @selected(@$data['tehsil'] == $location_data['tehsil'])>
+                                                {{ $location_data['tehsil'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="union_council" style="font-size: 20px;">district</label>
+                                    <select class="custom-select mb-3" id="union_council" name="union_council"
+                                        placeholder="Dadu, karachi">
+                                        <option>Select union council</option>
+                                        @foreach (@$location_list_union_council as $location => $location_data)
+                                            <option value="{{ $location_data['union_council'] }}" @selected(@$data['union_council'] == $location_data['union_council'])>
+                                                {{ $location_data['union_council'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="deh" style="font-size: 20px;">district</label>
+                                    <select class="custom-select mb-3" id="deh" name="deh"
+                                        placeholder="Dadu, karachi">
+                                        <option>Select deh</option>
+                                        @foreach (@$location_list_deh as $location => $location_data)
+                                            <option value="{{ $location_data['deh'] }}" @selected(@$data['deh'] == $location_data['deh'])>
+                                                {{ $location_data['deh'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                             <!-- <div class="form-row align-items-center my-2">
                                                     <div class="col-12">
