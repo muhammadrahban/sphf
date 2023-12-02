@@ -67,32 +67,47 @@ class FilterController extends Controller
             $filtersApplied = true;
         }
 
-        // Assuming each checkbox represents a field in your database
+        $selectedOptions = [];
+
+        if ($request->has('orphan')) {
+            $foundItems->where('unaccompained_minors_i_e_orphans', 1);
+            $filtersApplied = true;
+            $selectedOptions[] = 'orphan'; // Add 'orphan' to the selected options array
+        }
+
+        // Modify the other conditions in a similar manner
         if ($request->has('widow')) {
             $foundItems->where('widows', 1);
             $filtersApplied = true;
+            $selectedOptions[] = 'widow';
         }
 
         if ($request->has('women')) {
             $foundItems->where('women_with_disable_husband', 1);
             $filtersApplied = true;
+            $selectedOptions[] = 'women';
         }
 
         if ($request->has('elderly')) {
+            // Assuming two different conditions for 'elderly', choose one based on your logic
             $foundItems->where('divorced_abandoned_unmarried_older_dependent_on_others', 1);
+            // or $foundItems->where('unaccompained_elders_over_the_age_of_60', 1);
             $filtersApplied = true;
+            $selectedOptions[] = 'elderly';
         }
         if ($request->has('elderly')) {
+            // Assuming two different conditions for 'elderly', choose one based on your logic
+            //$foundItems->where('divorced_abandoned_unmarried_older_dependent_on_others', 1);
             $foundItems->where('unaccompained_elders_over_the_age_of_60', 1);
             $filtersApplied = true;
+            $selectedOptions[] = 'elderly';
         }
 
         if ($request->has('differently_abled')) {
             $foundItems->where('differently_abled', 1);
             $filtersApplied = true;
+            $selectedOptions[] = 'differently_abled';
         }
-
-
 
         if ($request->has('currency')) {
             $currency = $request->currency;
@@ -135,7 +150,7 @@ class FilterController extends Controller
             ->groupBy('deh')
             ->get();
 
-        return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list', 'location_list_tehsil', 'location_list_union_council', 'location_list_deh'));
+        return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list', 'location_list_tehsil', 'location_list_union_council', 'location_list_deh', 'selectedOptions'));
     }
 
     // public function currency($amount, $curr_symbol, $symbol)

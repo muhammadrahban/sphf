@@ -37,14 +37,14 @@
                                 </h4>
                                 <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
                                     <input class="form-check-input" type="radio" name="transaction_type" id="gridRadios1"
-                                        value="dod" checked>
+                                        value="dod">
                                     <label class="form-check-label" for="gridRadios1">
                                         Donate with Offline Donation
                                     </label>
                                 </div>
                                 <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
                                     <input class="form-check-input" type="radio" name="transaction_type" id="gridRadios1"
-                                        value="card">
+                                        value="card" checked>
                                     <label class="form-check-label" for="gridRadios1">
                                         Donate with Credit / Debit Card
                                     </label>
