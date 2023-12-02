@@ -40,7 +40,7 @@
                                 aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <div class="text-center p-4">
-                            <button class="btn btn-lg btn-success next-step" data-step="2">Donate Now <i
+                            <button type="button" class="btn btn-lg btn-success next-step" data-step="2">Donate Now <i
                                     class="fa fa-chevron-right"></i></button>
                             <div class="my-4">
                                 <i class="fa fa-circle mx-2"></i>
@@ -130,7 +130,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <button class="btn btn-lg btn-success next-step" data-step="3">Continue <i
+                            <button type="button" class="btn btn-lg btn-success next-step" data-step="3">Continue <i
                                     class="fa fa-chevron-right"></i></button>
                             <div class="my-4">
                                 <i class="fa fa-circle text-muted mx-2"></i>
@@ -147,21 +147,17 @@
                             <button class="btn p-3 prev-step" data-step="2"><i class="fa fa-chevron-left"></i></button>
                             <span class="mx-auto">Add Your Information</span>
                         </div>
-                        @auth
                         <div class="p-4 px-0 text-center">
                             <h4>Who’s giving today?</h4>
-                            {{-- <p><i>You’re required to fill your information. You can donate anonymously or as an individual
+                            <p><i>You’re required to fill your information. You can donate anonymously or as an individual
                                     or as a company.</i>
-                            </p> --}}
+                            </p>
                         </div>
-                        @else
-                            <div class="p-4 px-0 text-center">
-                                <h4>Who’s giving today?</h4>
-                                <p><i>You’re required to fill your information. You can donate anonymously or as an individual
-                                        or as a company.</i>
-                                </p>
-                            </div>
-                            <div class="row mx-0">
+                        <div class="row mx-0">
+                            @auth
+
+                            @else
+
                                 <div class="col-md-2">
                                     <select name="title" class="form-control mb-3">
                                         <option value="Mr.">Mr.</option>
@@ -176,14 +172,24 @@
                                     <input name="last_name" placeholder="Last Name" class="form-control mb-3" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" name="email" placeholder="Email" class="form-control mb-3"
+                                    <input type="email" name="email" placeholder="Email" class="form-control mb-3 @error('email') is-invalid @enderror"
                                         required>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <input name="cnic" placeholder="CNIC" class="form-control mb-3" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input name="phone" placeholder="Mobile Number" class="form-control mb-3" required>
+                                    <input name="phone" placeholder="Mobile Number" class="form-control mb-3 @error('phone') is-invalid @enderror" required>
+                                    @error('phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <input name="job_title" placeholder="Job Title" class="form-control mb-3" required>
@@ -201,16 +207,9 @@
                                 <div class="col-md-12">
                                     <input name="postal_code" placeholder="postal code*" class="form-control mb-3" required>
                                 </div>
-                                <!--<div class="col-md-12">
-                                    <input name="nationality_no" placeholder="CNIC / Passpost Number*"
-                                        class="form-control mb-3" required>
-                                </div>-->
                                 <div class="col-md-12">
                                     <input name="postalcode" placeholder="Donor consent*" class="form-control mb-3" required>
                                 </div>
-                            <!-- <div class="col-md-12">
-                                    <input name="email" placeholder="Email Address*" class="form-control mb-3" required>
-                                </div>-->
                                 <div class="col-sm-12">
                                     <input size="40" class="form-control mb-3 @error('password') is-invalid @enderror"
                                         required aria-required="true" aria-invalid="false" placeholder="Password"
@@ -225,7 +224,7 @@
                                     <input size="40"
                                         class="form-control mb-3 @error('confirm_password') is-invalid @enderror" required
                                         aria-required="true" aria-invalid="false" placeholder="Confirm Paswword"
-                                        type="password" name="confirm_password">
+                                        type="password" name="confirm_password" />
                                     @error('confirm_password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -233,7 +232,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mb-3">
-                                    <input type="checkbox" name="is_anonymous" id="anonymous">
+                                    <input type="checkbox" name="is_anonymous" id="anonymous" />
                                     <label for="anonymous">Donation anonymously.</label>
                                 </div>
                                 <div class="col-md-12">
@@ -258,23 +257,22 @@
                                     </div>
                                 </div>
 
-                            </div>
-                        @endauth
-
+                            @endauth
+                        </div>
                         <div class="bg-white border border-secondary rounded m-3 p-3">
                             <h4 class="bg-title p-3">
                                 Add Payment Information
                             </h4>
                             <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
                                 <input class="form-check-input" type="radio" name="transaction_type" id="gridRadios1"
-                                    value="dod" checked>
+                                    value="dod">
                                 <label class="form-check-label" for="gridRadios1">
                                     Donate with Offline Donation
                                 </label>
                             </div>
                             <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
                                 <input class="form-check-input" type="radio" name="transaction_type" id="gridRadios1"
-                                    value="card">
+                                    value="card" checked>
                                 <label class="form-check-label" for="gridRadios1">
                                     Donate with Credit / Debit Card
                                 </label>
