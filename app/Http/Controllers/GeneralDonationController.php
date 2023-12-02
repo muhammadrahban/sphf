@@ -73,7 +73,7 @@ class GeneralDonationController extends Controller
         // $params['is_individual']    = $request->has('is_individual') ? true : false;
         // $params['is_company']       = $request->has('is_company') ? true : false;
         $params['payment_status']   = 'pending';
-        $tok = $this->authToken($params['total_amount']);
+        $tok = $this->authToken($amount);
         $params['transaction_reference']   = $tok['id'];
         $general = GeneralDonation::create($params);
 
@@ -96,7 +96,7 @@ class GeneralDonationController extends Controller
         $HS_MerchantUsername = "apybej";
         $HS_MerchantPassword = "mGZK278HzVJvFzk4yqF7CA==";
         $transactionTypeId = "3";
-        $TransactionAmount = $params['total_amount'];
+        $TransactionAmount = $amount;
         $bankorderId   = $tok['id'];
 
         $cipher = "aes-128-cbc";
