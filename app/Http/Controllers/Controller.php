@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Currency;
 use Illuminate\Support\Str;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -20,4 +21,14 @@ class Controller extends BaseController
             env('DISK')
         );
     }
+    public static function currency($amount, $curr_symbol, $symbol)
+{
+    $Currency   = Currency::where(['base' => $curr_symbol, 'type' => $symbol])->first();
+    if($Currency){
+        $new_amount = $Currency->amount * $amount;
+    }else{
+        $new_amount = $amount;
+    }
+    return $new_amount;
+}
 }

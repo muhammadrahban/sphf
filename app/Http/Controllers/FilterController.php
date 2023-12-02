@@ -89,14 +89,14 @@ class FilterController extends Controller
         return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list', 'location_list_tehsil', 'location_list_union_council', 'location_list_deh'));
     }
 
-    public function currency($amount, $curr_symbol, $symbol)
-    {
-        $Currency   = Currency::where(['base' => $curr_symbol, 'type' => $symbol])->first();
-        if ($Currency) {
-            $new_amount = $Currency->amount * $amount;
-        } else {
-            $new_amount = $amount;
-        }
-        return $new_amount;
-    }
+    // public function currency($amount, $curr_symbol, $symbol)
+    // {
+    //     $Currency   = Currency::where(['base' => $curr_symbol, 'type' => $symbol])->first();
+    //     if ($Currency) {
+    //         $new_amount = $Currency->amount * $amount;
+    //     } else {
+    //         $new_amount = $amount;
+    //     }
+    //     return $new_amount;
+    // }
 }

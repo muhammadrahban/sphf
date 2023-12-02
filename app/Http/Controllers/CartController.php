@@ -18,7 +18,7 @@ class CartController extends Controller
         $initial_amount = 300000;
         foreach($foundItems as $key => $value){
             if($currency != 'PKR'){
-                $amount = currency($initial_amount, 'PKR', $currency);
+                $amount = $this->currency($initial_amount, 'PKR', $currency);
             }else{
                 $amount = $initial_amount;
             }

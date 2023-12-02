@@ -39,13 +39,13 @@ class PaymentController extends Controller
 
         $cartItems      = session()->get('cart', []);
         // Currency Code
-        // $initial_amount = 300000;
-        // $currency       = session()->get('currency');
-        // if($currency != 'PKR'){
-        //     $amount = currency($initial_amount, 'PKR', $currency);
-        // }else{
-        //     $amount = $initial_amount;
-        // }
+        $initial_amount = 300000;
+        $currency       = session()->get('currency');
+        if($currency != 'PKR'){
+            $amount = $this->currency($initial_amount, 'PKR', $currency);
+        }else{
+            $amount = $initial_amount;
+        }
 
         $amount         = (count($cartItems) * $amount);
         $two_per        = ($amount * 2) / 100;

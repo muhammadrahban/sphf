@@ -16,7 +16,7 @@ class GeneralDonationController extends Controller
         $initial_amount = $params['amount'];
         $currency       = session()->get('currency');
         if($currency != 'PKR' && $params['symbol'] != 'PKR'){
-            $amount     = currency($initial_amount, $params['symbol'], $currency);
+            $amount     = $this->currency($initial_amount, $params['symbol'], $currency);
         }else{
             $amount     = $initial_amount;
         }
