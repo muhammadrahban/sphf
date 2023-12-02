@@ -69,7 +69,7 @@ class FilterController extends Controller
 
         // Assuming each checkbox represents a field in your database
         if ($request->has('widow')) {
-            $foundItems->where('widow', 1);
+            $foundItems->where('widows', 1);
             $filtersApplied = true;
         }
 
