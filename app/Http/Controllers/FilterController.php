@@ -15,7 +15,7 @@ class FilterController extends Controller
         if(auth()->user()->email_verified_at == null)
         {
             $data['message'] = "Please Verify Your Email To Adopt Victim.";
-            return view('web.filter.view', compact('data'));
+            return view('web.verify-message', compact('data'));
         }
 
         $limit          = 10;
