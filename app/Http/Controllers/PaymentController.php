@@ -264,14 +264,9 @@ class PaymentController extends Controller
             $decodedData = json_decode($data, true);
             $decodedData = json_decode($decodedData, true);
             $donation = DonationInvoice::where('order_id', $O)->first();
-            if($donation){
-            $donation->transaction_status = $decodedData['TransactionStatus'];
-            $donation->transaction_reference = $decodedData['TransactionReferenceNumber'];
-            $donation->save();
-            }
 
             // Render the Blade view to a variable
-            $view = view('web.invoice', compact('decodedData'))->render();
+            $view = view('web.invoice-pdf', compact('decodedData'))->render();
 
             // Create an instance of Dompdf
             $dompdf = new Dompdf();
@@ -295,8 +290,14 @@ class PaymentController extends Controller
             $pdfFilePath = public_path('invoices/' . $fileName); // Save in public/invoices directory
 
             // Save the generated PDF to the server
-    file_put_contents($pdfFilePath, $dompdf->output());
-            return view('web.invoice', ['decodedData' => $decodedData, 'file' => $pdfFilePath]);
+            file_put_contents($pdfFilePath, $dompdf->output());
+            if ($donation) {
+                $donation->transaction_status = $decodedData['TransactionStatus'];
+                $donation->transaction_reference = $decodedData['TransactionReferenceNumber'];
+                $donation->invoice = 'invoices/' . $fileName;
+                $donation->save();
+            }
+            return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/'.'invoices/' . $fileName]);
         } catch (\Exception $e) {
             // Handle any exceptions or errors here
             return response()->json(['error' => $e->getMessage()], 500);

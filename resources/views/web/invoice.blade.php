@@ -51,7 +51,7 @@
                 <p><strong>Description:</strong> {{ $decodedData['Description'] }}</p>
 
                 <!-- Add a download button for the invoice -->
-                <a href="{{ route('download.invoice') }}" class="btn">Download Invoice</a>
+                <a href="{{$file}}" class="btn">Download Invoice</a>
             </div>
         </div>
     </section>
