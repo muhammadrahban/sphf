@@ -297,6 +297,7 @@ class PaymentController extends Controller
                 $donation->invoice = 'invoices/' . $fileName;
                 $donation->save();
             }
+            session()->forget('cart');
             return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/'.'invoices/' . $fileName]);
         } catch (\Exception $e) {
             // Handle any exceptions or errors here
