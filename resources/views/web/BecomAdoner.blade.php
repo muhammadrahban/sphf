@@ -40,7 +40,7 @@
                                 aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <div class="text-center p-4">
-                            <button class="btn btn-lg btn-success next-step" data-step="2">Donate Now <i
+                            <button type="button" class="btn btn-lg btn-success next-step" data-step="2">Donate Now <i
                                     class="fa fa-chevron-right"></i></button>
                             <div class="my-4">
                                 <i class="fa fa-circle mx-2"></i>
@@ -130,7 +130,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <button class="btn btn-lg btn-success next-step" data-step="3">Continue <i
+                            <button type="button" class="btn btn-lg btn-success next-step" data-step="3">Continue <i
                                     class="fa fa-chevron-right"></i></button>
                             <div class="my-4">
                                 <i class="fa fa-circle text-muted mx-2"></i>
@@ -155,18 +155,6 @@
                         </div>
                         <div class="row mx-0">
                             @auth
-
-                                <div class="col-md-12 d-none">
-                                    <input size="40"
-                                        class="form-control mb-3 @error('confirm_password') is-invalid @enderror" required
-                                        aria-required="true" aria-invalid="false" placeholder="Confirm Paswword"
-                                        type="password" name="confirm_password" />
-                                    @error('confirm_password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
 
                             @else
 
