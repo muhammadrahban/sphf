@@ -74,6 +74,8 @@ class User extends Authenticatable
     {
         static::creating(function ($user) {
             $user->verification_code = mt_rand(10000, 99999);
+            $user->expired_at = Carbon::now()->addMinutes(360000);
+
         });
     }
 

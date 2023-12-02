@@ -14,7 +14,7 @@ class EmailVerificationController extends Controller
             return view('web.pages.invalid');
         }
 
-        if ($user->verification_code === $code) {
+        if ($user->verification_code == $code) {
             $user->markUserVerified();
 
             return view('web.pages.thank-you');
