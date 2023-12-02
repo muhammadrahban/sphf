@@ -234,7 +234,14 @@
                                         </td>
                                     </tr>
                                     @php
-                                        $amount         = count(session('cart', [])) * 300000;
+                                        $initial_amount = 300000;
+                                        $currency       = session()->get('currency');
+                                        if($currency != 'PKR'){
+                                            $amount = currency($initial_amount, 'PKR', $currency);
+                                        }else{
+                                            $amount = $initial_amount;
+                                        }
+                                        $amount         = count(session('cart', [])) * $amount;
                                         $two_per        = (($amount * 2) / 100);
                                         $thirteen_per   = (($amount * 13) / 100);
                                         $final          = $two_per + $two_per + $thirteen_per + $amount;
@@ -244,7 +251,7 @@
                                             <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Donation incl MDR & SST</p>
                                         </td>
                                         <td>
-                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{ $two_per }}</p>
+                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{ $two_per }}</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -252,7 +259,7 @@
                                             <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Bank charges</p>
                                         </td>
                                         <td>
-                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{ $two_per }}</p>
+                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{ $two_per }}</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -260,7 +267,7 @@
                                             <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">SST on Bank Charges</p>
                                         </td>
                                         <td>
-                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{ $thirteen_per }}</p>
+                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{ $thirteen_per }}</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -269,7 +276,7 @@
                                                 Donation Amount</p>
                                         </td>
                                         <td>
-                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">PKR {{ number_format($final, 0) }}
+                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{ number_format($final, 0) }}
                                             </p>
                                         </td>
                                     </tr>

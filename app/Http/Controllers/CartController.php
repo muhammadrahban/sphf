@@ -9,11 +9,21 @@ class CartController extends Controller
 {
     public function index()
     {
-        $cartItems = session()->get('cart', []);
+        $cartItems  = session()->get('cart', []);
+        $currency   = session()->get('currency');
         $ids = array_keys($cartItems);
         $foundItems = victim::whereIn('id', $ids);
         $count      = $foundItems->count();
         $foundItems = $foundItems->get();
+        $initial_amount = 300000;
+        foreach($foundItems as $key => $value){
+            if($currency != 'PKR'){
+                $amount = currency($initial_amount, 'PKR', $currency);
+            }else{
+                $amount = $initial_amount;
+            }
+            $foundItems[$key]['price']  = $amount;
+        }
         return view('web.cart.cart', compact('foundItems', 'count'));
     }
 

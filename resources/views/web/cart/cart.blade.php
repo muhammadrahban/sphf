@@ -60,19 +60,19 @@
                                             {{ $item['people_with_disability_physically_or_mentally'] != 0 ? 'Differntly Abled ' : '' }}
                                         </p>
                                         <a href="#" class="text-secondary mx-4"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $item['district'] }} / {{ $item['tehsil'] }}</a>
-                                        <a href="#" class="text-secondary mx-4"><!--<i class="fa fa-btc" aria-hidden="true"></i> -->PKR 300,000</a>
+                                        <a href="#" class="text-secondary mx-4">{{session()->get('currency')}} {{number_format($item['price'], 0)}}</a>
                                     </div>
                                     <p class="m-0 w-auto rounded text-center my-3" style="background-color: #ececec;">Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available</p>
                                 </div>
                             </td>
                             <td>
-                                <p class="text-secondary m-0" style="font-size: 18px;">PKR 300,000</p>
+                                <p class="text-secondary m-0" style="font-size: 18px;">{{session()->get('currency')}} {{number_format($item['price'], 0)}}</p>
                             </td>
                             <td>
                                 <p class="text-secondary m-0" style="font-size: 18px;">1</p>
                             </td>
                             <td>
-                                <p class="text-secondary m-0" style="font-size: 18px;">PKR 300,000</p>
+                                <p class="text-secondary m-0" style="font-size: 18px;">{{session()->get('currency')}} {{number_format($item['price'], 0)}}</p>
                             </td>
                         </tr>
                     @endforeach
@@ -114,7 +114,7 @@
                             <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total Donation Amount &nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 14px; font-weight: 400;" class="text-secondary">(Exempted from all kind of taxes)</span></p>
                         </td>
                         <td>
-                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">PKR {{number_format($count * 300000, 0)}}</p>
+                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{number_format($count * $item['price'], 0)}}</p>
                         </td>
                     </tr>
                 </tbody>

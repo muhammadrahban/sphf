@@ -20,7 +20,6 @@ class CronController extends Controller
         ];
         foreach ($currencies as $value) {
             $this->updateCurrency($value[0], $value[1]);
-            // echo $value[0] .' --- '. $value[1] .' \\n ';
         }
         echo "Save Data Successfully";
     }
@@ -56,5 +55,16 @@ class CronController extends Controller
                 echo "Save Data Successfully";
             }
         }
+    }
+
+    public function convertCurreny($amount, $curr_symbol, $symbol)
+    {
+        $Currency   = Currency::where(['base' => $curr_symbol, 'type' => $symbol])->first();
+        if($Currency){
+            $new_amount = $Currency->amount * $amount;
+        }else{
+            $new_amount = $amount;
+        }
+        return Response()->json($new_amount);
     }
 }

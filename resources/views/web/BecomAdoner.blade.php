@@ -4,7 +4,7 @@
         <section style="background-image: url({{ asset('images/shape-8.png') }}); background-size:auto 100%;">
             <div class="container py-5">
                 <h1 class="mb-5">Transfer your donation to SPHF</h1>
-                <form class="card mb-5" id="multi-step-form" method="POST" action="{{route('become.doner')}}">
+                <form class="card mb-5" id="multi-step-form" method="POST" action="{{ route('become.doner') }}">
                     @csrf
                     <div class="step" data-step="1">
                         <div class="py-4 px-0">
@@ -17,7 +17,8 @@
                                 <li>Once you submit donation, you’ll receive e-receipt on e-mail.</li>
                                 <li>You can also login to your donor account to view and track your donation.</li>
                             </ul>
-                            <h4 class="ml-4  text-center">Unite for Resilience, Empower Change </br> Building a Stronger Sindh For a Better tomorrow, Today</h4>
+                            <h4 class="ml-4  text-center">Unite for Resilience, Empower Change </br> Building a Stronger
+                                Sindh For a Better tomorrow, Today</h4>
                         </div>
                         <img class="w-100" src="{{ asset('/images/our_donor/Transfer_to_SPHF.jpg') }}">
                         <div class="row text-center">
@@ -70,8 +71,8 @@
                                 <select class="btn alert-success" id="currency">
                                     <option value="PKR" data-symbol="₨">PKR - Pakistani Rupee</option>
                                     <option value="USD" data-symbol="$">USD - United States Dollar</option>
-                                    {{-- <option value="Euro" data-symbol="€">Euro - European Union</option>
-                                    <option value="GBP" data-symbol="£">GBP - Great British Pound</option> --}}
+                                    <option value="Eur" data-symbol="€">Euro - European Union</option>
+                                    <option value="GBP" data-symbol="£">GBP - Great British Pound</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -85,39 +86,45 @@
                             </div>
                             <div class="col-md-3 p-4"></div>
                             <div class="col-12"></div>
-                            <div class="col-md-4 p-2">
+                            <div class="col-md-4 p-2 static__amount">
                                 <button type="button" onclick="selectAmount(this,'10,000')"
-                                    class="amount-btn btn btn-lg btn-success btn-block py-3">
+                                    class="amount-btn btn btn-lg btn-success btn-block py-3 select__amount"
+                                    data-amount="10000" data-symbal="PKR">
                                     <h4 class="mb-0"><span class="input_symbol">₨</span> 10,000</h4>
                                 </button>
                             </div>
-                            <div class="col-md-4 p-2">
+                            <div class="col-md-4 p-2 static__amount">
                                 <button type="button" onclick="selectAmount(this,'50,000')"
-                                    class="amount-btn btn btn-lg btn-success btn-block py-3">
+                                    class="amount-btn btn btn-lg btn-success btn-block py-3 select__amount"
+                                    data-amount="50000" data-symbal="PKR">
                                     <h4 class="mb-0"><span class="input_symbol">₨</span> 50,000</h4>
                                 </button>
                             </div>
-                            <div class="col-md-4 p-2">
+                            <div class="col-md-4 p-2 static__amount">
                                 <button type="button" onclick="selectAmount(this,'100,000')"
-                                    class="amount-btn btn btn-lg btn-outline-success btn-block py-3">
+                                    class="amount-btn btn btn-lg btn-outline-success btn-block py-3 select__amount"
+                                    data-amount="100000" data-symbal="PKR">
                                     <h4 class="mb-0"><span class="input_symbol">₨</span> 100,000</h4>
                                 </button>
                             </div>
-                            <div class="col-md-4 p-2">
+                            <div class="col-md-4 p-2 static__amount">
                                 <button type="button" onclick="selectAmount(this,'1,500,000')"
-                                    class="amount-btn btn btn-lg btn-success btn-block py-3">
+                                    class="amount-btn btn btn-lg btn-success btn-block py-3 select__amount"
+                                    data-amount="1500000" data-symbal="PKR">
                                     <h4 class="mb-0"><span class="input_symbol">₨</span> 1,500,000</h4>
                                 </button>
                             </div>
-                            <div class="col-md-4 p-2">
+                            <div class="col-md-4 p-2 static__amount">
                                 <button type="button" onclick="selectAmount(this,'3,000,000')"
-                                    class="amount-btn btn btn-lg btn-success btn-block py-3">
+                                    class="amount-btn btn btn-lg btn-success btn-block py-3 select__amount"
+                                    data-amount="3000000" data-symbal="PKR">
                                     <h4 class="mb-0"><span class="input_symbol">₨</span> 3,000,000</h4>
                                 </button>
                             </div>
                             <div class="col-md-4 p-2">
                                 <button type="button" onclick="selectAmount(this,'custom')"
-                                    class="amount-btn btn btn-lg btn-success btn-block py-3">
+                                    class="amount-btn btn btn-lg btn-success btn-block py-3 select__amount"
+                                    data-amount="custom">
                                     <h4 class="mb-0">Custom Amount</h4>
                                 </button>
                             </div>
@@ -142,7 +149,8 @@
                         </div>
                         <div class="p-4 px-0 text-center">
                             <h4>Who’s giving today?</h4>
-                            <p><i>You’re required to fill your information. You can donate anonymously or as an individual or as a company.</i>
+                            <p><i>You’re required to fill your information. You can donate anonymously or as an individual
+                                    or as a company.</i>
                             </p>
                         </div>
                         <div class="row mx-0">
@@ -160,7 +168,8 @@
                                 <input name="last_name" placeholder="Last Name" class="form-control mb-3" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" name="email" placeholder="Email" class="form-control mb-3" required>
+                                <input type="email" name="email" placeholder="Email" class="form-control mb-3"
+                                    required>
                             </div>
                             <div class="col-md-6">
                                 <input name="cnic" placeholder="CNIC" class="form-control mb-3" required>
@@ -172,7 +181,8 @@
                                 <input name="job_title" placeholder="Job Title" class="form-control mb-3" required>
                             </div>
                             <div class="col-md-12">
-                                <input name="company_name" placeholder="Company Name*" class="form-control mb-3" required>
+                                <input name="company_name" placeholder="Company Name*" class="form-control mb-3"
+                                    required>
                             </div>
                             <div class="col-md-12">
                                 <input name="country" placeholder="Country*" class="form-control mb-3" required>
@@ -184,7 +194,8 @@
                                 <input name="postal_code" placeholder="postal code*" class="form-control mb-3" required>
                             </div>
                             <div class="col-md-12">
-                                <input name="nationality_no" placeholder="CNIC / Passpost Number*" class="form-control mb-3" required>
+                                <input name="nationality_no" placeholder="CNIC / Passpost Number*"
+                                    class="form-control mb-3" required>
                             </div>
                             <div class="col-md-12">
                                 <input name="postalcode" placeholder="Donor consent*" class="form-control mb-3" required>
@@ -193,7 +204,9 @@
                                 <input name="email" placeholder="Email Address*" class="form-control mb-3" required>
                             </div>
                             <div class="col-sm-12">
-                                <input size="40" class="form-control mb-3 @error('password') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Password" type="password" name="password">
+                                <input size="40" class="form-control mb-3 @error('password') is-invalid @enderror"
+                                    required aria-required="true" aria-invalid="false" placeholder="Password"
+                                    type="password" name="password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -201,7 +214,10 @@
                                 @enderror
                             </div>
                             <div class="col-md-12">
-                                <input size="40" class="form-control mb-3 @error('confirm_password') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Confirm Paswword" type="password" name="confirm_password">
+                                <input size="40"
+                                    class="form-control mb-3 @error('confirm_password') is-invalid @enderror" required
+                                    aria-required="true" aria-invalid="false" placeholder="Confirm Paswword"
+                                    type="password" name="confirm_password">
                                 @error('confirm_password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -215,22 +231,24 @@
                             <div class="col-md-12">
                                 <textarea name="comment" class="form-control mb-3" id="comment" placeholder="Leave a comment"></textarea>
                             </div>
-                           <div class="col-sm-6">
-    <div class="d-flex align-items-start">
-        <input type="radio" id="individual" class="m-2" name="donation_type" value="individual" />
-        <label for="individual">
-            Donate as individual.
-        </label>
-    </div>
-</div>
-<div class="col-sm-6">
-    <div class="d-flex align-items-start">
-        <input type="radio" id="company" class="m-2" name="donation_type" value="company" />
-        <label for="company">
-            Donate as company.
-        </label>
-    </div>
-</div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-start">
+                                    <input type="radio" id="individual" class="m-2" name="donation_type"
+                                        value="individual" />
+                                    <label for="individual">
+                                        Donate as individual.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-start">
+                                    <input type="radio" id="company" class="m-2" name="donation_type"
+                                        value="company" />
+                                    <label for="company">
+                                        Donate as company.
+                                    </label>
+                                </div>
+                            </div>
 
                         </div>
 
@@ -459,6 +477,7 @@
                         <input type="hidden" name="charges" value="0" id="amount_charges">
                         <input type="hidden" name="total_amount" value="0" id="total_amount">
                         <input type="hidden" name="charged_amount" value="0" id="charged_amount">
+                        <input type="hidden" name="symbol" value="PKR" id="symbol">
                         <div class="text-center p-4">
                             <button type="submit" class="btn btn-lg btn-success">Donate Now</button>
                             <div class="my-4">
@@ -473,7 +492,7 @@
                     </div>
                 </form>
                 <p>Having problems making a donation?</p>
-                <p>Email us at donor@sphf.gos.pk or call at  +92 21 99334119-20</p>
+                <p>Email us at donor@sphf.gos.pk or call at +92 21 99334119-20</p>
             </div>
         </section>
     </main>
@@ -486,6 +505,5 @@
                 $('#' + selectedValue).show();
             });
         });
-
     </script>
 @endsection

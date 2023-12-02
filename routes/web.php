@@ -157,7 +157,7 @@ Route::get('/', function () {
 });
 
 Route::get('/get-curreny', [CronController::class, 'getCurreny']);
-
+Route::get('/convert-curreny/{amount}/{curr}/{new}', [CronController::class, 'convertCurreny']);
 
 Route::get('/webfaqs', function () {
     return view('web.Faqs');

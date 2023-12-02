@@ -38,9 +38,18 @@ class PaymentController extends Controller
         ]);
 
         $cartItems      = session()->get('cart', []);
-        $amount         = (count($cartItems) * 300000);
-        $two_per        = (300000 * 2) / 100;
-        $thirteen_per   = (300000 * 13) / 100;
+        // Currency Code
+        // $initial_amount = 300000;
+        // $currency       = session()->get('currency');
+        // if($currency != 'PKR'){
+        //     $amount = currency($initial_amount, 'PKR', $currency);
+        // }else{
+        //     $amount = $initial_amount;
+        // }
+
+        $amount         = (count($cartItems) * $amount);
+        $two_per        = ($amount * 2) / 100;
+        $thirteen_per   = ($amount * 13) / 100;
         $charges        = $two_per + $two_per + $thirteen_per;
         $tok = $this->authToken($charges + $amount);
         foreach ($cartItems as $key => $value) {

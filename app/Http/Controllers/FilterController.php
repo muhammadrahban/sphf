@@ -21,7 +21,8 @@ class FilterController extends Controller
             $foundItems->where('da_occupant_name', 'like', '%' . $keyword . '%');
         }
 
-        if ($request->has('district') && $request->location != 'Select district') {
+        if ($request->has('district') && $request->location != 'Select district' && $request->location != null) {
+            dd($request->location);
             $location = $request->district;
             $data['district'] = $location;
             $foundItems->where('district', $location);
@@ -33,15 +34,32 @@ class FilterController extends Controller
             $foundItems->where('gender', $gender);
         }
 
+        if ($request->has('currency')) {
+            $currency = $request->currency;
+            session()->forget('currency');
+            session()->get('currency', $currency);
+            $cart = session()->put('currency', $currency);
+        }
+
         $count = $foundItems->count();
 
-        $foundItems = $foundItems->offset($offset * $limit)->take($limit)->get();
+        $foundItems     = $foundItems->offset($offset * $limit)->take($limit)->get();
+
+        $currency       = session()->get('currency');
+        $initial_amount = 300000;
+        foreach($foundItems as $key => $value){
+            if($currency != 'PKR'){
+                $amount = currency($initial_amount, 'PKR', $currency);
+            }else{
+                $amount = $initial_amount;
+            }
+            $foundItems[$key]['price']  = $amount;
+            // dd(session()->get('currency'));
+        }
 
         $location_list = victim::select('district', DB::raw('count(*) as total'))
                  ->groupBy('district')
                  ->get();
-
-     
 
         return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list'));
     }

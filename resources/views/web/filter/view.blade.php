@@ -92,9 +92,11 @@
                             <div class="form-row align-items-center my-2">
                                 <div class="col-12">
                                     <label for="currency" style="font-size: 20px;">Currency</label>
-                                    <select class="custom-select mb-3" id="currency">
-                                        <option value="pkr">PKR</option>
-                                        <option value="usd">USD</option>
+                                    <select class="custom-select mb-3" id="currency" name="currency">
+                                        <option value="PKR" @selected(session()->get('currency') == 'PKR')>PKR</option>
+                                        <option value="USD" @selected(session()->get('currency') == 'USD')>USD</option>
+                                        <option value="EUR" @selected(session()->get('currency') == 'EUR')>EURO</option>
+                                        <option value="GBP" @selected(session()->get('currency') == 'GBP')>GBP</option>
                                     </select>
                                 </div>
                             </div>
@@ -180,9 +182,7 @@
                                                     aria-hidden="true"></i> {{ $item['district'] }} /
                                                 {{ $item['tehsil'] }}
                                             </p>
-                                            <p class="text-secondary m-0 mx-4"><!--<i class="fa fa-btc"
-                                                    aria-hidden="true"></i>-->
-                                                PKR 300,000</p>
+                                            <p class="text-secondary m-0 mx-4">{{session()->get('currency')}} {{number_format($item['price'], 0)}}</p>
                                         </div>
                                         <p class="m-0 w-auto rounded text-left px-2 my-3"
                                             style="background-color: #ececec;">

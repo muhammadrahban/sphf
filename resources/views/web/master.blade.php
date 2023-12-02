@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     {{-- JQuery  --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    {{-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> --}}
 
     <link rel="stylesheet" href="{{asset('css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -179,10 +181,38 @@
             });
 
             $('#currency').on('change',function(){
+                var new_symbol = $(this).val();
                 var symbol = $(this).find('option[value="'+$(this).val()+'"]').data('symbol');
                 $('.input_symbol').html(symbol);
+                $('.static__amount > button').each(function () {
+                    var buttonElement   = $(this);
+                    var amount          = buttonElement.data('amount');
+                    var curr_symbol     = buttonElement.data('symbal');
+                    formatAmount(amount, curr_symbol, new_symbol, function (formattedAmount) {
+                        buttonElement.attr('onclick', 'selectAmount(this,'+formattedAmount+')');
+                        buttonElement.attr('data-symbal', new_symbol);
+                        buttonElement.attr('data-amount', formattedAmount);
+                        $('#symbol').val(new_symbol);
+                        buttonElement.find('h4').html('<span class="input_symbol">' + symbol + '</span> ' + formattedAmount);
+                    }.bind(this));
+                });
             });
+
+            function formatAmount(amount, curr_symbol, new_symbol, callback) {
+                $.ajax({
+                    url: '/convert-curreny/' + amount + '/' + curr_symbol + '/' + new_symbol,
+                    method: 'GET',
+                    success: function (response) {
+                        callback(response);
+                    },
+                    error: function (error) {
+                        console.error('Error:', error);
+                    }
+                });
+                return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
         });
+
 
         function selectAmount(obj,amount){
             console.log(amount);
@@ -194,7 +224,7 @@
                 $('#amount').val("");
                 $('#amount').focus();
             }else{
-                var f_amount        = parseInt(amount.replace(/,/g, ''));
+                var f_amount        = parseInt(amount);
                 var mdr             = ((f_amount * 2) / 100);
                 var bank            = ((f_amount * 2) / 100);
                 var sst_bank        = ((f_amount * 13) / 100);
@@ -215,7 +245,7 @@
         }
         $('#amount').on('change',function(){
             var amount          = $(this).val();
-            var f_amount        = parseInt(amount.replace(/,/g, ''));
+            var f_amount        = parseInt(amount); // .replace(/,/g, '')
             var mdr             = ((f_amount * 2) / 100);
             var bank            = ((f_amount * 2) / 100);
             var sst_bank        = ((f_amount * 13) / 100);
@@ -234,7 +264,7 @@
         });
 
         var amount          = $('#amount').val();
-        var f_amount        = parseInt(amount.replace(/,/g, ''));
+        var f_amount        = parseInt(amount);
         var mdr             = ((f_amount * 2) / 100);
         var bank            = ((f_amount * 2) / 100);
         var sst_bank        = ((f_amount * 13) / 100);

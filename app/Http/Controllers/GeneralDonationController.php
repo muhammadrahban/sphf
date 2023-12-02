@@ -11,7 +11,22 @@ class GeneralDonationController extends Controller
 {
     public function donation(Request $request) {
         $params = $request->all();
-        $regist = $request->all();
+
+        // Currency Code
+        $initial_amount = $params['amount'];
+        $currency       = session()->get('currency');
+        if($currency != 'PKR' && $params['symbol'] != 'PKR'){
+            $amount     = currency($initial_amount, $params['symbol'], $currency);
+        }else{
+            $amount     = $initial_amount;
+        }
+
+        // this $amount varable is $params['amount'] / $regist['amount'];
+        // you can please add there 2% or 13% calculation.
+
+        // it's incomplete
+
+        $regist = $params;
         unset($regist['amount']);
         unset($regist['charges']);
         unset($regist['total_amount']);
