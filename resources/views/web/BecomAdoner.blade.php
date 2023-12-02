@@ -147,110 +147,119 @@
                             <button class="btn p-3 prev-step" data-step="2"><i class="fa fa-chevron-left"></i></button>
                             <span class="mx-auto">Add Your Information</span>
                         </div>
+                        @auth
                         <div class="p-4 px-0 text-center">
                             <h4>Who’s giving today?</h4>
-                            <p><i>You’re required to fill your information. You can donate anonymously or as an individual
+                            {{-- <p><i>You’re required to fill your information. You can donate anonymously or as an individual
                                     or as a company.</i>
-                            </p>
+                            </p> --}}
                         </div>
-                        <div class="row mx-0">
-                            <div class="col-md-2">
-                                <select name="title" class="form-control mb-3">
-                                    <option value="Mr.">Mr.</option>
-                                    <option value="Mrs.">Mrs.</option>
-                                    <option value="Ms.">Ms.</option>
-                                </select>
+                        @else
+                            <div class="p-4 px-0 text-center">
+                                <h4>Who’s giving today?</h4>
+                                <p><i>You’re required to fill your information. You can donate anonymously or as an individual
+                                        or as a company.</i>
+                                </p>
                             </div>
-                            <div class="col-md-5">
-                                <input name="first_name" placeholder="First Name*" class="form-control mb-3" required>
-                            </div>
-                            <div class="col-md-5">
-                                <input name="last_name" placeholder="Last Name" class="form-control mb-3" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" name="email" placeholder="Email" class="form-control mb-3"
-                                    required>
-                            </div>
-                            <div class="col-md-6">
-                                <input name="cnic" placeholder="CNIC" class="form-control mb-3" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input name="phone" placeholder="Mobile Number" class="form-control mb-3" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input name="job_title" placeholder="Job Title" class="form-control mb-3" required>
-                            </div>
-                            <div class="col-md-12">
-                                <input name="company_name" placeholder="Company Name*" class="form-control mb-3"
-                                    required>
-                            </div>
-                            <div class="col-md-12">
-                                <input name="country" placeholder="Country*" class="form-control mb-3" required>
-                            </div>
-                            <div class="col-md-12">
-                                <input name="city" placeholder="City*" class="form-control mb-3" required>
-                            </div>
-                            <div class="col-md-12">
-                                <input name="postal_code" placeholder="postal code*" class="form-control mb-3" required>
-                            </div>
-                            <!--<div class="col-md-12">
-                                <input name="nationality_no" placeholder="CNIC / Passpost Number*"
-                                    class="form-control mb-3" required>
-                            </div>-->
-                            <div class="col-md-12">
-                                <input name="postalcode" placeholder="Donor consent*" class="form-control mb-3" required>
-                            </div>
-                           <!-- <div class="col-md-12">
-                                <input name="email" placeholder="Email Address*" class="form-control mb-3" required>
-                            </div>-->
-                            <div class="col-sm-12">
-                                <input size="40" class="form-control mb-3 @error('password') is-invalid @enderror"
-                                    required aria-required="true" aria-invalid="false" placeholder="Password"
-                                    type="password" name="password">
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="col-md-12">
-                                <input size="40"
-                                    class="form-control mb-3 @error('confirm_password') is-invalid @enderror" required
-                                    aria-required="true" aria-invalid="false" placeholder="Confirm Paswword"
-                                    type="password" name="confirm_password">
-                                @error('confirm_password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="col-md-12 mb-3">
-                                <input type="checkbox" name="is_anonymous" id="anonymous">
-                                <label for="anonymous">Donation anonymously.</label>
-                            </div>
-                            <div class="col-md-12">
-                                <textarea name="comment" class="form-control mb-3" id="comment" placeholder="Leave a comment"></textarea>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-start">
-                                    <input type="radio" id="individual" class="m-2" name="donation_type"
-                                        value="individual" />
-                                    <label for="individual">
-                                        Donate as individual.
-                                    </label>
+                            <div class="row mx-0">
+                                <div class="col-md-2">
+                                    <select name="title" class="form-control mb-3">
+                                        <option value="Mr.">Mr.</option>
+                                        <option value="Mrs.">Mrs.</option>
+                                        <option value="Ms.">Ms.</option>
+                                    </select>
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-start">
-                                    <input type="radio" id="company" class="m-2" name="donation_type"
-                                        value="company" />
-                                    <label for="company">
-                                        Donate as company.
-                                    </label>
+                                <div class="col-md-5">
+                                    <input name="first_name" placeholder="First Name*" class="form-control mb-3" required>
                                 </div>
-                            </div>
+                                <div class="col-md-5">
+                                    <input name="last_name" placeholder="Last Name" class="form-control mb-3" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" name="email" placeholder="Email" class="form-control mb-3"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input name="cnic" placeholder="CNIC" class="form-control mb-3" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input name="phone" placeholder="Mobile Number" class="form-control mb-3" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input name="job_title" placeholder="Job Title" class="form-control mb-3" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <input name="company_name" placeholder="Company Name*" class="form-control mb-3"
+                                        required>
+                                </div>
+                                <div class="col-md-12">
+                                    <input name="country" placeholder="Country*" class="form-control mb-3" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <input name="city" placeholder="City*" class="form-control mb-3" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <input name="postal_code" placeholder="postal code*" class="form-control mb-3" required>
+                                </div>
+                                <!--<div class="col-md-12">
+                                    <input name="nationality_no" placeholder="CNIC / Passpost Number*"
+                                        class="form-control mb-3" required>
+                                </div>-->
+                                <div class="col-md-12">
+                                    <input name="postalcode" placeholder="Donor consent*" class="form-control mb-3" required>
+                                </div>
+                            <!-- <div class="col-md-12">
+                                    <input name="email" placeholder="Email Address*" class="form-control mb-3" required>
+                                </div>-->
+                                <div class="col-sm-12">
+                                    <input size="40" class="form-control mb-3 @error('password') is-invalid @enderror"
+                                        required aria-required="true" aria-invalid="false" placeholder="Password"
+                                        type="password" name="password">
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-12">
+                                    <input size="40"
+                                        class="form-control mb-3 @error('confirm_password') is-invalid @enderror" required
+                                        aria-required="true" aria-invalid="false" placeholder="Confirm Paswword"
+                                        type="password" name="confirm_password">
+                                    @error('confirm_password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="checkbox" name="is_anonymous" id="anonymous">
+                                    <label for="anonymous">Donation anonymously.</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea name="comment" class="form-control mb-3" id="comment" placeholder="Leave a comment"></textarea>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-start">
+                                        <input type="radio" id="individual" class="m-2" name="donation_type"
+                                            value="individual" />
+                                        <label for="individual">
+                                            Donate as individual.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-start">
+                                        <input type="radio" id="company" class="m-2" name="donation_type"
+                                            value="company" />
+                                        <label for="company">
+                                            Donate as company.
+                                        </label>
+                                    </div>
+                                </div>
 
-                        </div>
+                            </div>
+                        @endauth
 
                         <div class="bg-white border border-secondary rounded m-3 p-3">
                             <h4 class="bg-title p-3">
@@ -270,13 +279,6 @@
                                     Donate with Credit / Debit Card
                                 </label>
                             </div>
-                            {{-- <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
-                                <input class="form-check-input" type="radio" name="transaction_type" id="gridRadios1"
-                                    value="obt">
-                                <label class="form-check-label" for="gridRadios1">
-                                    Donate via Online Bank Transfer
-                                </label>
-                            </div> --}}
                         </div>
                         <div id="dod" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
                             <h4 class="bg-title p-2">

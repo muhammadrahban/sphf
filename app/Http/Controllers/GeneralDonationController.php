@@ -36,8 +36,13 @@ class GeneralDonationController extends Controller
         $regist['is_individual']    = $request->has('is_individual') ? true : false;
         $regist['is_company']       = $request->has('is_company') ? true : false;
 
-        $user = User::create($regist);
-        Auth::login($user);
+        if(!Auth::check()){
+            $user = User::create($regist);
+            Auth::login($user);
+            $params['user_id'] = $user->id;
+        }else{
+            $params['user_id'] = Auth::user()->id;
+        }
 
         $amount = intval(str_replace(',', '', $params['amount']));
         $params['amount']           = intval(str_replace(',', '', $params['amount']));
