@@ -87,31 +87,33 @@
                                                         </select>
                                                     </div>
                                                 </div> -->
-                            <div class="form-row align-items-center my-2">
-                                <label for="vulnerability" style="font-size: 20px;">Vulnerability</label>
-                                <div class="col-12">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="widow" name="widow" value="widow">
-                                        <label class="form-check-label" for="widow">Widow</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="Women" name="women" value="women">
-                                        <label class="form-check-label" for="Women">Women with disabled husband</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="Elderly" name="elderly" value="elderly">
-                                        <label class="form-check-label" for="Elderly">Elderly</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="Differntly_Abled" name="differently_abled" value="differently_abled">
-                                        <label class="form-check-label" for="Differntly_Abled">Differently Abled</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="orphan" name="orphan" value="orphan">
-                                        <label class="form-check-label" for="orphan">Orphans</label>
-                                    </div>
-                                </div>
-                            </div>
+                                                <div class="form-row align-items-center my-2">
+                                                    <label for="vulnerability" style="font-size: 20px;">Vulnerability</label>
+                                                    <div class="col-12">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" id="widow" name="widow" value="widow" @if(in_array('widow', $selectedOptions)) checked @endif>
+                                                            <label class="form-check-label" for="widow">Widow</label>
+                                                        </div>
+                                                        <!-- Repeat this structure for other checkboxes -->
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" id="Women" name="women" value="women" @if(in_array('women', $selectedOptions)) checked @endif>
+                                                            <label class="form-check-label" for="Women">Women with disabled husband</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" id="Elderly" name="elderly" value="elderly" @if(in_array('elderly', $selectedOptions)) checked @endif>
+                                                            <label class="form-check-label" for="Elderly">Elderly</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" id="Differntly_Abled" name="differently_abled" value="differently_abled" @if(in_array('differently_abled', $selectedOptions)) checked @endif>
+                                                            <label class="form-check-label" for="Differntly_Abled">Differently Abled</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" id="orphan" name="orphan" value="orphan" @if(in_array('orphan', $selectedOptions)) checked @endif>
+                                                            <label class="form-check-label" for="orphan">Orphans</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                             <div class="form-row align-items-center my-2">
                                 <div class="col-12">
                                     <label for="gender" style="font-size: 20px;">Gender</label>
