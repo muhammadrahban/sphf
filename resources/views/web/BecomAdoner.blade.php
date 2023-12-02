@@ -184,14 +184,24 @@
                                     <input name="last_name" placeholder="Last Name" class="form-control mb-3" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" name="email" placeholder="Email" class="form-control mb-3"
+                                    <input type="email" name="email" placeholder="Email" class="form-control mb-3 @error('email') is-invalid @enderror"
                                         required>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <input name="cnic" placeholder="CNIC" class="form-control mb-3" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input name="phone" placeholder="Mobile Number" class="form-control mb-3" required>
+                                    <input name="phone" placeholder="Mobile Number" class="form-control mb-3 @error('phone') is-invalid @enderror" required>
+                                    @error('phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <input name="job_title" placeholder="Job Title" class="form-control mb-3" required>
@@ -267,14 +277,14 @@
                             </h4>
                             <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
                                 <input class="form-check-input" type="radio" name="transaction_type" id="gridRadios1"
-                                    value="dod" checked>
+                                    value="dod">
                                 <label class="form-check-label" for="gridRadios1">
                                     Donate with Offline Donation
                                 </label>
                             </div>
                             <div class="form-check m-2 py-2" style="background-color: #dfdfdf;"> &nbsp;&nbsp;
                                 <input class="form-check-input" type="radio" name="transaction_type" id="gridRadios1"
-                                    value="card">
+                                    value="card" checked>
                                 <label class="form-check-label" for="gridRadios1">
                                     Donate with Credit / Debit Card
                                 </label>
