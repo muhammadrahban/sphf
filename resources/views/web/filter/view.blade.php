@@ -91,24 +91,24 @@
                                 <label for="vulnerability" style="font-size: 20px;">Vulnerability</label>
                                 <div class="col-12">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="widow"
-                                            value="vulnerability">
+                                        <input class="form-check-input" type="checkbox" id="widow" name="widow" value="widow">
                                         <label class="form-check-label" for="widow">Widow</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="Women"
-                                            value="vulnerability">
-                                        <label class="form-check-label" for="Women">Women</label>
+                                        <input class="form-check-input" type="checkbox" id="Women" name="women" value="women">
+                                        <label class="form-check-label" for="Women">Women with disabled husband</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="Elderly"
-                                            value="vulnerability">
+                                        <input class="form-check-input" type="checkbox" id="Elderly" name="elderly" value="elderly">
                                         <label class="form-check-label" for="Elderly">Elderly</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="Differntly_Abled"
-                                            value="vulnerability">
-                                        <label class="form-check-label" for="Differntly_Abled">Differntly Abled</label>
+                                        <input class="form-check-input" type="checkbox" id="Differntly_Abled" name="differently_abled" value="differently_abled">
+                                        <label class="form-check-label" for="Differntly_Abled">Differently Abled</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="orphan" name="orphan" value="orphan">
+                                        <label class="form-check-label" for="orphan">Orphans</label>
                                     </div>
                                 </div>
                             </div>
