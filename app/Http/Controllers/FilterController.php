@@ -79,7 +79,7 @@ class FilterController extends Controller
         $location_list_tehsil = victim::select('tehsil', DB::raw('count(*) as total'))
             ->groupBy('tehsil')
             ->get();
-        $location_list_union_council = victim::select('union_council ', DB::raw('count(*) as total'))
+        $location_list_union_council = victim::select('union_council', DB::raw('count(*) as total'))
             ->groupBy('union_council')
             ->get();
         $location_list_deh = victim::select('deh ', DB::raw('count(*) as total'))
