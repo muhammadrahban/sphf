@@ -42,3 +42,7 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/umeradmin/public_html/sphf/config/view.php on line 17
+[02-Dec-2023 09:49:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/umeradmin/public_html/sphf/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/umeradmin/public_html/sphf/config/broadcasting.php on line 18

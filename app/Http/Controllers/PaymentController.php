@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Currency;
 use App\Models\Donation;
 use App\Models\DonationInvoice;
 use Exception;
@@ -43,6 +44,9 @@ class PaymentController extends Controller
         $currency       = session()->get('currency');
         if($currency != 'PKR'){
             $amount = $this->currency($initial_amount, 'PKR', $currency);
+            $currency_db = Currency::where(['type' => 'PKR', 'base' => $currency])->first();
+            $amount =$amount * $currency_db->amount;
+
         }else{
             $amount = $initial_amount;
         }
@@ -51,6 +55,7 @@ class PaymentController extends Controller
         $two_per        = ($amount * 2) / 100;
         $thirteen_per   = ($amount * 13) / 100;
         $charges        = $two_per + $two_per + $thirteen_per;
+        $amount = $amount ;
         $tok = $this->authToken($charges + $amount);
         foreach ($cartItems as $key => $value) {
             $donation = Donation::create([
