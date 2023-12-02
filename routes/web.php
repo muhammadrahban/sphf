@@ -33,6 +33,7 @@ use App\Http\Controllers\CustomChangePasswordController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\GeneralDonationController;
 
 /*
@@ -178,6 +179,7 @@ Route::get('/doner/register', function() {
 Route::get('/doner/login', function() {
     return view('web.auth.LoginForm');
 })->name('login.doner');
+Route::get('/verify/{id}/{code}', [EmailVerificationController::class, 'verify'])->name('verify');
 
 Route::middleware(['auth'])->prefix('web')->group(function () {
         Route::post('/filter', [FilterController::class, 'filterView'])->name('web.filterWiew');

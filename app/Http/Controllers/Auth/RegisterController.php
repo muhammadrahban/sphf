@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+
 
 class RegisterController extends Controller
 {
@@ -79,8 +81,8 @@ class RegisterController extends Controller
         $is_anonymous = isset($data['is_anonymously']) ? true : false;
         $is_individual = isset($data['is_individual']) ? true : false;
         $is_company   = isset($data['is_company']) ? true : false;
-        $password = $data['first_name'] .'_'. $data['last_name'] .'1234';
-        return User::create([
+        $password = $data['first_name'] . '_' . $data['last_name'] . '1234';
+        $user = User::create([
             'first_name'        => $data['first_name'],
             'last_name'         => $data['last_name'],
             'email'             => $data['email'],
@@ -99,5 +101,15 @@ class RegisterController extends Controller
             'is_individual'     => $is_individual,
             'is_company'        => $is_company,
         ]);
+
+        $user_data = User::find($user->id);
+        // Sending email with variables $id and $code to the blade template
+        Mail::send('web.pages.code', ['id' => $user_data->id , 'code' => $user_data->verification_code], function ($m) use ($data) {
+            $m->to($data['email'])
+                ->from('noreply@sphf.gos.pk')
+                ->subject('Account verification for SPHF');
+        });
+
+        return $user;
     }
 }

@@ -70,12 +70,12 @@ class User extends Authenticatable
     /**
      * The booted method of the model
      */
-    // protected static function booted()
-    // {
-    //     static::creating(function ($user) {
-    //         $user->verification_code = mt_rand(10000, 99999);
-    //     });
-    // }
+    protected static function booted()
+    {
+        static::creating(function ($user) {
+            $user->verification_code = mt_rand(10000, 99999);
+        });
+    }
 
 
     // public function verifyUser()
@@ -111,24 +111,24 @@ class User extends Authenticatable
     /**
      * Mark user verified
      */
-    // public function markUserVerified()
-    // {
-    //     $this->verification_code = null;
-    //     $this->expired_at = null;
-    //     $this->email_verified_at = now();
+    public function markUserVerified()
+    {
+        $this->verification_code = null;
+        $this->expired_at = null;
+        $this->email_verified_at = now();
 
-    //     $this->save();
-    // }
+        $this->save();
+    }
 
     /**
      * Check if verification code is not expired
      *
      * @return bool
      */
-    // public function hasValidCode()
-    // {
-    //     return $this->verification_code !== null && Carbon::parse($this->expired_at)->addMinutes(60) > now();
-    // }
+    public function hasValidCode()
+    {
+        return $this->verification_code !== null && Carbon::parse($this->expired_at)->addMinutes(36000) > now();
+    }
 
     // public function userDevice($request, $access_token)
     // {
