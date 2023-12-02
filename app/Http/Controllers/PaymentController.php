@@ -42,12 +42,11 @@ class PaymentController extends Controller
         // Currency Code
         $initial_amount = 300000;
         $currency       = session()->get('currency');
-        if($currency != 'PKR'){
+        if ($currency != 'PKR') {
             $amount = $this->currency($initial_amount, 'PKR', $currency);
             $currency_db = Currency::where(['type' => 'PKR', 'base' => $currency])->first();
-            $amount =$amount * $currency_db->amount;
-
-        }else{
+            $amount = $amount * $currency_db->amount;
+        } else {
             $amount = $initial_amount;
         }
 
@@ -55,7 +54,7 @@ class PaymentController extends Controller
         $two_per        = ($amount * 2) / 100;
         $thirteen_per   = ($amount * 13) / 100;
         $charges        = $two_per + $two_per + $thirteen_per;
-        $amount = $amount ;
+        $amount = $amount;
         $tok = $this->authToken($charges + $amount);
         foreach ($cartItems as $key => $value) {
             $donation = Donation::create([
@@ -75,8 +74,7 @@ class PaymentController extends Controller
             DonationInvoice::create($data);
         }
 
-        if($request->transaction_type == "dod")
-        {
+        if ($request->transaction_type == "dod") {
             session()->forget('cart');
             return redirect(Route('web.home'))->with("message", "Donation transfer suceesfully");
         }
@@ -89,7 +87,7 @@ class PaymentController extends Controller
         $HS_MerchantId = "24821";
         $HS_StoreId = "033844";
         $HS_IsRedirectionRequest  = 0;
-        $HS_ReturnURL = "https://ftrack.biz/sphf/public/home";
+        $HS_ReturnURL = "https://ftrack.biz/sphf/public/callback";
         $HS_MerchantHash = "AGRvQQKxriw=";
         $HS_MerchantUsername = "apybej";
         $HS_MerchantPassword = "mGZK278HzVJvFzk4yqF7CA==";
@@ -164,7 +162,7 @@ class PaymentController extends Controller
         $HS_MerchantId = "24821";
         $HS_StoreId = "033844";
         $HS_IsRedirectionRequest  = 0;
-        $HS_ReturnURL = "https://ftrack.biz/sphf/public/home";
+        $HS_ReturnURL = "https://ftrack.biz/sphf/public/callback";
         $HS_MerchantHash = "AGRvQQKxriw=";
         $HS_MerchantUsername = "apybej";
         $HS_MerchantPassword = "mGZK278HzVJvFzk4yqF7CA==";
@@ -229,4 +227,95 @@ class PaymentController extends Controller
 
         return ["auth" => $AuthToken, "id" => $bankorderId];
     }
+
+    public function handleCallback(Request $request)
+    {
+        // Get individual query parameters
+        $RC = $request->query('RC'); // Get RC parameter value
+        $RD = $request->query('RD'); // Get RD parameter value
+        $TS = $request->query('TS'); // Get TS parameter value
+        $O = $request->query('O');   // Get O parameter value
+
+        // Use the parameters as needed
+        // For example, you can return them as a JSON response
+
+
+        return response()->json([
+            'RC' => $RC,
+            'RD' => $RD,
+            'TS' => $TS,
+            'O' => $O
+        ]);
+
+        $client = new Client();
+
+        // Replace this URL with your actual endpoint
+        $url = 'https://sandbox.bankalfalah.com/HS/api/IPN/OrderStatus/24821/033844/' . $O;
+
+        try {
+            $response = $client->request('GET', $url);
+
+            // Get the response body as a string
+            $data = $response->getBody()->getContents();
+
+            // Decode the JSON string to an associative array
+            $decodedData = json_decode($data, true);
+
+            // $decodedData is now an associative array containing the response data
+            // You can access individual elements like $decodedData['ResponseCode'], $decodedData['Description'], etc.
+            $donation = DonationInvoice::where('order_id', $O)->first();
+            $donation->transaction_status = $decodedData->TransactionStatus;
+            $donation->transaction_reference = $decodedData->TransactionReferenceNumber;
+            $donation->save();
+
+            return view('web.invoice', ['decodedData' => $decodedData]);
+        } catch (\Exception $e) {
+            // Handle any exceptions or errors here
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    // public function downloadInvoice()
+    // {
+    //     // Use the decodedData to generate the invoice content
+    //     $invoiceContent = "
+    //     <h1>Invoice</h1>
+    //     <p><strong>Transaction ID:</strong> " . $decodedData['TransactionId'] . "</p>
+    //     <p><strong>Transaction Amount:</strong> " . $decodedData['TransactionAmount'] . "</p>
+    //     <p><strong>Transaction Status:</strong> " . $decodedData['TransactionStatus'] . "</p>
+    //     <p><strong>Order Date & Time:</strong> " . $decodedData['OrderDateTime'] . "</p>
+    //     <p><strong>Transaction Date & Time:</strong> " . $decodedData['TransactionDateTime'] . "</p>
+    //     <p><strong>Merchant ID:</strong> " . $decodedData['MerchantId'] . "</p>
+    //     <p><strong>Merchant Name:</strong> " . $decodedData['MerchantName'] . "</p>
+    //     <p><strong>Store ID:</strong> " . $decodedData['StoreId'] . "</p>
+    //     <p><strong>Store Name:</strong> " . $decodedData['StoreName'] . "</p>
+    //     <p><strong>Transaction Type ID:</strong> " . $decodedData['TransactionTypeId'] . "</p>
+    //     <p><strong>Transaction Reference Number:</strong> " . $decodedData['TransactionReferenceNumber'] . "</p>
+    //     <p><strong>Mobile Number:</strong> " . $decodedData['MobileNumber'] . "</p>
+    //     <p><strong>Description:</strong> " . $decodedData['Description'] . "</p>
+    //     <p><strong>Response Code:</strong> " . $decodedData['ResponseCode'] . "</p>";
+
+    //     // Create an instance of Dompdf
+    //     $dompdf = new Dompdf();
+
+    //     // Set options for PDF generation
+    //     $options = new Options();
+    //     $options->set('isHtml5ParserEnabled', true);
+    //     $dompdf->setOptions($options);
+
+    //     // Load HTML content into Dompdf
+    //     $dompdf->loadHtml($invoiceContent);
+
+    //     // (Optional) Set paper size and orientation
+    //     $dompdf->setPaper('A4', 'portrait');
+
+    //     // Render the HTML as PDF
+    //     $dompdf->render();
+
+    //     // Generate a file name for the invoice (e.g., invoice.pdf)
+    //     $fileName = 'invoice.pdf';
+
+    //     // Stream the generated PDF for download
+    //     $dompdf->stream($fileName);
+    // }
 }

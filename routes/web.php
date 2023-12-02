@@ -169,6 +169,8 @@ Route::get('/becomdoner', function () {
 })->name('becom.doner');
 
 Route::post('/become-mdoner', [GeneralDonationController::class, 'donation'])->name('become.doner');
+Route::post('/callback', [PaymentController::class, 'handleCallback'])->name('callback');
+Route::get('/download-invoice',[PaymentController::class, 'downloadInvoice'])->name('download.invoice');
 
 // Route::get('/donation', [DashboardController::class, 'donation'])->name('web.donation');
 
