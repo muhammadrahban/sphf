@@ -147,21 +147,29 @@
                             <button class="btn p-3 prev-step" data-step="2"><i class="fa fa-chevron-left"></i></button>
                             <span class="mx-auto">Add Your Information</span>
                         </div>
-                        @auth
                         <div class="p-4 px-0 text-center">
                             <h4>Who’s giving today?</h4>
-                            {{-- <p><i>You’re required to fill your information. You can donate anonymously or as an individual
+                            <p><i>You’re required to fill your information. You can donate anonymously or as an individual
                                     or as a company.</i>
-                            </p> --}}
+                            </p>
                         </div>
-                        @else
-                            <div class="p-4 px-0 text-center">
-                                <h4>Who’s giving today?</h4>
-                                <p><i>You’re required to fill your information. You can donate anonymously or as an individual
-                                        or as a company.</i>
-                                </p>
-                            </div>
-                            <div class="row mx-0">
+                        <div class="row mx-0">
+                            @auth
+
+                                <div class="col-md-12 d-none">
+                                    <input size="40"
+                                        class="form-control mb-3 @error('confirm_password') is-invalid @enderror" required
+                                        aria-required="true" aria-invalid="false" placeholder="Confirm Paswword"
+                                        type="password" name="confirm_password" />
+                                    @error('confirm_password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+                            @else
+
                                 <div class="col-md-2">
                                     <select name="title" class="form-control mb-3">
                                         <option value="Mr.">Mr.</option>
@@ -201,16 +209,9 @@
                                 <div class="col-md-12">
                                     <input name="postal_code" placeholder="postal code*" class="form-control mb-3" required>
                                 </div>
-                                <!--<div class="col-md-12">
-                                    <input name="nationality_no" placeholder="CNIC / Passpost Number*"
-                                        class="form-control mb-3" required>
-                                </div>-->
                                 <div class="col-md-12">
                                     <input name="postalcode" placeholder="Donor consent*" class="form-control mb-3" required>
                                 </div>
-                            <!-- <div class="col-md-12">
-                                    <input name="email" placeholder="Email Address*" class="form-control mb-3" required>
-                                </div>-->
                                 <div class="col-sm-12">
                                     <input size="40" class="form-control mb-3 @error('password') is-invalid @enderror"
                                         required aria-required="true" aria-invalid="false" placeholder="Password"
@@ -225,7 +226,7 @@
                                     <input size="40"
                                         class="form-control mb-3 @error('confirm_password') is-invalid @enderror" required
                                         aria-required="true" aria-invalid="false" placeholder="Confirm Paswword"
-                                        type="password" name="confirm_password">
+                                        type="password" name="confirm_password" />
                                     @error('confirm_password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -233,7 +234,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mb-3">
-                                    <input type="checkbox" name="is_anonymous" id="anonymous">
+                                    <input type="checkbox" name="is_anonymous" id="anonymous" />
                                     <label for="anonymous">Donation anonymously.</label>
                                 </div>
                                 <div class="col-md-12">
@@ -258,9 +259,8 @@
                                     </div>
                                 </div>
 
-                            </div>
-                        @endauth
-
+                            @endauth
+                        </div>
                         <div class="bg-white border border-secondary rounded m-3 p-3">
                             <h4 class="bg-title p-3">
                                 Add Payment Information
