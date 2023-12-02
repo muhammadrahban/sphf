@@ -12,6 +12,12 @@ class FilterController extends Controller
 {
     public function filterView(Request $request)
     {
+        if(auth()->user()->email_verified_at == null)
+        {
+            $data['message'] = "Please Verify Your Email To Adopt Victim.";
+            return view('web.filter.view', compact('data'));
+        }
+
         $limit          = 10;
         $offset         = $request->has('page') ? $request->page : 0;
         $data['page']   = $offset;
