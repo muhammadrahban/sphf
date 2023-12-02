@@ -243,12 +243,12 @@ class PaymentController extends Controller
         // For example, you can return them as a JSON response
 
 
-        return response()->json([
-            'RC' => $RC,
-            'RD' => $RD,
-            'TS' => $TS,
-            'O' => $O
-        ]);
+        // return response()->json([
+        //     'RC' => $RC,
+        //     'RD' => $RD,
+        //     'TS' => $TS,
+        //     'O' => $O
+        // ]);
 
         $client = new Client();
 
@@ -295,7 +295,7 @@ class PaymentController extends Controller
             $pdfFilePath = public_path('invoices/' . $fileName); // Save in public/invoices directory
 
             // Save the generated PDF to the server
-            $dompdf->save($pdfFilePath);
+    file_put_contents($pdfFilePath, $dompdf->output());
             return view('web.invoice', ['decodedData' => $decodedData, 'file' => $pdfFilePath]);
         } catch (\Exception $e) {
             // Handle any exceptions or errors here
