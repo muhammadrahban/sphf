@@ -39,6 +39,7 @@ class GeneralDonation extends Model
         'iban',
         'account_title',
         'bank_routing_number',
-        'payment_status'
+        'payment_status',
+        'user_id',
     ];
 }
