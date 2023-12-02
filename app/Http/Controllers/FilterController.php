@@ -16,38 +16,51 @@ class FilterController extends Controller
         $offset         = $request->has('page') ? $request->page : 0;
         $data['page']   = $offset;
         $foundItems = victim::query();
+        $filtersApplied = false;
 
         if ($request->has('keywords') && $request->keywords != '') {
             $keyword = $request->keywords;
             $data['keywords'] = $keyword;
             $foundItems->where('da_occupant_name', 'like', '%' . $keyword . '%');
+            $filtersApplied = true;
+
         }
 
-        if ($request->has('district') && $request->location != 'Select district' && $request->location != null) {
+        if ($request->has('district') && $request->district != 'Select district' && $request->district != null) {
             $district = $request->district;
             $data['district'] = $district;
             $foundItems->where('district', $district);
+            $filtersApplied = true;
+
         }
         if ($request->has('tehsil') && $request->tehsil != 'Select tehsil' && $request->tehsil != null) {
             $tehsil = $request->tehsil;
             $data['tehsil'] = $tehsil;
             $foundItems->where('tehsil', $tehsil);
+            $filtersApplied = true;
+
         }
         if ($request->has('union_council') && $request->union_council != 'Select union council' && $request->union_council != null) {
             $union_council = $request->union_council;
             $data['union_council'] = $union_council;
             $foundItems->where('union_council', $union_council);
+            $filtersApplied = true;
+
         }
         if ($request->has('deh') && $request->location != 'Select deh' && $request->deh != null) {
             $deh = $request->deh;
             $data['deh'] = $deh;
             $foundItems->where('deh', $deh);
+            $filtersApplied = true;
+
         }
 
         if ($request->has('gender') && $request->gender != 'Select Gender') {
             $gender = $request->gender;
             $data['gender'] = $gender;
             $foundItems->where('gender', $gender);
+            $filtersApplied = true;
+
         }
 
         if ($request->has('currency')) {
@@ -55,11 +68,17 @@ class FilterController extends Controller
             session()->forget('currency');
             session()->get('currency', $currency);
             $cart = session()->put('currency', $currency);
+
         }
 
-        $count = $foundItems->count();
-
-        $foundItems     = $foundItems->offset($offset * $limit)->take($limit)->get();
+        if ($filtersApplied) {
+            $count = $foundItems->count();
+            $foundItems = $foundItems->offset($offset * $limit)->take($limit)->get();
+        } else {
+            // No filters applied, so set count to 0 and don't fetch any data
+            $count = 0;
+            $foundItems = [];
+        }
 
         $currency       = session()->get('currency');
         $initial_amount = 300000;
