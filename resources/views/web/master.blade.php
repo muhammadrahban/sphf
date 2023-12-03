@@ -208,6 +208,9 @@
                         buttonElement.attr('data-symbal', new_symbol);
                         buttonElement.attr('data-amount', formattedAmount);
                         $('#symbol').val(new_symbol);
+                        $('#amount').val("");
+                        $('.amount-btn').removeClass('btn-outline-success');
+                        $('.amount-btn').addClass('btn-success');
                         buttonElement.find('h4').html('<span class="input_symbol">' +
                             symbol + '</span> ' + formattedAmount);
                     }.bind(this));
@@ -254,7 +257,7 @@
                 $('#total_amount').val(total_amount);
                 $('#charged_amount').val(total_amount);
 
-                $('.input_amount').html(amount);
+                $('.input_amount').html(f_amount);
                 $('.mdr_sst').html(mdr);
                 $('.bank_charges').html(bank);
                 $('.sst_bank_charges').html(sst_bank);

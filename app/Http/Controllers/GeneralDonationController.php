@@ -31,12 +31,12 @@ class GeneralDonationController extends Controller
         $params = $request->all();
 
         // Currency Code
-        $initial_amount = $params['amount'];
-        $currency       = session()->get('currency');
+        $initial_amount = $params['total_amount'];
+        $currency       = $params['symbol'];
         if ($currency != 'PKR') {
-            $amount = $this->currency($initial_amount, 'PKR', $currency);
             $currency_db = Currency::where(['type' => 'PKR', 'base' => $currency])->first();
-            $amount = $amount * $currency_db->amount;
+            //dd($currency_db);
+            $amount = $initial_amount * $currency_db->amount;
         } else {
             $amount = $initial_amount;
         }
@@ -64,7 +64,7 @@ class GeneralDonationController extends Controller
             $params['user_id'] = Auth::user()->id;
         }
 
-        $amount = intval(str_replace(',', '', $params['amount']));
+        $amountBase = intval(str_replace(',', '', $params['amount']));
         $params['amount']           = intval(str_replace(',', '', $params['amount']));
         $params['charges']          = intval(str_replace(',', '', $params['charges']));
         $params['total_amount']     = intval(str_replace(',', '', $params['total_amount']));

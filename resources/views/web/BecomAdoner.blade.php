@@ -71,7 +71,7 @@
                                 <select class="btn alert-success" id="currency">
                                     <option value="PKR" data-symbol="₨">PKR - Pakistani Rupee</option>
                                     <option value="USD" data-symbol="$">USD - United States Dollar</option>
-                                    <option value="Eur" data-symbol="€">Euro - European Union</option>
+                                    <option value="EUR" data-symbol="€">Euro - European Union</option>
                                     <option value="GBP" data-symbol="£">GBP - Great British Pound</option>
                                 </select>
                             </div>
@@ -79,7 +79,7 @@
                                 <div class="card mx-auto" style="width:fit-content">
                                     <div class="d-flex align-items-center">
                                         <h4 class="m-3 input_symbol">₨</h4>
-                                        <input id="amount" name="amount" class="p-3" required value="100,000"
+                                        <input id="amount" name="amount" class="p-3" required value="100000"
                                             style="font-size: 24px; border:1px solid lightgray; border-width: 0 0 0 1px;">
                                     </div>
                                 </div>
@@ -87,35 +87,35 @@
                             <div class="col-md-3 p-4"></div>
                             <div class="col-12"></div>
                             <div class="col-md-4 p-2 static__amount">
-                                <button type="button" onclick="selectAmount(this,'10,000')"
+                                <button type="button" onclick="selectAmount(this,10000)"
                                     class="amount-btn btn btn-lg btn-success btn-block py-3 select__amount"
                                     data-amount="10000" data-symbal="PKR">
                                     <h4 class="mb-0"><span class="input_symbol">₨</span> 10,000</h4>
                                 </button>
                             </div>
                             <div class="col-md-4 p-2 static__amount">
-                                <button type="button" onclick="selectAmount(this,'50,000')"
+                                <button type="button" onclick="selectAmount(this,50000)"
                                     class="amount-btn btn btn-lg btn-success btn-block py-3 select__amount"
                                     data-amount="50000" data-symbal="PKR">
                                     <h4 class="mb-0"><span class="input_symbol">₨</span> 50,000</h4>
                                 </button>
                             </div>
                             <div class="col-md-4 p-2 static__amount">
-                                <button type="button" onclick="selectAmount(this,'100,000')"
+                                <button type="button" onclick="selectAmount(this,100000)"
                                     class="amount-btn btn btn-lg btn-outline-success btn-block py-3 select__amount"
                                     data-amount="100000" data-symbal="PKR">
                                     <h4 class="mb-0"><span class="input_symbol">₨</span> 100,000</h4>
                                 </button>
                             </div>
                             <div class="col-md-4 p-2 static__amount">
-                                <button type="button" onclick="selectAmount(this,'1,500,000')"
+                                <button type="button" onclick="selectAmount(this,1500000)"
                                     class="amount-btn btn btn-lg btn-success btn-block py-3 select__amount"
                                     data-amount="1500000" data-symbal="PKR">
                                     <h4 class="mb-0"><span class="input_symbol">₨</span> 1,500,000</h4>
                                 </button>
                             </div>
                             <div class="col-md-4 p-2 static__amount">
-                                <button type="button" onclick="selectAmount(this,'3,000,000')"
+                                <button type="button" onclick="selectAmount(this,3000000)"
                                     class="amount-btn btn btn-lg btn-success btn-block py-3 select__amount"
                                     data-amount="3000000" data-symbal="PKR">
                                     <h4 class="mb-0"><span class="input_symbol">₨</span> 3,000,000</h4>
@@ -458,10 +458,10 @@
                                     <span class="input_symbol">₨</span> <span class="sst_bank_charges">100,000</span>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Giving Frequency</td>
-                                <td class="text-right">One time</td>
-                            </tr>
+                            <!--<tr>-->
+                            <!--    <td>Giving Frequency</td>-->
+                            <!--    <td class="text-right">One time</td>-->
+                            <!--</tr>-->
                             <tr>
                                 <td><b>Total</b></td>
                                 <td class="text-right"><b><span class="input_symbol">₨</span> <span
