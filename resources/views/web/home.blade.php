@@ -779,24 +779,129 @@
                 <div class="row text-center ">
                     <div class="col">
                         <img src="{{asset('/images/Client_logo/logo-01.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >
+                        <h5>Internal Auditor</h5>
                     </div>
                     <div class="col  ">
                         <img src="{{asset('/images/Client_logo/logo-02.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >
+                        <h5>Execution Partner</h5>
                     </div>
                     <div class="col   ">
                         <img src="{{asset('/images/Client_logo/logo-03.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >
+                        <h5>MIS Partner</h5>
                     </div>
                     <div class="col   ">
                         <img src="{{asset('/images/Client_logo/logo-04.svg')}}" class="img-fluid partner-logo mx-auto"  style="width: 150px; height: 150px;" >
+                        <h5>Internal Auditor</h5>
                     </div>
                     <div class="col  ">
                         <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 150px; height: 150px;" >
+                        <h5>Technology Partner</h5>
                     </div>
                 </div>
             </div>
         </section>
+        
+      <!--<section>-->
+      <!--    <img src="{{asset('images/bg-2.jpg')}}" class="img-fluid partner-logo mx-auto" style="width:100%; height: 500px;" >-->
+      <!--  </section>-->
+
+      <!--  <section class="box-slider  box_center">-->
+            
+      <!--      <div class="slide box_last  ">-->
+      <!--          <div class="text-center" >-->
+      <!--              <div>-->
+      <!--                <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >-->
+      <!--                  <h5>Technology Partner</h5>-->
+      <!--              </div>-->
+      <!--          </div>-->
+      <!--      </div>-->
+            
+      <!--        <div class="slide box_last">-->
+      <!--          <div class="text-center" >-->
+      <!--              <div>-->
+      <!--                <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >-->
+      <!--                   <div class="video-link" style="background-color: #df5311; margin-top:-46px">-->
+      <!--                          <p>Technology Partner</p>-->
+      <!--                      </div>-->
+      <!--              </div>-->
+      <!--          </div>-->
+      <!--      </div>-->
+            
+      <!--         <div class="slide box_last">-->
+      <!--          <div class="text-center" >-->
+      <!--              <div>-->
+      <!--                <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >-->
+      <!--                  <h5>Technology Partner</h5>-->
+      <!--              </div>-->
+      <!--          </div>-->
+      <!--      </div>-->
+            
+      <!--         <div class="slide box_last">-->
+      <!--          <div class="text-center" >-->
+      <!--              <div>-->
+      <!--                <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >-->
+      <!--                  <h5>Technology Partner</h5>-->
+      <!--              </div>-->
+      <!--          </div>-->
+      <!--      </div>-->
+            
+      <!--         <div class="slide box_last">-->
+      <!--          <div class="text-center" >-->
+      <!--              <div>-->
+      <!--                <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 200px; height: 200px;" >-->
+      <!--                  <h5>Technology Partner</h5>-->
+      <!--              </div>-->
+      <!--          </div>-->
+      <!--      </div>-->
+
+
+
+           
+      <!--  </section>-->
+        
+      <!--       <section>-->
+      <!--      <div class="container">-->
+      <!--          <div class="row my-5">-->
+      <!--              <div class="col-lg-6 col-md-12 mb-4">-->
+      <!--                  <div class="text-center" style="background-color:#8139E7; background-image: url('{{asset('images/shape-1.png')}}'); background-repeat: no-repeat; background-position: bottom left; height:60%;">-->
+      <!--                      <div class="p-4">-->
+      <!--                          <h3 class="text-white">Our Pastners</h3>-->
+      <!--                          <p class="text-white">The World Bank has allocated $500 million to assist in the reconstruction of houses affected by the 2022 floods. The bank is offering technical assistance to shape and execute a comprehensive reconstruction plan, ensuring an informed and beneficiary-focused approach to the reconstruction program.</p>-->
+      <!--                      </div>-->
+      <!--                  </div>-->
+      <!--              </div>-->
+      <!--              <div class="col-lg-6 col-md-12 mb-4">-->
+      <!--                  <div class="text-center" style="background-color:#df5311; background-image: url('{{asset('images/shape-1.png')}}'); background-repeat: no-repeat; background-position: bottom left; height:60%;">-->
+      <!--                      <div class="p-4">-->
+      <!--                          <h3>Government of Sindh</h3>-->
+      <!--                          <p >The Government of Sindh (GoS) has initiated the Sindh People’s Housing for Flood Affectees (SPHF), a Section 42 company. In a display of long-term commitment, the government has contributed $227 million for the construction of houses. The beneficiaries will be awarded land titles, reinforcing the government's enduring support for those affected by the floods.</p>-->
+      <!--                      </div>-->
+      <!--                  </div>-->
+      <!--              </div>-->
+      <!--          </div>-->
+      <!--      </div>-->
+      <!--  </section>-->
+        
          <!-- Umer Code End -->
     </main>
+
+
+<style>
+.box_last {
+    width: 198px !important;
+        height: 200px; /* Set your desired height */
+        background-color: #f1f6f7; /* White background color */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+    }
+    
+ .box_center {
+    margin: 0 auto; /* Center the section horizontally */
+    max-width: 1200px; /* Optional: Set a max-width for the section */
+    margin-top: -100px;
+  }
+
+</style>
+
 
 
     <!-- Modal -->
@@ -884,7 +989,6 @@
             </div>
         </div>
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 

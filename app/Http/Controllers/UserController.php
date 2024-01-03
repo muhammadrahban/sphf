@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Mail;
+
 
 class UserController extends Controller
 {
@@ -37,5 +39,18 @@ class UserController extends Controller
         ]);
         Auth::user()->update($userData);
         return redirect(Route('web.SubmitPaymentDetail'))->with("message", "User updated suceesfully");
+    }
+    
+    public function resendMail()
+    {
+         $user_data = auth()->user();
+        // Sending email with variables $id and $code to the blade template
+        Mail::send('web.pages.code', ['id' => $user_data->id , 'code' => $user_data->verification_code], function ($m) use ($user_data) {
+            $m->to($user_data->email)
+                ->from('noreply@ftrack.biz')
+                ->subject('Account verification for SPHF');
+        });
+        return redirect()->back()->with('success', 'Email sent successfully.');
+
     }
 }

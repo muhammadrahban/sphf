@@ -13,7 +13,7 @@ class FilterController extends Controller
     public function filterView(Request $request)
     {
         if (auth()->user()->email_verified_at == null) {
-            $data['message'] = "Please Verify Your Email To Adopt Victim.";
+            $data['message'] = "Please Verify Your Email To Adopt beneficiary.";
             return view('web.verify-message', compact('data'));
         }
 
@@ -22,6 +22,9 @@ class FilterController extends Controller
         $data['page']   = $offset;
         $foundItems = victim::query();
         $filtersApplied = false;
+        $foundItems->whereNotIn('id', function($query) {
+    $query->select('victim_id')->from('donations');
+});
 
         if ($request->has('keywords') && $request->keywords != '') {
             $keyword = $request->keywords;

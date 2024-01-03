@@ -66,7 +66,7 @@ class RegisterController extends Controller
             'post_code'         => ['required', 'string', 'max:255'],
             'organiation'       => ['required', 'string', 'max:255'],
             'job_title'         => ['required', 'string', 'max:255'],
-            'comments'          => ['required', 'string', 'max:255'],
+            'comments'          => ['sometimes', 'max:255'],
         ]);
     }
 
@@ -106,7 +106,7 @@ class RegisterController extends Controller
         // Sending email with variables $id and $code to the blade template
         Mail::send('web.pages.code', ['id' => $user_data->id , 'code' => $user_data->verification_code], function ($m) use ($data) {
             $m->to($data['email'])
-                ->from('noreply@sphf.gos.pk')
+                ->from('noreply@ftrack.biz')
                 ->subject('Account verification for SPHF');
         });
 

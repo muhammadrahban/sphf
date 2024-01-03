@@ -25,7 +25,7 @@ class GeneralDonationController extends Controller
             'post_code'         => ['sometimes', 'string', 'max:255'],
             'organiation'       => ['sometimes', 'string', 'max:255'],
             'job_title'         => ['sometimes', 'string', 'max:255'],
-            'comments'          => ['sometimes', 'string', 'max:255'],
+            'comments'          => ['sometimes', 'max:255'],
         ]);
 
         $params = $request->all();

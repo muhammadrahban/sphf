@@ -142,9 +142,9 @@ use App\Http\Controllers\GeneralDonationController;
 //     Route::get('/home', [HomeController::class, 'index'])->name('home');
 // });
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 Route::get('/logintest', [LoginController::class, 'showLoginForm'])->name('login.form');
@@ -152,6 +152,9 @@ Route::get('/logintest', [LoginController::class, 'showLoginForm'])->name('login
 Route::get('/home', function () {
     return view('web.home');
 })->name('web.home');
+Route::get('/home2', function () {
+    return view('web.home');
+})->name('web.home_changes');
 
 Route::get('/', function () {
     return view('web.home');
@@ -198,6 +201,7 @@ Route::middleware(['auth'])->prefix('web')->group(function () {
         Route::get('/track', [DashboardController::class, 'track'])->name('web.track');
         Route::get('/donation', [DashboardController::class, 'donation'])->name('web.donation');
         Route::post('/profile-update', [DashboardController::class, 'updateuser'])->name('user.adminupdate');
+        Route::post('/resend-mail', [UserController::class, 'resendMail'])->name('verification.send');
     }
 );
 
