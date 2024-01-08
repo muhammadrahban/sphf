@@ -167,7 +167,7 @@ Route::get('/webfaqs', function () {
     return view('web.Faqs');
 })->name('web.faqs');
 
-Route::get('/becomdoner', function () {
+Route::get('/transfer-sphf', function () {
     return view('web.BecomAdoner');
 })->name('becom.doner');
 
@@ -178,6 +178,9 @@ Route::get('/download-invoice',[PaymentController::class, 'downloadInvoice'])->n
 // Route::get('/donation', [DashboardController::class, 'donation'])->name('web.donation');
 
 Route::get('/doner/register', function() {
+    return view('web.auth.RegistrationForm');
+})->name('register.doner');
+Route::get('/adopt-beneficiary', function() {
     return view('web.auth.RegistrationForm');
 })->name('register.doner');
 

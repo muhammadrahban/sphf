@@ -42,7 +42,7 @@
                         <div class="col-lg-10">
                             <h1 class="text-white display-1 font-weight-bold mb-4">Together Against Adversity</h1>
                             <h4 class="text-white mb-5">Your Support Builds Homes for a Steadfast Tomorrow</h4>
-                            <a href="/sphf/public/becomdoner" class="btn text-white primary_button rounded-0 px-4 py-3">TRANSFER TO SPHF</a>
+                            <a href="/sphf/public/transfer-sphf" class="btn text-white primary_button rounded-0 px-4 py-3">TRANSFER TO SPHF</a>
                         </div>
                     </div>
                 </div>
@@ -176,8 +176,8 @@
                             <div class="custom-card orange p-4 text-right mb-4" style="width: 100%; min-height:200px; background-color: #FBB329; height:90%">
                                <!-- <i class="fa-5x far fa-heart text-light"></i>-->
                                  <img  style="width: 70px; height: 70px;" src="{{asset('images/Home_icon/Icons-05.svg')}}">
-                               <a href="/sphf/public/becomdoner">  <h4 class="text-light text-left">Transfer to </br>SPHF</h4></a>
-                               <a href="/sphf/public/becomdoner"> <p class="text-light text-left">Confide in SPHF with your donations.</p></a>
+                               <a href="/sphf/public/transfer-sphf">  <h4 class="text-light text-left">Transfer to </br>SPHF</h4></a>
+                               <a href="/sphf/public/transfer-sphf"> <p class="text-light text-left">Confide in SPHF with your donations.</p></a>
                             </div>
                         </div>
                         <div class="col-md-6 ">
