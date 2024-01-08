@@ -7,6 +7,8 @@ use App\Models\victim;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\DB;
 use \Cache;
+use GuzzleHttp\Psr7\Response;
+use Illuminate\Http\JsonResponse;
 
 class FilterController extends Controller
 {
@@ -22,9 +24,9 @@ class FilterController extends Controller
         $data['page']   = $offset;
         $foundItems = victim::query();
         $filtersApplied = false;
-        $foundItems->whereNotIn('id', function($query) {
-    $query->select('victim_id')->from('donations');
-});
+        $foundItems->whereNotIn('id', function ($query) {
+            $query->select('victim_id')->from('donations');
+        });
 
         if ($request->has('keywords') && $request->keywords != '') {
             $keyword = $request->keywords;
@@ -39,18 +41,21 @@ class FilterController extends Controller
             $foundItems->where('district', $district);
             $filtersApplied = true;
         }
+
         if ($request->has('tehsil') && $request->tehsil != 'Select tehsil' && $request->tehsil != null) {
             $tehsil = $request->tehsil;
             $data['tehsil'] = $tehsil;
             $foundItems->where('tehsil', $tehsil);
             $filtersApplied = true;
         }
+
         if ($request->has('union_council') && $request->union_council != 'Select union council' && $request->union_council != null) {
             $union_council = $request->union_council;
             $data['union_council'] = $union_council;
             $foundItems->where('union_council', $union_council);
             $filtersApplied = true;
         }
+
         if ($request->has('deh') && $request->location != 'Select deh' && $request->deh != null) {
             $deh = $request->deh;
             $data['deh'] = $deh;
@@ -98,6 +103,7 @@ class FilterController extends Controller
             $filtersApplied = true;
             $selectedOptions[] = 'elderly';
         }
+
         if ($request->has('elderly')) {
             // Assuming two different conditions for 'elderly', choose one based on your logic
             //$foundItems->where('divorced_abandoned_unmarried_older_dependent_on_others', 1);
@@ -166,4 +172,29 @@ class FilterController extends Controller
     //     }
     //     return $new_amount;
     // }
+
+    public function filterVictim(Request $request)
+    {
+        if($request->district){
+            $data = victim::select('tehsil', DB::raw('count(*) as total'))
+                ->where('district', $request->district)
+                ->groupBy('tehsil')
+                ->get();
+        }
+
+        if($request->tehsil){
+            $data = victim::select('union_council', DB::raw('count(*) as total'))
+                ->where('tehsil', $request->tehsil)
+                ->groupBy('union_council')
+                ->get();
+        }
+
+        if($request->union_council){
+            $data = victim::select('deh', DB::raw('count(*) as total'))
+                ->where('union_council', $request->union_council)
+                ->groupBy('deh')
+                ->get();
+        }
+        return response()->json($data, 200);
+    }
 }

@@ -157,7 +157,6 @@
                             @auth
 
                             @else
-
                                 <div class="col-md-2">
                                     <select name="title" class="form-control mb-3">
                                         <option value="Mr.">Mr.</option>
@@ -256,7 +255,6 @@
                                         </label>
                                     </div>
                                 </div>
-
                             @endauth
                         </div>
                         <div class="bg-white border border-secondary rounded m-3 p-3">

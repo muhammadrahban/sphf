@@ -46,7 +46,7 @@
                                     <label for="tehsil" style="font-size: 20px;">Tehsil</label>
                                     <select class="custom-select mb-3" id="tehsil" name="tehsil"
                                         placeholder="Dadu, karachi">
-                                        <option>Select tehsil</option>
+                                        <option value="">Select Tehsil</option>
                                         @foreach (@$location_list_tehsil as $location => $location_data)
                                             <option value="{{ $location_data['tehsil'] }}" @selected(@$data['tehsil'] == $location_data['tehsil'])>
                                                 {{ $location_data['tehsil'] }}</option>
@@ -57,9 +57,10 @@
                                     <label for="union_council" style="font-size: 20px;">Union Council</label>
                                     <select class="custom-select mb-3" id="union_council" name="union_council"
                                         placeholder="Dadu, karachi">
-                                        <option>Select union council</option>
+                                        <option value="">Select Union Council</option>
                                         @foreach (@$location_list_union_council as $location => $location_data)
-                                            <option value="{{ $location_data['union_council'] }}" @selected(@$data['union_council'] == $location_data['union_council'])>
+                                            <option value="{{ $location_data['union_council'] }}"
+                                                @selected(@$data['union_council'] == $location_data['union_council'])>
                                                 {{ $location_data['union_council'] }}</option>
                                         @endforeach
                                     </select>
@@ -68,7 +69,7 @@
                                     <label for="deh" style="font-size: 20px;">Deh</label>
                                     <select class="custom-select mb-3" id="deh" name="deh"
                                         placeholder="Dadu, karachi">
-                                        <option>Select deh</option>
+                                        <option value="">Select Deh</option>
                                         @foreach (@$location_list_deh as $location => $location_data)
                                             <option value="{{ $location_data['deh'] }}" @selected(@$data['deh'] == $location_data['deh'])>
                                                 {{ $location_data['deh'] }}</option>
@@ -77,43 +78,48 @@
                                 </div>
                             </div>
                             <!-- <div class="form-row align-items-center my-2">
-                                                    <div class="col-12">
-                                                        <label for="location" style="font-size: 13px;">Radius around selected destination</label>
-                                                        <select class="custom-select mb-3" id="location" placeholder="Dadu, Sukkar">
-                                                            <option selected>Open this select menu</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
-                                                        </select>
-                                                    </div>
-                                                </div> -->
-                                                <div class="form-row align-items-center my-2">
-                                                    <label for="vulnerability" style="font-size: 20px;">Vulnerability</label>
-                                                    <div class="col-12">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="widow" name="widow" value="widow" @if(in_array('widow', $selectedOptions)) checked @endif>
-                                                            <label class="form-check-label" for="widow">Widow</label>
-                                                        </div>
-                                                        <!-- Repeat this structure for other checkboxes -->
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="Women" name="women" value="women" @if(in_array('women', $selectedOptions)) checked @endif>
-                                                            <label class="form-check-label" for="Women">Women with disabled husband</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="Elderly" name="elderly" value="elderly" @if(in_array('elderly', $selectedOptions)) checked @endif>
-                                                            <label class="form-check-label" for="Elderly">Elderly</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="Differntly_Abled" name="differently_abled" value="differently_abled" @if(in_array('differently_abled', $selectedOptions)) checked @endif>
-                                                            <label class="form-check-label" for="Differntly_Abled">Differently Abled</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" id="orphan" name="orphan" value="orphan" @if(in_array('orphan', $selectedOptions)) checked @endif>
-                                                            <label class="form-check-label" for="orphan">Orphans</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
+                                    <div class="col-12">
+                                        <label for="location" style="font-size: 13px;">Radius around selected destination</label>
+                                        <select class="custom-select mb-3" id="location" placeholder="Dadu, Sukkar">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+                            <div class="form-row align-items-center my-2">
+                                <label for="vulnerability" style="font-size: 20px;">Vulnerability</label>
+                                <div class="col-12">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="widow" name="widow"
+                                            value="widow" @if (in_array('widow', $selectedOptions)) checked @endif>
+                                        <label class="form-check-label" for="widow">Widow</label>
+                                    </div>
+                                    <!-- Repeat this structure for other checkboxes -->
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="Women" name="women"
+                                            value="women" @if (in_array('women', $selectedOptions)) checked @endif>
+                                        <label class="form-check-label" for="Women">Women with disabled husband</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="Elderly" name="elderly"
+                                            value="elderly" @if (in_array('elderly', $selectedOptions)) checked @endif>
+                                        <label class="form-check-label" for="Elderly">Elderly</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="Differntly_Abled"
+                                            name="differently_abled" value="differently_abled"
+                                            @if (in_array('differently_abled', $selectedOptions)) checked @endif>
+                                        <label class="form-check-label" for="Differntly_Abled">Differently Abled</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="orphan" name="orphan"
+                                            value="orphan" @if (in_array('orphan', $selectedOptions)) checked @endif>
+                                        <label class="form-check-label" for="orphan">Orphans</label>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-row align-items-center my-2">
                                 <div class="col-12">
                                     <label for="gender" style="font-size: 20px;">Gender</label>
@@ -170,21 +176,21 @@
                                     style="font-size: 20px; color: #878787;">Select All</label>
                             </div>
                             <!--<div class="d-flex mx-3">
-                                <i class="fa fa-user" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
-                                    aria-hidden="true"></i>
-                                <div class="d-flex flex-column">
-                                    <p class="m-0">Persons</p>
-                                    <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                                    <i class="fa fa-user" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
+                                        aria-hidden="true"></i>
+                                    <div class="d-flex flex-column">
+                                        <p class="m-0">Persons</p>
+                                        <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="d-flex mx-3">
-                                <i class="fa fa-home" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
-                                    aria-hidden="true"></i>
-                                <div class="d-flex flex-column">
-                                    <p class="m-0">Homes</p>
-                                    <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
-                                </div>
-                            </div>-->
+                                <div class="d-flex mx-3">
+                                    <i class="fa fa-home" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
+                                        aria-hidden="true"></i>
+                                    <div class="d-flex flex-column">
+                                        <p class="m-0">Homes</p>
+                                        <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                                    </div>
+                                </div>-->
                             <div class="d-flex ml-auto w-40 sort_filter">
                                 <label class="w-50" for="sort_by">Sort by : </label>
                                 <select class="form-control" id="sort_by">
@@ -217,7 +223,8 @@
                                                     aria-hidden="true"></i> {{ $item['district'] }} /
                                                 {{ $item['tehsil'] }}
                                             </p>
-                                            <p class="text-secondary m-0 mx-4">{{session()->get('currency')}} {{number_format($item['price'], 0)}}</p>
+                                            <p class="text-secondary m-0 mx-4">{{ session()->get('currency') }}
+                                                {{ number_format($item['price'], 0) }}</p>
                                         </div>
                                         <p class="m-0 w-auto rounded text-left px-2 my-3"
                                             style="background-color: #ececec;">
@@ -295,10 +302,9 @@
             return color;
         }
 
-        $(Document).ready(function(){
+        $(Document).ready(function() {
             $('.rounded-background').css('background-color', getRandomColor());
         })
-        // document.get('').style.backgroundColor = getRandomColor();
 
         function clear_all_button() {
             $('#clear_all_form').find(':input').each(function() {
@@ -316,5 +322,65 @@
             });
 
         })
+
+        $('#district').change(function() {
+            var val = $(this).val();
+            $.ajax({
+                url: '{{ route('filter.victims') }}',
+                method: 'POST',
+                data: { district: val, _token: '{{csrf_token()}}' },
+                success: function(response) {
+                    $('#tehsil').html();
+                    var data = '<option value="">Select Tehsil</option>';
+                    response.forEach(function(res){
+                        data += '<option value="'+res.tehsil+'">'+res.tehsil+'</option>';
+                    })
+                    $('#tehsil').html(data);
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+
+        $('#tehsil').change(function() {
+            var val = $(this).val();
+            $.ajax({
+                url: '{{ route('filter.victims') }}',
+                method: 'POST',
+                data: { tehsil: val, _token: '{{csrf_token()}}' },
+                success: function(response) {
+                    $('#union_council').html();
+                    var data = '<option value="">Select Union Council</option>';
+                    response.forEach(function(res){
+                        data += '<option value="'+res.union_council+'">'+res.union_council+'</option>';
+                    })
+                    $('#union_council').html(data);
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+
+        $('#union_council').change(function() {
+            var val = $(this).val();
+            $.ajax({
+                url: '{{ route('filter.victims') }}',
+                method: 'POST',
+                data: { union_council: val, _token: '{{csrf_token()}}' },
+                success: function(response) {
+                    $('#deh').html();
+                    var data = '<option value="">Select Deh</option>';
+                    response.forEach(function(res){
+                        data += '<option value="'+res.deh+'">'+res.deh+'</option>';
+                    })
+                    $('#deh').html(data);
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
     </script>
 @endsection

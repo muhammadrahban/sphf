@@ -205,6 +205,8 @@ Route::middleware(['auth'])->prefix('web')->group(function () {
         Route::get('/donation', [DashboardController::class, 'donation'])->name('web.donation');
         Route::post('/profile-update', [DashboardController::class, 'updateuser'])->name('user.adminupdate');
         Route::post('/resend-mail', [UserController::class, 'resendMail'])->name('verification.send');
+        // ajax call
+        Route::post('/filter/victims', [FilterController::class, 'filterVictim'])->name('filter.victims');
     }
 );
 

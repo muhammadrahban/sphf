@@ -40,7 +40,7 @@ class UserController extends Controller
         Auth::user()->update($userData);
         return redirect(Route('web.SubmitPaymentDetail'))->with("message", "User updated suceesfully");
     }
-    
+
     public function resendMail()
     {
          $user_data = auth()->user();
