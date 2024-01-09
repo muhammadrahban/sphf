@@ -167,7 +167,7 @@
                                 <div class="d-flex align-items-start">
                                     <input type="radio" id="individual" class="m-2" name="donation_type" value="individual" />
                                     <label for="individual">
-                                        Donate as individual.
+                                        Donate as an individual.
                                     </label>
                                 </div>
                             </div>

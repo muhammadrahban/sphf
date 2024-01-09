@@ -4,8 +4,8 @@
             <div class="col-lg-4 col-md-12">
                 <div class="d-flex flex-column">
                     <img class="mb-3" src="{{asset('images/SPHF-donor-logo-white.png')}}" alt="logo" width="150">
-                    <p class="text-light text-left footer_paragraph">
-                        The SPHF Donor Platform facilitates individuals and organizations wishing to make online donation for  construction of resilient houses for flood affectees in Sindh, Pakistan. The platform is simple, secure medium to register, select donation option, process payment and track impact of the donation made.
+                    <p class="text-light text-justify footer_paragraph">
+                       The SPHF Donor Platform serves as a convenient and secure channel for individuals and organizations looking to contribute online donations towards the construction of resilient houses for flood-affected individuals in Sindh, Pakistan. This user-friendly platform enables users to easily register, choose their preferred donation option, complete the payment process, and monitor the impact of their contributions.
                     </p>
                 </div>
             </div>
@@ -22,14 +22,14 @@
                     <div class="col-md-4">
                         <h4 class="text-white mb-5">Contact</h4>
                         <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-map-marker"></i> Bungalow no. 20, Block 7/8, Modern Cooperative Housing Society, Karachi.</a>
-                        <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-envelope"></i> donor@sphf.gos.pk</a>
+                        <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-envelope"></i> Donations@sphf.gos.pk</a>
                         <a href="#" class="p-link text-white d-block mb-3"><i class="fa fa-phone"></i> +92 21 99334119-20</a>
                          <a href="#" class="p-link text-white mr-3">Privacy</a>
                         <a href="#" class="p-link text-white ">Terms</a>
 
                     </div>
                     <div class="col-md-4">
-                        <h4 class="text-white mb-0">Sponsor houses & help them</h4>
+                        <h4 class="text-white mb-0">Sow Seeds of Change: Sponsor a home</h4>
                         <div class="text-right">
                             <img src="{{asset('images/arrow-3.png')}}">
                         </div>

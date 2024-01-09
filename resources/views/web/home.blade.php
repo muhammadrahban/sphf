@@ -20,10 +20,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="text-white display-1 font-weight-bold mb-4">Impact Beyond Walls</h1>
-                            <h4 class="text-white mb-5">Join us in Creating Resilient Housing for Vulnerable Communities
-                            </h4>
-                            <a href="/sphf/public/doner/register"
-                                class="btn text-white primary_button rounded-0 px-4 py-3">ADOPT A BENEFICIARY</a>
+
+                            <h4 class="text-white mb-5">Join us in Creating Resilient Housing for Vulnerable Communities</h4>
+
                         </div>
                     </div>
                 </div>
@@ -34,8 +33,9 @@
                         <div class="col-lg-10">
                             <h1 class="text-white display-1 font-weight-bold mb-4">Invest in Resilience</h1>
                             <h4 class="text-white mb-5">Give the gift of homes that rise above disaster</h4>
-                            <a href="/sphf/public/doner/register"
-                                class="btn text-white primary_button rounded-0 px-4 py-3">ADOPT A BENEFICIARY</a>
+
+                            <a href="/adopt-beneficiary" class="btn text-white primary_button rounded-0 px-4 py-3">ADOPT A BENEFICIARY</a>
+
                         </div>
                     </div>
                 </div>
@@ -189,29 +189,27 @@
                             <div class="custom-card orange p-4 text-right mb-4"
                                 style="width: 100%; min-height:200px; background-color: #df5311; height:90%;">
                                 <!--<i class="fa-5x far fa-heart text-light"></i>-->
-                                </a><img style="width: 70px; height: 70px;"
-                                    src="{{ asset('images/Home_icon/Icons-04.svg') }}">
-                                <a href="/sphf/public/doner/register">
-                                    <h4 class="text-light text-left">Register</h4>
-                                </a>
-                                <a href="/sphf/public/doner/register">
-                                    <p class="text-light text-left">Signing up as a donor is quick, easy, systematic and
-                                        secure</p>
-                                </a>
+
+                                 </a><img  style="width: 70px; height: 70px;" src="{{asset('images/Home_icon/Icons-04.svg')}}">
+                               <a href="/adopt-beneficiary"> <h4 class="text-light text-left">Register</h4></a>
+                                <a href="/adopt-beneficiary"><p class="text-light text-left">Signing up as a donor is quick, easy, systematic and secure</p></a>
+                            </div>  
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="custom-card orange p-4 text-right mb-4" style="width: 100%; min-height:200px; background-color: #FBB329; height:90%">
+                               <!-- <i class="fa-5x far fa-heart text-light"></i>-->
+                                 <img  style="width: 70px; height: 70px;" src="{{asset('images/Home_icon/Icons-05.svg')}}">
+                               <a href="/sphf/public/transfer-sphf">  <h4 class="text-light text-left">Transfer to </br>SPHF</h4></a>
+                               <a href="/sphf/public/transfer-sphf"> <p class="text-light text-left">Confide in SPHF with your donations.</p></a>
                             </div>
                         </div>
                         <div class="col-md-6 ">
-                            <div class="custom-card orange p-4 text-right mb-4"
-                                style="width: 100%; min-height:200px; background-color: #FBB329; height:90%">
-                                <!-- <i class="fa-5x far fa-heart text-light"></i>-->
-                                <img style="width: 70px; height: 70px;"
-                                    src="{{ asset('images/Home_icon/Icons-05.svg') }}">
-                                <a href="/sphf/public/transfer-sphf">
-                                    <h4 class="text-light text-left">Transfer to </br>SPHF</h4>
-                                </a>
-                                <a href="/sphf/public/transfer-sphf">
-                                    <p class="text-light text-left">Confide in SPHF with your donations.</p>
-                                </a>
+                            <div class="custom-card orange p-4 text-right mb-4" style="width: 100%; min-height:200px; background-color: #138999; height:90%">
+                                <!--<i class="fa-5x far fa-heart text-light"></i>-->
+                                 <img  style="width: 70px; height: 70px;" src="{{asset('images/Home_icon/Icons-06.svg')}}">
+                               <a href="/adopt-beneficiary">  <h4 class="text-light text-left">Adopt a Beneficiary</h4></a>
+                               <a href="/adopt-beneficiary">  <p class="text-light text-left">Select & foster personalized connection with beneficiaries.</p></a>
+
                             </div>
                         </div>
                         <div class="col-md-6 ">
@@ -293,381 +291,37 @@
                         <h1 class="mb-4">Explore & adopt a beneficiary</h1>
                     </div>
                     <div class="col-lg-4 col-md-6 text-left text-md-right">
-                        <a href="/sphf/public/doner/register"
-                            class="btn text-white primary_button rounded-0 px-4 py-3">ADOPT A BENEFICIARY</a>
+
+                        <a href="/adopt-beneficiary" class="btn text-white primary_button rounded-0 px-4 py-3">ADOPT A BENEFICIARY</a>
                     </div>
                 </div>
-                <div class="box-slider-2 slider">
-                    <!--1-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Larkana.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <h4 class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #8139e7; font-size: 15px;">LARKANA</h4>
-                            <h4 class="text-white">131,896 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:26%; background-color: #8139e7;">
-                                        <span style="background-color: #8139e7;">26%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">131,806 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--2-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_jacobabad.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #df5311; font-size: 15px;">JACOBABAD</label>
-                            <h4 class="text-white">112,411 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:10%; background-color: #df5311;">
-                                        <span style="background-color: #df5311;">10%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">112,411 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--3-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_kamber_shahdatkot.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #ceaa6a; font-size: 15px;">KAMBER SHAHDADKOT</label>
-                            <h4 class="text-white">143,017 <small>Affected by 2022 Floods</small></h4>
-                            <!-- <div class="progress">
-                                    <div style="width:0.9%; background-color: #ceaa6a;">
-                                        <span style="background-color: #ceaa6a;">0.9%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">143,017 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--4-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_khairpur.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #8139e7; font-size: 15px;">KHAIRPUR</label>
-                            <h4 class="text-white">275,644 <small>Affected by 2022 Floods</small> </h4>
-                            <!--<div class="progress">
-                                    <div style="width:11%; background-color: #8139e7;">
-                                        <span style="background-color: #8139e7;">11%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">275,644 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--5-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_shikarpur.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #ceaa6a; font-size: 15px;">SHIKARPUR</label>
-                            <h4 class="text-white">89,791 <small>Affected by 2022 Floods</small></h4>
-                            <!-- <div class="progress">
-                                    <div style="width:7%; background-color: #ceaa6a;">
-                                        <span style="background-color: #ceaa6a;">7%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">89,791 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--6-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Badin.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #8139e7; font-size: 15px;">BADIN</label>
-                            <h4 class="text-white">111,179 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:6%; background-color: #8139e7;">
-                                        <span style="background-color: #8139e7;">6%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">111,179 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--7-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Matiari.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #df5311; font-size: 15px;">MATIARI</label>
-                            <h4 class="text-white">46,485 <small>Affected by 2022 Floods</small></h4>
-                            <!-- <div class="progress">
-                                    <div style="width:5.6%; background-color: #df5311;">
-                                        <span style="background-color: #df5311;">5.6%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">46,485 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--8-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Mirpurkhas.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #ceaa6a; font-size: 15px;">MIRPURKHAS</label>
-                            <h4 class="text-white">86,269 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:17%; background-color: #ceaa6a;">
-                                        <span style="background-color: #ceaa6a;">17%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">86,269 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--9-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_sanghar.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #8139e7; font-size: 15px;">SANGHAR</label>
-                            <h4 class="text-white">105,864 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:4.5%; background-color: #8139e7;">
-                                        <span style="background-color: #8139e7;">4.5%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">105,864 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--10-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_sujawal.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #ceaa6a; font-size: 15px;">SUJAWAL</label>
-                            <h4 class="text-white">52,615 <small>Affected by 2022 Floods</small></h4>
-                            <!--   <div class="progress">
-                                    <div style="width:6.2%; background-color: #ceaa6a;">
-                                        <span style="background-color: #ceaa6a;">6.2%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">52,615 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--11-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Tando_Allahyar.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #8139e7;">TANDO ALLAHYAR</label>
-                            <h4 class="text-white">30,116 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:3.2%; background-color: #8139e7;">
-                                        <span style="background-color: #8139e7;">3.2%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">30,116 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--12-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_tando_muhammad_khan.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #df5311; font-size: 15px;">TANDO MUHAMMAD KHAN</label>
-                            <h4 class="text-white">28,456 <small>Affected by 2022 Floods</small></h4>
-                            <!-- <div class="progress">
-                                    <div style="width:2.05%; background-color: #df5311;">
-                                        <span style="background-color: #df5311;">2.05%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">28,456 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--13-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Ghotki.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #ceaa6a; font-size: 15px;">GHOTKI</label>
-                            <h4 class="text-white">85,162 <small>Affected by 2022 Floods</small></h4>
-                            <!--  <div class="progress">
-                                    <div style="width:4.8%; background-color: #ceaa6a;">
-                                        <span style="background-color: #ceaa6a;">4.8%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">85,162 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--14-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img-24.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #8139e7; font-size: 15px">HYDERABAD</label>
-                            <h4 class="text-white">20,008 <small>Affected by 2022 Floods</small></h4>
-                            <!-- <div class="progress">
-                                    <div style="width:0.2%; background-color: #8139e7;">
-                                        <span style="background-color: #8139e7;">0.2%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">20,008 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--15-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Kashmore.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #ceaa6a; font-size: 15px">KASHMORE</label>
-                            <h4 class="text-white">76,278 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:6.1%; background-color: #ceaa6a;">
-                                        <span style="background-color: #ceaa6a;">6.1%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">76,278 </h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--16-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_sukkur.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #8139e7;  font-size: 15px">SUKHAR</label>
-                            <h4 class="text-white">83,417 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:15%; background-color: #8139e7;">
-                                        <span style="background-color: #8139e7;">15%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">83,417</h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--17-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_unknow.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #df5311;  font-size: 15px">THATTA</label>
-                            <h4 class="text-white">24,716 <small>Affected by 2022 Floods</small></h4>
-                            <!-- <div class="progress">
-                                    <div style="width:2.3%; background-color: #df5311;">
-                                        <span style="background-color: #df5311;">2.3%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">24,716</h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--18-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Malir.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #ceaa6a;  font-size: 15px">MALIR</label>
-                            <h4 class="text-white">55 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:0.2%; background-color: #ceaa6a;">
-                                        <span style="background-color: #ceaa6a;">0.2%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">55</h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--19-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_omerkot.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #8139e7;  font-size: 15px">UMERKOT</label>
-                            <h4 class="text-white">68,092 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:5.8%; background-color: #8139e7;">
-                                        <span style="background-color: #8139e7;">5.8%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">68,092</h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--20-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Dadu.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #ceaa6a;  font-size: 15px">DADU</label>
-                            <h4 class="text-white">164,103<small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
+                    <div class="box-slider-2 slider">
+    <!--1-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_khairpur.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">KHAIRPUR</label>
+            <h4 class="text-white">275,644 <small>Affected by 2022 Floods</small> </h4>
+            <!--<div class="progress">
+                <div style="width:11%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">11%</span>
+>>>>>>> Stashed changes
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">275,644 </h4>
+            </div>-->
+        </div>
+    </div>
+     
+    <!--2-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Dadu.png')}}');">
+                            <div class="overlay"></div>
+                            <div class="cover p-4">
+                                <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a;  font-size: 15px">DADU</label>
+                                <h4 class="text-white">164,103<small>Affected by 2022 Floods</small></h4>
+                                <!--<div class="progress">
                                     <div style="width:9.4%; background-color: #ceaa6a;">
                                         <span style="background-color: #ceaa6a;">9.4%</span>
                                     </div>
@@ -676,85 +330,405 @@
                                     <h5 class="text-white"><small>Beneficiaries</small></h5>
                                     <h4 class="text-white">164,103</h4>
                                 </div>-->
-                        </div>
-                    </div>
-                    <!--21-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_jamshoro.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #8139e7; font-size: 15px">JAMSHORO</label>
-                            <h4 class="text-white">60,609 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:5.4%; background-color: #8139e7;">
-                                        <span style="background-color: #8139e7;">5.4%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">60,609</h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--22-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_tharparkar.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #df5311; font-size: 15px">THARPARKAR</label>
-                            <h4 class="text-white">8,766 <small>Affected by 2022 Floods</small></h4>
-                            <!--  <div class="progress">
-                                    <div style="width:0.4%; background-color: #df5311;">
-                                        <span style="background-color: #df5311;">0.4%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">8,766</h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--23-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_shaheed_benazirabad.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #ceaa6a; font-size: 15px">SHAHEED BENAZIRABAD</label>
-                            <h4 class="text-white">114,181 <small>Affected by 2022 Floods</small></h4>
-                            <!--<div class="progress">
-                                    <div style="width:6.1%; background-color: #ceaa6a;">
-                                        <span style="background-color: #ceaa6a;">6.1%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">114,181</h4>
-                                </div>-->
-                        </div>
-                    </div>
-                    <!--24-->
-                    <div class="slide"
-                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_naushro_feroz.png') }}');">
-                        <div class="overlay"></div>
-                        <div class="cover p-4">
-                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
-                                style="background-color: #8139e7; font-size: 15px">NAUSHERO FEROZ</label>
-                            <h4 class="text-white">143,323 <small>Affected by 2022 Floods</small></h4>
-                            <!-- <div class="progress">
-                                    <div style="width:8%; background-color: #8139e7;">
-                                        <span style="background-color: #8139e7;">8%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">143,323</h4>
-                                </div>-->
-                        </div>
-                    </div>
+                            </div>
+    </div>
+
+    <!--3-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_kamber_shahdatkot.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">KAMBER SHAHDADKOT</label>
+            <h4 class="text-white">143,017 <small>Affected by 2022 Floods</small></h4>
+            <!-- <div class="progress">
+                <div style="width:0.9%; background-color: #ceaa6a;">
+                    <span style="background-color: #ceaa6a;">0.9%</span>
                 </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">143,017 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--4-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_naushro_feroz.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px">NAUSHERO FEROZ</label>
+            <h4 class="text-white">143,323 <small>Affected by 2022 Floods</small></h4>
+            <!-- <div class="progress">
+                <div style="width:8%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">8%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">143,323</h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--5-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_shaheed_benazirabad.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px">SHAHEED BENAZIRABAD</label>
+            <h4 class="text-white">114,181 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:6.1%; background-color: #ceaa6a;">
+                    <span style="background-color: #ceaa6a;">6.1%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">114,181</h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--6-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_jacobabad.png')}}');">
+                <div class="overlay"></div>
+                <div class="cover p-4">
+                    <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">JACOBABAD</label>
+                    <h4 class="text-white">112,411 <small>Affected by 2022 Floods</small></h4>
+                    <!--<div class="progress">
+                        <div style="width:10%; background-color: #df5311;">
+                            <span style="background-color: #df5311;">10%</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h5 class="text-white"><small>Beneficiaries</small></h5>
+                        <h4 class="text-white">112,411 </h4>
+                    </div>-->
+                </div>
+    </div>
+
+    <!--7-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_sanghar.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">SANGHAR</label>
+            <h4 class="text-white">105,864 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:4.5%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">4.5%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">105,864 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--8-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_sukkur.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7;  font-size: 15px">SUKHAR</label>
+            <h4 class="text-white">83,417 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:15%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">15%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">83,417</h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--9-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Ghotki.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">GHOTKI</label>
+            <h4 class="text-white">85,162  <small>Affected by 2022 Floods</small></h4>
+        <!--  <div class="progress">
+                <div style="width:4.8%; background-color: #ceaa6a;">
+                    <span style="background-color: #ceaa6a;">4.8%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">85,162 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--10-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Mirpurkhas.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">MIRPURKHAS</label>
+            <h4 class="text-white">86,269 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:17%; background-color: #ceaa6a;">
+                    <span style="background-color: #ceaa6a;">17%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">86,269 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--11-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_shikarpur.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">SHIKARPUR</label>
+            <h4 class="text-white">89,791 <small>Affected by 2022 Floods</small></h4>
+            <!-- <div class="progress">
+                <div style="width:7%; background-color: #ceaa6a;">
+                    <span style="background-color: #ceaa6a;">7%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">89,791 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--12-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_omerkot.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7;  font-size: 15px">UMERKOT</label>
+            <h4 class="text-white">68,092 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:5.8%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">5.8%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">68,092</h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--13-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Kashmore.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px">KASHMORE</label>
+            <h4 class="text-white">76,278 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:6.1%; background-color: #ceaa6a;">
+                    <span style="background-color: #ceaa6a;">6.1%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">76,278 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--14-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Tando_Allahyar.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7;">TANDO ALLAHYAR</label>
+            <h4 class="text-white">30,116 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:3.2%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">3.2%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">30,116 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--15-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_jamshoro.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px">JAMSHORO</label>
+            <h4 class="text-white">60,609 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:5.4%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">5.4%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">60,609</h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--16-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_sujawal.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">SUJAWAL</label>
+            <h4 class="text-white">52,615 <small>Affected by 2022 Floods</small></h4>
+        <!--   <div class="progress">
+                <div style="width:6.2%; background-color: #ceaa6a;">
+                    <span style="background-color: #ceaa6a;">6.2%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">52,615 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--17-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Matiari.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">MATIARI</label>
+            <h4 class="text-white">46,485 <small>Affected by 2022 Floods</small></h4>
+            <!-- <div class="progress">
+                <div style="width:5.6%; background-color: #df5311;">
+                    <span style="background-color: #df5311;">5.6%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">46,485 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--18-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_unknow.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311;  font-size: 15px">THATTA</label>
+            <h4 class="text-white">24,716 <small>Affected by 2022 Floods</small></h4>
+            <!-- <div class="progress">
+                <div style="width:2.3%; background-color: #df5311;">
+                    <span style="background-color: #df5311;">2.3%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">24,716</h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--19-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img-24.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px">HYDERABAD</label>
+            <h4 class="text-white">20,008 <small>Affected by 2022 Floods</small></h4>
+            <!-- <div class="progress">
+                <div style="width:0.2%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">0.2%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">20,008 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--20-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_tando_muhammad_khan.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">TANDO MUHAMMAD KHAN</label>
+            <h4 class="text-white">28,456 <small>Affected by 2022 Floods</small></h4>
+            <!-- <div class="progress">
+                <div style="width:2.05%; background-color: #df5311;">
+                    <span style="background-color: #df5311;">2.05%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">28,456 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--21-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Badin.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">BADIN</label>
+            <h4 class="text-white">111,179 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:6%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">6%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">111,179 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--22-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Larkana.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <h4 class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">LARKANA</h4>
+            <h4 class="text-white">131,896 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:26%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">26%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">131,806 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--23-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Tando_Allahyar.png')}}');">
+        <div class="overlay"></div>
+        <div class="cover p-4">
+            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7;">TANDO ALLAHYAR</label>
+            <h4 class="text-white">30,116 <small>Affected by 2022 Floods</small></h4>
+            <!--<div class="progress">
+                <div style="width:3.2%; background-color: #8139e7;">
+                    <span style="background-color: #8139e7;">3.2%</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5 class="text-white"><small>Beneficiaries</small></h5>
+                <h4 class="text-white">30,116 </h4>
+            </div>-->
+        </div>
+    </div>
+
+    <!--24-->
+    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Malir.png')}}');">
+                            <div class="overlay"></div>
+                            <div class="cover p-4">
+                                <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a;  font-size: 15px">MALIR</label>
+                                <h4 class="text-white">55 <small>Affected by 2022 Floods</small></h4>
+                                <!--<div class="progress">
+                                    <div style="width:0.2%; background-color: #ceaa6a;">
+                                        <span style="background-color: #ceaa6a;">0.2%</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                                    <h4 class="text-white">55</h4>
+                                </div>-->
+                            </div>
+    </div>
+    </div>
             </div>
         </section>
 
@@ -911,6 +885,7 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< Updated upstream
             </section>-->
 
         <!-- Umer Code Strat -->
@@ -1028,6 +1003,128 @@
         <!--  </section>-->
 
         <!-- Umer Code End -->
+=======
+            </div>
+        </section>-->
+        
+         <!-- Umer Code Strat -->
+        <!--<section style="background-color: #f1f6f7;">-->
+        <!--  <div class="container py-3 ">-->
+        <!--        <div class="row text-center ">-->
+        <!--            <div class="col">-->
+        <!--                <img src="{{asset('/images/Client_logo/logo-01.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >-->
+        <!--                <h5>Internal Auditor</h5>-->
+        <!--            </div>-->
+        <!--            <div class="col  ">-->
+        <!--                <img src="{{asset('/images/Client_logo/logo-02.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >-->
+        <!--                <h5>Execution Partner</h5>-->
+        <!--            </div>-->
+        <!--            <div class="col   ">-->
+        <!--                <img src="{{asset('/images/Client_logo/logo-03.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >-->
+        <!--                <h5>MIS Partner</h5>-->
+        <!--            </div>-->
+        <!--            <div class="col   ">-->
+        <!--                <img src="{{asset('/images/Client_logo/logo-04.svg')}}" class="img-fluid partner-logo mx-auto"  style="width: 150px; height: 150px;" >-->
+        <!--                <h5>Internal Auditor</h5>-->
+        <!--            </div>-->
+        <!--            <div class="col  ">-->
+        <!--                <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 150px; height: 150px;" >-->
+        <!--                <h5>Technology Partner</h5>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</section>-->
+        
+      <section>
+          <img src="{{asset('images/bg_4.jpg')}}" class="img-fluid partner-logo mx-auto" style="width:100%; height: 500px;" >
+        </section>
+
+        <section class="box-slider  box_center">
+            
+            <div class="slide box_last  ">
+                <div class="text-center" >
+                    <div>
+                      <img src="{{asset('/images/Client_logo/logo-02.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >
+                         <div class="text-center"  style="margin-top:6% ; margin-left:10% ; margin-right:10% ; ">
+                                    <p href="#" class="btn btn-block text-white  rounded-0" style="background-color: #df5311;">Execution Partner</p>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            
+              <div class="slide box_last">
+                <div class="text-center" >
+                    <div>
+                      <img src="{{asset('/images/Client_logo/logo-03.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >
+                          <div class="text-center"  style="margin-top:6% ; margin-left:10% ; margin-right:10% ; ">
+                                    <p href="#" class="btn btn-block text-white  rounded-0 " style="background-color: #df5311;">MIS Partner</p>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            
+               <div class="slide box_last">
+                <div class="text-center" >
+                    <div>
+                      <img src="{{asset('/images/Client_logo/logo-04.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >
+                        <div class="text-center"  style="margin-top:6% ; margin-left:10% ; margin-right:10% ; ">
+                                    <p href="#" class="btn btn-block text-white  rounded-0 " style="background-color: #df5311;">Internal Auditor</p>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            
+               <div class="slide box_last">
+                <div class="text-center" >
+                    <div>
+                      <img src="{{asset('/images/Client_logo/logo-01.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >
+                         <div class="text-center"  style="margin-top:6%; margin-left:10% ; margin-right:10% ; ">
+                                    <p href="#" class="btn btn-block text-white  rounded-0" style="background-color: #df5311;">Statuary Auditor</p>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            
+               <div class="slide box_last">
+                <div class="text-center" >
+                    <div>
+                      <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >
+                         <div class="text-center"  style="margin-top:6%; margin-left:5% ; margin-right:5% ; ">
+                                    <p href="#" class="btn btn-block text-white  rounded-0 " style="background-color: #df5311;">Technology Partner</p>
+                                </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+           
+        </section>
+        
+             <section>
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="text-justify" style="background-image: url('{{asset('images/shape-1.png')}}'); background-repeat: no-repeat; background-position: bottom left; height:60%;">
+                            <div >
+                                <h2 ><label class="leading-line">Our Pastners</label></h2>
+                                <p >In order to implement the SPHF (Execution, Implementation, Communication, and Technology)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-12 mb-4">
+                        <div class="text-justify"  style="background-image: url('{{asset('images/shape-1.png')}}'); background-repeat: no-repeat; background-position: bottom left; height:60%;">
+                            <div class="p-4">
+                                <p >We have formed a dynamic organization with top-tier partners. This ensures a comprehensive approach across key pillars, enhancing our capabilities in executing tasks with excellence, implementing seamlessly, communicating effectively, and utilizing rigotous technology. this collaborative and robust framework positions us for success in achieving our strategic objectives.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+         <!-- Umer Code End -->
+
     </main>
 
 

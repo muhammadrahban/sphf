@@ -3,7 +3,7 @@
     <main>
         <section style="background-image: url({{ asset('images/shape-8.png') }}); background-size:auto 100%;">
             <div class="container py-5">
-                <h1 class="mb-5">Transfer your donation to SPHF</h1>
+                <h1 class="mb-5" style="   font-size: 50px; ">Transfer your donation to SPHF</h1>
                 <form class="card mb-5" id="multi-step-form" method="POST" action="{{ route('become.doner') }}">
                     @csrf
                     <div class="step" data-step="1">
@@ -32,7 +32,7 @@
                             </div>
                             <div class="col-md-4 p-3">
                                 <h5 class="mb-0">$1.35 Billion</h5>
-                                <h4>Financial Gap</h4>
+                                 <small style="color: #df5311;">Financial Gap</small>
                             </div>
                         </div>
                         <div class="progress py-2 rounded mx-4">
@@ -490,7 +490,7 @@
                     </div>
                 </form>
                 <p>Having problems making a donation?</p>
-                <p>Email us at donor@sphf.gos.pk or call at +92 21 99334119-20</p>
+                <p>Email us at Donations@sphf.gos.pk or call at +92 21 99334119-20</p>
             </div>
         </section>
     </main>

@@ -8,7 +8,7 @@
                 </a>
                 <a href="#" class="p-2 text-light">
                     <i class="fas fa-envelope text-warning"></i>
-                    donor@sphf.gos.pk
+                    Donations@sphf.gos.pk
                 </a>
                 <a href="{{route('web.faqs')}}" class="p-2 text-light">
                     <i class="fa fa-info text-warning"></i>
@@ -69,8 +69,8 @@
                 <img src="{{asset('images/SPHF-donor-logo.png')}}" alt="SPHF-donor-logo" width="150">
             </a>
             <div class="d-none d-md-flex">
-                <a href="{{route('web.home')}}" class="underline-link p-2">Why & How Donate</a>
-                <a href="{{route('web.dashboard')}}" class="underline-link p-2">Track Your Donation</a>
+                <a href="{{route('web.home')}}" class="underline-link p-2"  style="color: #768385;" >Why & How Donate</a>
+                <a href="{{route('web.dashboard')}}" class="underline-link p-2" style="color: #768385;" >Track Your Donation</a>
             </div>
             <div class="d-none d-md-flex">
                 <a class="btn p-2 nav-btn-secondary mx-2 text-white"  href="{{route('becom.doner')}}">
