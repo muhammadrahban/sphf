@@ -36,7 +36,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($foundItems as $item)
+                    @foreach (@$foundItems as $item)
                         <tr>
                             <td>
                                 <a href="{{ route('cart.remove', $item->id) }}" type="button" class="btn btn-warning mx-2">
@@ -60,7 +60,7 @@
                                             {{ $item['people_with_disability_physically_or_mentally'] != 0 ? 'Differntly Abled ' : '' }}
                                         </p>
                                         <a href="#" class="text-secondary mx-4"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $item['district'] }} / {{ $item['tehsil'] }}</a>
-                                        <a href="#" class="text-secondary mx-4">{{session()->get('currency')}} {{number_format($item['price'], 0)}}</a>
+                                        <a href="#" class="text-secondary mx-4">{{session()->get('currency')}} {{number_format(@$item['price'], 0)}}</a>
                                     </div>
                                     <p class="m-0 w-auto rounded text-center my-3" style="background-color: #ececec;">Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available</p>
                                 </div>
@@ -79,8 +79,11 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="6">
+                        <td colspan="4">
                             <p class="text-dark m-0" style="font-size: 18px;">Showing {{$count}} of {{$count}} Beneficiaries</p>
+                        </td>
+                        <td colspan="2">
+                            <a href="{{route('filterView')}}" class="btn btn-warning mx-2 btn-block">UPDATE YOUR LIST</a>
                         </td>
                         {{-- <td colspan="2">
                             <button type="button" class="btn btn-warning mx-2 p-3 font-weight btn-block">
@@ -115,15 +118,17 @@
                             <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total Donation Amount &nbsp;&nbsp;&nbsp;&nbsp; </p>
                         </td>
                         <td>
-                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{number_format($count * $item['price'], 0)}}</p>
+                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{number_format($count * @$item['price'], 0)}}</p>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div class="py-4">
-                <a href="{{route('user.paymentuser')}}" class="btn btn-warning mx-2 float-right ">
-                    Proceed To Checkout &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
+                @if (count($foundItems) > 0)
+                    <a href="{{route('user.paymentuser')}}" class="btn btn-warning mx-2 float-right ">
+                        Proceed To Checkout &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                @endif
             </div>
         </div>
     </section>
@@ -139,7 +144,10 @@
         }
 
         $(Document).ready(function(){
-            $('.rounded-background').css('background-color', getRandomColor());
+            // $('.rounded-background').css('background-color', getRandomColor());
+            $('.rounded-background').each(function() {
+                $(this).css('background-color', getRandomColor());
+            });
         })
         // document.get('').style.backgroundColor = getRandomColor();
 

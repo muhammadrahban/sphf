@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-3 px-2">
                     <div class="border border-secondary border-0 border-bottom-1">
-                        
+
                         <h5 class="bg-title"><img style="width: 25px; height: 25px;" src="/sphf/public/images/Home_icon/Filter-icon-01.svg"> Filters </h5>
                         <hr style="border-top: 3px solid gray;">
                     </div>
@@ -98,7 +98,7 @@
                                         <label class="form-check-label" for="widow">Widow</label>
                                     </div>
                                     <!-- Repeat this structure for other checkboxes -->
-                                   
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="Elderly" name="elderly"
                                             value="elderly" @if (in_array('elderly', $selectedOptions)) checked @endif>
@@ -156,10 +156,11 @@
                     <form action="{{ route('cart.store') }}" method="POST">
                         @csrf
                         <div class="d-flex justify-content-end mb-4">
-                            <button type="submit" class="btn btn-outline-warning mx-2"><i class="fa fa-heart"
-                                    aria-hidden="true"></i> Your Beneficiaries List &nbsp;&nbsp; <i
-                                    class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                            {{-- <a href="{{ route('web.checkOutList') }}" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a> --}}
+                            <button type="submit" class="btn btn-outline-warning mx-2">
+                                <i class="fa fa-heart" aria-hidden="true"></i> Your Beneficiaries List &nbsp;&nbsp; <i
+                                    class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                            {{-- <a href="{{ route('user.paymentuser') }}" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a> --}}
                             <button type="submit" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i
                                     class="fa fa-arrow-right" aria-hidden="true"></i></button>
                         </div>
@@ -305,13 +306,21 @@
         }
 
         $(Document).ready(function() {
-            $('.rounded-background').css('background-color', getRandomColor());
+            // $('.rounded-background').css('background-color', getRandomColor());
+            $('.rounded-background').each(function() {
+                $(this).css('background-color', getRandomColor());
+            });
         })
 
         function clear_all_button() {
             $('#clear_all_form').find(':input').each(function() {
                 if (this.type !== 'submit' && this.type !== 'button' && this.type !== 'hidden') {
-                    $(this).val('');
+                    if (this.type === 'checkbox') {
+                        $(this).prop('checked', false);
+                    } else {
+                        $(this).val('');
+                    }
+                    console.log($(this));
                 }
             });
         }

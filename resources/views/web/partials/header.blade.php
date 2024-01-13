@@ -28,7 +28,7 @@
                     </div>
                     <div class="ml-3">
                         <div class="d-flex align-items-center">
-                            <a class="p-2" href="#">
+                            <a class="p-2" href="{{route('cart.index')}}">
                                 <i style="position:relative; z-index:0" class="fas fa-heart text-light"></i>
                                 <span class="cart-indicator">{{ count(session('cart', [])) }}</span>
                             </a>

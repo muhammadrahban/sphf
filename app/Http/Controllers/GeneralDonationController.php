@@ -11,19 +11,37 @@ use Illuminate\Support\Facades\Auth;
 class GeneralDonationController extends Controller
 {
     public function donation(Request $request) {
+        // $request->validate([
+        //     'first_name'        => ['sometimes', 'string', 'max:255'],
+        //     'last_name'         => ['sometimes', 'string', 'max:255'],
+        //     'email'             => ['sometimes', 'string', 'email', 'max:255', 'unique:users'],
+        //     'phone'             => ['sometimes', 'string', 'max:255', 'unique:users'],
+        //     'password'          => 'min:6|sometimes_with:confirm_password|same:confirm_password', 'confirm_password' => 'min:6',
+        //     'nationality_no'    => ['sometimes', 'string', 'max:255'],
+        //     'nationality'       => ['sometimes', 'string', 'max:255'],
+        //     'address'           => ['sometimes', 'string', 'max:255'],
+        //     'city'              => ['sometimes', 'string', 'max:255'],
+        //     'country'           => ['sometimes', 'string', 'max:255'],
+        //     'post_code'         => ['sometimes', 'string', 'max:255'],
+        //     'organiation'       => ['sometimes', 'string', 'max:255'],
+        //     'job_title'         => ['sometimes', 'string', 'max:255'],
+        //     'comments'          => ['sometimes', 'max:255'],
+        // ]);
+
         $request->validate([
             'first_name'        => ['sometimes', 'string', 'max:255'],
             'last_name'         => ['sometimes', 'string', 'max:255'],
             'email'             => ['sometimes', 'string', 'email', 'max:255', 'unique:users'],
             'phone'             => ['sometimes', 'string', 'max:255', 'unique:users'],
-            'password'          => 'min:6|sometimes_with:confirm_password|same:confirm_password', 'confirm_password' => 'min:6',
+            'password'          => 'sometimes|min:6|same:confirm_password',
+            'confirm_password'  => 'sometimes|min:6',
             'nationality_no'    => ['sometimes', 'string', 'max:255'],
             'nationality'       => ['sometimes', 'string', 'max:255'],
             'address'           => ['sometimes', 'string', 'max:255'],
             'city'              => ['sometimes', 'string', 'max:255'],
             'country'           => ['sometimes', 'string', 'max:255'],
             'post_code'         => ['sometimes', 'string', 'max:255'],
-            'organiation'       => ['sometimes', 'string', 'max:255'],
+            'organization'      => ['sometimes', 'string', 'max:255'], // corrected typo
             'job_title'         => ['sometimes', 'string', 'max:255'],
             'comments'          => ['sometimes', 'max:255'],
         ]);

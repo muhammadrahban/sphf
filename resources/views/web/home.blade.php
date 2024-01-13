@@ -7,10 +7,12 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="text-white display-1 font-weight-bold mb-4">Empower Communities, Empower Lives</h1>
-                            <h4 class="text-white mb-5">Join the largest housing rehabilitation program – 2.1M houses need your support</h4>
-                            <a href="#hdws" target="_self" style="border-radius: 0.3rem;" class="btn text-white primary_button px-4 py-3">LEARN
+                            <h4 class="text-white mb-5">Join the largest housing rehabilitation program – 2.1M houses need
+                                your support</h4>
+                            <a href="#hdws" target="_self" style="border-radius: 0.3rem;"
+                                class="btn text-white primary_button px-4 py-3">LEARN
                                 MORE</a>
-                                <!--<a href="#hdws" target="_self" class="btn text-white primary_button rounded-0 px-4 py-3">LEARN MORE</a>-->
+                            <!--<a href="#hdws" target="_self" class="btn text-white primary_button rounded-0 px-4 py-3">LEARN MORE</a>-->
                         </div>
                     </div>
                 </div>
@@ -20,9 +22,11 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="text-white display-1 font-weight-bold mb-4">Impact Beyond Walls</h1>
-                            <h4 class="text-white mb-5">Join us in creating resilient housing for vulnerable communities</h4>
+                            <h4 class="text-white mb-5">Join us in creating resilient housing for vulnerable communities
+                            </h4>
                             <!--<a href="#hdws" target="_self" class="btn text-white primary_button rounded-0 px-4 py-3">LEARN MORE</a>-->
-                            <a href="#hdws" target="_self"  style="border-radius: 0.3rem;" class="btn text-white primary_button px-4 py-3">LEARN MORE</a>
+                            <a href="#hdws" target="_self" style="border-radius: 0.3rem;"
+                                class="btn text-white primary_button px-4 py-3">LEARN MORE</a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +38,8 @@
                             <h1 class="text-white display-1 font-weight-bold mb-4">Invest in Resilience</h1>
                             <h4 class="text-white mb-5">Give the gift of homes that rise above disaster</h4>
 
-                            <a href="/adopt-beneficiary" style="border-radius: 0.3rem;"  class="btn text-white primary_button px-4 py-3">ADOPT A BENEFICIARY</a>
+                            <a href="/adopt-beneficiary" style="border-radius: 0.3rem;"
+                                class="btn text-white primary_button px-4 py-3">ADOPT A BENEFICIARY</a>
                             <!--<a href="/adopt-beneficiary" class="btn text-white primary_button rounded-0 px-4 py-3">ADOPT A BENEFICIARY</a>-->
 
                         </div>
@@ -47,7 +52,8 @@
                         <div class="col-lg-10">
                             <h1 class="text-white display-1 font-weight-bold mb-4">Together Against Adversity</h1>
                             <h4 class="text-white mb-5">Your support builds homes for a steadfast tomorrow</h4>
-                             <a href="/sphf/public/transfer-sphf" style="border-radius: 0.3rem;"  class="btn text-white primary_button px-4 py-3">TRANSFER TO SPHF</a>
+                            <a href="/sphf/public/transfer-sphf" style="border-radius: 0.3rem;"
+                                class="btn text-white primary_button px-4 py-3">TRANSFER TO SPHF</a>
                             <!--<a href="/sphf/public/transfer-sphf" class="btn text-white primary_button rounded-0 px-4 py-3">TRANSFER TO SPHF</a>-->
                         </div>
                     </div>
@@ -111,49 +117,49 @@
                 </div>
             </div>
             <!-- <div class="slide" style="background-image: url('{{ asset('images/Slider_box_home/images-06.jpg') }}');">
-                    <div class="cover">
-                        <div>
-                            <h4>$1000</h4>
-                            <p class="mb-0">ONE HOME COST</p>
+                        <div class="cover">
+                            <div>
+                                <h4>$1000</h4>
+                                <p class="mb-0">ONE HOME COST</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                    <div class="slide" style="background-image: url('{{ asset('images/Slider_box_home/images-07.jpg') }}');">
-                    <div class="cover">
-                        <div>
-                            <h4>10,000+</h4>
-                            <p class="mb-0">HOUSE GRANTS GIVEN</p>
+                        <div class="slide" style="background-image: url('{{ asset('images/Slider_box_home/images-07.jpg') }}');">
+                        <div class="cover">
+                            <div>
+                                <h4>10,000+</h4>
+                                <p class="mb-0">HOUSE GRANTS GIVEN</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                    <div class="slide" style="background-image: url('{{ asset('images/Slider_box_home/images-08.jpg') }}');">
-                    <div class="cover">
-                        <div>
-                            <h4>2500+</h4>
-                            <p class="mb-0">WOMEN-LED CONSTRUCTIONS</p>
+                        <div class="slide" style="background-image: url('{{ asset('images/Slider_box_home/images-08.jpg') }}');">
+                        <div class="cover">
+                            <div>
+                                <h4>2500+</h4>
+                                <p class="mb-0">WOMEN-LED CONSTRUCTIONS</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                    <div class="slide" style="background-image: url('{{ asset('images/Slider_box_home/images-09.jpg') }}');">
-                    <div class="cover">
-                        <div>
-                            <h4>700,000</h4>
-                            <p class="mb-0">DAMAGE ASSESSMENT CONDUCTED</p>
+                        <div class="slide" style="background-image: url('{{ asset('images/Slider_box_home/images-09.jpg') }}');">
+                        <div class="cover">
+                            <div>
+                                <h4>700,000</h4>
+                                <p class="mb-0">DAMAGE ASSESSMENT CONDUCTED</p>
+                            </div>
                         </div>
-                    </div>
-                </div>-->
+                    </div>-->
 
         </section>
 
         <section class="container">
             <div class="row my-5">
                 <!--<div class="col-lg-6">
-                        <label class="leading-line">Simple, transparent & joyful</label>
-                        <h1>How donating with SPHF Donor Platform works</h1>
-                        <p>In order to help the flood affectees build their resilient houses in Sindh, you can donate as an individual or organization, whether you are located in Pakistan or overseas.</p>
-                        <p>Each beneficiary under the <a href="http://www.sphf.gos.pk/" class="p-link"> Sindh People’s Housing for Flood Affectees (SPHF) program</a> is to receive PKR. 300,000 to build their home. The amount is to be disbursed in installments after verification of their profile and completion of building phases.</p>
-                        <p class="mb-5">Donors have two options. First is to explore and select beneficiaries online and donate directly to them. Second is to transfer funds to SPHF and assign them to disburse to relevant beneficiaries. Donations are processed securely online through various payment options. All donations made through the SPHF platform are online via credit/ debit card and bank transfer and securely processed with help of our technology, banking and legal partners.</p>
-                    </div>-->
+                            <label class="leading-line">Simple, transparent & joyful</label>
+                            <h1>How donating with SPHF Donor Platform works</h1>
+                            <p>In order to help the flood affectees build their resilient houses in Sindh, you can donate as an individual or organization, whether you are located in Pakistan or overseas.</p>
+                            <p>Each beneficiary under the <a href="http://www.sphf.gos.pk/" class="p-link"> Sindh People’s Housing for Flood Affectees (SPHF) program</a> is to receive PKR. 300,000 to build their home. The amount is to be disbursed in installments after verification of their profile and completion of building phases.</p>
+                            <p class="mb-5">Donors have two options. First is to explore and select beneficiaries online and donate directly to them. Second is to transfer funds to SPHF and assign them to disburse to relevant beneficiaries. Donations are processed securely online through various payment options. All donations made through the SPHF platform are online via credit/ debit card and bank transfer and securely processed with help of our technology, banking and legal partners.</p>
+                        </div>-->
 
                 <!-- Umer Code Strat -->
                 <div class="col-lg-6">
@@ -190,25 +196,36 @@
                                 style="width: 100%; min-height:200px; background-color: #df5311; height:90%;">
                                 <!--<i class="fa-5x far fa-heart text-light"></i>-->
 
-                                 </a><img  style="width: 70px; height: 70px;" src="{{asset('images/Home_icon/Icons-01.svg')}}">
-                                 </br></br>
-                               <a href="/adopt-beneficiary"> <h5 class="text-light text-left">Register</h5></a>
-                                <a href="/adopt-beneficiary"><p class="text-light text-left">Signing up as a donor is quick, systematic & secure</p></a>
-                            </div>  
+                                </a><img style="width: 70px; height: 70px;"
+                                    src="{{ asset('images/Home_icon/Icons-01.svg') }}">
+                                </br></br>
+                                <a href="/adopt-beneficiary">
+                                    <h5 class="text-light text-left">Register</h5>
+                                </a>
+                                <a href="/adopt-beneficiary">
+                                    <p class="text-light text-left">Signing up as a donor is quick, systematic & secure</p>
+                                </a>
+                            </div>
                         </div>
                         <div class="col-md-6 ">
-                            <div class="custom-card orange p-4 text-right mb-4" style="width: 100%; min-height:200px; background-color: #FBB329; height:90%">
-                               <!-- <i class="fa-5x far fa-heart text-light"></i>-->
-                                 <img  style="width: 70px; height: 70px;" src="{{asset('images/Home_icon/Icons-02.svg')}}">
-                                 </br></br>
-                               <a href="/sphf/public/transfer-sphf">  <h5 class="text-light text-left">Transfer to SPHF</h5></a>
-                               <a href="/sphf/public/transfer-sphf"> <p class="text-light text-left">Confide in SPHF with your donations.</p></a>
+                            <div class="custom-card orange p-4 text-right mb-4"
+                                style="width: 100%; min-height:200px; background-color: #FBB329; height:90%">
+                                <!-- <i class="fa-5x far fa-heart text-light"></i>-->
+                                <img style="width: 70px; height: 70px;"
+                                    src="{{ asset('images/Home_icon/Icons-02.svg') }}">
+                                </br></br>
+                                <a href="/sphf/public/transfer-sphf">
+                                    <h5 class="text-light text-left">Transfer to SPHF</h5>
+                                </a>
+                                <a href="/sphf/public/transfer-sphf">
+                                    <p class="text-light text-left">Confide in SPHF with your donations.</p>
+                                </a>
                             </div>
                         </div>
                         <!--<div class="col-md-6 ">-->
                         <!--    <div class="custom-card orange p-4 text-right mb-4" style="width: 100%; min-height:200px; background-color: #138999; height:90%">-->
-                                <!--<i class="fa-5x far fa-heart text-light"></i>-->
-                        <!--         <img  style="width: 70px; height: 70px;" src="{{asset('images/Home_icon/Icons-06.svg')}}">-->
+                        <!--<i class="fa-5x far fa-heart text-light"></i>-->
+                        <!--         <img  style="width: 70px; height: 70px;" src="{{ asset('images/Home_icon/Icons-06.svg') }}">-->
                         <!--       <a href="/adopt-beneficiary">  <h4 class="text-light text-left">Adopt a Beneficiary</h4></a>-->
                         <!--       <a href="/adopt-beneficiary">  <p class="text-light text-left">Select & foster personalized connection with beneficiaries.</p></a>-->
 
@@ -220,7 +237,7 @@
                                 <!--<i class="fa-5x far fa-heart text-light"></i>-->
                                 <img style="width: 70px; height: 70px;"
                                     src="{{ asset('images/Home_icon/Icons-03.svg') }}">
-                                    </br></br>
+                                </br></br>
                                 <a href="/sphf/public/doner/register">
                                     <h5 class="text-light text-left">Adopt a Beneficiary</h5>
                                 </a>
@@ -235,7 +252,7 @@
                                 <!--<i class="fa-5x far fa-heart text-light"></i>-->
                                 <img style="width: 70px; height: 70px;"
                                     src="{{ asset('images/Home_icon/Icons-04.svg') }}">
-                                    </br></br>
+                                </br></br>
                                 <a href="/sphf/public/doner/login">
                                     <h5 class="text-light text-left">Track</h5><a />
                                     <a href="/sphf/public/doner/login">
@@ -245,26 +262,26 @@
                         </div>
                     </div>
                     <!--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img class="d-block w-100" src="{{ asset('images/Slider_box_home/images-01.jpg') }}" alt="First slide" style="height: 300px !important;">
-                            </div>
-                            <div class="carousel-item">
-                              <img class="d-block w-100" src="{{ asset('images/Slider_box_home/images-02.jpg') }}" alt="Second slide" style="height: 300px !important;">
-                            </div>
-                            <div class="carousel-item">
-                              <img class="d-block w-100" src="{{ asset('images/Slider_box_home/images-01.jpg') }}" alt="Third slide" style="height: 300px !important;">
-                            </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                            </a>
-                        </div>-->
+                                <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                  <img class="d-block w-100" src="{{ asset('images/Slider_box_home/images-01.jpg') }}" alt="First slide" style="height: 300px !important;">
+                                </div>
+                                <div class="carousel-item">
+                                  <img class="d-block w-100" src="{{ asset('images/Slider_box_home/images-02.jpg') }}" alt="Second slide" style="height: 300px !important;">
+                                </div>
+                                <div class="carousel-item">
+                                  <img class="d-block w-100" src="{{ asset('images/Slider_box_home/images-01.jpg') }}" alt="Third slide" style="height: 300px !important;">
+                                </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                                </a>
+                            </div>-->
                 </div>
             </div>
         </section>
@@ -281,7 +298,8 @@
                     <h5 class="text-white my-5">Watch the impact of your generosity</h5>
                     <h1 class="text-white mb-5">Building homes with disaster-ready designs where resilience meets the
                         blueprint for a secure tomorrow</h1>
-                    <a href="#our_donors" style="border-radius: 0.3rem;" class="btn text-white primary_button  px-4 py-3">OUR DONORS</a>
+                    <a href="#our_donors" style="border-radius: 0.3rem;"
+                        class="btn text-white primary_button  px-4 py-3">OUR DONORS</a>
                     <!--<a href="#our_donors" class="btn text-white primary_button rounded-0 px-4 py-3">OUR DONORS</a>-->
                 </div>
             </div>
@@ -296,467 +314,545 @@
                     </div>
                     <div class="col-lg-4 col-md-6 text-left text-md-right">
                         <!--<a href="/adopt-beneficiary" class="btn text-white primary_button rounded-0 px-4 py-3" >ADOPT A BENEFICIARY</a>-->
-                        <a href="/adopt-beneficiary" style="border-radius: 0.3rem;" class="btn text-white primary_button px-4 py-3" >ADOPT A BENEFICIARY</a>
+                        <a href="/adopt-beneficiary" style="border-radius: 0.3rem;"
+                            class="btn text-white primary_button px-4 py-3">ADOPT A BENEFICIARY</a>
                     </div>
                 </div>
-                    <div class="box-slider-2 slider">
-    <!--1-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_khairpur.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">KHAIRPUR</label>-->
-            <label class="badge badge-warning text-white px-2 py-1" style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">KHAIRPUR</label>
-            <h4 class="text-white">275,644 <small style=" font-size: 79%;">affected by 2022 floods</small> </h4>
-            <!--<div class="progress">
-                <div style="width:11%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">11%</span>
->>>>>>> Stashed changes
+                <div class="box-slider-2 slider">
+                    <!--1-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_khairpur.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">KHAIRPUR</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1"
+                                style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">KHAIRPUR</label>
+                            <h4 class="text-white">275,644 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:11%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">11%</span>
+    >>>>>>> Stashed changes
+                    </div>
                 </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">275,644 </h4>
-            </div>-->
-        </div>
-    </div>
-     
-    <!--2-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Dadu.png')}}');">
-                            <div class="overlay"></div>
-                            <div class="cover p-4">
-                                <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a;  font-size: 15px">DADU</label>-->
-                                <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #ceaa6a;  font-size: 15px; border-radius: 0.3rem;">DADU</label>
-                                <h4 class="text-white">164,103 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-                                <!--<div class="progress">
-                                    <div style="width:9.4%; background-color: #ceaa6a;">
-                                        <span style="background-color: #ceaa6a;">9.4%</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">164,103</h4>
-                                </div>-->
-                            </div>
-    </div>
-
-    <!--3-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_kamber_shahdatkot.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">KAMBER SHAHDADKOT</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #df5311; font-size: 15px; border-radius: 0.3rem;">KAMBER SHAHDADKOT</label>
-            <h4 class="text-white">143,017 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!-- <div class="progress">
-                <div style="width:0.9%; background-color: #ceaa6a;">
-                    <span style="background-color: #ceaa6a;">0.9%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">143,017 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--4-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_naushro_feroz.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-             <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px">NAUSHERO FEROZ</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">NAUSHERO FEROZ</label>
-            <h4 class="text-white">143,323 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!-- <div class="progress">
-                <div style="width:8%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">8%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">143,323</h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--5-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_shaheed_benazirabad.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px">SHAHEED BENAZIRABAD</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #ceaa6a; font-size: 15px; border-radius: 0.3rem;">SHAHEED BENAZIRABAD</label>
-            <h4 class="text-white">114,181 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:6.1%; background-color: #ceaa6a;">
-                    <span style="background-color: #ceaa6a;">6.1%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">114,181</h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--6-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_jacobabad.png')}}');">
-                <div class="overlay"></div>
-                <div class="cover p-4">
-                    <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">JACOBABAD</label>-->
-                    <label class="badge badge-warning text-white px-2 py-1" style="background-color: #df5311; font-size: 15px; border-radius: 0.3rem;">JACOBABAD</label>
-                    <h4 class="text-white">112,411 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-                    <!--<div class="progress">
-                        <div style="width:10%; background-color: #df5311;">
-                            <span style="background-color: #df5311;">10%</span>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">275,644 </h4>
+                </div>-->
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between">
-                        <h5 class="text-white"><small>Beneficiaries</small></h5>
-                        <h4 class="text-white">112,411 </h4>
-                    </div>-->
-                </div>
-    </div>
 
-    <!--7-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_sanghar.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">SANGHAR</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">SANGHAR</label>
-            <h4 class="text-white">105,864 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:4.5%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">4.5%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">105,864 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--8-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_sukkur.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a;  font-size: 15px">SUKHAR</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #ceaa6a;  font-size: 15px; border-radius: 0.3rem;">SUKHAR</label>
-            <h4 class="text-white">83,417 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:15%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">15%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">83,417</h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--9-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Ghotki.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">GHOTKI</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #df5311; font-size: 15px; border-radius: 0.3rem;">GHOTKI</label>
-            <h4 class="text-white">85,162  <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-        <!--  <div class="progress">
-                <div style="width:4.8%; background-color: #ceaa6a;">
-                    <span style="background-color: #ceaa6a;">4.8%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">85,162 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--10-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Mirpurkhas.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">MIRPURKHAS</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">MIRPURKHAS</label>
-            <h4 class="text-white">86,269 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:17%; background-color: #ceaa6a;">
-                    <span style="background-color: #ceaa6a;">17%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">86,269 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--11-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_shikarpur.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">SHIKARPUR</label>-->
-            <label class="badge badge-warning text-white px-2 py-1" style="background-color: #ceaa6a; font-size: 15px; border-radius: 0.3rem;">SHIKARPUR</label>
-            <h4 class="text-white">89,791 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!-- <div class="progress">
-                <div style="width:7%; background-color: #ceaa6a;">
-                    <span style="background-color: #ceaa6a;">7%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">89,791 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--12-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_omerkot.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-             <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311;  font-size: 15px">UMERKOT</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #df5311;  font-size: 15px; border-radius: 0.3rem;">UMERKOT</label>
-            <h4 class="text-white">68,092 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:5.8%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">5.8%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">68,092</h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--13-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Kashmore.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px">KASHMORE</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">KASHMORE</label>
-            <h4 class="text-white">76,278 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:6.1%; background-color: #ceaa6a;">
-                    <span style="background-color: #ceaa6a;">6.1%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">76,278 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--14-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Tando_Allahyar.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a;">TANDO ALLAHYAR</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #ceaa6a; font-size: 15px; border-radius: 0.3rem;">TANDO ALLAHYAR</label>
-            <h4 class="text-white">30,116 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:3.2%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">3.2%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">30,116 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--15-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_jamshoro.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px">JAMSHORO</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #df5311; font-size: 15px; border-radius: 0.3rem;">JAMSHORO</label>
-            <h4 class="text-white">60,609 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:5.4%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">5.4%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">60,609</h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--16-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_sujawal.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">SUJAWAL</label>-->
-            <label class="badge badge-warning text-white px-2 py-1" style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">SUJAWAL</label>
-            <h4 class="text-white">52,615 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-        <!--   <div class="progress">
-                <div style="width:6.2%; background-color: #ceaa6a;">
-                    <span style="background-color: #ceaa6a;">6.2%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">52,615 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--17-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Matiari.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px; ">MATIARI</label>-->
-            <label class="badge badge-warning text-white px-2 py-1" style="background-color: #ceaa6a; font-size: 15px; border-radius: 0.3rem; ">MATIARI</label>
-            <h4 class="text-white">46,485 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!-- <div class="progress">
-                <div style="width:5.6%; background-color: #df5311;">
-                    <span style="background-color: #df5311;">5.6%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">46,485 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--18-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_unknow.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <label class="badge badge-warning text-white px-2 py-1" style="background-color: #df5311;  font-size: 15px; border-radius: 0.3rem; ">THATTA</label>
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311;  font-size: 15px">THATTA</label>-->
-            <h4 class="text-white">24,716 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!-- <div class="progress">
-                <div style="width:2.3%; background-color: #df5311;">
-                    <span style="background-color: #df5311;">2.3%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">24,716</h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--19-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img-24.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-             <!--<label class="badge badge-warning text-white px-2 py-1 " style="background-color: #8139e7; font-size: 15px">HYDERABAD</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;  ">HYDERABAD</label>
-            <h4 class="text-white">20,008 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!-- <div class="progress">
-                <div style="width:0.2%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">0.2%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">20,008 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--20-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_tando_muhammad_khan.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">TANDO MUHAMMAD KHAN</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #ceaa6a; font-size: 15px; border-radius: 0.3rem;">TANDO MUHAMMAD KHAN</label>
-            <h4 class="text-white">28,456 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!-- <div class="progress">
-                <div style="width:2.05%; background-color: #df5311;">
-                    <span style="background-color: #df5311;">2.05%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">28,456 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--21-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Badin.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">BADIN</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #df5311; font-size: 15px; border-radius: 0.3rem;">BADIN</label>
-            <h4 class="text-white">111,179 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:6%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">6%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">111,179 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--22-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Larkana.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-             <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px; ">LARKANA</label>-->
-             <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">LARKANA</label>
-            <h4 class="text-white">131,896 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:26%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">26%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">131,806 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--23-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Tando_Allahyar.png')}}');">
-        <div class="overlay"></div>
-        <div class="cover p-4">
-             <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">TANDO ALLAHYAR</label>-->
-            <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #ceaa6a; font-size: 15px;  border-radius: 0.3rem;">TANDO ALLAHYAR</label>
-            <h4 class="text-white">30,116 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-            <!--<div class="progress">
-                <div style="width:3.2%; background-color: #8139e7;">
-                    <span style="background-color: #8139e7;">3.2%</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h5 class="text-white"><small>Beneficiaries</small></h5>
-                <h4 class="text-white">30,116 </h4>
-            </div>-->
-        </div>
-    </div>
-
-    <!--24-->
-    <div class="slide" style="background-image: url('{{asset('images/home_adopt_beneficiary/Img_Malir.png')}}');">
-                            <div class="overlay"></div>
-                            <div class="cover p-4">
-                                <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311;  font-size: 15px">MALIR</label>-->
-                                <label class="badge badge-warning text-white px-2 py-1 " style="background-color: #df5311;  font-size: 15px border-radius: 0.3rem;">MALIR</label>
-                                <h4 class="text-white">55 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
-                                <!--<div class="progress">
-                                    <div style="width:0.2%; background-color: #ceaa6a;">
-                                        <span style="background-color: #ceaa6a;">0.2%</span>
+                    <!--2-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Dadu.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a;  font-size: 15px">DADU</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #ceaa6a;  font-size: 15px; border-radius: 0.3rem;">DADU</label>
+                            <h4 class="text-white">164,103 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                                        <div style="width:9.4%; background-color: #ceaa6a;">
+                                            <span style="background-color: #ceaa6a;">9.4%</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white"><small>Beneficiaries</small></h5>
-                                    <h4 class="text-white">55</h4>
-                                </div>-->
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-white"><small>Beneficiaries</small></h5>
+                                        <h4 class="text-white">164,103</h4>
+                                    </div>-->
+                        </div>
+                    </div>
+
+                    <!--3-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_kamber_shahdatkot.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">KAMBER SHAHDADKOT</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #df5311; font-size: 15px; border-radius: 0.3rem;">KAMBER
+                                SHAHDADKOT</label>
+                            <h4 class="text-white">143,017 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!-- <div class="progress">
+                    <div style="width:0.9%; background-color: #ceaa6a;">
+                        <span style="background-color: #ceaa6a;">0.9%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">143,017 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--4-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_naushro_feroz.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px">NAUSHERO FEROZ</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">NAUSHERO
+                                FEROZ</label>
+                            <h4 class="text-white">143,323 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!-- <div class="progress">
+                    <div style="width:8%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">8%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">143,323</h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--5-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_shaheed_benazirabad.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px">SHAHEED BENAZIRABAD</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #ceaa6a; font-size: 15px; border-radius: 0.3rem;">SHAHEED
+                                BENAZIRABAD</label>
+                            <h4 class="text-white">114,181 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:6.1%; background-color: #ceaa6a;">
+                        <span style="background-color: #ceaa6a;">6.1%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">114,181</h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--6-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_jacobabad.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">JACOBABAD</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1"
+                                style="background-color: #df5311; font-size: 15px; border-radius: 0.3rem;">JACOBABAD</label>
+                            <h4 class="text-white">112,411 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                            <div style="width:10%; background-color: #df5311;">
+                                <span style="background-color: #df5311;">10%</span>
                             </div>
-    </div>
-    </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h5 class="text-white"><small>Beneficiaries</small></h5>
+                            <h4 class="text-white">112,411 </h4>
+                        </div>-->
+                        </div>
+                    </div>
+
+                    <!--7-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_sanghar.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">SANGHAR</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">SANGHAR</label>
+                            <h4 class="text-white">105,864 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:4.5%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">4.5%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">105,864 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--8-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_sukkur.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a;  font-size: 15px">SUKHAR</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #ceaa6a;  font-size: 15px; border-radius: 0.3rem;">SUKHAR</label>
+                            <h4 class="text-white">83,417 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:15%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">15%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">83,417</h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--9-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Ghotki.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">GHOTKI</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #df5311; font-size: 15px; border-radius: 0.3rem;">GHOTKI</label>
+                            <h4 class="text-white">85,162 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--  <div class="progress">
+                    <div style="width:4.8%; background-color: #ceaa6a;">
+                        <span style="background-color: #ceaa6a;">4.8%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">85,162 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--10-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Mirpurkhas.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">MIRPURKHAS</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">MIRPURKHAS</label>
+                            <h4 class="text-white">86,269 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:17%; background-color: #ceaa6a;">
+                        <span style="background-color: #ceaa6a;">17%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">86,269 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--11-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_shikarpur.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">SHIKARPUR</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1"
+                                style="background-color: #ceaa6a; font-size: 15px; border-radius: 0.3rem;">SHIKARPUR</label>
+                            <h4 class="text-white">89,791 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!-- <div class="progress">
+                    <div style="width:7%; background-color: #ceaa6a;">
+                        <span style="background-color: #ceaa6a;">7%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">89,791 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--12-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_omerkot.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311;  font-size: 15px">UMERKOT</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #df5311;  font-size: 15px; border-radius: 0.3rem;">UMERKOT</label>
+                            <h4 class="text-white">68,092 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:5.8%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">5.8%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">68,092</h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--13-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Kashmore.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px">KASHMORE</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">KASHMORE</label>
+                            <h4 class="text-white">76,278 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:6.1%; background-color: #ceaa6a;">
+                        <span style="background-color: #ceaa6a;">6.1%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">76,278 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--14-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Tando_Allahyar.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a;">TANDO ALLAHYAR</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #ceaa6a; font-size: 15px; border-radius: 0.3rem;">TANDO
+                                ALLAHYAR</label>
+                            <h4 class="text-white">30,116 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:3.2%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">3.2%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">30,116 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--15-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_jamshoro.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px">JAMSHORO</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #df5311; font-size: 15px; border-radius: 0.3rem;">JAMSHORO</label>
+                            <h4 class="text-white">60,609 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:5.4%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">5.4%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">60,609</h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--16-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_sujawal.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px;">SUJAWAL</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1"
+                                style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">SUJAWAL</label>
+                            <h4 class="text-white">52,615 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--   <div class="progress">
+                    <div style="width:6.2%; background-color: #ceaa6a;">
+                        <span style="background-color: #ceaa6a;">6.2%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">52,615 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--17-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Matiari.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px; ">MATIARI</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1"
+                                style="background-color: #ceaa6a; font-size: 15px; border-radius: 0.3rem; ">MATIARI</label>
+                            <h4 class="text-white">46,485 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!-- <div class="progress">
+                    <div style="width:5.6%; background-color: #df5311;">
+                        <span style="background-color: #df5311;">5.6%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">46,485 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--18-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_unknow.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <label class="badge badge-warning text-white px-2 py-1"
+                                style="background-color: #df5311;  font-size: 15px; border-radius: 0.3rem; ">THATTA</label>
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311;  font-size: 15px">THATTA</label>-->
+                            <h4 class="text-white">24,716 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!-- <div class="progress">
+                    <div style="width:2.3%; background-color: #df5311;">
+                        <span style="background-color: #df5311;">2.3%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">24,716</h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--19-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img-24.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 " style="background-color: #8139e7; font-size: 15px">HYDERABAD</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 rounded-0"
+                                style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;  ">HYDERABAD</label>
+                            <h4 class="text-white">20,008 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!-- <div class="progress">
+                    <div style="width:0.2%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">0.2%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">20,008 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--20-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_tando_muhammad_khan.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">TANDO MUHAMMAD KHAN</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #ceaa6a; font-size: 15px; border-radius: 0.3rem;">TANDO MUHAMMAD
+                                KHAN</label>
+                            <h4 class="text-white">28,456 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!-- <div class="progress">
+                    <div style="width:2.05%; background-color: #df5311;">
+                        <span style="background-color: #df5311;">2.05%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">28,456 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--21-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Badin.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311; font-size: 15px;">BADIN</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #df5311; font-size: 15px; border-radius: 0.3rem;">BADIN</label>
+                            <h4 class="text-white">111,179 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:6%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">6%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">111,179 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--22-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Larkana.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #8139e7; font-size: 15px; ">LARKANA</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #8139e7; font-size: 15px; border-radius: 0.3rem;">LARKANA</label>
+                            <h4 class="text-white">131,896 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:26%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">26%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">131,806 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--23-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Tando_Allahyar.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #ceaa6a; font-size: 15px;">TANDO ALLAHYAR</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #ceaa6a; font-size: 15px;  border-radius: 0.3rem;">TANDO
+                                ALLAHYAR</label>
+                            <h4 class="text-white">30,116 <small style=" font-size: 79%;">affected by 2022 floods</small>
+                            </h4>
+                            <!--<div class="progress">
+                    <div style="width:3.2%; background-color: #8139e7;">
+                        <span style="background-color: #8139e7;">3.2%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="text-white"><small>Beneficiaries</small></h5>
+                    <h4 class="text-white">30,116 </h4>
+                </div>-->
+                        </div>
+                    </div>
+
+                    <!--24-->
+                    <div class="slide"
+                        style="background-image: url('{{ asset('images/home_adopt_beneficiary/Img_Malir.png') }}');">
+                        <div class="overlay"></div>
+                        <div class="cover p-4">
+                            <!--<label class="badge badge-warning text-white px-2 py-1 rounded-0" style="background-color: #df5311;  font-size: 15px">MALIR</label>-->
+                            <label class="badge badge-warning text-white px-2 py-1 "
+                                style="background-color: #df5311;  font-size: 15px border-radius: 0.3rem;">MALIR</label>
+                            <h4 class="text-white">55 <small style=" font-size: 79%;">affected by 2022 floods</small></h4>
+                            <!--<div class="progress">
+                                        <div style="width:0.2%; background-color: #ceaa6a;">
+                                            <span style="background-color: #ceaa6a;">0.2%</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-white"><small>Beneficiaries</small></h5>
+                                        <h4 class="text-white">55</h4>
+                                    </div>-->
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -772,7 +868,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <span class="form_span input_symbol" style="border-radius: 0.3rem;">Rs</span>
-                                        <input id="amount" name="amount" type="text" class="form_input_amount" min="1000" style="border-radius: 0.3rem;">
+                                        <input id="amount" name="amount" type="text" class="form_input_amount"
+                                            min="1000" style="border-radius: 0.3rem;">
                                     </div>
                                     <div class="col-md-6">
                                         <select class="btn alert-success" id="currency">
@@ -786,24 +883,36 @@
                                 <div class="row">
                                     <div class="col-md-12 d-flex justify-content-between flex-wrap">
                                         <div class="static__amount">
-                                            <button type="button" onclick="selectAmount(this,300000)" data-amount="300000" data-symbal="PKR" class="form_price_btn" style="border-radius: 0.3rem;">
+                                            <button type="button" onclick="selectAmount(this,300000)"
+                                                data-amount="300000" data-symbal="PKR" class="form_price_btn"
+                                                style="border-radius: 0.3rem;">
                                                 <h4 class="mb-0" style="font-size:1rem;">
                                                     <span class="input_symbol">₨</span> 300,000
                                                 </h4>
                                             </button>
                                         </div>
                                         <div class="static__amount">
-                                            <button type="button" onclick="selectAmount(this,600000)" data-amount="600000" data-symbal="PKR" class="form_price_btn" style="border-radius: 0.3rem;">
-                                                <h4 class="mb-0" style="font-size:1rem;"><span class="input_symbol">₨</span> 600,000</h4>
+                                            <button type="button" onclick="selectAmount(this,600000)"
+                                                data-amount="600000" data-symbal="PKR" class="form_price_btn"
+                                                style="border-radius: 0.3rem;">
+                                                <h4 class="mb-0" style="font-size:1rem;"><span
+                                                        class="input_symbol">₨</span> 600,000</h4>
                                             </button>
                                         </div>
                                         <div class="static__amount">
-                                            <button type="button" onclick="selectAmount(this,900000)" data-amount="900000" data-symbal="PKR" class="form_price_btn" style="border-radius: 0.3rem;">
-                                                <h4 class="mb-0" style="font-size:1rem;"><span class="input_symbol">₨</span> 900,000</h4>
+                                            <button type="button" onclick="selectAmount(this,900000)"
+                                                data-amount="900000" data-symbal="PKR" class="form_price_btn"
+                                                style="border-radius: 0.3rem;">
+                                                <h4 class="mb-0" style="font-size:1rem;"><span
+                                                        class="input_symbol">₨</span> 900,000</h4>
                                             </button>
                                         </div>
                                         <div class="static__amount">
-                                            <button type="button" onclick="selectAmount(this,'custom')" data-amount="custom" class="form_price_btn" style="border-radius: 0.3rem;"><h4 class="mb-0" style="font-size:1rem;">Custom Amount</h4></button>
+                                            <button type="button" onclick="selectAmount(this,'custom')"
+                                                data-amount="custom" class="form_price_btn"
+                                                style="border-radius: 0.3rem;">
+                                                <h4 class="mb-0" style="font-size:1rem;">Custom Amount</h4>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -812,8 +921,9 @@
                                     <div class="col-md-6">
                                         <!--<button type="button" data-toggle="modal" data-target="#modelId" class="form_submit_btn">DONATE</button>-->
                                         <a href="{{ route('becom.doner') }}" type="button"
-                                            class="btn btn-lg  next-step" style="color:white; background-color: #a34d21; border-color: #a34d21;">DONATE NOW <i
-                                    class="fa fa-chevron-right"></i></a>
+                                            class="btn btn-lg  next-step"
+                                            style="color:white; background-color: #a34d21; border-color: #a34d21;">DONATE
+                                            NOW <i class="fa fa-chevron-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -827,14 +937,14 @@
                             <h3 class="text-white">Adopt a home for PKR 300,000</h3>
                             <label class="text-white">Join the movement for relief, renewal & hope</label>
                             <!-- <div class="progress">
-                                    <div style="width:33.1%; background-color: #df5311;">
-                                        <span style="background-color: #df5311;">33.1%</span>
+                                        <div style="width:33.1%; background-color: #df5311;">
+                                            <span style="background-color: #df5311;">33.1%</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="text-white">Rs 727,300,000 <small>Raised</small></h5>
-                                    <h5 class="text-white">Rs 2,200,000,000 <small>Goal</small></h5>
-                                </div>-->
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-white">Rs 727,300,000 <small>Raised</small></h5>
+                                        <h5 class="text-white">Rs 2,200,000,000 <small>Goal</small></h5>
+                                    </div>-->
                         </div>
                     </div>
                 </div>
@@ -890,15 +1000,14 @@
                                 <!--<i class="far fa-4x mt-4 fa-heart text-white"></i>-->
                                 <img style="width: 70px; height: 70px;"
                                     src="{{ asset('images/Home_icon/Icons-03.svg') }}">
-                                    </br></br>
+                                </br></br>
                                 <h2 class="text-white">Let’s make a difference in the lives of other people</h2>
                                 <div class="text-right">
                                     <img src="{{ asset('images/shape-arrow.png') }}">
                                     <!--<a href="#"-->
                                     <!--    class="btn btn-block text-white primary_button rounded-0 px-4 py-3 mt-3"-->
                                     <!--    style="background-color: #fdbe44;">OUR DONORS</a>-->
-                                        <a href="#"
-                                        class="btn btn-block text-white primary_button px-4 py-3 mt-3"
+                                    <a href="#" class="btn btn-block text-white primary_button px-4 py-3 mt-3"
                                         style="background-color: #fdbe44; border-radius: 0.3rem;">OUR DONORS</a>
                                 </div>
                             </div>
@@ -908,133 +1017,156 @@
             </div>
         </section>
         <!--- <section style="background-color: #f1f6f7;">
-                <div class="container py-5">
-                    <div class="logo-slider">
-                        <div class="slide text-center">
-                            <img src="{{ asset('images/logo-01_.png') }}" class="img-fluid partner-logo mx-auto">
-                        </div>
-                        <div class="slide text-center">
-                            <img src="{{ asset('images/logo-02_.png') }}" class="img-fluid partner-logo mx-auto">
+                    <div class="container py-5">
+                        <div class="logo-slider">
+                            <div class="slide text-center">
+                                <img src="{{ asset('images/logo-01_.png') }}" class="img-fluid partner-logo mx-auto">
+                            </div>
+                            <div class="slide text-center">
+                                <img src="{{ asset('images/logo-02_.png') }}" class="img-fluid partner-logo mx-auto">
+                            </div>
                         </div>
                     </div>
-                </div>
-         <!-- Umer Code Strat -->
+             <!-- Umer Code Strat -->
         <!--<section style="background-color: #f1f6f7;">-->
         <!--  <div class="container py-3 ">-->
         <!--        <div class="row text-center ">-->
         <!--            <div class="col">-->
-        <!--                <img src="{{asset('/images/Client_logo/logo-01.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >-->
+        <!--                <img src="{{ asset('/images/Client_logo/logo-01.svg') }}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >-->
         <!--                <h5>Internal Auditor</h5>-->
         <!--            </div>-->
         <!--            <div class="col  ">-->
-        <!--                <img src="{{asset('/images/Client_logo/logo-02.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >-->
+        <!--                <img src="{{ asset('/images/Client_logo/logo-02.svg') }}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >-->
         <!--                <h5>Execution Partner</h5>-->
         <!--            </div>-->
         <!--            <div class="col   ">-->
-        <!--                <img src="{{asset('/images/Client_logo/logo-03.svg')}}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >-->
+        <!--                <img src="{{ asset('/images/Client_logo/logo-03.svg') }}" class="img-fluid partner-logo mx-auto "  style="width: 150px; height: 150px;" >-->
         <!--                <h5>MIS Partner</h5>-->
         <!--            </div>-->
         <!--            <div class="col   ">-->
-        <!--                <img src="{{asset('/images/Client_logo/logo-04.svg')}}" class="img-fluid partner-logo mx-auto"  style="width: 150px; height: 150px;" >-->
+        <!--                <img src="{{ asset('/images/Client_logo/logo-04.svg') }}" class="img-fluid partner-logo mx-auto"  style="width: 150px; height: 150px;" >-->
         <!--                <h5>Internal Auditor</h5>-->
         <!--            </div>-->
         <!--            <div class="col  ">-->
-        <!--                <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 150px; height: 150px;" >-->
+        <!--                <img src="{{ asset('/images/Client_logo/logo-05.svg') }}" class="img-fluid partner-logo mx-auto" style="width: 150px; height: 150px;" >-->
         <!--                <h5>Technology Partner</h5>-->
         <!--            </div>-->
         <!--        </div>-->
         <!--    </div>-->
         <!--</section>-->
-        
-      <section>
-          <img src="{{asset('images/bg_4.jpg')}}" class="img-fluid partner-logo mx-auto" style="width:100%; height: 500px;" >
+
+        <section>
+            <img src="{{ asset('images/bg_4.jpg') }}" class="img-fluid partner-logo mx-auto"
+                style="width:100%; height: 500px;">
         </section>
 
         <section class="box-slider  box_center">
-            
+
             <div class="slide box_last  ">
-                <div class="text-center" >
+                <div class="text-center">
                     <div>
-                      <img src="{{asset('/images/Client_logo/logo-02.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >
-                         <div class="text-center"  style="margin-top:6% ; margin-left:10% ; margin-right:10% ;  border-radius: 0.3rem;">
-                                    <p href="#" class="btn btn-block text-white " style="background-color: #df5311;">Execution Partner</p>
-                                </div>
+                        <img src="{{ asset('/images/Client_logo/logo-02.svg') }}" class="img-fluid partner-logo mx-auto"
+                            style="width: 180px; height: 150px;">
+                        <div class="text-center"
+                            style="margin-top:6% ; margin-left:10% ; margin-right:10% ;  border-radius: 0.3rem;">
+                            <p href="#" class="btn btn-block text-white " style="background-color: #df5311;">
+                                Execution Partner</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-              <div class="slide box_last">
-                <div class="text-center" >
+
+            <div class="slide box_last">
+                <div class="text-center">
                     <div>
-                      <img src="{{asset('/images/Client_logo/logo-03.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >
-                          <div class="text-center"  style="margin-top:6% ; margin-left:10% ; margin-right:10% ; border-radius: 0.3rem; ">
-                                    <p href="#" class="btn btn-block text-white " style="background-color: #df5311;">MIS Partner</p>
-                                </div>
+                        <img src="{{ asset('/images/Client_logo/logo-03.svg') }}" class="img-fluid partner-logo mx-auto"
+                            style="width: 180px; height: 150px;">
+                        <div class="text-center"
+                            style="margin-top:6% ; margin-left:10% ; margin-right:10% ; border-radius: 0.3rem; ">
+                            <p href="#" class="btn btn-block text-white " style="background-color: #df5311;">MIS
+                                Partner</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-               <div class="slide box_last">
-                <div class="text-center" >
+
+            <div class="slide box_last">
+                <div class="text-center">
                     <div>
-                      <img src="{{asset('/images/Client_logo/logo-04.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >
-                        <div class="text-center"  style="margin-top:6% ; margin-left:10% ; margin-right:10% ; border-radius: 0.3rem; ">
-                                    <p href="#" class="btn btn-block text-white  " style="background-color: #df5311;">Internal Auditor</p>
-                                </div>
+                        <img src="{{ asset('/images/Client_logo/logo-04.svg') }}" class="img-fluid partner-logo mx-auto"
+                            style="width: 180px; height: 150px;">
+                        <div class="text-center"
+                            style="margin-top:6% ; margin-left:10% ; margin-right:10% ; border-radius: 0.3rem; ">
+                            <p href="#" class="btn btn-block text-white  " style="background-color: #df5311;">
+                                Internal Auditor</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-               <div class="slide box_last">
-                <div class="text-center" >
+
+            <div class="slide box_last">
+                <div class="text-center">
                     <div>
-                      <img src="{{asset('/images/Client_logo/logo-01.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >
-                         <div class="text-center"  style="margin-top:6%; margin-left:10% ; margin-right:10% ; border-radius: 0.3rem;">
-                                    <p href="#" class="btn btn-block text-white " style="background-color: #df5311;">Statuary Auditor</p>
-                                </div>
+                        <img src="{{ asset('/images/Client_logo/logo-01.svg') }}" class="img-fluid partner-logo mx-auto"
+                            style="width: 180px; height: 150px;">
+                        <div class="text-center"
+                            style="margin-top:6%; margin-left:10% ; margin-right:10% ; border-radius: 0.3rem;">
+                            <p href="#" class="btn btn-block text-white " style="background-color: #df5311;">
+                                Statuary Auditor</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-               <div class="slide box_last">
-                <div class="text-center" >
+
+            <div class="slide box_last">
+                <div class="text-center">
                     <div>
-                      <img src="{{asset('/images/Client_logo/logo-05.svg')}}" class="img-fluid partner-logo mx-auto" style="width: 180px; height: 150px;" >
-                         <div class="text-center"  style="margin-top:6%; margin-left:5% ; margin-right:5% ;  border-radius: 0.3rem;">
-                                    <p href="#" class="btn btn-block text-white" style="background-color: #df5311;">Technology Partner</p>
-                                </div>
+                        <img src="{{ asset('/images/Client_logo/logo-05.svg') }}" class="img-fluid partner-logo mx-auto"
+                            style="width: 180px; height: 150px;">
+                        <div class="text-center"
+                            style="margin-top:6%; margin-left:5% ; margin-right:5% ;  border-radius: 0.3rem;">
+                            <p href="#" class="btn btn-block text-white" style="background-color: #df5311;">
+                                Technology Partner</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
 
 
-           
+
         </section>
-        
-             <section>
+
+        <section>
             <div class="container">
                 <div class="row my-5">
                     <div class="col-lg-4 col-md-12 mb-4">
-                        <div class="text-justify" style="background-image: url('{{asset('images/shape-1.png')}}'); background-repeat: no-repeat; background-position: bottom left; height:60%;">
-                            <div >
-                                <h2 ><label class="leading-line">Our Partners</label></h2>
-                                <p >Our execution, implementation, communication & technology partners facilitating the SPHF initiative.</p>
+                        <div class="text-justify"
+                            style="background-image: url('{{ asset('images/shape-1.png') }}'); background-repeat: no-repeat; background-position: bottom left; height:60%;">
+                            <div>
+                                <h2><label class="leading-line">Our Partners</label></h2>
+                                <p>Our execution, implementation, communication & technology partners facilitating the SPHF
+                                    initiative.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-12 mb-4">
-                        <div class="text-justify"  style="background-image: url('{{asset('images/shape-1.png')}}'); background-repeat: no-repeat; background-position: bottom left; height:60%;">
+                        <div class="text-justify"
+                            style="background-image: url('{{ asset('images/shape-1.png') }}'); background-repeat: no-repeat; background-position: bottom left; height:60%;">
                             <div class="p-4">
-                                <p >We have formed a dynamic organization with top-tier partners. This ensures a comprehensive approach across key pillars, enhancing our capabilities in executing tasks with excellence, implementing seamlessly, communicating effectively, and utilizing rigorous technology. This collaborative and robust framework positions us for success in achieving our strategic objectives.</p>
+                                <p>We have formed a dynamic organization with top-tier partners. This ensures a
+                                    comprehensive approach across key pillars, enhancing our capabilities in executing tasks
+                                    with excellence, implementing seamlessly, communicating effectively, and utilizing
+                                    rigorous technology. This collaborative and robust framework positions us for success in
+                                    achieving our strategic objectives.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-         <!-- Umer Code End -->
+
+        <!-- Umer Code End -->
 
     </main>
 

@@ -42,7 +42,7 @@ class CartController extends Controller
             }
         }
 
-        return redirect(route('cart.index'))->with('success', 'Items added to cart');
+        return redirect(route('user.paymentuser'))->with('success', 'Items added to cart');
     }
 
     public function remove($id)
