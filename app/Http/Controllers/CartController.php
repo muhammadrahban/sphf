@@ -41,7 +41,9 @@ class CartController extends Controller
                 session()->put('cart', $cart);
             }
         }
-
+        if($request->action == 'button'){
+            return redirect(route('cart.index'))->with('success', 'Items added to cart');
+        }
         return redirect(route('user.paymentuser'))->with('success', 'Items added to cart');
     }
 

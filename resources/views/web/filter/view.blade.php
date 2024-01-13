@@ -156,13 +156,13 @@
                     <form action="{{ route('cart.store') }}" method="POST">
                         @csrf
                         <div class="d-flex justify-content-end mb-4">
-                            <button type="submit" class="btn btn-outline-warning mx-2">
+                            <button type="submit" name="action" value="button" class="btn btn-outline-warning mx-2">
                                 <i class="fa fa-heart" aria-hidden="true"></i> Your Beneficiaries List &nbsp;&nbsp; <i
                                     class="fa fa-arrow-right" aria-hidden="true"></i>
                             </button>
-                            {{-- <a href="{{ route('user.paymentuser') }}" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a> --}}
-                            <button type="submit" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i
-                                    class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            <button type="submit" name="action" value="submit" class="btn btn-warning mx-2 checkout_btn" @if(count(session('cart', [])) < 1) disabled @endif>Checkout &nbsp;&nbsp;
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </button>
                         </div>
                         <div class="d-flex justify-content-start m-2">
                             @foreach ($data as $key => $list)
@@ -205,7 +205,7 @@
                         <div class="mx-3 my-4 found-items-table">
                             @foreach ($foundItems as $item)
                                 <div class="d-flex justify-content-between my-3 align-items-center searchable-item">
-                                    <input class="mx-3" type="checkbox" class="heart" name="item_ids[]"
+                                    <input class="mx-3 heart checkbox_items" type="checkbox" name="item_ids[]"
                                         value="{{ $item->id }}" />
                                     {{-- <img src="{{$item['__metadata']['uri']}}" width="70" height="70" class="rounded-circle"> --}}
                                     {{-- <img src="{{ asset('images/users/1.jpg') }}" width="70" height="70" class="rounded-circle"> --}}
@@ -306,9 +306,24 @@
         }
 
         $(Document).ready(function() {
-            // $('.rounded-background').css('background-color', getRandomColor());
             $('.rounded-background').each(function() {
                 $(this).css('background-color', getRandomColor());
+            });
+
+            $('.checkbox_items').change(function() {
+                var checkedCheckboxes = $('.checkbox_items:checked');
+                checkedCheckboxes.each(function() {
+                    console.log('Checkbox with value ' + $(this).val() + ' is checked.');
+                });
+                var checkedValues = checkedCheckboxes.map(function() {
+                    return $(this).val();
+                }).get();
+                console.log('Checked values: ', checkedValues);
+                if( {{count(session('cart', []))}} > 0 || checkedValues.length > 0){
+                    $('.checkout_btn').attr('disabled', false);
+                }else{
+                    $('.checkout_btn').attr('disabled', true);
+                }
             });
         })
 

@@ -32,7 +32,7 @@
                                 <i style="position:relative; z-index:0" class="fas fa-heart text-light"></i>
                                 <span class="cart-indicator">{{ count(session('cart', [])) }}</span>
                             </a>
-                            <a class="waves-effect waves-dark" href="#"><i class="fas fa-search text-light"></i></a>
+                            <a class="waves-effect waves-dark" href="{{route('filterView')}}"><i class="fas fa-search text-light"></i></a>
                         </div>
                     </div>
                 </div>
