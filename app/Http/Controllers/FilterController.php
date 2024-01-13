@@ -22,6 +22,11 @@ class FilterController extends Controller
         $limit          = 10;
         $offset         = $request->has('page') ? $request->page : 0;
         $data['page']   = $offset;
+        
+        $location_list_tehsil = [];
+        $location_list_union_council = [];
+        $location_list_deh = [];
+        
         $foundItems = victim::query();
         $filtersApplied = false;
         $foundItems->whereNotIn('id', function ($query) {
@@ -40,6 +45,10 @@ class FilterController extends Controller
             $data['district'] = $district;
             $foundItems->where('district', $district);
             $filtersApplied = true;
+            
+            $location_list_tehsil = victim::where('district', $district)->select('tehsil', DB::raw('count(*) as total'))
+            ->groupBy('tehsil')
+            ->get();
         }
 
         if ($request->has('tehsil') && $request->tehsil != 'Select tehsil' && $request->tehsil != null) {
@@ -47,6 +56,10 @@ class FilterController extends Controller
             $data['tehsil'] = $tehsil;
             $foundItems->where('tehsil', $tehsil);
             $filtersApplied = true;
+            
+            $location_list_union_council = victim::where('tehsil', $tehsil)->select('union_council', DB::raw('count(*) as total'))
+            ->groupBy('union_council')
+            ->get();
         }
 
         if ($request->has('union_council') && $request->union_council != 'Select union council' && $request->union_council != null) {
@@ -54,6 +67,10 @@ class FilterController extends Controller
             $data['union_council'] = $union_council;
             $foundItems->where('union_council', $union_council);
             $filtersApplied = true;
+            
+            $location_list_deh = victim::where('union_council', $union_council)->select('deh', DB::raw('count(*) as total'))
+            ->groupBy('deh')
+            ->get();
         }
 
         if ($request->has('deh') && $request->location != 'Select deh' && $request->deh != null) {
@@ -149,15 +166,7 @@ class FilterController extends Controller
         $location_list = victim::select('district', DB::raw('count(*) as total'))
             ->groupBy('district')
             ->get();
-        $location_list_tehsil = victim::select('tehsil', DB::raw('count(*) as total'))
-            ->groupBy('tehsil')
-            ->get();
-        $location_list_union_council = victim::select('union_council', DB::raw('count(*) as total'))
-            ->groupBy('union_council')
-            ->get();
-        $location_list_deh = victim::select('deh', DB::raw('count(*) as total'))
-            ->groupBy('deh')
-            ->get();
+        
 
         return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list', 'location_list_tehsil', 'location_list_union_council', 'location_list_deh', 'selectedOptions'));
     }

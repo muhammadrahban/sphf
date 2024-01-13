@@ -204,7 +204,7 @@
                             <i class="fa fa-exclamation-circle mx-3" style="font-size: 50px;" aria-hidden="true"></i>
                             <p style="font-size: 25px;font-weight: 200;">
                                 This form is prefilled using the information you provided at time of registeration.
-                                You can edit the slected information.
+                                You can edit the selected information.
                             </p>
                         </div>
                     </div>

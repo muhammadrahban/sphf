@@ -62,13 +62,13 @@
                                     Donate with Offline Donation
                                 </h4>
                                 <p class="p-2">
-                                    To make an Offline donation toward this SPHF caise, follow these steps:
+                                    To make an offline donation toward this SPHF case, follow these steps:
                                 </p>
                                 <ol>
-                                    <li> Write a check payable to "Sindh People's Housing for Flood Affectees"</li>
+                                    <li> Write a cheque payable to "Sindh People's Housing for Flood Affectees"</li>
                                     <li> On the memo line of the check, indicate that the donation is for "Sindh People's
                                         Housing for Flood Affectees"</li>
-                                    <li> Mail your check to:</li>
+                                    <li> Mail your cheque to:</li>
                                 </ol>
                                 <p class="px-4">
                                     Sindh People's Housing for Flood Affectees
@@ -216,15 +216,15 @@
                                             <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{ count(session('cart', [])) }}</p>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total Houses
-                                                Sponsored</p>
-                                        </td>
-                                        <td>
-                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{ count(session('cart', [])) }}</p>
-                                        </td>
-                                    </tr>
+                                    <!--<tr>-->
+                                    <!--    <td>-->
+                                    <!--        <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total Houses-->
+                                    <!--            Sponsored</p>-->
+                                    <!--    </td>-->
+                                    <!--    <td>-->
+                                    <!--        <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{ count(session('cart', [])) }}</p>-->
+                                    <!--    </td>-->
+                                    <!--</tr>-->
                                     <tr>
                                         <td>
                                             <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total Houses Sponsored</p>
@@ -248,7 +248,7 @@
                                     @endphp
                                     <tr>
                                         <td>
-                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Donation incl MDR & SST</p>
+                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Donation including MDR & SST</p>
                                         </td>
                                         <td>
                                             <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{ $two_per }}</p>

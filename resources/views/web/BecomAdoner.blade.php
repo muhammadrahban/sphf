@@ -3,7 +3,8 @@
     <main>
         <section style="background-image: url({{ asset('images/shape-8.png') }}); background-size:auto 100%;">
             <div class="container py-5">
-                <h1 class="mb-5" style="   font-size: 50px; ">Transfer your donation to SPHF</h1>
+                <h1 style="   font-size: 50px; ">Transfer your donation to SPHF</h1>
+                <h5 class="mb-5 " style="color: #138999;">Unite for resilience, empower change  building a stronger Sindh for a better tomorrow, today</h5>
                 <form class="card mb-5" id="multi-step-form" method="POST" action="{{ route('become.doner') }}">
                     @csrf
                     <div class="step" data-step="1">
@@ -17,8 +18,7 @@
                                 <li>Once you submit donation, you’ll receive e-receipt on e-mail.</li>
                                 <li>You can also login to your donor account to view and track your donation.</li>
                             </ul>
-                            <h4 class="ml-4  text-center">Unite for Resilience, Empower Change </br> Building a Stronger
-                                Sindh For a Better tomorrow, Today</h4>
+                            
                         </div>
                         <img class="w-100" src="{{ asset('/images/our_donor/Transfer_to_SPHF.jpg') }}">
                         <div class="row text-center">
@@ -58,11 +58,10 @@
                             <span class="mx-auto">Choose Amount</span>
                         </div>
                         <div class="p-4 px-0">
-                            <h4>How much would you like to donate?</h4>
-                            <p>You can contribute any amount you wish to.</p>
-                            <p>The cost of building one house is PKR 300,000. Any amount you contribute will go towards
+                            <h5>How much would you like to donate?</h5>
+                            <p>You can contribute any amount you wish to. The cost of building one house is PKR 300,000. Any amount you contribute </br>will go towards
                                 building houses in flood-affected areas of Sindh, Pakistan.</p>
-                            <h4>Thank you for your generosity!</h4>
+                            <h5>Thank you for your generosity!</h5>
                         </div>
 
                         <div class="row mx-0">
@@ -180,7 +179,7 @@
                                         @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <input name="cnic" placeholder="CNIC" class="form-control mb-3" required>
+                                    <input name="cnic" placeholder="CNIC / Passport Number" class="form-control mb-3" required>
                                 </div>
                                 <div class="col-md-6">
                                     <input name="phone" placeholder="Mobile Number" class="form-control mb-3 @error('phone') is-invalid @enderror" required>
@@ -204,10 +203,10 @@
                                     <input name="city" placeholder="City*" class="form-control mb-3" required>
                                 </div>
                                 <div class="col-md-12">
-                                    <input name="postal_code" placeholder="postal code*" class="form-control mb-3" required>
+                                    <input name="postal_code" placeholder="Postal Code*" class="form-control mb-3" required>
                                 </div>
                                 <div class="col-md-12">
-                                    <input name="postalcode" placeholder="Donor consent*" class="form-control mb-3" required>
+                                    <input name="postalcode" placeholder="Donor Consent*" class="form-control mb-3" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <input size="40" class="form-control mb-3 @error('password') is-invalid @enderror"
@@ -222,7 +221,7 @@
                                 <div class="col-md-12">
                                     <input size="40"
                                         class="form-control mb-3 @error('confirm_password') is-invalid @enderror" required
-                                        aria-required="true" aria-invalid="false" placeholder="Confirm Paswword"
+                                        aria-required="true" aria-invalid="false" placeholder="Confirm Password"
                                         type="password" name="confirm_password" />
                                     @error('confirm_password')
                                         <span class="invalid-feedback" role="alert">
@@ -230,30 +229,39 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="col-md-12 mb-3">
-                                    <input type="checkbox" name="is_anonymous" id="anonymous" />
-                                    <label for="anonymous">Donation anonymously.</label>
+                                <!--<div class="col-md-12 mb-3">-->
+                                <!--    <input type="checkbox" name="is_anonymous" id="anonymous" />-->
+                                <!--    <label for="anonymous">Donation anonymously</label>-->
+                                <!--</div>-->
+                                <div class="col-sm-4">
+                                    <div class="d-flex align-items-start">
+                                        <input type="radio" id="anonymous" class="m-2" name="donation_type"
+                                            value="anonymous" />
+                                        <label for="anonymous">
+                                            Donation anonymously
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <textarea name="comment" class="form-control mb-3" id="comment" placeholder="Leave a comment"></textarea>
-                                </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="d-flex align-items-start">
                                         <input type="radio" id="individual" class="m-2" name="donation_type"
                                             value="individual" />
                                         <label for="individual">
-                                            Donate as individual.
+                                            Donate as individual
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="d-flex align-items-start">
                                         <input type="radio" id="company" class="m-2" name="donation_type"
                                             value="company" />
                                         <label for="company">
-                                            Donate as company.
+                                            Donate as company
                                         </label>
                                     </div>
+                                </div>
+                                 <div class="col-md-12">
+                                    <textarea name="comment" class="form-control mb-3" id="comment" placeholder="Leave a comment"></textarea>
                                 </div>
                             @endauth
                         </div>
@@ -281,13 +289,13 @@
                                 Donate with Offline Donation
                             </h4>
                             <p class="p-2">
-                                To make an Offline donation toward this SPHF caise, follow these steps:
+                                To make an offline donation toward this SPHF case, follow these steps:
                             </p>
                             <ol>
-                                <li> Write a check payable to "Sindh People's Housing for Flood Affectees"</li>
+                                <li> Write a cheque payable to "Sindh People's Housing for Flood Affectees"</li>
                                 <li> On the memo line of the check, indicate that the donation is for "Sindh People's
                                     Housing for Flood Affectees"</li>
-                                <li> Mail your check to:</li>
+                                <li> Mail your cheque to:</li>
                             </ol>
                             <p class="px-4">
                                 Sindh People's Housing for Flood Affectees
@@ -439,7 +447,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Donation incl MDR & SST</td>
+                                <td>Donation including MDR & SST</td>
                                 <td class="text-right">
                                     <span class="input_symbol">₨</span> <span class="mdr_sst">100,000</span>
                                 </td>

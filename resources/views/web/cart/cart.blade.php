@@ -111,7 +111,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total Donation Amount &nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 14px; font-weight: 400;" class="text-secondary">(Exempted from all kind of taxes)</span></p>
+                            <!--<p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total Donation Amount &nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 14px; font-weight: 400;" class="text-secondary">(Exempted from all kind of taxes)</span></p>-->
+                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Total Donation Amount &nbsp;&nbsp;&nbsp;&nbsp; </p>
                         </td>
                         <td>
                             <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{number_format($count * $item['price'], 0)}}</p>

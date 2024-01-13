@@ -10,24 +10,20 @@
                         <i class="fa fa-play"></i>
                         <span></span>
                     </a>
-                    <h2 style="font-size: 40px;" class="text-white my-4">Adopt a beneficiary & directly donate to
-                        them</h2 style="font-size: 40px;">
+                   <h2 style="font-size: 40px;" class="text-white my-4">Spark joy with direct giving!</h2 style="font-size: 40px;">
+                    <h2 style="font-size: 20px; margin-top:-22px !important;" class="text-white my-4">Adopt a beneficiary, change a life. Your support matters.</h2 style="font-size: 30px;">
                     <ul class="adopt_list_group">
                         <li class="adopt_list_item">
-                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> First register on the
-                                SPHF platform</span>
+                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Register on SPHF platform to create your donor account</span>
                         </li>
                         <li class="adopt_list_item">
-                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Our team will connect
-                                & approve your donor account</span>
+                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Our team will promptly review and approve your donor account</span>
                         </li>
                         <li class="adopt_list_item">
-                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span>
-                                Soon after, you can explore & add beneficiary to your list</span>
+                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Then you can explore & add beneficiaries to your personalized list</span>
                         </li>
                         <li class="adopt_list_item">
-                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Make direct online
-                                donations to your chosen beneficiary</span>
+                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Make direct online donations to your chosen beneficiary</span>
                         </li>
                     </ul>
                 </div>

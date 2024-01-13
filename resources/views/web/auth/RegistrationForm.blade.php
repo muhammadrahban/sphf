@@ -11,19 +11,19 @@
                         <span></span>
                     </a>
                     <h2 style="font-size: 40px;" class="text-white my-4">Spark joy with direct giving!</h2 style="font-size: 40px;">
-                    <h2 style="font-size: 30px; margin-top:-22px !important;" class="text-white my-4">Adopt a beneficiary, change a life. Your support matters.</h2 style="font-size: 30px;">
+                    <h2 style="font-size: 20px; margin-top:-22px !important;" class="text-white my-4">Adopt a beneficiary, change a life. Your support matters.</h2 style="font-size: 30px;">
                     <ul class="adopt_list_group">
                         <li class="adopt_list_item">
-                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Begin by registering on the SPHF platform to create your donor account.</span>
+                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Register on SPHF platform to create your donor account</span>
                         </li>
                         <li class="adopt_list_item">
-                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Our dedicated team will promptly review and approve your donor account, ensuring a seamless connection.</span>
+                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Our team will promptly review and approve your donor account</span>
                         </li>
                         <li class="adopt_list_item">
-                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Once approved, you can easily explore and add beneficiaries to your personalized list.</span>
+                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Then you can explore & add beneficiaries to your personalized list</span>
                         </li>
                         <li class="adopt_list_item">
-                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Take advantage of the convenience of making direct online donations to your chosen beneficiaries, making a positive impact with just a few clicks.</span>
+                            <i class="fas fa-check-circle" style="color: #FDBE44;"></i><span> Make direct online donations to your chosen beneficiary</span>
                         </li>
                     </ul>
                 </div>
@@ -111,7 +111,7 @@
                                 @enderror
                             </div>
                             <div class="col-sm-6 col-xs-12 p-3">
-                                <input size="40" class="form-control @error('confirm_password') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Confirm Paswword" type="password" name="confirm_password">
+                                <input size="40" class="form-control @error('confirm_password') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Confirm Password" type="password" name="confirm_password">
                                 @error('confirm_password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -130,7 +130,7 @@
                                 @enderror
                             </div>
                             <div class="col-sm-6 col-xs-12 p-3">
-                                <input size="40" class="form-control @error('nationality_no') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="National Identity/ Passport Number" type="text" name="nationality_no">
+                                <input size="40" class="form-control @error('nationality_no') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="CNIC / Passport Number" type="text" name="nationality_no">
                                 @error('nationality_no')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -176,7 +176,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6 col-xs-12 p-3">
-                                <input size="40" class="form-control @error('post_code') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Post code" type="text" name="post_code">
+                                <input size="40" class="form-control @error('post_code') is-invalid @enderror" required aria-required="true" aria-invalid="false" placeholder="Postal code" type="text" name="post_code">
                                 @error('post_code')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -238,7 +238,7 @@
                                 <div class="col-sm-12">
                                     <div class="d-flex align-items-start">
                                         <input type="checkbox" id="termsCheckbox" class="m-2" required />
-                                        <label for="termsCheckbox">I agree to the <a href="#" id="termsLink" required style="color:#428bca;">Terms and Conditions</a>.</label>
+                                        <label for="termsCheckbox"><a href="#" id="termsLink" required style="color:#428bca;">Donor's Undertaking</a></label>
                                     </div>
                                 </div>
                                 
@@ -258,7 +258,7 @@
     <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+                <h5 class="modal-title" id="termsModalLabel">Undertaking</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -270,8 +270,8 @@
                     <li>I acknowledge that the collection and use of information will be in accordance with relevant privacy laws and regulations. I understand the organization's commitment to compliance with these laws.</li>
                     <li>I recognize that the information provided is for the sole purpose of facilitating donations and support for beneficiaries through this portal. I agree that the information will be used only for this intended purpose.</li>
                     <li>I understand that any violation of these terms may result in legal action and the termination of my access to the donation portal.</li>
-                    <li>I acknowledge that I have read and understood the terms outlined above, and I willingly agree to abide by them in my use of this donation portal.</li>
                 </ol>
+                <b>I acknowledge that I have read and understood the terms outlined above, and I willingly agree to abide by them in my use of this donation portal.</b>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

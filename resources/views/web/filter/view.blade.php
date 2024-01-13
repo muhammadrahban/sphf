@@ -5,7 +5,8 @@
             <div class="row">
                 <div class="col-md-3 px-2">
                     <div class="border border-secondary border-0 border-bottom-1">
-                        <h1 class="bg-title"> Filters </h1>
+                        
+                        <h5 class="bg-title"><img style="width: 25px; height: 25px;" src="/sphf/public/images/Home_icon/Filter-icon-01.svg"> Filters </h5>
                         <hr style="border-top: 3px solid gray;">
                     </div>
                     <div class="d-flex justify-content-between">
@@ -97,11 +98,7 @@
                                         <label class="form-check-label" for="widow">Widow</label>
                                     </div>
                                     <!-- Repeat this structure for other checkboxes -->
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="Women" name="women"
-                                            value="women" @if (in_array('women', $selectedOptions)) checked @endif>
-                                        <label class="form-check-label" for="Women">Women with disabled husband</label>
-                                    </div>
+                                   
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="Elderly" name="elderly"
                                             value="elderly" @if (in_array('elderly', $selectedOptions)) checked @endif>
@@ -111,12 +108,17 @@
                                         <input class="form-check-input" type="checkbox" id="Differntly_Abled"
                                             name="differently_abled" value="differently_abled"
                                             @if (in_array('differently_abled', $selectedOptions)) checked @endif>
-                                        <label class="form-check-label" for="Differntly_Abled">Differently Abled</label>
+                                        <label class="form-check-label" for="Differntly_Abled">Differently-abled</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="orphan" name="orphan"
                                             value="orphan" @if (in_array('orphan', $selectedOptions)) checked @endif>
                                         <label class="form-check-label" for="orphan">Orphans</label>
+                                    </div>
+                                     <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="Women" name="women"
+                                            value="women" @if (in_array('women', $selectedOptions)) checked @endif>
+                                        <label class="form-check-label" for="Women">Women with disabled husband</label>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +156,7 @@
                     <form action="{{ route('cart.store') }}" method="POST">
                         @csrf
                         <div class="d-flex justify-content-end mb-4">
-                            <button type="button" class="btn btn-outline-warning mx-2"><i class="fa fa-heart"
+                            <button type="submit" class="btn btn-outline-warning mx-2"><i class="fa fa-heart"
                                     aria-hidden="true"></i> Your Beneficiaries List &nbsp;&nbsp; <i
                                     class="fa fa-arrow-right" aria-hidden="true"></i></button>
                             {{-- <a href="{{ route('web.checkOutList') }}" class="btn btn-warning mx-2">Checkout &nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></a> --}}
@@ -191,13 +193,13 @@
                                         <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
                                     </div>
                                 </div>-->
-                            <div class="d-flex ml-auto w-40 sort_filter">
-                                <label class="w-50" for="sort_by">Sort by : </label>
-                                <select class="form-control" id="sort_by">
-                                    <option value="most_relevant">Most Relevant</option>
-                                    <option value="show_all">Show All</option>
-                                </select>
-                            </div>
+                            <!--<div class="d-flex ml-auto w-40 sort_filter">-->
+                            <!--    <label class="w-50" for="sort_by">Sort by : </label>-->
+                            <!--    <select class="form-control" id="sort_by">-->
+                            <!--        <option value="most_relevant">Most Relevant</option>-->
+                            <!--        <option value="show_all">Show All</option>-->
+                            <!--    </select>-->
+                            <!--</div>-->
                         </div>
                         <div class="mx-3 my-4 found-items-table">
                             @foreach ($foundItems as $item)
@@ -227,7 +229,7 @@
                                                 {{ number_format($item['price'], 0) }}</p>
                                         </div>
                                         <p class="m-0 w-auto rounded text-left px-2 my-3"
-                                            style="background-color: #ececec;">
+                                            style="background-color: #ececec; ">
                                             Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available
                                         </p>
                                     </div>
