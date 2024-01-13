@@ -10,21 +10,6 @@ class GeneralDonation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'first_name',
-        'last_name',
-        'cnic',
-        'phone',
-        'job_title',
-        'country',
-        'city',
-        'postal_code',
-        'company_name',
-        'email',
-        'is_anonymous',
-        'comments',
-        'is_individual',
-        'is_company',
         'amount',
         'charges',
         'total_amount',
