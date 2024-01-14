@@ -22,11 +22,11 @@ class FilterController extends Controller
         $limit          = 10;
         $offset         = $request->has('page') ? $request->page : 0;
         $data['page']   = $offset;
-        
+
         $location_list_tehsil = [];
         $location_list_union_council = [];
         $location_list_deh = [];
-        
+
         $foundItems = victim::query();
         $filtersApplied = false;
         $foundItems->whereNotIn('id', function ($query) {
@@ -45,7 +45,7 @@ class FilterController extends Controller
             $data['district'] = $district;
             $foundItems->where('district', $district);
             $filtersApplied = true;
-            
+
             $location_list_tehsil = victim::where('district', $district)->select('tehsil', DB::raw('count(*) as total'))
             ->groupBy('tehsil')
             ->get();
@@ -56,7 +56,7 @@ class FilterController extends Controller
             $data['tehsil'] = $tehsil;
             $foundItems->where('tehsil', $tehsil);
             $filtersApplied = true;
-            
+
             $location_list_union_council = victim::where('tehsil', $tehsil)->select('union_council', DB::raw('count(*) as total'))
             ->groupBy('union_council')
             ->get();
@@ -67,7 +67,7 @@ class FilterController extends Controller
             $data['union_council'] = $union_council;
             $foundItems->where('union_council', $union_council);
             $filtersApplied = true;
-            
+
             $location_list_deh = victim::where('union_council', $union_council)->select('deh', DB::raw('count(*) as total'))
             ->groupBy('deh')
             ->get();
@@ -87,10 +87,10 @@ class FilterController extends Controller
             $filtersApplied = true;
         }
 
-        if ($request->has('orphan')) {
-            $foundItems->where('unaccompained_minors_i_e_orphans', 1);
-            $filtersApplied = true;
-        }
+        // if ($request->has('orphan')) {
+        //     $foundItems->where('unaccompained_minors_i_e_orphans', 1);
+        //     $filtersApplied = true;
+        // }
 
         $selectedOptions = [];
 
@@ -114,17 +114,7 @@ class FilterController extends Controller
         }
 
         if ($request->has('elderly')) {
-            // Assuming two different conditions for 'elderly', choose one based on your logic
-            $foundItems->where('divorced_abandoned_unmarried_older_dependent_on_others', 1);
-            // or $foundItems->where('unaccompained_elders_over_the_age_of_60', 1);
-            $filtersApplied = true;
-            $selectedOptions[] = 'elderly';
-        }
-
-        if ($request->has('elderly')) {
-            // Assuming two different conditions for 'elderly', choose one based on your logic
-            //$foundItems->where('divorced_abandoned_unmarried_older_dependent_on_others', 1);
-            $foundItems->where('unaccompained_elders_over_the_age_of_60', 1);
+            $foundItems->where('divorced_abandoned_unmarried_older_dependent_on_others', 1)->orWhere('unaccompained_elders_over_the_age_of_60', 1);
             $filtersApplied = true;
             $selectedOptions[] = 'elderly';
         }
@@ -166,7 +156,7 @@ class FilterController extends Controller
         $location_list = victim::select('district', DB::raw('count(*) as total'))
             ->groupBy('district')
             ->get();
-        
+
 
         return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list', 'location_list_tehsil', 'location_list_union_council', 'location_list_deh', 'selectedOptions'));
     }

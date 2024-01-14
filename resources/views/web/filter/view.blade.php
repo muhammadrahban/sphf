@@ -6,7 +6,8 @@
                 <div class="col-md-3 px-2">
                     <div class="border border-secondary border-0 border-bottom-1">
 
-                        <h5 class="bg-title"><img style="width: 25px; height: 25px;" src="/sphf/public/images/Home_icon/Filter-icon-01.svg"> Filters </h5>
+                        <h5 class="bg-title"><img style="width: 25px; height: 25px;"
+                                src="/sphf/public/images/Home_icon/Filter-icon-01.svg"> Filters </h5>
                         <hr style="border-top: 3px solid gray;">
                     </div>
                     <div class="d-flex justify-content-between">
@@ -14,6 +15,18 @@
                         <p class="bg-title clear_all" onclick="clear_all_button()"
                             style="border: none; background-color: transparent; cursor: pointer;">Clear all <span
                                 style="font-weight: 700; font-size: 18px;">X</span></p>
+                    </div>
+                    <div class="d-flex flex-wrap align-content-between">
+                        @foreach ($data as $key => $list)
+                            @if ($key != 'page')
+                                <button type="button" class="btn btn-outline-primary my-2 mx-1" data-key="{{$key}}" onclick="removeParentValue(this)">{{ $key }}&nbsp;&nbsp;X
+                                </button>
+                            @endif
+                        @endforeach
+                        @if (count($selectedOptions) > 0)
+                            <button type="button" class="btn btn-outline-primary my-2 mx-1" data-key="Vulnerability" onclick="removeParentValue(this)">Vulnerability &nbsp;&nbsp;X
+                            </button>
+                        @endif
                     </div>
                     <div class="my-4 p-4" style="background-color: #f6f6f6 !important;">
                         <form action="{{ route('web.filterWiew', ['page' => 0]) }}" method="post" id="clear_all_form">
@@ -78,17 +91,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- <div class="form-row align-items-center my-2">
-                                    <div class="col-12">
-                                        <label for="location" style="font-size: 13px;">Radius around selected destination</label>
-                                        <select class="custom-select mb-3" id="location" placeholder="Dadu, Sukkar">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </div> -->
                             <div class="form-row align-items-center my-2">
                                 <label for="vulnerability" style="font-size: 20px;">Vulnerability</label>
                                 <div class="col-12">
@@ -97,15 +99,13 @@
                                             value="widow" @if (in_array('widow', $selectedOptions)) checked @endif>
                                         <label class="form-check-label" for="widow">Widow</label>
                                     </div>
-                                    <!-- Repeat this structure for other checkboxes -->
-
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="Elderly" name="elderly"
+                                        <input class="form-check-input" type="checkbox" id="elderly" name="elderly"
                                             value="elderly" @if (in_array('elderly', $selectedOptions)) checked @endif>
                                         <label class="form-check-label" for="Elderly">Elderly</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="Differntly_Abled"
+                                        <input class="form-check-input" type="checkbox" id="differently_abled"
                                             name="differently_abled" value="differently_abled"
                                             @if (in_array('differently_abled', $selectedOptions)) checked @endif>
                                         <label class="form-check-label" for="Differntly_Abled">Differently-abled</label>
@@ -115,7 +115,7 @@
                                             value="orphan" @if (in_array('orphan', $selectedOptions)) checked @endif>
                                         <label class="form-check-label" for="orphan">Orphans</label>
                                     </div>
-                                     <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="Women" name="women"
                                             value="women" @if (in_array('women', $selectedOptions)) checked @endif>
                                         <label class="form-check-label" for="Women">Women with disabled husband</label>
@@ -160,17 +160,25 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i> Your Beneficiaries List &nbsp;&nbsp; <i
                                     class="fa fa-arrow-right" aria-hidden="true"></i>
                             </button>
-                            <button type="submit" name="action" value="submit" class="btn btn-warning mx-2 checkout_btn" @if(count(session('cart', [])) < 1) disabled @endif>Checkout &nbsp;&nbsp;
+                            <button type="submit" name="action" value="submit"
+                                class="btn btn-warning mx-2 checkout_btn"
+                                @if (count(session('cart', [])) < 1) disabled @endif>Checkout &nbsp;&nbsp;
                                 <i class="fa fa-arrow-right" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div class="d-flex justify-content-start m-2">
                             @foreach ($data as $key => $list)
                                 @if ($key != 'page')
-                                    <button type="button" class="btn btn-outline-warning mx-2">{{ $list }}
+                                    <button type="button" class="btn btn-outline-warning mx-2" data-key="{{$key}}" data-value="{{$list}}" onclick="removeValue(this)">{{ $list }}&nbsp;&nbsp;X
                                     </button>
                                 @endif
                             @endforeach
+                            @if (count($selectedOptions) > 0)
+                                @foreach ($selectedOptions as $list)
+                                    <button type="button" class="btn btn-outline-warning mx-2" data-key="Vulnerability" data-value="{{$list}}" onclick="removeValue(this)">{{ $list }}&nbsp;&nbsp;X
+                                    </button>
+                                @endforeach
+                            @endif
                         </div>
                         <div class="d-flex justify-content-start m-3 filter_row">
                             <div class="form-check form-check-inline mx-3">
@@ -179,21 +187,21 @@
                                     style="font-size: 20px; color: #878787;">Select All</label>
                             </div>
                             <!--<div class="d-flex mx-3">
-                                    <i class="fa fa-user" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
-                                        aria-hidden="true"></i>
-                                    <div class="d-flex flex-column">
-                                        <p class="m-0">Persons</p>
-                                        <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                                        <i class="fa fa-user" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
+                                            aria-hidden="true"></i>
+                                        <div class="d-flex flex-column">
+                                            <p class="m-0">Persons</p>
+                                            <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="d-flex mx-3">
-                                    <i class="fa fa-home" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
-                                        aria-hidden="true"></i>
-                                    <div class="d-flex flex-column">
-                                        <p class="m-0">Homes</p>
-                                        <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
-                                    </div>
-                                </div>-->
+                                    <div class="d-flex mx-3">
+                                        <i class="fa fa-home" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
+                                            aria-hidden="true"></i>
+                                        <div class="d-flex flex-column">
+                                            <p class="m-0">Homes</p>
+                                            <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                                        </div>
+                                    </div>-->
                             <!--<div class="d-flex ml-auto w-40 sort_filter">-->
                             <!--    <label class="w-50" for="sort_by">Sort by : </label>-->
                             <!--    <select class="form-control" id="sort_by">-->
@@ -207,8 +215,6 @@
                                 <div class="d-flex justify-content-between my-3 align-items-center searchable-item">
                                     <input class="mx-3 heart checkbox_items" type="checkbox" name="item_ids[]"
                                         value="{{ $item->id }}" />
-                                    {{-- <img src="{{$item['__metadata']['uri']}}" width="70" height="70" class="rounded-circle"> --}}
-                                    {{-- <img src="{{ asset('images/users/1.jpg') }}" width="70" height="70" class="rounded-circle"> --}}
                                     <div class="rounded-background" id="profile-background">
                                         <span class="initial-letter">{{ substr($item['da_occupant_name'], 0, 1) }}</span>
                                     </div>
@@ -238,8 +244,6 @@
                                         <div class="d-flex flex-column">
                                             <p class="bg-title text-success text-right m-0">ID:
                                                 {{ $item['filled_da_form_id'] }}</p>
-                                            <!--<button type="button" class="btn btn-info mt-4 px-4 py-2 text-center">View-->
-                                            <!--    Profile</button>-->
                                         </div>
                                     </div>
                                 </div>
@@ -319,9 +323,9 @@
                     return $(this).val();
                 }).get();
                 console.log('Checked values: ', checkedValues);
-                if( {{count(session('cart', []))}} > 0 || checkedValues.length > 0){
+                if ({{ count(session('cart', [])) }} > 0 || checkedValues.length > 0) {
                     $('.checkout_btn').attr('disabled', false);
-                }else{
+                } else {
                     $('.checkout_btn').attr('disabled', true);
                 }
             });
@@ -340,6 +344,115 @@
             });
         }
 
+        function removeValue(e) {
+            var key = $(e).attr('data-key');
+            var value = $(e).attr('data-value');
+            if(key == 'keywords'){
+                $('#clear_all_form').find('#keywords').each(function() {
+                    $(this).val('');
+                });
+            }else if(key == 'district' && value != null){
+                $('#clear_all_form').find('#district').each(function(){
+                    $(this).val('');
+                });
+                $('#clear_all_form').find('#tehsil').each(function(){
+                    $(this).html('');
+                });
+                $('#clear_all_form').find('#union_council').each(function(){
+                    $(this).html('');
+                });
+                $('#clear_all_form').find('#deh').each(function(){
+                    $(this).html('');
+                });
+            }else if(key == 'tehsil' && value != null){
+                $('#clear_all_form').find('#tehsil').each(function(){
+                    $(this).val('');
+                });
+                $('#clear_all_form').find('#union_council').each(function(){
+                    $(this).html('');
+                });
+                $('#clear_all_form').find('#deh').each(function(){
+                    $(this).html('');
+                });
+            }else if(key == 'union_council' && value != null){
+                $('#clear_all_form').find('#union_council').each(function(){
+                    $(this).val('');
+                });
+                $('#clear_all_form').find('#deh').each(function(){
+                    $(this).html('');
+                });
+            }else if(key == 'deh' && value != null){
+                $('#clear_all_form').find('#deh').each(function(){
+                    $(this).val('');
+                });
+            }else if(key == 'gender'){
+                $('#clear_all_form').find('#gender').each(function(){
+                    $(this).val('');
+                });
+            }else if(key == 'Vulnerability' && value != null){
+                $('#clear_all_form').find('#'+value).each(function(){
+                    $(this).prop('checked', false);
+                });
+            }
+            $(e).remove();
+            $('#clear_all_form').submit();
+        }
+
+        function removeParentValue(e) {
+            var key = $(e).attr('data-key');
+            if(key == 'keywords'){
+                $('#clear_all_form').find('#keywords').each(function() {
+                    $(this).val('');
+                });
+            }else if(key == 'district'){
+                $('#clear_all_form').find('#district').each(function(){
+                    $(this).val('');
+                });
+                $('#clear_all_form').find('#tehsil').each(function(){
+                    $(this).html('');
+                });
+                $('#clear_all_form').find('#union_council').each(function(){
+                    $(this).html('');
+                });
+                $('#clear_all_form').find('#deh').each(function(){
+                    $(this).html('');
+                });
+            }else if(key == 'tehsil'){
+                $('#clear_all_form').find('#tehsil').each(function(){
+                    $(this).val('');
+                });
+                $('#clear_all_form').find('#union_council').each(function(){
+                    $(this).html('');
+                });
+                $('#clear_all_form').find('#deh').each(function(){
+                    $(this).html('');
+                });
+            }else if(key == 'union_council'){
+                $('#clear_all_form').find('#union_council').each(function(){
+                    $(this).val('');
+                });
+                $('#clear_all_form').find('#deh').each(function(){
+                    $(this).html('');
+                });
+            }else if(key == 'deh'){
+                $('#clear_all_form').find('#deh').each(function(){
+                    $(this).val('');
+                });
+            }else if(key == 'gender'){
+                $('#clear_all_form').find('#gender').each(function(){
+                    $(this).val('');
+                });
+            }else if(key == 'Vulnerability'){
+                $('#clear_all_form').find(':input').each(function(){
+                    if (this.type === 'checkbox') {
+                        $(this).prop('checked', false);
+                    }
+                });
+            }
+            $(e).remove();
+            $('#clear_all_form').submit();
+        }
+
         $('#select_all').click(function() {
 
             var isChecked = this.checked;
@@ -354,12 +467,16 @@
             $.ajax({
                 url: '{{ route('filter.victims') }}',
                 method: 'POST',
-                data: { district: val, _token: '{{csrf_token()}}' },
+                data: {
+                    district: val,
+                    _token: '{{ csrf_token() }}'
+                },
                 success: function(response) {
                     $('#tehsil').html();
                     var data = '<option value="">Select Tehsil</option>';
-                    response.forEach(function(res){
-                        data += '<option value="'+res.tehsil+'">'+res.tehsil+'</option>';
+                    response.forEach(function(res) {
+                        data += '<option value="' + res.tehsil + '">' + res.tehsil +
+                        '</option>';
                     })
                     $('#tehsil').html(data);
                 },
@@ -374,12 +491,16 @@
             $.ajax({
                 url: '{{ route('filter.victims') }}',
                 method: 'POST',
-                data: { tehsil: val, _token: '{{csrf_token()}}' },
+                data: {
+                    tehsil: val,
+                    _token: '{{ csrf_token() }}'
+                },
                 success: function(response) {
                     $('#union_council').html();
                     var data = '<option value="">Select Union Council</option>';
-                    response.forEach(function(res){
-                        data += '<option value="'+res.union_council+'">'+res.union_council+'</option>';
+                    response.forEach(function(res) {
+                        data += '<option value="' + res.union_council + '">' + res
+                            .union_council + '</option>';
                     })
                     $('#union_council').html(data);
                 },
@@ -394,12 +515,15 @@
             $.ajax({
                 url: '{{ route('filter.victims') }}',
                 method: 'POST',
-                data: { union_council: val, _token: '{{csrf_token()}}' },
+                data: {
+                    union_council: val,
+                    _token: '{{ csrf_token() }}'
+                },
                 success: function(response) {
                     $('#deh').html();
                     var data = '<option value="">Select Deh</option>';
-                    response.forEach(function(res){
-                        data += '<option value="'+res.deh+'">'+res.deh+'</option>';
+                    response.forEach(function(res) {
+                        data += '<option value="' + res.deh + '">' + res.deh + '</option>';
                     })
                     $('#deh').html(data);
                 },
