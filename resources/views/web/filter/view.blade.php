@@ -254,7 +254,7 @@
                                                 {{ number_format($item['price'], 0) }}</p>
                                         </div>
                                         <p class="m-0 rounded text-left px-2 my-3"
-                                            style="background-color: #ececec; width:40%; ">
+                                            style="background-color: #ececec; width:50%; ">
                                             Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available
                                         </p>
                                     </div>
