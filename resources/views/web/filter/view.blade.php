@@ -174,7 +174,7 @@
                                 @if ($key != 'page')
                                     <button type="button" class="btn btn-outline-warning mx-2"
                                         data-key="{{ $key }}" data-value="{{ $list }}"
-                                        onclick="removeValue(this)">{{ $list }}&nbsp;&nbsp;X
+                                        onclick="removeValue(this)">{{  ucfirst(str_replace('_', ' ', $list)) }}&nbsp;&nbsp;X
                                     </button>
                                 @endif
                             @endforeach
@@ -237,13 +237,13 @@
                                                     Elderly
                                                 @endif
                                                 @if (in_array('differently_abled', $selectedOptions))
-                                                    Differently abled
+                                                    Differently able
                                                 @endif
                                                 @if (in_array('orphan', $selectedOptions))
                                                     Orphan
                                                 @endif
                                                 @if (in_array('women', $selectedOptions))
-                                                    women
+                                                    Women
                                                 @endif
                                             </p>
                                             <p class="text-secondary m-0 mx-4"><i class="fa fa-map-marker"
@@ -253,8 +253,8 @@
                                             <p class="text-secondary m-0 mx-4">{{ session()->get('currency') }}
                                                 {{ number_format($item['price'], 0) }}</p>
                                         </div>
-                                        <p class="m-0 w-auto rounded text-left px-2 my-3"
-                                            style="background-color: #ececec; ">
+                                        <p class="m-0 rounded text-left px-2 my-3"
+                                            style="background-color: #ececec; width:30%; ">
                                             Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available
                                         </p>
                                     </div>
