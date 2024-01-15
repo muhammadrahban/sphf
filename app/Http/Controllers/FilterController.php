@@ -120,7 +120,7 @@ class FilterController extends Controller
         }
 
         if ($request->has('differently_abled')) {
-            $foundItems->where('differently_abled', 1);
+            $foundItems->where('people_with_disability_physically_or_mentally', 1);
             $filtersApplied = true;
             $selectedOptions[] = 'differently_abled';
         }

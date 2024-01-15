@@ -19,12 +19,15 @@
                     <div class="d-flex flex-wrap align-content-between">
                         @foreach ($data as $key => $list)
                             @if ($key != 'page')
-                                <button type="button" class="btn btn-outline-primary my-2 mx-1" data-key="{{$key}}" onclick="removeParentValue(this)">{{ $key }}&nbsp;&nbsp;X
+                                <button type="button" class="btn btn-outline-primary my-2 mx-1"
+                                    data-key="{{ $key }}"
+                                    onclick="removeParentValue(this)">{{ $key }}&nbsp;&nbsp;X
                                 </button>
                             @endif
                         @endforeach
                         @if (count($selectedOptions) > 0)
-                            <button type="button" class="btn btn-outline-primary my-2 mx-1" data-key="Vulnerability" onclick="removeParentValue(this)">Vulnerability &nbsp;&nbsp;X
+                            <button type="button" class="btn btn-outline-primary my-2 mx-1" data-key="Vulnerability"
+                                onclick="removeParentValue(this)">Vulnerability &nbsp;&nbsp;X
                             </button>
                         @endif
                     </div>
@@ -169,13 +172,17 @@
                         <div class="d-flex justify-content-start m-2">
                             @foreach ($data as $key => $list)
                                 @if ($key != 'page')
-                                    <button type="button" class="btn btn-outline-warning mx-2" data-key="{{$key}}" data-value="{{$list}}" onclick="removeValue(this)">{{ $list }}&nbsp;&nbsp;X
+                                    <button type="button" class="btn btn-outline-warning mx-2"
+                                        data-key="{{ $key }}" data-value="{{ $list }}"
+                                        onclick="removeValue(this)">{{ $list }}&nbsp;&nbsp;X
                                     </button>
                                 @endif
                             @endforeach
                             @if (count($selectedOptions) > 0)
                                 @foreach ($selectedOptions as $list)
-                                    <button type="button" class="btn btn-outline-warning mx-2" data-key="Vulnerability" data-value="{{$list}}" onclick="removeValue(this)">{{ $list }}&nbsp;&nbsp;X
+                                    <button type="button" class="btn btn-outline-warning mx-2" data-key="Vulnerability"
+                                        data-value="{{ $list }}"
+                                        onclick="removeValue(this)">{{ $list }}&nbsp;&nbsp;X
                                     </button>
                                 @endforeach
                             @endif
@@ -187,21 +194,21 @@
                                     style="font-size: 20px; color: #878787;">Select All</label>
                             </div>
                             <!--<div class="d-flex mx-3">
-                                        <i class="fa fa-user" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
-                                            aria-hidden="true"></i>
-                                        <div class="d-flex flex-column">
-                                            <p class="m-0">Persons</p>
-                                            <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                                            <i class="fa fa-user" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
+                                                aria-hidden="true"></i>
+                                            <div class="d-flex flex-column">
+                                                <p class="m-0">Persons</p>
+                                                <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="d-flex mx-3">
-                                        <i class="fa fa-home" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
-                                            aria-hidden="true"></i>
-                                        <div class="d-flex flex-column">
-                                            <p class="m-0">Homes</p>
-                                            <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
-                                        </div>
-                                    </div>-->
+                                        <div class="d-flex mx-3">
+                                            <i class="fa fa-home" style="font-size: 2.73em;margin-top: 5px;margin-right: 5px;"
+                                                aria-hidden="true"></i>
+                                            <div class="d-flex flex-column">
+                                                <p class="m-0">Homes</p>
+                                                <p style="font-size: 20px; font-weight: 600; margin: 0;">{{ $count }}</p>
+                                            </div>
+                                        </div>-->
                             <!--<div class="d-flex ml-auto w-40 sort_filter">-->
                             <!--    <label class="w-50" for="sort_by">Sort by : </label>-->
                             <!--    <select class="form-control" id="sort_by">-->
@@ -223,10 +230,21 @@
                                         <div class="d-flex" style="font-size: 18px;">
                                             <p class="text-primary m-0 mr-4"><i class="fa fa-bars"
                                                     aria-hidden="true"></i>
-                                                {{ $item['widows'] != 0 ? 'Widow ' : '' }}
-                                                {{ $item['women_with_disable_husband'] != 0 ? 'Women ' : '' }}
-                                                {{ $item['unaccompained_elders_over_the_age_of_60'] != 0 ? 'Elderly ' : '' }}
-                                                {{ $item['people_with_disability_physically_or_mentally'] != 0 ? 'Differntly Abled ' : '' }}
+                                                @if (in_array('widow', $selectedOptions))
+                                                    Widow
+                                                @endif
+                                                @if (in_array('elderly', $selectedOptions))
+                                                    Elderly
+                                                @endif
+                                                @if (in_array('differently_abled', $selectedOptions))
+                                                    Differently abled
+                                                @endif
+                                                @if (in_array('orphan', $selectedOptions))
+                                                    Orphan
+                                                @endif
+                                                @if (in_array('women', $selectedOptions))
+                                                    women
+                                                @endif
                                             </p>
                                             <p class="text-secondary m-0 mx-4"><i class="fa fa-map-marker"
                                                     aria-hidden="true"></i> {{ $item['district'] }} /
@@ -347,50 +365,50 @@
         function removeValue(e) {
             var key = $(e).attr('data-key');
             var value = $(e).attr('data-value');
-            if(key == 'keywords'){
+            if (key == 'keywords') {
                 $('#clear_all_form').find('#keywords').each(function() {
                     $(this).val('');
                 });
-            }else if(key == 'district' && value != null){
-                $('#clear_all_form').find('#district').each(function(){
+            } else if (key == 'district' && value != null) {
+                $('#clear_all_form').find('#district').each(function() {
                     $(this).val('');
                 });
-                $('#clear_all_form').find('#tehsil').each(function(){
+                $('#clear_all_form').find('#tehsil').each(function() {
                     $(this).html('');
                 });
-                $('#clear_all_form').find('#union_council').each(function(){
+                $('#clear_all_form').find('#union_council').each(function() {
                     $(this).html('');
                 });
-                $('#clear_all_form').find('#deh').each(function(){
+                $('#clear_all_form').find('#deh').each(function() {
                     $(this).html('');
                 });
-            }else if(key == 'tehsil' && value != null){
-                $('#clear_all_form').find('#tehsil').each(function(){
+            } else if (key == 'tehsil' && value != null) {
+                $('#clear_all_form').find('#tehsil').each(function() {
                     $(this).val('');
                 });
-                $('#clear_all_form').find('#union_council').each(function(){
+                $('#clear_all_form').find('#union_council').each(function() {
                     $(this).html('');
                 });
-                $('#clear_all_form').find('#deh').each(function(){
+                $('#clear_all_form').find('#deh').each(function() {
                     $(this).html('');
                 });
-            }else if(key == 'union_council' && value != null){
-                $('#clear_all_form').find('#union_council').each(function(){
+            } else if (key == 'union_council' && value != null) {
+                $('#clear_all_form').find('#union_council').each(function() {
                     $(this).val('');
                 });
-                $('#clear_all_form').find('#deh').each(function(){
+                $('#clear_all_form').find('#deh').each(function() {
                     $(this).html('');
                 });
-            }else if(key == 'deh' && value != null){
-                $('#clear_all_form').find('#deh').each(function(){
+            } else if (key == 'deh' && value != null) {
+                $('#clear_all_form').find('#deh').each(function() {
                     $(this).val('');
                 });
-            }else if(key == 'gender'){
-                $('#clear_all_form').find('#gender').each(function(){
+            } else if (key == 'gender') {
+                $('#clear_all_form').find('#gender').each(function() {
                     $(this).val('');
                 });
-            }else if(key == 'Vulnerability' && value != null){
-                $('#clear_all_form').find('#'+value).each(function(){
+            } else if (key == 'Vulnerability' && value != null) {
+                $('#clear_all_form').find('#' + value).each(function() {
                     $(this).prop('checked', false);
                 });
             }
@@ -400,50 +418,50 @@
 
         function removeParentValue(e) {
             var key = $(e).attr('data-key');
-            if(key == 'keywords'){
+            if (key == 'keywords') {
                 $('#clear_all_form').find('#keywords').each(function() {
                     $(this).val('');
                 });
-            }else if(key == 'district'){
-                $('#clear_all_form').find('#district').each(function(){
+            } else if (key == 'district') {
+                $('#clear_all_form').find('#district').each(function() {
                     $(this).val('');
                 });
-                $('#clear_all_form').find('#tehsil').each(function(){
+                $('#clear_all_form').find('#tehsil').each(function() {
                     $(this).html('');
                 });
-                $('#clear_all_form').find('#union_council').each(function(){
+                $('#clear_all_form').find('#union_council').each(function() {
                     $(this).html('');
                 });
-                $('#clear_all_form').find('#deh').each(function(){
+                $('#clear_all_form').find('#deh').each(function() {
                     $(this).html('');
                 });
-            }else if(key == 'tehsil'){
-                $('#clear_all_form').find('#tehsil').each(function(){
+            } else if (key == 'tehsil') {
+                $('#clear_all_form').find('#tehsil').each(function() {
                     $(this).val('');
                 });
-                $('#clear_all_form').find('#union_council').each(function(){
+                $('#clear_all_form').find('#union_council').each(function() {
                     $(this).html('');
                 });
-                $('#clear_all_form').find('#deh').each(function(){
+                $('#clear_all_form').find('#deh').each(function() {
                     $(this).html('');
                 });
-            }else if(key == 'union_council'){
-                $('#clear_all_form').find('#union_council').each(function(){
+            } else if (key == 'union_council') {
+                $('#clear_all_form').find('#union_council').each(function() {
                     $(this).val('');
                 });
-                $('#clear_all_form').find('#deh').each(function(){
+                $('#clear_all_form').find('#deh').each(function() {
                     $(this).html('');
                 });
-            }else if(key == 'deh'){
-                $('#clear_all_form').find('#deh').each(function(){
+            } else if (key == 'deh') {
+                $('#clear_all_form').find('#deh').each(function() {
                     $(this).val('');
                 });
-            }else if(key == 'gender'){
-                $('#clear_all_form').find('#gender').each(function(){
+            } else if (key == 'gender') {
+                $('#clear_all_form').find('#gender').each(function() {
                     $(this).val('');
                 });
-            }else if(key == 'Vulnerability'){
-                $('#clear_all_form').find(':input').each(function(){
+            } else if (key == 'Vulnerability') {
+                $('#clear_all_form').find(':input').each(function() {
                     if (this.type === 'checkbox') {
                         $(this).prop('checked', false);
                     }
@@ -476,7 +494,7 @@
                     var data = '<option value="">Select Tehsil</option>';
                     response.forEach(function(res) {
                         data += '<option value="' + res.tehsil + '">' + res.tehsil +
-                        '</option>';
+                            '</option>';
                     })
                     $('#tehsil').html(data);
                 },
