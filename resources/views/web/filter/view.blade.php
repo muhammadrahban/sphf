@@ -111,7 +111,7 @@
                                         <input class="form-check-input" type="checkbox" id="differently_abled"
                                             name="differently_abled" value="differently_abled"
                                             @if (in_array('differently_abled', $selectedOptions)) checked @endif>
-                                        <label class="form-check-label" for="Differntly_Abled">Differently-abled</label>
+                                        <label class="form-check-label" for="Differntly_Abled">Differently-able</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="orphan" name="orphan"
