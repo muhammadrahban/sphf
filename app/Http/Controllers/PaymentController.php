@@ -11,8 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use Dompdf\Dompdf;
 use Dompdf\Options;
-
-
+use GuzzleHttp\Psr7\Request as Psr7Request;
 
 class PaymentController extends Controller
 {
@@ -249,8 +248,9 @@ class PaymentController extends Controller
         //     'TS' => $TS,
         //     'O' => $O
         // ]);
-
-        $client = new Client();
+$client = new Client([
+    'verify' => false,
+]);
 
         // Replace this URL with your actual endpoint
         $url = 'https://sandbox.bankalfalah.com/HS/api/IPN/OrderStatus/24821/033844/' . $O;
@@ -264,6 +264,42 @@ class PaymentController extends Controller
             $decodedData = json_decode($data, true);
             $decodedData = json_decode($decodedData, true);
             $donation = DonationInvoice::where('order_id', $O)->first();
+
+
+
+        $headers1 = [
+            'x-csrf-token' => 'fetch',
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Basic VE1DVEVDSDE6QXNhbmkxMjM0NQ==',
+        ];
+        $body1 = ''; // Your request body if needed
+
+        $request = new Psr7Request('GET', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet', $headers1, $body1);
+        $request = $client->send($request);
+
+        // Send the request and get the response
+
+        // Extract CSRF token from response headers
+        $sToken = $request->getHeader('x-csrf-token');
+        $headers2 = [
+            'x-csrf-token' => $sToken,
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Basic VE1DVEVDSDE6QXNhbmkxMjM0NQ==',
+        ];
+
+        $body2 = '{
+          "BUDAT": "20240204",
+          "BPCNIC": "43503-0384942-7",
+          "DDET": "190019001901",
+          "WRBTR": "300000"
+        }';
+
+        $response2 = $client->request('POST', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet', [
+            'headers' => $headers2,
+            'body' => $body2,
+        ]);
 
             // Render the Blade view to a variable
             $view = view('web.invoice-pdf', compact('decodedData'))->render();
@@ -298,7 +334,7 @@ class PaymentController extends Controller
                 $donation->save();
             }
             session()->forget('cart');
-            return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/'.'invoices/' . $fileName]);
+            return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/' . 'invoices/' . $fileName]);
         } catch (\Exception $e) {
             // Handle any exceptions or errors here
             return response()->json(['error' => $e->getMessage()], 500);
