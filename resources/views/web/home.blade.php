@@ -860,11 +860,12 @@
             <div class="container" id="DdSPHF">
                 <div class="row mx-0 my-5">
                     <div class="col-md-6 p-3 p-md-5 order-2 order-md-1" style="background: #144047;">
+                        <br><br><br>
                         <h4 class="text-warning">Direct your donations to SPHF</h4>
                         <h3 class="text-white">Empower change. Impact lives.</h3>
 
                         <form action="">
-                            <div style="margin-top: 20%;">
+                            <div style="margin-top: 10%;">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <span class="form_span input_symbol" style="border-radius: 0.3rem;">Rs</span>

@@ -17,12 +17,27 @@
                                 style="font-weight: 700; font-size: 18px;">X</span></p>
                     </div>
                     <div class="d-flex flex-wrap align-content-between">
+                        @php
+                            $is_location = 0;
+                        @endphp
                         @foreach ($data as $key => $list)
                             @if ($key != 'page')
-                                <button type="button" class="btn btn-outline-primary my-2 mx-1"
-                                    data-key="{{ $key }}"
-                                    onclick="removeParentValue(this)">{{ $key }}&nbsp;&nbsp;X
-                                </button>
+                                @if($key == 'district' || $key == 'tehsil' || $key == 'union_council' || $key == 'deh')
+                                    @if($is_location == 0)
+                                        <button type="button" class="btn btn-outline-primary my-2 mx-1"
+                                            data-key="location"
+                                            onclick="removeParentValue(this)">Location&nbsp;&nbsp;X
+                                        </button>
+                                        @php
+                                            $is_location++;
+                                        @endphp 
+                                    @endif
+                                @else
+                                    <button type="button" class="btn btn-outline-primary my-2 mx-1"
+                                        data-key="{{ $key }}"
+                                        onclick="removeParentValue(this)">{{ucfirst(str_replace('_', ' ', $key))  }}&nbsp;&nbsp;X
+                                    </button>
+                                @endif
                             @endif
                         @endforeach
                         @if (count($selectedOptions) > 0)
@@ -113,15 +128,15 @@
                                             @if (in_array('differently_abled', $selectedOptions)) checked @endif>
                                         <label class="form-check-label" for="Differntly_Abled">Differently-able</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="orphan" name="orphan"
-                                            value="orphan" @if (in_array('orphan', $selectedOptions)) checked @endif>
-                                        <label class="form-check-label" for="orphan">Orphans</label>
-                                    </div>
+                                    <!--<div class="form-check form-check-inline">-->
+                                    <!--    <input class="form-check-input" type="checkbox" id="orphan" name="orphan"-->
+                                    <!--        value="orphan" @if (in_array('orphan', $selectedOptions)) checked @endif>-->
+                                    <!--    <label class="form-check-label" for="orphan">Orphans</label>-->
+                                    <!--</div>-->
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="Women" name="women"
                                             value="women" @if (in_array('women', $selectedOptions)) checked @endif>
-                                        <label class="form-check-label" for="Women">Women with disabled husband</label>
+                                        <label class="form-check-label" for="Women">Disabled Spouse</label>
                                     </div>
                                 </div>
                             </div>
@@ -182,7 +197,7 @@
                                 @foreach ($selectedOptions as $list)
                                     <button type="button" class="btn btn-outline-warning mx-2" data-key="Vulnerability"
                                         data-value="{{ $list }}"
-                                        onclick="removeValue(this)">{{ $list }}&nbsp;&nbsp;X
+                                        onclick="removeValue(this)">{{ ucfirst(str_replace('_', ' ', $list)) }}&nbsp;&nbsp;X
                                     </button>
                                 @endforeach
                             @endif
@@ -243,7 +258,7 @@
                                                     Orphan
                                                 @endif
                                                 @if (in_array('women', $selectedOptions))
-                                                    Women
+                                                    Disabled Spouse
                                                 @endif
                                             </p>
                                             <p class="text-secondary m-0 mx-4"><i class="fa fa-map-marker"
@@ -254,7 +269,7 @@
                                                 {{ number_format($item['price'], 0) }}</p>
                                         </div>
                                         <p class="m-0 rounded text-left px-2 my-3"
-                                            style="background-color: #ececec; width:50%; ">
+                                            style="background-color: #ececec; width:250px; ">
                                             Beneficiary CNIC {{ !$item['da_cnic'] ? 'not' : '' }} available
                                         </p>
                                     </div>
@@ -360,6 +375,7 @@
                     console.log($(this));
                 }
             });
+            $('#clear_all_form').submit();
         }
 
         function removeValue(e) {
@@ -422,7 +438,7 @@
                 $('#clear_all_form').find('#keywords').each(function() {
                     $(this).val('');
                 });
-            } else if (key == 'district') {
+            } else if (key == 'location') {
                 $('#clear_all_form').find('#district').each(function() {
                     $(this).val('');
                 });
@@ -435,27 +451,40 @@
                 $('#clear_all_form').find('#deh').each(function() {
                     $(this).html('');
                 });
-            } else if (key == 'tehsil') {
-                $('#clear_all_form').find('#tehsil').each(function() {
-                    $(this).val('');
-                });
-                $('#clear_all_form').find('#union_council').each(function() {
-                    $(this).html('');
-                });
-                $('#clear_all_form').find('#deh').each(function() {
-                    $(this).html('');
-                });
-            } else if (key == 'union_council') {
-                $('#clear_all_form').find('#union_council').each(function() {
-                    $(this).val('');
-                });
-                $('#clear_all_form').find('#deh').each(function() {
-                    $(this).html('');
-                });
-            } else if (key == 'deh') {
-                $('#clear_all_form').find('#deh').each(function() {
-                    $(this).val('');
-                });
+            // } else if (key == 'district') {
+            //     $('#clear_all_form').find('#district').each(function() {
+            //         $(this).val('');
+            //     });
+            //     $('#clear_all_form').find('#tehsil').each(function() {
+            //         $(this).html('');
+            //     });
+            //     $('#clear_all_form').find('#union_council').each(function() {
+            //         $(this).html('');
+            //     });
+            //     $('#clear_all_form').find('#deh').each(function() {
+            //         $(this).html('');
+            //     });
+            // } else if (key == 'tehsil') {
+            //     $('#clear_all_form').find('#tehsil').each(function() {
+            //         $(this).val('');
+            //     });
+            //     $('#clear_all_form').find('#union_council').each(function() {
+            //         $(this).html('');
+            //     });
+            //     $('#clear_all_form').find('#deh').each(function() {
+            //         $(this).html('');
+            //     });
+            // } else if (key == 'union_council') {
+            //     $('#clear_all_form').find('#union_council').each(function() {
+            //         $(this).val('');
+            //     });
+            //     $('#clear_all_form').find('#deh').each(function() {
+            //         $(this).html('');
+            //     });
+            // } else if (key == 'deh') {
+            //     $('#clear_all_form').find('#deh').each(function() {
+            //         $(this).val('');
+            //     });
             } else if (key == 'gender') {
                 $('#clear_all_form').find('#gender').each(function() {
                     $(this).val('');
