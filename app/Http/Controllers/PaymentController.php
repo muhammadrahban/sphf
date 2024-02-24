@@ -291,15 +291,16 @@ $client = new Client([
 
         $body2 = '{
           "BUDAT": "20240204",
-          "BPCNIC": "43503-0384942-7",
-          "DDET": "190019001901",
-          "WRBTR": "300000"
+          "BPCNIC": "'.$donation->victim->da_cnic.'",
+          "DDET": "'.$donation->id.'",
+          "WRBTR": "'.$donation->amount.'"
         }';
 
         $response2 = $client->request('POST', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet', [
             'headers' => $headers2,
             'body' => $body2,
         ]);
+        dd($response2);
 
             // Render the Blade view to a variable
             $view = view('web.invoice-pdf', compact('decodedData'))->render();

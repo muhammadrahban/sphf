@@ -32,4 +32,9 @@ class DonationInvoice extends Model
         'payment_status',
         'order_id',
     ];
+
+    public function victim()
+    {
+        return $this->belongsTo(victim::class);
+    }
 }
