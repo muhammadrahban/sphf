@@ -113,8 +113,13 @@ class FilterController extends Controller
             $selectedOptions[] = 'women';
         }
 
-        if ($request->has('elderly')) {
-            $foundItems->where('divorced_abandoned_unmarried_older_dependent_on_others', 1)->orWhere('unaccompained_elders_over_the_age_of_60', 1);
+        // if ($request->has('elderly')) {
+        //     $foundItems->where('divorced_abandoned_unmarried_older_dependent_on_others', 1)->orWhere('unaccompained_elders_over_the_age_of_60', 1);
+        //     $filtersApplied = true;
+        //     $selectedOptions[] = 'elderly';
+        // }
+         if ($request->has('elderly')) {
+            $foundItems->where('unaccompained_elders_over_the_age_of_60', 1);
             $filtersApplied = true;
             $selectedOptions[] = 'elderly';
         }

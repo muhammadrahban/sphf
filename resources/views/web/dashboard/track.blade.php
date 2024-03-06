@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="col-md-9 bg-light" style="padding: 50px;">
-                    <h2 style="padding: 20px 0px;">My Beneficiary Progress</h2>
+                    <h2 style="padding: 20px 0px;">Track Beneficiaries</h2>
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex flex-wrap justify-content-center" style="gap:12px;">
