@@ -10,13 +10,10 @@ use Illuminate\Validation\Rule;
 class DashboardController extends Controller
 {
     public function index(){
-        $count                  = Donation::where('user_id', auth()->user()->id)->count();
-        $count_phase_one        = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'phase_one')->count();
-        $count_phase_two        = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'phase_two')->count();
-        $count_phase_three      = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'phase_three')->count();
-        $count_phase_four       = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'phase_four')->count();
-        $count_completed        = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'completed')->count();
-        return view('web.dashboard.index', compact('count', 'count_phase_one', 'count_phase_two', 'count_phase_three', 'count_phase_four', 'count_completed'));
+        $count      = Donation::where('user_id', auth()->user()->id)->count();
+        $average    = Donation::where('user_id', auth()->user()->id)->groupBy('victim_id')->count();
+        $donation   = Donation::where('user_id', auth()->user()->id)->with('victim', 'DonationInvoice', 'user')->latest()->limit(2)->get()->groupBy('victim_id');
+        return view('web.dashboard.index', compact('count', 'average', 'donation'));
     }
 
     public function profile(){
@@ -38,7 +35,8 @@ class DashboardController extends Controller
     public function donation(){
         $donation               = Donation::where('user_id', auth()->user()->id);
         $count                  = $donation->count();
-        $donation               = $donation->with('victim', 'DonationInvoice')->get();
+        $donation               = $donation->with('victim', 'DonationInvoice', 'user')->get()->groupBy('victim_id');
+        // dd($donation[1]);
         return view('web.dashboard.history', compact('donation', 'count'));
     }
 

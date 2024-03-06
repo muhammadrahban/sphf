@@ -1,29 +1,34 @@
 @extends('web.master')
 @section('webcontain')
     <main>
-        <section class="container my-5" style="max-width: 90% !important;">
-            <div class="row">
-                <div class="col-md-3 px-3 py-2 pt-4" style="background-color: #f5f5f5; border-radius: 5px;">
-                    @include('web.partials.admin_header')
+        <!--<section class="container my-5" style="max-width: 90% !important;">-->
+        <section>
+            <div class="row" style="margin:0px">
+                <div class="col-md-3" style="border-radius: 5px;">
+                    <div class="row">
+                        <div class="offset-1 col-md-10" style="height: 100vh; box-shadow: 14px 10px 14px 0px #e3e1e1ab; padding: 50px 0px;">
+                            @include('web.partials.admin_header')
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-9 p-5 bg-light">
+                <div class="col-md-9 bg-light" style="padding: 50px;">
+                    <h2 style="padding: 20px 0px;">My Beneficiary Progress</h2>
                     <div class="row">
                         <div class="col-12">
-                            <div class="d-flex flex-wrap justify-content-center" style="gap:10px;">
-                                <div style="color: #5f3c03;" class="rounded bg-warning shadow text-center px-2 py-1 ">
+                            <div class="d-flex flex-wrap justify-content-center" style="gap:12px;">
+                                <div style="color: #5f3c03;" class="d-flex flex-column text-center justify-content-center align-items-center rounded bg-warning shadow text-center px-2 py-1">
                                     <h2>{{$count}}</h2>
                                     <h6>Total Beneficiaries</h6>
                                 </div>
                                 <div class="rounded bg-info shadow px-4 py-2 text-white">
                                     <div class="d-flex text-center align-items-center" style="gap:15px;">
                                         <div>
-                                            
                                             <h3 class="mb-0 "><img class="mr-2 mt-0 mb-2" style="width: 25px; height: 25px;" src="{{asset('images/home_icon_01.svg')}}">{{$count}}</h3>
                                             <h6><small>House Sponsored</small></h6>
                                         </div>
                                         <div style="height:50px; width:2px; background:lightgray"></div>
                                         <div>
-                                            <h3>{{number_format(($count * 300000), 0)}} <small>PKR</small></h3>
+                                            <h3>PKR <br />{{number_format(($count * 300000), 0)}}</h3>
                                             <h6><small>Total Donations</small></h6>
                                         </div>
                                     </div>

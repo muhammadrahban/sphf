@@ -1,5 +1,5 @@
 <div class="border border-secondary border-0 border-bottom-1">
-    <div class="d-flex justify-content-center align-items-end">
+    <div class="d-flex justify-content-center align-items-center">
         <div class="rounded-background" style="background-color: #148b9b">
             @php
                 $initials   = strtoupper(substr(auth()->user()->first_name, 0, 1));
@@ -7,11 +7,14 @@
             @endphp
             <span class="initial-letter">{{ $initials }}{{$last}}</span>
         </div>
-        <h3 class="bg-title"> {{auth()->user()->first_name}} {{auth()->user()->last_name}} </h3>
+        <div class="d-flex flex-column">
+            <h3 class="bg-title" style="font-size: 25px;"> {{auth()->user()->first_name}} {{auth()->user()->last_name}} </h3>
+            <h5 class="" style="font-size: 18px; color: #2c95d5;"> {{auth()->user()->city}}, {{auth()->user()->country}} </h5>
+        </div>
     </div>
-    <hr style="border-top: 3px solid gray;">
+    <hr style="border-top: 3px solid gray; margin: 15px 45px;">
 </div>
-<div class="p-1" style="background-color: #f6f6f6 !important;">
+<div class="pl-5" style="/* background-color: #f6f6f6 !important; */">
     <div id="left-menu">
         <ul>
             <li class="{{ Route::currentRouteName() == 'web.dashboard' ? 'active' : '' }} ">

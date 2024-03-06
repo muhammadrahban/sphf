@@ -677,7 +677,7 @@ ol>li::marker {
 
 
 #left-menu ul li a i {
-    font-size: 28px;
+    font-size: 21px;
     text-align: center;
     width: 35px;
     display: inline-block;
@@ -699,7 +699,7 @@ ol>li::marker {
     height: 35px;
     padding-left: 10px;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 16px;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -731,8 +731,8 @@ ol>li::marker {
 }
 
 .rounded-background {
-    width: 60px; /* Adjust size as needed */
-    height: 60px; /* Adjust size as needed */
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
     border-radius: 50%;
     display: flex;
     align-items: center;

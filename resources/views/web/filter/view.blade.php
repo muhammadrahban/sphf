@@ -4,10 +4,22 @@
         <section class="container my-5" style="max-width: 90% !important;">
             <div class="row">
                 <div class="col-md-3 px-2">
+                    <form action="{{ route('web.filterWiew', ['page' => 0]) }}" method="post" id="clear_all_form">
                     <div class="border border-secondary border-0 border-bottom-1">
 
-                        <h5 class="bg-title"><img style="width: 25px; height: 25px;"
-                                src="/sphf/public/images/Home_icon/Filter-icon-01.svg"> Filters </h5>
+                        <!--<h5 class="bg-title"><img style="width: 25px; height: 25px;"-->
+                        <!--        src="/sphf/public/images/Home_icon/Filter-icon-01.svg"> Filters </h5>-->
+                                
+                                <div class="d-flex justify-content-between">
+                        <h5 class="bg-title"><img style="width: 25px; height: 25px;" 
+                        src="/sphf/public/images/Home_icon/Filter-icon-01.svg"> Filters </h5>
+                        
+                        <input type="hidden" name="page" value="0">
+                                    <button type="submit" class="btn btn-warning btn-block" style="width: 80px; height: 40px;" >Search</button>
+                        <!--<p class="bg-title clear_all" onclick="clear_all_button()"-->
+                        <!--    style="border: none; background-color: transparent; cursor: pointer;">Clear all <span-->
+                        <!--        style="font-weight: 700; font-size: 18px;">X</span></p>-->
+                    </div>
                         <hr style="border-top: 3px solid gray;">
                     </div>
                     <div class="d-flex justify-content-between">
@@ -47,7 +59,7 @@
                         @endif
                     </div>
                     <div class="my-4 p-4" style="background-color: #f6f6f6 !important;">
-                        <form action="{{ route('web.filterWiew', ['page' => 0]) }}" method="post" id="clear_all_form">
+                        
                             @csrf
                             <div class="form-row align-items-center my-2">
                                 <div class="col-12">
@@ -161,12 +173,12 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-row align-items-center my-2">
-                                <div class="col-12">
-                                    <input type="hidden" name="page" value="0">
-                                    <button type="submit" class="btn btn-warning btn-block">Search</button>
-                                </div>
-                            </div>
+                            <!--<div class="form-row align-items-center my-2">-->
+                            <!--    <div class="col-12">-->
+                            <!--        <input type="hidden" name="page" value="0">-->
+                            <!--        <button type="submit" class="btn btn-warning btn-block">Search</button>-->
+                            <!--    </div>-->
+                            <!--</div>-->
                         </form>
                     </div>
                 </div>

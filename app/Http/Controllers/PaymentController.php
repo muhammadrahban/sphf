@@ -12,6 +12,10 @@ use GuzzleHttp\Client;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use GuzzleHttp\Psr7\Request as Psr7Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
+
+
 
 class PaymentController extends Controller
 {
@@ -272,6 +276,7 @@ $client = new Client([
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
             'Authorization' => 'Basic VE1DVEVDSDE6QXNhbmkxMjM0NQ==',
+            'Cookie' => 'JSESSIONID=SiVTtp97GeSTDCzWPv55ImXyLVXcjQGOmxcA_SAPRjW0iskfe3ix9xvkuQQ0gtng; JSESSIONMARKID=hnph6QXrwHeD_oXiDT9on9TBSO2FhB8K6Lyo6bFwA; MYSAPSSO2=AjExMDAgAA1wb3J0YWw6c2FsbWFuiAAHZGVmYXVsdAEABlNBTE1BTgIAAzAwMAMAA1BPRAQADDIwMjQwMjI0MTgxNgUABAAAAAgKAAZTQUxNQU7%2FAQQwggEABgkqhkiG9w0BBwKggfIwge8CAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGBzzCBzAIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwMjI0MTgxNjI2WjAjBgkqhkiG9w0BCQQxFgQUjdvcnFtM37DvnWSSOeLlJJn%2FJrQwCQYHKoZIzjgEAwQuMCwCFGNjGD3MKAJA75bDkgUinAyoJxhfAhR0kRU6IXrohDw4zAjehUHfYyJtrg%3D%3D; saplb_*=(J2EE1547120)1547150'
         ];
         $body1 = ''; // Your request body if needed
 
@@ -281,25 +286,30 @@ $client = new Client([
         // Send the request and get the response
 
         // Extract CSRF token from response headers
-        $sToken = $request->getHeader('x-csrf-token');
+        $sToken = $request->getHeader('x-csrf-token')[0];
+        //dd($sToken);
         $headers2 = [
             'x-csrf-token' => $sToken,
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
             'Authorization' => 'Basic VE1DVEVDSDE6QXNhbmkxMjM0NQ==',
+            'Cookie' => 'JSESSIONID=SiVTtp97GeSTDCzWPv55ImXyLVXcjQGOmxcA_SAPRjW0iskfe3ix9xvkuQQ0gtng; JSESSIONMARKID=hnph6QXrwHeD_oXiDT9on9TBSO2FhB8K6Lyo6bFwA; MYSAPSSO2=AjExMDAgAA1wb3J0YWw6c2FsbWFuiAAHZGVmYXVsdAEABlNBTE1BTgIAAzAwMAMAA1BPRAQADDIwMjQwMjI0MTgxNgUABAAAAAgKAAZTQUxNQU7%2FAQQwggEABgkqhkiG9w0BBwKggfIwge8CAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGBzzCBzAIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwMjI0MTgxNjI2WjAjBgkqhkiG9w0BCQQxFgQUjdvcnFtM37DvnWSSOeLlJJn%2FJrQwCQYHKoZIzjgEAwQuMCwCFGNjGD3MKAJA75bDkgUinAyoJxhfAhR0kRU6IXrohDw4zAjehUHfYyJtrg%3D%3D; saplb_*=(J2EE1547120)1547150'
         ];
+        $todayDate = Carbon::now()->format('Ymd');
+        //dd($todayDate);
 
-        $body2 = '{
-          "BUDAT": "20240204",
+
+
+ $body2 = '{
+          "BUDAT": "'.$todayDate.'",
           "BPCNIC": "'.$donation->victim->da_cnic.'",
           "DDET": "'.$donation->id.'",
           "WRBTR": "'.$donation->amount.'"
         }';
 
-        $response2 = $client->request('POST', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet', [
-            'headers' => $headers2,
-            'body' => $body2,
-        ]);
+        $response2 = new Psr7Request('POST', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet',$headers2, $body2);
+                $response2 = $client->send($response2);
+
         dd($response2);
 
             // Render the Blade view to a variable
@@ -336,10 +346,16 @@ $client = new Client([
             }
             session()->forget('cart');
             return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/' . 'invoices/' . $fileName]);
+        
+            
         } catch (\Exception $e) {
             // Handle any exceptions or errors here
-            return response()->json(['error' => $e->getMessage()], 500);
+            Log::info($e);
+            //return response()->json(['error' => $e->getMessage()], 500);
         }
+         session()->forget('cart');
+            return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/' . 'invoices/' . $fileName]);
+        
     }
 
     // public function downloadInvoice()
