@@ -246,11 +246,16 @@
                 $('#amount').val("");
                 $('#amount').focus();
             } else {
-                var f_amount = parseInt(amount);
-                var mdr = ((f_amount * 2) / 100);
-                var bank = ((f_amount * 2) / 100);
-                var sst_bank = ((f_amount * 13) / 100);
-                var total_amount = mdr + bank + sst_bank + f_amount;
+                var f_amount = parseInt(amount); // Assuming 'amount' contains the donation amount
+                var mdr = (f_amount * 0.02); // Calculating MDR amount (2%)
+                var bank = 0; // Assuming there's no additional bank fee
+                var tax_fed = 798; // Tax/FED amount
+
+                // Calculating tax/FED on MDR
+                var sst_bank = (mdr * 0.13);
+
+                // Calculating total amount
+                var total_amount = f_amount + mdr + bank + sst_bank + tax_fed;
                 $('#amount').val(amount);
                 $('#amount_value').val(amount);
                 $('#amount_charges').val((mdr + bank + sst_bank));
@@ -267,11 +272,16 @@
         }
         $('#amount').on('change', function() {
             var amount = $(this).val();
-            var f_amount = parseInt(amount); // .replace(/,/g, '')
-            var mdr = ((f_amount * 2) / 100);
-            var bank = ((f_amount * 2) / 100);
-            var sst_bank = ((f_amount * 13) / 100);
-            var total_amount = mdr + bank + sst_bank + f_amount;
+            var f_amount = parseInt(amount); // Assuming 'amount' contains the donation amount
+            var mdr = (f_amount * 0.02); // Calculating MDR amount (2%)
+            var bank = 0; // Assuming there's no additional bank fee
+            var tax_fed = 798; // Tax/FED amount
+
+            // Calculating tax/FED on MDR
+            var sst_bank = (mdr * 0.13);
+
+            // Calculating total amount
+            var total_amount = f_amount + mdr + bank + sst_bank + tax_fed;
             $('#amount').val(amount);
             $('#amount_value').val(amount);
             $('#amount_charges').val((mdr + bank + sst_bank));
@@ -286,11 +296,16 @@
         });
 
         var amount = $('#amount').val();
-        var f_amount = parseInt(amount);
-        var mdr = ((f_amount * 2) / 100);
-        var bank = ((f_amount * 2) / 100);
-        var sst_bank = ((f_amount * 13) / 100);
-        var total_amount = mdr + bank + sst_bank + f_amount;
+        var f_amount = parseInt(amount); // Assuming 'amount' contains the donation amount
+        var mdr = (f_amount * 0.02); // Calculating MDR amount (2%)
+        var bank = 0; // Assuming there's no additional bank fee
+        var tax_fed = 798; // Tax/FED amount
+
+        // Calculating tax/FED on MDR
+        var sst_bank = (mdr * 0.13);
+
+        // Calculating total amount
+        var total_amount = f_amount + mdr + bank + sst_bank + tax_fed;
         $('#amount').val(amount);
         $('#amount_value').val(amount);
         $('#amount_charges').val((mdr + bank + sst_bank));

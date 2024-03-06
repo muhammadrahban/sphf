@@ -58,8 +58,8 @@ class PaymentController extends Controller
 
         $amount         = (count($cartItems) * $amount);
         $two_per        = ($amount * 2) / 100;
-        $thirteen_per   = ($amount * 13) / 100;
-        $charges        = $two_per + $two_per + $thirteen_per;
+        $thirteen_per   = ($two_per * 13) / 100;
+        $charges        = $two_per + $thirteen_per;
         $amount = $amount;
         $tok = $this->authToken($charges + $amount);
         foreach ($cartItems as $key => $value) {
@@ -346,8 +346,8 @@ $client = new Client([
             }
             session()->forget('cart');
             return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/' . 'invoices/' . $fileName]);
-        
-            
+
+
         } catch (\Exception $e) {
             // Handle any exceptions or errors here
             Log::info($e);
@@ -355,7 +355,7 @@ $client = new Client([
         }
          session()->forget('cart');
             return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/' . 'invoices/' . $fileName]);
-        
+
     }
 
     // public function downloadInvoice()
