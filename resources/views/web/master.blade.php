@@ -249,7 +249,7 @@
                 var f_amount = parseInt(amount); // Assuming 'amount' contains the donation amount
                 var mdr = (f_amount * 0.02); // Calculating MDR amount (2%)
                 var bank = 0; // Assuming there's no additional bank fee
-                var tax_fed = 798; // Tax/FED amount
+                var tax_fed = 0; // Tax/FED amount
 
                 // Calculating tax/FED on MDR
                 var sst_bank = (mdr * 0.13);
@@ -275,7 +275,7 @@
             var f_amount = parseInt(amount); // Assuming 'amount' contains the donation amount
             var mdr = (f_amount * 0.02); // Calculating MDR amount (2%)
             var bank = 0; // Assuming there's no additional bank fee
-            var tax_fed = 798; // Tax/FED amount
+            var tax_fed = 0; // Tax/FED amount
 
             // Calculating tax/FED on MDR
             var sst_bank = (mdr * 0.13);
@@ -299,7 +299,7 @@
         var f_amount = parseInt(amount); // Assuming 'amount' contains the donation amount
         var mdr = (f_amount * 0.02); // Calculating MDR amount (2%)
         var bank = 0; // Assuming there's no additional bank fee
-        var tax_fed = 798; // Tax/FED amount
+        var tax_fed = 0; // Tax/FED amount
 
         // Calculating tax/FED on MDR
         var sst_bank = (mdr * 0.13);
