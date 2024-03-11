@@ -93,10 +93,10 @@ class PaymentController extends Controller
         $HS_MerchantId = "24821";
         $HS_StoreId = "033844";
         $HS_IsRedirectionRequest  = 0;
-        $HS_ReturnURL = "https://ftrack.biz/sphf/public/callback";
-        $HS_MerchantHash = "AGRvQQKxriw=";
-        $HS_MerchantUsername = "apybej";
-        $HS_MerchantPassword = "mGZK278HzVJvFzk4yqF7CA==";
+        $HS_ReturnURL = "http://donationportal.sphf.gos.pk/callback";
+        $HS_MerchantHash = "OUU362MB1uqPcNVB7xsDL1InUQW0Q3ZYQhLb8+NsufFNitJqA5mSP/2PBCbxlhoSzAOSQ6B8GbA=";
+        $HS_MerchantUsername = "lakuku";
+        $HS_MerchantPassword = "vRrlND/EAopvFzk4yqF7CA==";
         $transactionTypeId = "3";
         $TransactionAmount = $charges + $amount;
         $bankorderId   = $tok['id'];
@@ -128,7 +128,7 @@ class PaymentController extends Controller
         $cipher_text = openssl_encrypt($mapStringSSo, $cipher, $Key1,   OPENSSL_RAW_DATA, $Key2);
         $hashRequest1 = base64_encode($cipher_text);
 
-        echo '<form id="redirectForm" action="https://sandbox.bankalfalah.com/SSO/SSO/SSO" method="post">';
+        echo '<form id="redirectForm" action="https://payments.bankalfalah.com/SSO/SSO/SSO" method="post">';
         echo '<input type="hidden" name="AuthToken" value="' . $AuthToken . '">';
         echo '<input type="hidden" name="RequestHash" value="' . $hashRequest1 . '">';
         echo '<input type="hidden" name="ChannelId" value="' . $HS_ChannelId . '">';
@@ -153,9 +153,9 @@ class PaymentController extends Controller
 
     public function authToken($amount)
     {
-        $url = "https://sandbox.bankalfalah.com/HS/HS/HS";
+        //$url = "https://sandbox.bankalfalah.com/HS/HS/HS";
 
-        //$url = "https://payments.bankalfalah.com/HS/HS/HS";
+        $url = "https://payments.bankalfalah.com/HS/HS/HS";
 
 
         // $bankorderId   = $this->session->userdata('bankorderId');
@@ -168,10 +168,10 @@ class PaymentController extends Controller
         $HS_MerchantId = "24821";
         $HS_StoreId = "033844";
         $HS_IsRedirectionRequest  = 0;
-        $HS_ReturnURL = "https://ftrack.biz/sphf/public/callback";
-        $HS_MerchantHash = "AGRvQQKxriw=";
-        $HS_MerchantUsername = "apybej";
-        $HS_MerchantPassword = "mGZK278HzVJvFzk4yqF7CA==";
+        $HS_ReturnURL = "http://donationportal.sphf.gos.pk/callback";
+        $HS_MerchantHash = "OUU362MB1uqPcNVB7xsDL1InUQW0Q3ZYQhLb8+NsufFNitJqA5mSP/2PBCbxlhoSzAOSQ6B8GbA=";
+        $HS_MerchantUsername = "lakuku";
+        $HS_MerchantPassword = "vRrlND/EAopvFzk4yqF7CA==";
         $HS_TransactionReferenceNumber = $bankorderId;
         $transactionTypeId = "3";
         $TransactionAmount = $amount;
@@ -257,7 +257,7 @@ $client = new Client([
 ]);
 
         // Replace this URL with your actual endpoint
-        $url = 'https://sandbox.bankalfalah.com/HS/api/IPN/OrderStatus/24821/033844/' . $O;
+        $url = 'https://payments.bankalfalah.com/HS/api/IPN/OrderStatus/24821/033844/' . $O;
 
         try {
             $response = $client->request('GET', $url);
