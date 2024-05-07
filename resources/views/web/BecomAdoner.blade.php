@@ -4,7 +4,7 @@
         <section style="background-image: url({{ asset('images/shape-8.png') }}); background-size:auto 100%;">
             <div class="container py-5">
                 <h1 style="   font-size: 50px; ">Transfer your donation to SPHF</h1>
-                <h5 class="mb-5 " style="color: #138999;">Unite for resilience, empower change  building a stronger Sindh for a better tomorrow, today</h5>
+                <h5 class="mb-5 " style="color: #138999;">Unite for resilience: Building a stronger Sindh for a better tomorrow</h5>
                 <form class="card mb-5" id="multi-step-form" method="POST" action="{{ route('become.doner') }}">
                     @csrf
                     <div class="step" data-step="1">
@@ -12,26 +12,25 @@
                             <ul>
                                 <li>Add the amount you want to donate.</li>
                                 <li>Add your details, select payment mode and make online payment.</li>
-                                <li>You can also choose offline payment option.</li>
+                                <li>Once you submit donation, you’ll receive e-receipt on e-mail.</li>
+                                <li>Create & login to your donor account to view and track your donation.</li>
                                 <li>Your donation will be transferred securely to SPHF, and SPHF will be assigned to
                                     disburse your funds to flood-affected beneficiaries in Sindh.</li>
-                                <li>Once you submit donation, you’ll receive e-receipt on e-mail.</li>
-                                <li>You can also login to your donor account to view and track your donation.</li>
                             </ul>
                             
                         </div>
                         <img class="w-100" src="{{ asset('/images/our_donor/Transfer_to_SPHF.jpg') }}">
                         <div class="row text-center">
                             <div class="col-md-4 p-3">
-                                <h5 class="mb-0">$2.08 Billion</h5>
+                                <h5 class="mb-0">2.08 Billion USD</h5>
                                 <small>Financial Needs</small>
                             </div>
                             <div class="col-md-4 p-3">
-                                <h5 class="mb-0">$727 Million</h5>
+                                <h5 class="mb-0">927 Million USD</h5>
                                 <small>Donor Compliment</small>
                             </div>
                             <div class="col-md-4 p-3">
-                                <h5 class="mb-0">$1.35 Billion</h5>
+                                <h5 class="mb-0">1.15 Billion USD</h5>
                                  <small style="color: #df5311;">Financial Gap</small>
                             </div>
                         </div>
@@ -55,7 +54,7 @@
                     <div class="step" data-step="2">
                         <div class="bg-light d-flex align-items-center">
                             <button class="btn p-3 prev-step" data-step="2"><i class="fa fa-chevron-left"></i></button>
-                            <span class="mx-auto">Choose Amount</span>
+                            <h4 class="mx-auto">Donate</h4>
                         </div>
                         <div class="p-4 px-0">
                             <h5>How much would you like to donate?</h5>
@@ -86,10 +85,10 @@
                             <div class="col-md-3 p-4"></div>
                             <div class="col-12"></div>
                             <div class="col-md-4 p-2 static__amount">
-                                <button type="button" onclick="selectAmount(this,10000)"
+                                <button type="button" onclick="selectAmount(this,30000)"
                                     class="amount-btn btn btn-lg btn-success btn-block py-3 select__amount"
-                                    data-amount="10000" data-symbal="PKR">
-                                    <h4 class="mb-0"><span class="input_symbol">₨</span> 10,000</h4>
+                                    data-amount="30000" data-symbal="PKR">
+                                    <h4 class="mb-0"><span class="input_symbol">₨</span> 30,000</h4>
                                 </button>
                             </div>
                             <div class="col-md-4 p-2 static__amount">
@@ -144,7 +143,7 @@
                     <div class="step" data-step="3">
                         <div class="bg-light d-flex align-items-center">
                             <button class="btn p-3 prev-step" data-step="2"><i class="fa fa-chevron-left"></i></button>
-                            <span class="mx-auto">Add Your Information</span>
+                            <h4 class="mx-auto">Register Yourself</h4>
                         </div>
                         <div class="p-4 px-0 text-center">
                             <h4>Who’s giving today?</h4>
@@ -289,7 +288,7 @@
                                 Donate with Offline Donation
                             </h4>
                             <p class="p-2">
-                                To make an offline donation toward this SPHF case, follow these steps:
+                                To make an offline donation follow these steps:
                             </p>
                             <ol>
                                 <li> Write a cheque payable to "Sindh People's Housing for Flood Affectees"</li>
@@ -297,11 +296,11 @@
                                     Housing for Flood Affectees"</li>
                                 <li> Mail your cheque to:</li>
                             </ol>
-                            <p class="px-4">
-                                Sindh People's Housing for Flood Affectees
-                            </p>
+                            <!--<p class="px-4">-->
+                            <!--    Sindh People's Housing for Flood Affectees-->
+                            <!--</p>-->
                             <p class="font-weight-bold py-2 px-4" style="font-size: 20px;">
-                                Bungalow No.20, Block 7/8, Modern Cooperative Housing Society, Tipu Sultan Road,
+                                Address: SPHF Office, Bungalow No.20, Block 7/8, Modern Cooperative Housing Society, Tipu Sultan Road,
                                 Karachi, Pakistan
                             </p>
 
@@ -447,7 +446,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Donation including MDR & SST</td>
+                                <td>Donation including MDR</td>
                                 <td class="text-right">
                                     <span class="input_symbol">₨</span> <span class="mdr_sst">100,000</span>
                                 </td>

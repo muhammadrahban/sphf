@@ -165,9 +165,9 @@
                 <div class="col-lg-6">
                     <!-- <label class="leading-line">Simple, transparent & joyful</label>-->
                     <h1>How donating with SPHF Donor Platform works</h1>
-                    <p class="text-justify">Supporting the beneficiaries who lost their homes in the floods of 2022 in
+                    <p class="text-justify">Supporting the beneficiaries who lost their houses in the floods of 2022 in
                         Sindh, Pakistan, is a simple process with the SPHF Donor Platform. Individuals and organizations,
-                        both local and overseas, can contribute to the construction of resilient homes.</p>
+                        both local and overseas, can contribute to the construction of resilient houses.</p>
                     <p class="text-justify">Under the <a href="http://www.sphf.gos.pk/" class="p-link">Sindh People’s
                             Housing for Flood Affectees (SPHF)</a> program, each beneficiary is designated to receive PKR
                         300,000 for their home reconstruction.</p>
@@ -298,8 +298,8 @@
                     <h5 class="text-white my-5">Watch the impact of your generosity</h5>
                     <h1 class="text-white mb-5">Building homes with disaster-ready designs where resilience meets the
                         blueprint for a secure tomorrow</h1>
-                    <a href="#our_donors" style="border-radius: 0.3rem;"
-                        class="btn text-white primary_button  px-4 py-3">OUR DONORS</a>
+                    <a href="/sphf/public/transfer-sphf" style="border-radius: 0.3rem;"
+                        class="btn text-white primary_button  px-4 py-3">Donate Now</a>
                     <!--<a href="#our_donors" class="btn text-white primary_button rounded-0 px-4 py-3">OUR DONORS</a>-->
                 </div>
             </div>
@@ -970,7 +970,7 @@
                             <div class="p-4">
                                 <h3 class="text-white">World Bank</h3>
                                 <p class="text-white">The World Bank has allocated $500 million to assist in the
-                                    reconstruction of houses affected by the 2022 floods. The bank is offering technical
+                                    reconstruction of houses affected by the 2022 floods. The Bank is offering technical
                                     assistance to shape and execute a comprehensive reconstruction plan, ensuring an
                                     informed and beneficiary-focused approach to the reconstruction program.</p>
                             </div>
@@ -1008,8 +1008,8 @@
                                     <!--<a href="#"-->
                                     <!--    class="btn btn-block text-white primary_button rounded-0 px-4 py-3 mt-3"-->
                                     <!--    style="background-color: #fdbe44;">OUR DONORS</a>-->
-                                    <a href="#" class="btn btn-block text-white primary_button px-4 py-3 mt-3"
-                                        style="background-color: #fdbe44; border-radius: 0.3rem;">OUR DONORS</a>
+                                    <a href="/sphf/public/transfer-sphf" class="btn btn-block text-white primary_button px-4 py-3 mt-3"
+                                        style="background-color: #fdbe44; border-radius: 0.3rem;">Help build a resilient future</a>
                                 </div>
                             </div>
                         </div>

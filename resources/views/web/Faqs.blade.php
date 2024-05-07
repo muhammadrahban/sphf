@@ -19,7 +19,7 @@
         </style>
         <section style="background-image: url('{{asset('images/breadcrumb.jpg')}}'); background-size:cover;">
             <div class="container py-5">
-                <h1 class="my-5 text-white text-center text-lg-left">Faqs</h1>
+                <h1 class="my-5 text-white text-center text-lg-left">FAQs</h1>
             </div>
         </section>
         <section style="background-color: #144047; background-image: url('{{asset('images/bg-10.png')}}'); background-repeat: no-repeat;">

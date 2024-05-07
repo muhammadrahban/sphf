@@ -79,7 +79,7 @@
                                     <label for="district" style="font-size: 20px;">District</label>
                                     <select class="custom-select mb-3" id="district" name="district"
                                         placeholder="Dadu, karachi">
-                                        <option>Select district</option>
+                                        <option>Select District</option>
                                         @foreach (@$location_list as $location => $location_data)
                                             <option value="{{ $location_data['district'] }}" @selected(@$data['district'] == $location_data['district'])>
                                                 {{ $location_data['district'] }}</option>

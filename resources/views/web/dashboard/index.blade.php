@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="col-md-9 bg-light" style="padding: 50px;">
-                    <h2 style="padding: 20px 0px;">Your Giving Stats</h2>
+                    <h2 style="padding: 20px 0px;">Donation Status</h2>
                     <div class="row p-3 bg-white border border-white">
                         <div class="col-md-4">
                             <div class="card shadow border-0 mt-2 text-center">
@@ -77,7 +77,7 @@
                                         <tr>
                                             <td class="text-success text-nowrap align-middle">PKR {{ number_format($totalAmount, 0) }}</td>
                                             <td class="text-left align-middle">
-                                                <h6>Transfer your donation to SPHF</h6>
+                                                <h6>Transfer to SPHF/Adopt a Beneficiaries</h6>
                                             </td>
                                             <td class="text-nowrap align-middle">
                                                 <h6>{{ \Carbon\Carbon::parse($item[0]->created_at)->isoFormat('MMMM DD, YYYY') }}<br>

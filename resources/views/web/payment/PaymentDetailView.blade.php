@@ -62,7 +62,7 @@
                                     Donate with Offline Donation
                                 </h4>
                                 <p class="p-2">
-                                    To make an offline donation toward this SPHF case, follow these steps:
+                                    To make an offline donation follow these steps:
                                 </p>
                                 <ol>
                                     <li> Write a cheque payable to "Sindh People's Housing for Flood Affectees"</li>
@@ -70,11 +70,11 @@
                                         Housing for Flood Affectees"</li>
                                     <li> Mail your cheque to:</li>
                                 </ol>
-                                <p class="px-4">
-                                    Sindh People's Housing for Flood Affectees
-                                </p>
+                                <!--<p class="px-4">-->
+                                <!--    Sindh People's Housing for Flood Affectees-->
+                                <!--</p>-->
                                 <p class="font-weight-bold py-2 px-4" style="font-size: 20px;">
-                                    Bungalow No.20, Block 7/8, Modern Cooperative Housing Society, Tipu Sultan Road,
+                                    Address: SPHF Office, Bungalow No.20, Block 7/8, Modern Cooperative Housing Society, Tipu Sultan Road,
                                     Karachi, Pakistan
                                 </p>
 
@@ -243,25 +243,25 @@
                                         }
                                         $amount         = count(session('cart', [])) * $amount;
                                         $two_per        = (($amount * 2) / 100);
-                                        $thirteen_per   = (($amount * 13) / 100);
-                                        $final          = $two_per + $two_per + $thirteen_per + $amount;
+                                        $thirteen_per   = (($two_per * 13) / 100);
+                                        $final          = $two_per + $thirteen_per + $amount;
                                     @endphp
                                     <tr>
                                         <td>
-                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Donation including MDR & SST</p>
+                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Donation including MDR & Bank charges</p>
                                         </td>
                                         <td>
                                             <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{ $two_per }}</p>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Bank charges</p>
-                                        </td>
-                                        <td>
-                                            <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{ $two_per }}</p>
-                                        </td>
-                                    </tr>
+                                    <!--<tr>-->
+                                    <!--    <td>-->
+                                    <!--        <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">Bank charges</p>-->
+                                    <!--    </td>-->
+                                    <!--    <td>-->
+                                    <!--        <p class="text-secondary m-0 text-center" style="font-size: 18px;">{{session()->get('currency')}} {{ $two_per }}</p>-->
+                                    <!--    </td>-->
+                                    <!--</tr>-->
                                     <tr>
                                         <td>
                                             <p class="text-dark m-0 font-weight-bold" style="font-size: 18px;">SST on Bank Charges</p>
