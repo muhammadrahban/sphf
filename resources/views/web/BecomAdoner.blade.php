@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-md-4 p-3">
                                 <h5 class="mb-0">1.15 Billion USD</h5>
-                                 <small style="color: #df5311;">Financial Gap</small>
+                                 <small style="color: #df5311;font-size: medium;font-weight: bold;">Financial Gap</small>
                             </div>
                         </div>
                         <div class="progress py-2 rounded mx-4">
