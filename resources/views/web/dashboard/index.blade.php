@@ -43,7 +43,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <span class="h3 font-bold mb-0 text-success"><sup>₨</sup>{{ number_format((300000 / $average), 0) }}</span>
+                                            <span class="h3 font-bold mb-0 text-success"><sup>₨</sup>{{ ($average) ? number_format((300000 / $average), 0) : 0 }}</span>
                                             <span class="h6 font-semibold text-sm d-block mb-2">AVERAGE DONATION</span>
                                         </div>
                                     </div>

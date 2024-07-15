@@ -6,6 +6,8 @@ use App\Models\Donation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Http;
+use App\Enums\StatusEnum;
 
 class DashboardController extends Controller
 {
@@ -21,14 +23,27 @@ class DashboardController extends Controller
     }
 
     public function track(){
+        // $client                 = new GuzzleHttp\Client();
         $donation               = Donation::where('user_id', auth()->user()->id);
         $count                  = $donation->count();
-        $donation               = $donation->with('victim')->get();
+        $donation               = $donation->with('victim', 'DonationInvoice', 'user')->get();
         $count_phase_one        = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'phase_one')->count();
         $count_phase_two        = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'phase_two')->count();
         $count_phase_three      = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'phase_three')->count();
         $count_phase_four       = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'phase_four')->count();
         $count_completed        = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'completed')->count();
+        foreach($donation as $index => $dt){
+            // $response = Http::get('http://103.111.160.107:8183/api/status?cnic=4540265349559');
+            $response = Http::get('http://103.111.160.107:8183/api/status?cnic='.$dt->da_cnic);
+            if($response->ok()){
+                $donation[$index]->ext_data = $response->json();
+                $donation[$index]->plint_status_name = StatusEnum::getStatusName($donation[$index]->ext_data['plint_status']);
+                $donation[$index]->roof_status_name = StatusEnum::getStatusName($donation[$index]->ext_data['roof_status']);
+                $donation[$index]->lintel_status_name = StatusEnum::getStatusName($donation[$index]->ext_data['lintel_status']);
+            }else{
+                $donation[$index]->ext_data = null;
+            }
+        }
         return view('web.dashboard.track', compact('donation', 'count', 'count_phase_one', 'count_phase_two', 'count_phase_three', 'count_phase_four', 'count_completed'));
     }
 

@@ -14,6 +14,11 @@ class Donation extends Model
         'victim_id',
         'construction_status',
     ];
+    
+    // Define the ext_data attribute as a casted array
+    protected $casts = [
+        'ext_data' => 'array',
+    ];
 
     /**
      * Get the user associated with the Donation

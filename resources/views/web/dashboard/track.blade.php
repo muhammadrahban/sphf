@@ -61,7 +61,7 @@
                                     <tr>
                                         <td>ID Number</td>
                                         <td colspan="2">My Beneficiaries</td>
-                                        <td colspan="5">Construction Status</td>
+                                        <td colspan="3">Construction Status</td>
                                         <td>Amount Disbursed</td>
                                     </tr>
                                 </thead>
@@ -95,43 +95,80 @@
                                                     0/4 installment provided
                                                 </small>
                                             </td>
-                                            <td>
-                                                <label><b>Phase 1</b></label>
-                                                <label>
-                                                    Mobilization
-                                                </label>
-                                                <br>
-                                                <span class="text-warning">in progress</span>
-                                            </td>
-                                            <td>
-                                                <label><b>Phase 2</b></label>
-                                                <label>
-                                                    Mobilization
-                                                </label>
-                                                <br>
-                                                <span class="text-danger">Not Started</span>
-                                            </td>
-                                            <td>
-                                                <label><b>Phase 3</b></label>
-                                                <label>
-                                                    Mobilization
-                                                </label>
-                                                <br>
-                                                <span class="text-danger">Not Started</span>
-                                            </td>
-                                            <td>
-                                                <label><b>Phase 4</b></label>
-                                                <label>
-                                                    Mobilization
-                                                </label>
-                                                <br>
-                                                <span class="text-danger">Not Started</span>
-                                            </td>
-                                            <td>
-                                                <img>
-                                            </td>
+                                            <!--<td>-->
+                                            <!--    <label><b>Phase 1</b></label>-->
+                                            <!--    <label>-->
+                                            <!--        Mobilization-->
+                                            <!--    </label>-->
+                                            <!--    <br>-->
+                                            <!--    <span class="text-warning">in progress</span>-->
+                                            <!--</td>-->
+                                            <!--<td>-->
+                                            <!--    <label><b>Phase 2</b></label>-->
+                                            <!--    <label>-->
+                                            <!--        Mobilization-->
+                                            <!--    </label>-->
+                                            <!--    <br>-->
+                                            <!--    <span class="text-danger">Not Started</span>-->
+                                            <!--</td>-->
+                                            <!--<td>-->
+                                            <!--    <label><b>Phase 3</b></label>-->
+                                            <!--    <label>-->
+                                            <!--        Mobilization-->
+                                            <!--    </label>-->
+                                            <!--    <br>-->
+                                            <!--    <span class="text-danger">Not Started</span>-->
+                                            <!--</td>-->
+                                            <!--<td>-->
+                                            <!--    <label><b>Phase 4</b></label>-->
+                                            <!--    <label>-->
+                                            <!--        Mobilization-->
+                                            <!--    </label>-->
+                                            <!--    <br>-->
+                                            <!--    <span class="text-danger">Not Started</span>-->
+                                            <!--</td>-->
+                                            @if($item->ext_data != null)
+                                                <td>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <label><b>Plint Status</b></label>
+                                                        <span class="text-danger">{{ $item->plint_status_name }}</span>
+                                                    </div>    
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <label><b>Roof Status</b></label>
+                                                        <span class="text-danger">{{ $item->roof_status_name }}</span>
+                                                    </div>    
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <label><b>Lintel Status</b></label>
+                                                        <span class="text-danger">{{ $item->lintel_status_name }}</span>
+                                                    </div>
+                                                </td>
+                                            @else
+                                                <td>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <label><b>Plint Status</b></label>
+                                                        <span class="text-danger">Not Started</span>
+                                                    </div>    
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <label><b>Roof Status</b></label>
+                                                        <span class="text-danger">Not Started</span>
+                                                    </div>    
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <label><b>Lintel Status</b></label>
+                                                        <span class="text-danger">Not Started</span>
+                                                    </div>
+                                                </td>
+                                            @endif
                                             <td class="text-nowrap align-middle">
                                                 <h6>PRK 300,000</h6>
+                                                <a href="#" class="text-success" data-toggle="modal" data-target="#receiptModal" onclick="passItemToModal({{ json_encode($item) }})">View Receipt ></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -156,5 +193,161 @@
                 </div>
             </div>
         </section>
+        
+        <div class="modal fade" id="receiptModal" tabindex="-1" role="dialog" aria-labelledby="receiptModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="receiptModalLabel">Donation Receipt #<span id="model_id"></span></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="myModalBody">
+                        <div class="bg-light p-2">
+                            <div class="mb-2 d-flex justify-content-between bg-white p-1">
+                                <strong>Donor Name:</strong>
+                                <h6 id="model_name">umer shafi</h6>
+                            </div>
+                            <div class="mb-2 d-flex justify-content-between bg-white p-1">
+                                <strong>Email Address:</strong>
+                                <h6 id="model_mail">umer.shafi@hasnain.biz</h6>
+                            </div>
+                        </div>
+                        <hr>
+                        <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>CNIC</td>
+                                    <td>Address</td>
+                                    <td>Date</td>
+                                    <td>Amount</td>
+                                </tr>
+                            </thead>
+                            <tbody id="model_victims">
+                                
+                            </tbody>
+                        </table>
+                        <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <td>Construction</td>
+                                    <td>Media</td>
+                                    <td>Status</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="align-content: center;"><h6><b>Plint</b></h6></td>
+                                    <td>
+                                        <img id="construction_plink_image" src="https://demofree.sirv.com/nope-not-here.jpg?w=150" width="150" height="150" target="_blank" />
+                                    </td>
+                                    <td id="construction_plink_status"></td>
+                                </tr>
+                                <tr>
+                                    <td style="align-content: center;"><h6><b>Lintel</b></h6></td>
+                                    <td>
+                                        <img id="construction_lintel_image" src="https://demofree.sirv.com/nope-not-here.jpg?w=150" width="150" height="150" target="_blank" />
+                                    </td>
+                                    <td id="construction_lintel_status"></td>
+                                </tr>
+                                <tr>
+                                    <td style="align-content: center;"><h6><b>Roof</b></h6></td>
+                                    <td>
+                                        <img id="construction_roof_image" src="https://demofree.sirv.com/nope-not-here.jpg?w=150" width="150" height="150" target="_blank" />
+                                    </td>
+                                    <td id="construction_roof_status"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        <div class="bg-light p-2">
+                            <div class="mb-2 d-flex justify-content-between bg-white p-1">
+                                <strong>Payment Status:</strong>
+                                <span class="badge badge-success">Complete</span>
+                            </div>
+                            <div class="mb-2 d-flex justify-content-between bg-white p-1">
+                                <strong>Payment Method:</strong>
+                                <h6>Donation</h6>
+                            </div>
+                            <div class="mb-2 d-flex justify-content-between bg-white p-1">
+                                <strong>Donation Amount:</strong>
+                                <h6 id="model_amount">Rs 300000</h6>
+                            </div>
+                            <div class="mb-2 d-flex justify-content-between bg-white p-1">
+                                <strong>Donation Total:</strong>
+                                <h6 id="model_total" class="text-success">Rs 300000</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function passItemToModal(item) {
+                console.log(item.victim);
+                var modelId             = document.getElementById('model_id');
+                var modalName           = document.getElementById('model_name');
+                var modalMail           = document.getElementById('model_mail');
+                var modelVictims        = document.getElementById('model_victims');
+                var modelAmount         = document.getElementById('model_amount');
+                var modelTotal          = document.getElementById('model_total');
+                
+                var construction_plink_image    = document.getElementById('construction_plink_image');
+                var construction_plink_status   = document.getElementById('construction_plink_status');
+                
+                var construction_lintel_image   = document.getElementById('construction_lintel_image');
+                var construction_lintel_status  = document.getElementById('construction_lintel_status');
+                
+                var construction_roof_image     = document.getElementById('construction_roof_image');
+                var construction_roof_status    = document.getElementById('construction_roof_status');
+                
+                if (item.ext_data) {
+                    construction_plink_image.src = item.ext_data.plint_image || 'https://demofree.sirv.com/nope-not-here.jpg?w=150';
+                    construction_plink_status.innerHTML = item.ext_data.plint_status_name || 'Not Started';
+                    
+                    construction_lintel_image.src = item.ext_data.lintel_image || 'https://demofree.sirv.com/nope-not-here.jpg?w=150';
+                    construction_lintel_status.innerHTML = item.ext_data.lintel_status_name || 'Not Started';
+                    
+                    construction_roof_image.src = item.ext_data.roof_image || 'https://demofree.sirv.com/nope-not-here.jpg?w=150';
+                    construction_roof_status.innerHTML = item.ext_data.roof_status_name || 'Not Started';
+                } else {
+                    construction_plink_image.src = 'https://demofree.sirv.com/nope-not-here.jpg?w=150';
+                    construction_plink_status.innerHTML = 'Not Started';
+                    
+                    construction_lintel_image.src = 'https://demofree.sirv.com/nope-not-here.jpg?w=150';
+                    construction_lintel_status.innerHTML = 'Not Started';
+                    
+                    construction_roof_image.src = 'https://demofree.sirv.com/nope-not-here.jpg?w=150';
+                    construction_roof_status.innerHTML = 'Not Started';
+                }
+                
+                modelId.innerHTML       = item.id;
+                modalName.innerHTML     = item.user.first_name + ' ' + item.user.last_name;
+                modalMail.innerHTML     = item.user.email;
+                var amount              = 0;
+                var detail              = '';
+                var date                = new Date(item.victim.created_at);
+                var options             = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+                var formattedDate       = date.toLocaleString('en-US', options);
+                // Victim Detail
+                detail += '<tr>';
+                detail += '<td><h6>'+ item.victim.da_occupant_name + '</h6></td>';
+                detail += '<td><small class="text-nowrap">'+ item.victim.da_cnic + '</small></td>';
+                detail += '<td><small class="text-nowrap"><i class="fa fa-marker-alt"></i> ' + item.victim.tehsil +' </small></td>';
+                detail += '<td><small class="text-nowrap"><i class="fa fa-calendar"></i> '+ formattedDate +' </small></td>';
+                
+                detail += '<td><small class="text-nowrap"><i class="fa fa-money"></i> PKR '+ item.donation_invoice.charged_amount +'</small></td>';
+                detail += '</tr>';
+    
+                amount += item.donation_invoice.charged_amount;
+                modelVictims.innerHTML  = detail;
+                modelAmount.innerHTML   = 'Rs '+ amount;
+                modelTotal.innerHTML    = 'Rs '+ amount;
+            }
+        </script>
+        
     </main>
 @endsection
