@@ -248,7 +248,7 @@
                             @foreach ($foundItems as $item)
                                 <div class="d-flex justify-content-between my-3 align-items-center searchable-item">
                                     <input class="mx-3 heart checkbox_items" type="checkbox" name="item_ids[]"
-                                        value="{{ $item->id }}" />
+                                        value="{{ $item['id'] }}" />
                                     <div class="rounded-background" id="profile-background">
                                         <span class="initial-letter">{{ substr($item['da_occupant_name'], 0, 1) }}</span>
                                     </div>
@@ -288,7 +288,7 @@
                                     <div class="ml-auto">
                                         <div class="d-flex flex-column">
                                             <p class="bg-title text-success text-right m-0">ID:
-                                                {{ $item['filled_da_form_id'] }}</p>
+                                                {{ $item['uuid'] }}</p>
                                         </div>
                                     </div>
                                 </div>

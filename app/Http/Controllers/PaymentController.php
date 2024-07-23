@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Currency;
 use App\Models\Donation;
 use App\Models\DonationInvoice;
+use App\Models\victim;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,12 +14,15 @@ use Dompdf\Dompdf;
 use Dompdf\Options;
 use GuzzleHttp\Psr7\Request as Psr7Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 
 
 class PaymentController extends Controller
 {
+    private $apiUrl = 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_GET_BENF_DATA_SRV/ZES_BENF';
+
     function submitPaymentDetail(Request $request)
     {
         return view('web.payment.PaymentDetailView');
@@ -63,14 +67,46 @@ class PaymentController extends Controller
         $amount = $amount;
         $tok = $this->authToken($charges + $amount);
         foreach ($cartItems as $key => $value) {
+            $response = Http::withOptions([
+                'verify' => false, // Disable SSL certificate verification
+            ])->withHeaders([
+                'x-csrf-token' => 'fetch',
+                'Accept' => 'application/json',
+                'Authorization' => 'Basic VE1DVEVDSDE6U1BIRkAxMjM=',
+                'Cookie' => 'JSESSIONID=mMmRMHkTOk0TtKTcbDBkTwAvsSCnkAGOmxcA_SAPiR7fJrvaslRX3G43KenhfLbh; JSESSIONMARKID=vPQOvgmrPzQKwo4pzkKfg5OWg_82xwX5NsmY6bFwA; MYSAPSSO2=AjExMDAgAA9wb3J0YWw6dG1jdGVjaDGIAAdkZWZhdWx0AQAIVE1DVEVDSDECAAMwMDADAANQT0QEAAwyMDI0MDcxNTA5MzkFAAQAAAAICgAIVE1DVEVDSDH%2FAQQwggEABgkqhkiG9w0BBwKggfIwge8CAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGBzzCBzAIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwNzE1MDkzOTMyWjAjBgkqhkiG9w0BCQQxFgQUVgI85tgOBY0ibnRV34QLGldzM58wCQYHKoZIzjgEAwQuMCwCFAPbR3c2x8s5iP6DZisN5hVjz2rXAhQ7i1ctiixbDlBzHd0RKza%2FkmqiNQ%3D%3D; saplb_*=(J2EE1547120)1547150'
+            ])->get($this->apiUrl . "('{$key}')");
+
+            $apiData = $response->json();
+
+            // Check if the response contains results
+            if (isset($apiData['d']) && !empty($apiData['d'])) {
+                $victim = victim::create([
+                    //'id' => $apiData['d']['BenfId'] ?? null, // Use null coalescing to avoid undefined index
+                    'uuid' => $apiData['d']['UuId'] ?? null,
+                    'filled_da_form_id' => $apiData['d']['FormId'] ?? null,
+                    'da_cnic' => $apiData['d']['Cnic'] ?? null,
+                    'da_occupant_name' => $apiData['d']['BenfName'] ?? null,
+                    'gender' => $apiData['d']['Gender'] ?? null,
+                    'district' => $apiData['d']['District'] ?? null,
+                    'tehsil' => $apiData['d']['Tehsil'] ?? null,
+                    'union_council' => $apiData['d']['Uc'] ?? null,
+                    'deh' => $apiData['d']['Dehat'] ?? null,
+                    'widows' => $apiData['d']['Vul01'] ?? null,
+                    'women_with_disable_husband' => $apiData['d']['Vul02'] ?? null,
+                    'divorced_abandoned_unmarried_older_dependent_on_others' => $apiData['d']['Vul03'] ?? null,
+                    'people_with_disability_physically_or_mentally' => $apiData['d']['Vul04'] ?? null,
+                    'unaccompained_minors_i_e_orphans' => $apiData['d']['Vul05'] ?? null,
+                    'unaccompained_elders_over_the_age_of_60' => $apiData['d']['Vul06'] ?? null,
+                ]);
+            }
             $donation = Donation::create([
                 'user_id'               => Auth::user()->id,
-                'victim_id'             => $key,
+                'victim_id'             => $victim->id,
                 'construction_status'   => 'phase_one'
             ]);
             $data['donation_id']    = $donation->id;
             $data['user_id']        = Auth::user()->id;
-            $data['victim_id']      = $key;
+            $data['victim_id']      = $victim->id;
             $data['amount']         = $amount;
             $data['charges']        = $charges;
             $data['total_amount']   = $charges + $amount;
@@ -81,7 +117,61 @@ class PaymentController extends Controller
         }
 
         if ($request->transaction_type == "dod") {
-            session()->forget('cart');
+             $client = new Client([
+            'verify' => false,
+        ]);
+             try {
+
+            $headers1 = [
+                'x-csrf-token' => 'fetch',
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Basic VE1DVEVDSDE6U1BIRkAxMjM=',
+                'Cookie' => 'JSESSIONID=PtHse27PSoGXBbi-s_fX5Ex7jMHakAGOmxcA_SAPpAEQeKCFifXNb2SExbyESVyC; JSESSIONMARKID=masOHgudqtKLfY3naRtNgwDXcnTTvJIPHk1Y6bFwA; MYSAPSSO2=AjExMDAgAA9wb3J0YWw6dG1jdGVjaDGIAAdkZWZhdWx0AQAIVE1DVEVDSDECAAMwMDADAANQT0QEAAwyMDI0MDcyMjE0MDMFAAQAAAAICgAIVE1DVEVDSDH%2FAQYwggECBgkqhkiG9w0BBwKggfQwgfECAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGB0TCBzgIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwNzIyMTQwMzU1WjAjBgkqhkiG9w0BCQQxFgQUujit5zePudZ1sD5jPsn1qLewKSYwCQYHKoZIzjgEAwQwMC4CFQCbBNsa3wsoEc8wC0d1RcuB18UbhwIVAMhstFb5n580m!mZWekmcFtDcA2Z; saplb_*=(J2EE1547120)1547150'
+            ];
+            $body1 = ''; // Your request body if needed
+
+            $request = new Psr7Request('GET', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet', $headers1, $body1);
+            $request = $client->send($request);
+
+            // Send the request and get the response
+
+            // Extract CSRF token from response headers
+            $sToken = $request->getHeader('x-csrf-token')[0];
+ Log::info($sToken);
+            $headers2 = [
+                'x-csrf-token' => $sToken,
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Basic VE1DVEVDSDE6U1BIRkAxMjM=',
+                'Cookie' => 'JSESSIONID=PtHse27PSoGXBbi-s_fX5Ex7jMHakAGOmxcA_SAPpAEQeKCFifXNb2SExbyESVyC; JSESSIONMARKID=masOHgudqtKLfY3naRtNgwDXcnTTvJIPHk1Y6bFwA; MYSAPSSO2=AjExMDAgAA9wb3J0YWw6dG1jdGVjaDGIAAdkZWZhdWx0AQAIVE1DVEVDSDECAAMwMDADAANQT0QEAAwyMDI0MDcyMjE0MDMFAAQAAAAICgAIVE1DVEVDSDH%2FAQYwggECBgkqhkiG9w0BBwKggfQwgfECAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGB0TCBzgIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwNzIyMTQwMzU1WjAjBgkqhkiG9w0BCQQxFgQUujit5zePudZ1sD5jPsn1qLewKSYwCQYHKoZIzjgEAwQwMC4CFQCbBNsa3wsoEc8wC0d1RcuB18UbhwIVAMhstFb5n580m!mZWekmcFtDcA2Z; saplb_*=(J2EE1547120)1547150'
+            ];
+            $todayDate = Carbon::now()->format('Ymd');
+            //dd($todayDate);
+
+            $body2 = '{
+           "BUDAT":"'. (string) $todayDate .'",
+           "BPCNIC":"'. (string)$donation->victim->da_cnic .'",
+           "DDET":"'. (string)$donation->id .'",
+           "WRBTR":"'. (string)$amount .'"
+        }';
+ Log::info($donation->victim->da_cnic);
+ Log::info($donation->id);
+ Log::info($amount);
+ Log::info($body2);
+            $response2 = new Psr7Request('POST', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet', $headers2, $body2);
+            $response2 = $client->send($response2);
+ Log::info($response2);
+
+  session()->forget('cart');
+            return redirect(Route('web.home'))->with("message", "Donation transfer suceesfully");
+
+        } catch (\Exception $e) {
+            // Handle any exceptions or errors here
+            Log::info($e);
+            //return response()->json(['error' => $e->getMessage()], 500);
+        }
+             session()->forget('cart');
             return redirect(Route('web.home'))->with("message", "Donation transfer suceesfully");
         }
         /* ==============SSO CALL ================*/
@@ -252,9 +342,9 @@ class PaymentController extends Controller
         //     'TS' => $TS,
         //     'O' => $O
         // ]);
-$client = new Client([
-    'verify' => false,
-]);
+        $client = new Client([
+            'verify' => false,
+        ]);
 
         // Replace this URL with your actual endpoint
         $url = 'https://payments.bankalfalah.com/HS/api/IPN/OrderStatus/24821/033844/' . $O;
@@ -271,46 +361,46 @@ $client = new Client([
 
 
 
-        $headers1 = [
-            'x-csrf-token' => 'fetch',
-            'Accept' => 'application/json',
-            'Content-Type' => 'application/json',
-            'Authorization' => 'Basic VE1DVEVDSDE6QXNhbmkxMjM0NQ==',
-            'Cookie' => 'JSESSIONID=SiVTtp97GeSTDCzWPv55ImXyLVXcjQGOmxcA_SAPRjW0iskfe3ix9xvkuQQ0gtng; JSESSIONMARKID=hnph6QXrwHeD_oXiDT9on9TBSO2FhB8K6Lyo6bFwA; MYSAPSSO2=AjExMDAgAA1wb3J0YWw6c2FsbWFuiAAHZGVmYXVsdAEABlNBTE1BTgIAAzAwMAMAA1BPRAQADDIwMjQwMjI0MTgxNgUABAAAAAgKAAZTQUxNQU7%2FAQQwggEABgkqhkiG9w0BBwKggfIwge8CAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGBzzCBzAIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwMjI0MTgxNjI2WjAjBgkqhkiG9w0BCQQxFgQUjdvcnFtM37DvnWSSOeLlJJn%2FJrQwCQYHKoZIzjgEAwQuMCwCFGNjGD3MKAJA75bDkgUinAyoJxhfAhR0kRU6IXrohDw4zAjehUHfYyJtrg%3D%3D; saplb_*=(J2EE1547120)1547150'
-        ];
-        $body1 = ''; // Your request body if needed
+            $headers1 = [
+                'x-csrf-token' => 'fetch',
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Basic ' . base64_encode('TMCTECH1:SPHF@123'),
+                'Cookie' => 'JSESSIONID=SiVTtp97GeSTDCzWPv55ImXyLVXcjQGOmxcA_SAPRjW0iskfe3ix9xvkuQQ0gtng; JSESSIONMARKID=hnph6QXrwHeD_oXiDT9on9TBSO2FhB8K6Lyo6bFwA; MYSAPSSO2=AjExMDAgAA1wb3J0YWw6c2FsbWFuiAAHZGVmYXVsdAEABlNBTE1BTgIAAzAwMAMAA1BPRAQADDIwMjQwMjI0MTgxNgUABAAAAAgKAAZTQUxNQU7%2FAQQwggEABgkqhkiG9w0BBwKggfIwge8CAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGBzzCBzAIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwMjI0MTgxNjI2WjAjBgkqhkiG9w0BCQQxFgQUjdvcnFtM37DvnWSSOeLlJJn%2FJrQwCQYHKoZIzjgEAwQuMCwCFGNjGD3MKAJA75bDkgUinAyoJxhfAhR0kRU6IXrohDw4zAjehUHfYyJtrg%3D%3D; saplb_*=(J2EE1547120)1547150'
+            ];
+            $body1 = ''; // Your request body if needed
 
-        $request = new Psr7Request('GET', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet', $headers1, $body1);
-        $request = $client->send($request);
+            $request = new Psr7Request('GET', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet', $headers1, $body1);
+            $request = $client->send($request);
 
-        // Send the request and get the response
+            // Send the request and get the response
 
-        // Extract CSRF token from response headers
-        $sToken = $request->getHeader('x-csrf-token')[0];
-        //dd($sToken);
-        $headers2 = [
-            'x-csrf-token' => $sToken,
-            'Accept' => 'application/json',
-            'Content-Type' => 'application/json',
-            'Authorization' => 'Basic VE1DVEVDSDE6QXNhbmkxMjM0NQ==',
-            'Cookie' => 'JSESSIONID=SiVTtp97GeSTDCzWPv55ImXyLVXcjQGOmxcA_SAPRjW0iskfe3ix9xvkuQQ0gtng; JSESSIONMARKID=hnph6QXrwHeD_oXiDT9on9TBSO2FhB8K6Lyo6bFwA; MYSAPSSO2=AjExMDAgAA1wb3J0YWw6c2FsbWFuiAAHZGVmYXVsdAEABlNBTE1BTgIAAzAwMAMAA1BPRAQADDIwMjQwMjI0MTgxNgUABAAAAAgKAAZTQUxNQU7%2FAQQwggEABgkqhkiG9w0BBwKggfIwge8CAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGBzzCBzAIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwMjI0MTgxNjI2WjAjBgkqhkiG9w0BCQQxFgQUjdvcnFtM37DvnWSSOeLlJJn%2FJrQwCQYHKoZIzjgEAwQuMCwCFGNjGD3MKAJA75bDkgUinAyoJxhfAhR0kRU6IXrohDw4zAjehUHfYyJtrg%3D%3D; saplb_*=(J2EE1547120)1547150'
-        ];
-        $todayDate = Carbon::now()->format('Ymd');
-        //dd($todayDate);
+            // Extract CSRF token from response headers
+            $sToken = $request->getHeader('x-csrf-token')[0];
+            //dd($sToken);
+            $headers2 = [
+                'x-csrf-token' => $sToken,
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Basic ' . base64_encode('TMCTECH1:SPHF@123'),
+                'Cookie' => 'JSESSIONID=SiVTtp97GeSTDCzWPv55ImXyLVXcjQGOmxcA_SAPRjW0iskfe3ix9xvkuQQ0gtng; JSESSIONMARKID=hnph6QXrwHeD_oXiDT9on9TBSO2FhB8K6Lyo6bFwA; MYSAPSSO2=AjExMDAgAA1wb3J0YWw6c2FsbWFuiAAHZGVmYXVsdAEABlNBTE1BTgIAAzAwMAMAA1BPRAQADDIwMjQwMjI0MTgxNgUABAAAAAgKAAZTQUxNQU7%2FAQQwggEABgkqhkiG9w0BBwKggfIwge8CAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGBzzCBzAIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwMjI0MTgxNjI2WjAjBgkqhkiG9w0BCQQxFgQUjdvcnFtM37DvnWSSOeLlJJn%2FJrQwCQYHKoZIzjgEAwQuMCwCFGNjGD3MKAJA75bDkgUinAyoJxhfAhR0kRU6IXrohDw4zAjehUHfYyJtrg%3D%3D; saplb_*=(J2EE1547120)1547150'
+            ];
+            $todayDate = Carbon::now()->format('Ymd');
+            //dd($todayDate);
 
 
 
- $body2 = '{
-          "BUDAT": "'.$todayDate.'",
-          "BPCNIC": "'.$donation->victim->da_cnic.'",
-          "DDET": "'.$donation->id.'",
-          "WRBTR": "'.$donation->amount.'"
+            $body2 = '{
+          "BUDAT":"'. $todayDate .'",
+          "BPCNIC":"'. $donation->victim->da_cnic .'",
+          "DDET":"'. $donation->id .'",
+          "WRBTR":"'. $donation->amount .'"
         }';
 
-        $response2 = new Psr7Request('POST', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet',$headers2, $body2);
-                $response2 = $client->send($response2);
-
-        dd($response2);
+            $response2 = new Psr7Request('POST', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet', $headers2, $body2);
+            $response2 = $client->send($response2);
+ Log::info($response2);
+            //dd($response2);
 
             // Render the Blade view to a variable
             $view = view('web.invoice-pdf', compact('decodedData'))->render();
@@ -346,16 +436,13 @@ $client = new Client([
             }
             session()->forget('cart');
             return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/' . 'invoices/' . $fileName]);
-
-
         } catch (\Exception $e) {
             // Handle any exceptions or errors here
             Log::info($e);
             //return response()->json(['error' => $e->getMessage()], 500);
         }
-         session()->forget('cart');
-            return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/' . 'invoices/' . $fileName]);
-
+        session()->forget('cart');
+        return view('web.invoice', ['decodedData' => $decodedData, 'file' => 'https://ftrack.biz/sphf/public/' . 'invoices/' . $fileName]);
     }
 
     // public function downloadInvoice()

@@ -39,7 +39,7 @@
                     @foreach (@$foundItems as $item)
                         <tr>
                             <td>
-                                <a href="{{ route('cart.remove', $item->id) }}" type="button" class="btn btn-warning mx-2">
+                                <a href="{{ route('cart.remove', $item['id']) }}" type="button" class="btn btn-warning mx-2">
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </a>
                             </td>

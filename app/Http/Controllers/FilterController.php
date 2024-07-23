@@ -9,126 +9,127 @@ use \Illuminate\Support\Facades\DB;
 use \Cache;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Http;
 
 class FilterController extends Controller
 {
+    private $apiUrl = 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_GET_BENF_DATA_SRV/ZES_BENF';
+
     public function filterView(Request $request)
     {
         if (auth()->user()->email_verified_at == null) {
             $data['message'] = "Please Verify Your Email To Adopt beneficiary.";
             return view('web.verify-message', compact('data'));
         }
+                $filtersApplied = false;
 
-        $limit          = 10;
-        $offset         = $request->has('page') ? $request->page : 0;
-        $data['page']   = $offset;
+
+        $limit = 10;
+        $offset = $request->has('page') ? $request->page : 0;
+        $data['page'] = $offset;
+
+        $filters = $this->buildFilters($request);
+        
+
+$response = Http::withOptions([
+    'verify' => false, // Disable SSL certificate verification
+])->withHeaders([
+  'x-csrf-token' => 'fetch',
+  'Accept' => 'application/json',
+  'Authorization' => 'Basic ' . base64_encode('TMCTECH1:SPHF@123'),
+  'Cookie' => 'JSESSIONID=mMmRMHkTOk0TtKTcbDBkTwAvsSCnkAGOmxcA_SAPiR7fJrvaslRX3G43KenhfLbh; JSESSIONMARKID=vPQOvgmrPzQKwo4pzkKfg5OWg_82xwX5NsmY6bFwA; MYSAPSSO2=AjExMDAgAA9wb3J0YWw6dG1jdGVjaDGIAAdkZWZhdWx0AQAIVE1DVEVDSDECAAMwMDADAANQT0QEAAwyMDI0MDcxNTA5MzkFAAQAAAAICgAIVE1DVEVDSDH%2FAQQwggEABgkqhkiG9w0BBwKggfIwge8CAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGBzzCBzAIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwNzE1MDkzOTMyWjAjBgkqhkiG9w0BCQQxFgQUVgI85tgOBY0ibnRV34QLGldzM58wCQYHKoZIzjgEAwQuMCwCFAPbR3c2x8s5iP6DZisN5hVjz2rXAhQ7i1ctiixbDlBzHd0RKza%2FkmqiNQ%3D%3D; saplb_*=(J2EE1547120)1547150'
+])->get($this->apiUrl, [
+    '$filter' => $filters,
+    '$top' => $limit,
+    '$skip' => $offset * $limit,
+]);
+
+$apiData = $response->json();
+    
+    // Check if the response contains results
+    if (isset($apiData['d']['results']) && !empty($apiData['d']['results'])) {
+        $foundItems = array_map(function($item) {
+            return [
+                'id' => $item['BenfId'],
+                'uuid' => $item['UuId'],
+                'filled_da_form_id' => $item['FormId'],
+                'da_cnic' => $item['Cnic'],
+                'da_occupant_name' => $item['BenfName'],
+                'gender' => $item['Gender'],
+                'district' => $item['District'],
+                'tehsil' => $item['Tehsil'],
+                'union_council' => $item['Uc'],
+                'deh' => $item['Dehat'],
+                'widows' => $item['Vul01'],
+                'women_with_disable_husband' => $item['Vul02'],
+                'divorced_abandoned_unmarried_older_dependent_on_others' => $item['Vul03'],
+                'people_with_disability_physically_or_mentally' => $item['Vul04'],
+                'unaccompained_minors_i_e_orphans' => $item['Vul05'],
+                'unaccompained_elders_over_the_age_of_60' => $item['Vul06'],
+            ];
+        }, $apiData['d']['results']);
+    } else {
+        $foundItems = [];
+    }
+
+    $count = count($foundItems);
+    $currency = session()->get('currency');
+    $initial_amount = 300000;
+
+    foreach ($foundItems as $key => $value) {
+        $amount = $currency != 'PKR' ? $this->currency($initial_amount, 'PKR', $currency) : $initial_amount;
+        $foundItems[$key]['price'] = $amount;
+    }
+
+
+// Fetch location lists
+       
+            
+       // Fetch location lists
 
         $location_list_tehsil = [];
         $location_list_union_council = [];
         $location_list_deh = [];
-
-        $foundItems = victim::query();
-        $filtersApplied = false;
-        $foundItems->whereNotIn('id', function ($query) {
-            $query->select('victim_id')->from('donations');
-        });
-
-        if ($request->has('keywords') && $request->keywords != '') {
-            $keyword = $request->keywords;
-            $data['keywords'] = $keyword;
-            $foundItems->where('da_occupant_name', 'like', '%' . $keyword . '%');
-            $filtersApplied = true;
-        }
-
-        if ($request->has('district') && $request->district != 'Select district' && $request->district != null) {
-            $district = $request->district;
+ $location_list = victim::select('district', DB::raw('count(*) as total'))
+            ->groupBy('district')
+            ->get();
+            if ($request->district  && $request->district != 'Select District' && $request->district != null) {
+              $district = $request->district;
             $data['district'] = $district;
-            $foundItems->where('district', $district);
-            $filtersApplied = true;
-
-            $location_list_tehsil = victim::where('district', $district)->select('tehsil', DB::raw('count(*) as total'))
+ $location_list_tehsil = victim::where('district', $district)->select('tehsil', DB::raw('count(*) as total'))
             ->groupBy('tehsil')
             ->get();
+            $filtersApplied = true;
+
+        }
+        if ($request->deh) {
+              $deh = $request->deh;
+            $data['deh'] = $deh;
+                        $filtersApplied = true;
+
         }
 
-        if ($request->has('tehsil') && $request->tehsil != 'Select tehsil' && $request->tehsil != null) {
-            $tehsil = $request->tehsil;
+        if ($request->tehsil) {
+              $tehsil = $request->tehsil;
             $data['tehsil'] = $tehsil;
-            $foundItems->where('tehsil', $tehsil);
+$location_list_union_council = victim::where('tehsil', $tehsil)->select('union_council', DB::raw('count(*) as total'))
+            ->groupBy('union_council')
+            ->get();                        
             $filtersApplied = true;
 
-            $location_list_union_council = victim::where('tehsil', $tehsil)->select('union_council', DB::raw('count(*) as total'))
-            ->groupBy('union_council')
-            ->get();
         }
 
-        if ($request->has('union_council') && $request->union_council != 'Select union council' && $request->union_council != null) {
-            $union_council = $request->union_council;
+        if ($request->union_council) {
+              $union_council = $request->union_council;
             $data['union_council'] = $union_council;
-            $foundItems->where('union_council', $union_council);
-            $filtersApplied = true;
-
             $location_list_deh = victim::where('union_council', $union_council)->select('deh', DB::raw('count(*) as total'))
             ->groupBy('deh')
             ->get();
+                        $filtersApplied = true;
+
         }
 
-        if ($request->has('deh') && $request->location != 'Select deh' && $request->deh != null) {
-            $deh = $request->deh;
-            $data['deh'] = $deh;
-            $foundItems->where('deh', $deh);
-            $filtersApplied = true;
-        }
-
-        if ($request->has('gender') && $request->gender != 'Select Gender') {
-            $gender = $request->gender;
-            $data['gender'] = $gender;
-            $foundItems->where('gender', $gender);
-            $filtersApplied = true;
-        }
-
-        // if ($request->has('orphan')) {
-        //     $foundItems->where('unaccompained_minors_i_e_orphans', 1);
-        //     $filtersApplied = true;
-        // }
-
-        $selectedOptions = [];
-
-        if ($request->has('orphan')) {
-            $foundItems->where('unaccompained_minors_i_e_orphans', 1);
-            $filtersApplied = true;
-            $selectedOptions[] = 'orphan'; // Add 'orphan' to the selected options array
-        }
-
-        // Modify the other conditions in a similar manner
-        if ($request->has('widow')) {
-            $foundItems->where('widows', 1);
-            $filtersApplied = true;
-            $selectedOptions[] = 'widow';
-        }
-
-        if ($request->has('women')) {
-            $foundItems->where('women_with_disable_husband', 1);
-            $filtersApplied = true;
-            $selectedOptions[] = 'women';
-        }
-
-        // if ($request->has('elderly')) {
-        //     $foundItems->where('divorced_abandoned_unmarried_older_dependent_on_others', 1)->orWhere('unaccompained_elders_over_the_age_of_60', 1);
-        //     $filtersApplied = true;
-        //     $selectedOptions[] = 'elderly';
-        // }
-         if ($request->has('elderly')) {
-            $foundItems->where('unaccompained_elders_over_the_age_of_60', 1);
-            $filtersApplied = true;
-            $selectedOptions[] = 'elderly';
-        }
-
-        if ($request->has('differently_abled')) {
-            $foundItems->where('people_with_disability_physically_or_mentally', 1);
-            $filtersApplied = true;
-            $selectedOptions[] = 'differently_abled';
-        }
+$selectedOptions = $this->getSelectedOptions($request);
 
         if ($request->has('currency')) {
             $currency = $request->currency;
@@ -136,45 +137,121 @@ class FilterController extends Controller
             session()->get('currency', $currency);
             $cart = session()->put('currency', $currency);
         }
-
-        if ($filtersApplied) {
-            $count = $foundItems->count();
-            $foundItems = $foundItems->offset($offset * $limit)->take($limit)->get();
-        } else {
-            // No filters applied, so set count to 0 and don't fetch any data
-            $count = 0;
-            $foundItems = [];
-        }
-
-        $currency       = session()->get('currency');
-        $initial_amount = 300000;
-        foreach ($foundItems as $key => $value) {
-            if ($currency != 'PKR') {
-                $amount = $this->currency($initial_amount, 'PKR', $currency);
-            } else {
-                $amount = $initial_amount;
-            }
-            $foundItems[$key]['price']  = $amount;
-            // dd(session()->get('currency'));
-        }
-
-        $location_list = victim::select('district', DB::raw('count(*) as total'))
-            ->groupBy('district')
-            ->get();
-
-
-        return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list', 'location_list_tehsil', 'location_list_union_council', 'location_list_deh', 'selectedOptions'));
+        
+return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list', 'location_list_tehsil', 'location_list_union_council', 'location_list_deh', 'selectedOptions'));
     }
+
+    private function buildFilters(Request $request)
+    {
+        $filters = [];
+        
+        if ($request->has('keywords') && $request->keywords != '') {
+            $filters[] = "contains(Cnic, '{$request->keywords}')";
+        }
+
+        if ($request->has('district') && $request->district != 'Select District' && $request->district != null) {
+            $filters[] = "District eq '{$request->district}'";
+        }
+
+        if ($request->has('tehsil') && $request->tehsil != 'Select tehsil' && $request->tehsil != null) {
+            $filters[] = "Tehsil eq '{$request->tehsil}'";
+        }
+
+        if ($request->has('union_council') && $request->union_council != 'Select union council' && $request->union_council != null) {
+            $filters[] = "Uc eq '{$request->union_council}'";
+        }
+
+        if ($request->has('deh') && $request->deh != 'Select deh' && $request->deh != null) {
+            $filters[] = "Dehat eq '{$request->deh}'";
+        }
+
+        if ($request->has('gender') && $request->gender != 'Select Gender') {
+            $filters[] = "Gender eq '{$request->gender}'";
+        }
+
+        $filters = $this->applyVulnerabilityFilters($request, $filters);
+        if(count($filters) > 0)
+        {
+            $filters[] = "IsAdoptable eq 'Y'";
+        }
+
+        return implode(' and ', $filters);
+    }
+
+    private function applyVulnerabilityFilters(Request $request, $filters)
+    {
+        if ($request->has('orphan')) {
+            $filters[] = "Vul05 eq 'Y'";
+        }
+
+        if ($request->has('widow')) {
+            $filters[] = "Vul01 eq 'Y'";
+        }
+
+        if ($request->has('women')) {
+            $filters[] = "Vul02 eq 'Y'";
+        }
+
+        if ($request->has('elderly')) {
+            $filters[] = "Vul06 eq 'Y'";
+        }
+
+        if ($request->has('differently_abled')) {
+            $filters[] = "Vul04 eq 'Y'";
+        }
+
+        return $filters;
+    }
+
+    private function getSelectedOptions(Request $request)
+    {
+        $selectedOptions = [];
+
+        if ($request->has('orphan')) {
+            $selectedOptions[] = 'orphan';
+        }
+
+        if ($request->has('widow')) {
+            $selectedOptions[] = 'widow';
+        }
+
+        if ($request->has('women')) {
+            $selectedOptions[] = 'women';
+        }
+
+        if ($request->has('elderly')) {
+            $selectedOptions[] = 'elderly';
+        }
+
+        if ($request->has('differently_abled')) {
+            $selectedOptions[] = 'differently_abled';
+        }
+
+        return $selectedOptions;
+    }
+    
+    private function getLocationList($filterValue = null, $filterType = 'district')
+{
+    $response = Http::withOptions([
+        'verify' => false, // Disable SSL certificate verification
+    ])->withHeaders([
+        'x-csrf-token' => 'fetch',
+        'Accept' => 'application/json',
+        'Authorization' => 'Basic ' . base64_encode('TMCTECH1:SPHF@123'),
+        'Cookie' => 'JSESSIONID=mMmRMHkTOk0TtKTcbDBkTwAvsSCnkAGOmxcA_SAPiR7fJrvaslRX3G43KenhfLbh; JSESSIONMARKID=vPQOvgmrPzQKwo4pzkKfg5OWg_82xwX5NsmY6bFwA; MYSAPSSO2=AjExMDAgAA9wb3J0YWw6dG1jdGVjaDGIAAdkZWZhdWx0AQAIVE1DVEVDSDECAAMwMDADAANQT0QEAAwyMDI0MDcxNTA5MzkFAAQAAAAICgAIVE1DVEVDSDH%2FAQQwggEABgkqhkiG9w0BBwKggfIwge8CAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGBzzCBzAIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwNzE1MDkzOTMyWjAjBgkqhkiG9w0BCQQxFgQUVgI85tgOBY0ibnRV34QLGldzM58wCQYHKoZIzjgEAwQuMCwCFAPbR3c2x8s5iP6DZisN5hVjz2rXAhQ7i1ctiixbDlBzHd0RKza%2FkmqiNQ%3D%3D; saplb_*=(J2EE1547120)1547150'
+    ])->get($this->apiUrl, [
+        '$filter' => "$filterType eq '$filterValue'",
+        '$select' => "$filterType, count($filterType) as total",
+        '$groupby' => $filterType,
+    ]);
+
+    return $response->json()['d']['results'] ?? [];
+}
 
     // public function currency($amount, $curr_symbol, $symbol)
     // {
-    //     $Currency   = Currency::where(['base' => $curr_symbol, 'type' => $symbol])->first();
-    //     if ($Currency) {
-    //         $new_amount = $Currency->amount * $amount;
-    //     } else {
-    //         $new_amount = $amount;
-    //     }
-    //     return $new_amount;
+    //     // Implement currency conversion logic here
+    //     return $amount; // For now, just returning the same amount
     // }
 
     public function filterVictim(Request $request)
