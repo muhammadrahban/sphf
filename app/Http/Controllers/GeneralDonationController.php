@@ -98,13 +98,13 @@ class GeneralDonationController extends Controller
 
         if($request->transaction_type == "dod")
         {
-            return redirect(route('web.home'));
+            return redirect(Route('web.home'))->with("message", "Donation transfer suceesfully");
         }
         /* ==============SSO CALL ================*/
 
         // you need Auth Token & Amount Here before Hashing
-        $Key1 = "JX8Unwz2fS8e37ar";
-        $Key2 = "5869656954870442";
+        $Key1 = "q5n6k2p2NSNcRHRm";
+        $Key2 = "5100221563544858";
         $HS_ChannelId = "1001";
         $HS_MerchantId = "24821";
         $HS_StoreId = "033844";
@@ -178,13 +178,13 @@ class GeneralDonationController extends Controller
         $bankorderId   = auth()->user()->id . rand(0, 1786612);
 
 
-        $Key1 = "JX8Unwz2fS8e37ar";
-        $Key2 = "5869656954870442";
+       $Key1 = "q5n6k2p2NSNcRHRm";
+        $Key2 = "5100221563544858";
         $HS_ChannelId = "1001";
         $HS_MerchantId = "24821";
         $HS_StoreId = "033844";
         $HS_IsRedirectionRequest  = 0;
-        $HS_ReturnURL = "http://donationportal.sphf.gos.pk/home";
+        $HS_ReturnURL = "http://donationportal.sphf.gos.pk/callback";
         $HS_MerchantHash = "OUU362MB1uqPcNVB7xsDL1InUQW0Q3ZYQhLb8+NsufFNitJqA5mSP/2PBCbxlhoSzAOSQ6B8GbA=";
         $HS_MerchantUsername = "lakuku";
         $HS_MerchantPassword = "vRrlND/EAopvFzk4yqF7CA==";

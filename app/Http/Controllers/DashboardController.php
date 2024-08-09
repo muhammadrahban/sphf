@@ -33,8 +33,8 @@ class DashboardController extends Controller
         $count_phase_four       = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'phase_four')->count();
         $count_completed        = Donation::where('user_id', auth()->user()->id)->where('construction_status', 'completed')->count();
         foreach($donation as $index => $dt){
-            // $response = Http::get('http://103.111.160.107:8183/api/status?cnic=4540265349559');
-            $response = Http::get('http://103.111.160.107:8183/api/status?cnic='.$dt->da_cnic);
+             //$response = Http::get('http://103.111.160.107:8183/api/status?cnic=4540265349559');
+            $response = Http::get('http://103.111.160.107:8183/api/status?cnic='. str_replace('-', '', $dt->victim->da_cnic));
             if($response->ok()){
                 $donation[$index]->ext_data = $response->json();
                 $donation[$index]->plint_status_name = StatusEnum::getStatusName($donation[$index]->ext_data['plint_status']);

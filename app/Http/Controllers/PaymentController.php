@@ -127,7 +127,6 @@ class PaymentController extends Controller
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Basic VE1DVEVDSDE6U1BIRkAxMjM=',
-                'Cookie' => 'JSESSIONID=PtHse27PSoGXBbi-s_fX5Ex7jMHakAGOmxcA_SAPpAEQeKCFifXNb2SExbyESVyC; JSESSIONMARKID=masOHgudqtKLfY3naRtNgwDXcnTTvJIPHk1Y6bFwA; MYSAPSSO2=AjExMDAgAA9wb3J0YWw6dG1jdGVjaDGIAAdkZWZhdWx0AQAIVE1DVEVDSDECAAMwMDADAANQT0QEAAwyMDI0MDcyMjE0MDMFAAQAAAAICgAIVE1DVEVDSDH%2FAQYwggECBgkqhkiG9w0BBwKggfQwgfECAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGB0TCBzgIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwNzIyMTQwMzU1WjAjBgkqhkiG9w0BCQQxFgQUujit5zePudZ1sD5jPsn1qLewKSYwCQYHKoZIzjgEAwQwMC4CFQCbBNsa3wsoEc8wC0d1RcuB18UbhwIVAMhstFb5n580m!mZWekmcFtDcA2Z; saplb_*=(J2EE1547120)1547150'
             ];
             $body1 = ''; // Your request body if needed
 
@@ -137,23 +136,29 @@ class PaymentController extends Controller
             // Send the request and get the response
 
             // Extract CSRF token from response headers
-            $sToken = $request->getHeader('x-csrf-token')[0];
- Log::info($sToken);
+$sToken = $request->getHeader('x-csrf-token')[0];
+$cookies = $request->getHeader('Set-Cookie'); Log::info($sToken);
             $headers2 = [
                 'x-csrf-token' => $sToken,
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Basic VE1DVEVDSDE6U1BIRkAxMjM=',
-                'Cookie' => 'JSESSIONID=PtHse27PSoGXBbi-s_fX5Ex7jMHakAGOmxcA_SAPpAEQeKCFifXNb2SExbyESVyC; JSESSIONMARKID=masOHgudqtKLfY3naRtNgwDXcnTTvJIPHk1Y6bFwA; MYSAPSSO2=AjExMDAgAA9wb3J0YWw6dG1jdGVjaDGIAAdkZWZhdWx0AQAIVE1DVEVDSDECAAMwMDADAANQT0QEAAwyMDI0MDcyMjE0MDMFAAQAAAAICgAIVE1DVEVDSDH%2FAQYwggECBgkqhkiG9w0BBwKggfQwgfECAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGB0TCBzgIBATAiMB0xDDAKBgNVBAMTA1BPRDENMAsGA1UECxMESjJFRQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjQwNzIyMTQwMzU1WjAjBgkqhkiG9w0BCQQxFgQUujit5zePudZ1sD5jPsn1qLewKSYwCQYHKoZIzjgEAwQwMC4CFQCbBNsa3wsoEc8wC0d1RcuB18UbhwIVAMhstFb5n580m!mZWekmcFtDcA2Z; saplb_*=(J2EE1547120)1547150'
+                'Cookie' => $cookies
             ];
             $todayDate = Carbon::now()->format('Ymd');
             //dd($todayDate);
 
+        //     $body2 = '{
+        //   "BUDAT":"20240601",
+        //   "BPCNIC":"'. (string)$donation->victim->da_cnic .'",
+        //   "DDET":"'. (string)$donation->id .'",
+        //   "WRBTR":"'. (string)$amount .'"
+        // }';
             $body2 = '{
-           "BUDAT":"'. (string) $todayDate .'",
-           "BPCNIC":"'. (string)$donation->victim->da_cnic .'",
-           "DDET":"'. (string)$donation->id .'",
-           "WRBTR":"'. (string)$amount .'"
+          "BUDAT":"'. (string)$todayDate .'",
+          "BPCNIC":"'. (string)$donation->victim->da_cnic .'",
+          "DDET":"'. (string)$donation->id .'",
+          "WRBTR":"'. (string)$amount .'"
         }';
  Log::info($donation->victim->da_cnic);
  Log::info($donation->id);
@@ -161,8 +166,11 @@ class PaymentController extends Controller
  Log::info($body2);
             $response2 = new Psr7Request('POST', 'https://103.111.160.108:50001/igwj/odata/sap/ZSPHF_INV_POST_SRV/ZINV_ETSet', $headers2, $body2);
             $response2 = $client->send($response2);
- Log::info($response2);
+// Get the response body
+$responseBody = $response2->getBody()->__toString();
 
+// Log the response body
+Log::info('API Response:', ['response' => $responseBody]);
   session()->forget('cart');
             return redirect(Route('web.home'))->with("message", "Donation transfer suceesfully");
 
@@ -177,8 +185,8 @@ class PaymentController extends Controller
         /* ==============SSO CALL ================*/
 
         // you need Auth Token & Amount Here before Hashing
-        $Key1 = "JX8Unwz2fS8e37ar";
-        $Key2 = "5869656954870442";
+        $Key1 = "q5n6k2p2NSNcRHRm";
+        $Key2 = "5100221563544858";
         $HS_ChannelId = "1001";
         $HS_MerchantId = "24821";
         $HS_StoreId = "033844";
@@ -252,8 +260,8 @@ class PaymentController extends Controller
         $bankorderId   = auth()->user()->id . rand(0, 1786612);
 
 
-        $Key1 = "JX8Unwz2fS8e37ar";
-        $Key2 = "5869656954870442";
+        $Key1 = "q5n6k2p2NSNcRHRm";
+        $Key2 = "5100221563544858";
         $HS_ChannelId = "1001";
         $HS_MerchantId = "24821";
         $HS_StoreId = "033844";
