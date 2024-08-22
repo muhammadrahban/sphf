@@ -177,7 +177,7 @@ Log::info('API Response:', ['response' => $responseBody]);
         } catch (\Exception $e) {
             // Handle any exceptions or errors here
             Log::info($e);
-            //return response()->json(['error' => $e->getMessage()], 500);
+                return redirect(Route('web.home'))->with("error", "Adoption fialed, please contact support for further queries. ");
         }
              session()->forget('cart');
             return redirect(Route('web.home'))->with("message", "Donation transfer suceesfully");

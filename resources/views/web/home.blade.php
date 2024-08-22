@@ -14,6 +14,47 @@
                         </div>
                          <div id="dod" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
                                 <h4 class="bg-title p-2">
+                                    Adoption fialed, please contact support for further queries
+                                </h4>
+                                <p class="p-2">
+                                    To make an offline donation follow these steps:
+                                </p>
+                                <ol>
+                                    <li> Write a cheque payable to "Sindh People's Housing for Flood Affectees"</li>
+                                    <li> On the memo line of the check, indicate that the donation is for "Sindh People's
+                                        Housing for Flood Affectees"</li>
+                                    <li> Mail your cheque to:</li>
+                                </ol>
+                                <!--<p class="px-4">-->
+                                <!--    Sindh People's Housing for Flood Affectees-->
+                                <!--</p>-->
+                                <p class="font-weight-bold py-2 px-4" style="font-size: 20px;">
+                                    Address: SPHF Office, Bungalow No.20, Block 7/8, Modern Cooperative Housing Society, Tipu Sultan Road,
+                                    Karachi, Pakistan
+                                </p>
+
+                            </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+  @if(session('error'))
+            <!-- Modal -->
+            <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="messageModalLabel"> {{ session('message') }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                         <div id="dod" class="bg-white border border-secondary rounded m-3 p-3 payment-section">
+                                <h4 class="bg-title p-2">
                                     Donate with Offline Donation
                                 </h4>
                                 <p class="p-2">
@@ -34,7 +75,7 @@
                                 </p>
 
                             </div>
-                      
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
