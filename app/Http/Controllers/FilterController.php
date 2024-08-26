@@ -256,6 +256,54 @@ class FilterController extends Controller
         }
 
         // Fetch location lists (same as your original code)
+        //     // Fetch location lists
+
+        $location_list_tehsil = [];
+        $location_list_union_council = [];
+        $location_list_deh = [];
+        $location_list = victim::select('district', DB::raw('count(*) as total'))
+            ->groupBy('district')
+            ->get();
+        if ($request->district  && $request->district != 'Select District' && $request->district != null) {
+            $district = $request->district;
+            $data['district'] = $district;
+            $location_list_tehsil = victim::where('district', $district)->select('tehsil', DB::raw('count(*) as total'))
+                ->groupBy('tehsil')
+                ->get();
+            $filtersApplied = true;
+        }
+        if ($request->deh) {
+            $deh = $request->deh;
+            $data['deh'] = $deh;
+            $filtersApplied = true;
+        }
+
+        if ($request->tehsil) {
+            $tehsil = $request->tehsil;
+            $data['tehsil'] = $tehsil;
+            $location_list_union_council = victim::where('tehsil', $tehsil)->select('union_council', DB::raw('count(*) as total'))
+                ->groupBy('union_council')
+                ->get();
+            $filtersApplied = true;
+        }
+
+        if ($request->union_council) {
+            $union_council = $request->union_council;
+            $data['union_council'] = $union_council;
+            $location_list_deh = victim::where('union_council', $union_council)->select('deh', DB::raw('count(*) as total'))
+                ->groupBy('deh')
+                ->get();
+            $filtersApplied = true;
+        }
+
+        $selectedOptions = $this->getSelectedOptions($request);
+
+        if ($request->has('currency')) {
+            $currency = $request->currency;
+            session()->forget('currency');
+            session()->get('currency', $currency);
+            $cart = session()->put('currency', $currency);
+        }
 
         return view('web.filter.view', compact('foundItems', 'count', 'data', 'location_list', 'location_list_tehsil', 'location_list_union_council', 'location_list_deh', 'selectedOptions'));
     }
